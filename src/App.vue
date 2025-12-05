@@ -1,9 +1,12 @@
 <script setup lang="ts">
-import HelloWorld from './components/FirstView.vue'
+  import HelloWorld from './components/FirstView.vue'
+  import Header from './components/Header.vue'
 </script>
 
+
 <template>
-  <HelloWorld msg="Festival Pulse" />
+  <Header></Header>
+  <HelloWorld />
 </template>
 
 <style scoped>
