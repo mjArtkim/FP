@@ -6,9 +6,11 @@ export default {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        gugi: ['Gugi', 'sans-serif'],
-        pretendard: ['Pretendard', 'sans-serif'], 
+      colors: {
+        neonpink: '#F61979'
+      },
+      fontSize: {
+        xss: '10px',
       },
     },
   },
