@@ -28,15 +28,27 @@ const props = defineProps<{
   month: string 
   events: EventItem[]
 }>()
+
+const parseMonth = (value: string) => {
+  const [yearStr, monthStr] = value.split('-')
+  const year = Number(yearStr)
+  const month = Number(monthStr)
+  if (!Number.isInteger(year) || !Number.isInteger(month)) return null
+  return { year, month }
+}
+
 const toDateStr = (year: number, month: number, day: number) =>
   `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`
 
 const MAX_LANES_PER_WEEK = 2
 
 const calendarDays = computed<WeekDay[]>(() => {
-  const [y, m] = props.month.split('-').map(Number)
-  const firstDay = new Date(y, m - 1, 1)
-  const lastDate = new Date(y, m, 0).getDate()
+  const parsed = parseMonth(props.month)
+  if (!parsed) return []
+  const { year, month } = parsed
+
+  const firstDay = new Date(year, month - 1, 1)
+  const lastDate = new Date(year, month, 0).getDate()
   const startWeekday = firstDay.getDay() 
   const days: WeekDay[] = []
 
@@ -47,7 +59,7 @@ const calendarDays = computed<WeekDay[]>(() => {
   for (let d = 1; d <= lastDate; d++) {
     days.push({
       day: d,
-      dateStr: toDateStr(y, m, d),
+      dateStr: toDateStr(year, month, d),
     })
   }
 
@@ -65,13 +77,14 @@ const calendarDays = computed<WeekDay[]>(() => {
 
 const weeks = computed<Week[]>(() => {
   const days = calendarDays.value
+  if (!days.length) return []
   const result: Week[] = []
 
   for (let i = 0; i < days.length; i += 7) {
     const weekDays = days.slice(i, i + 7)
 
-    const weekStartStr = weekDays[0].dateStr
-    const weekEndStr = weekDays[6].dateStr
+    const weekStartStr = weekDays[0]?.dateStr ?? null
+    const weekEndStr = weekDays[weekDays.length - 1]?.dateStr ?? null
 
     const segments: WeekSegment[] = []
 
@@ -125,7 +138,9 @@ const weeks = computed<Week[]>(() => {
           const start = seg.startCol
           const end = seg.startCol + seg.span - 1
           for (let col = start; col <= end && col < 7; col++) {
-            hiddenByCol[col] += 1
+            if (col >= 0 && col < hiddenByCol.length) {
+              hiddenByCol[col] = (hiddenByCol[col] ?? 0) + 1
+            }
           }
         }
       }
