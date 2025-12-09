@@ -159,36 +159,35 @@ const weeks = computed<Week[]>(() => {
 
 <template>
   <div class="w-full">
-    <div class="grid grid-cols-7 text-center font-semibold mb-2 text-xs">
-      <div class="text-red-500">일</div>
-      <div>월</div>
-      <div>화</div>
-      <div>수</div>
-      <div>목</div>
-      <div>금</div>
-      <div class="text-blue-500">토</div>
+    <div class="grid grid-cols-7 text-center mb-2 text-sm font-gugi">
+      <div class="text-pulsered">SUN</div>
+      <div>MON</div>
+      <div>TUE</div>
+      <div>WED</div>
+      <div>THD</div>
+      <div>FRI</div>
+      <div class="text-pulsedarkblue">SAT</div>
     </div>
 
-    <!-- 주 단위 렌더링 -->
+    <!-- 주 -->
     <div class="space-y-4">
       <div
         v-for="(week, wi) in weeks"
         :key="wi"
-        class="border-t border-gray-200 pt-2 pb-1"
+        class="border-t border-gray-200 pt-2 h-[100px]"
       >
-        <!-- 날짜 줄 -->
-        <div class="grid grid-cols-7 text-center text-xs mb-1">
+        <!-- 날짜 -->
+        <div class="grid grid-cols-7 text-sm mb-1 font-gugi">
           <div
             v-for="(day, di) in week.days"
             :key="di"
-            class="h-6"
+            class="pl-2"
           >
             <span
               v-if="day.day"
-              class="text-[11px] font-semibold"
               :class="{
-                'text-red-500': di === 0,
-                'text-blue-500': di === 6,
+                'text-pulsered': di === 0,
+                'text-pulsedarkblue': di === 6,
               }"
             >
               {{ day.day }}
@@ -196,7 +195,7 @@ const weeks = computed<Week[]>(() => {
           </div>
         </div>
 
-        <!-- 이벤트 bar 줄들 (lane 단위) -->
+        <!-- 이벤트 bar 줄 -->
         <div class="space-y-1">
           <div
             v-for="(lane, li) in week.lanes"
@@ -206,15 +205,15 @@ const weeks = computed<Week[]>(() => {
             <div
               v-for="seg in lane"
               :key="seg.id"
-              class="h-6 flex items-center text-[11px] bg-indigo-100 text-slate-700 rounded-full px-2 overflow-hidden whitespace-nowrap text-ellipsis"
+              class="h-[16px] flex items-center text-[12px] bg-indigo-100 text-slate-700 rounded-[3px] px-2 overflow-hidden whitespace-nowrap text-ellipsis"
               :style="{ gridColumn: `${seg.startCol + 1} / span ${seg.span}` }"
             >
               {{ seg.title }}
             </div>
           </div>
 
-          <!-- 날짜별 +n (해당 칸에 숨겨진 bar 수) -->
-          <div class="grid grid-cols-7 text-[10px] text-gray-500">
+          <!-- 날짜별 +n -->
+          <div class="grid grid-cols-7 text-[10px] text-pulsegray">
             <div
               v-for="(cnt, ci) in week.hiddenByCol"
               :key="ci"

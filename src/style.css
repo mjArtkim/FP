@@ -99,7 +99,6 @@ ol, ul {
 }
 button {
   border: 0;
-  padding: 0.6em 1.2em;
   background-color: transparent;
   cursor: pointer;
   transition: border-color 0.25s;

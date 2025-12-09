@@ -7,7 +7,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        neonpink: '#F61979'
+        neonpink: '#F61979',
+        pulsedarkblue: '#2D5DAA',
+        pulseblue: '#1F51FF',
+        pulsered: '#EA6466',
+        pulsegray: '#CCCCCC'
       },
       fontSize: {
         xss: '10px',

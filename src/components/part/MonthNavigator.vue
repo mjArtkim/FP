@@ -36,11 +36,11 @@ const changeMonth = (delta: number) => {
 </script>
 
 <template>
-  <div class="flex items-center gap-3">
-    <button @click="changeMonth(-1)" class="material-symbols-rounded">keyboard_arrow_left</button>
-    <div class="text-xl font-semibold">
+  <div class="flex items-center font-gugi">
+    <button @click="changeMonth(-1)" class="material-symbols-rounded text-3xl">keyboard_arrow_left</button>
+    <div class="text-xl font-semibold px-2">
       {{ label }}
     </div>
-    <button @click="changeMonth(1)" class="material-symbols-rounded">keyboard_arrow_right</button>
+    <button @click="changeMonth(1)" class="material-symbols-rounded text-3xl">keyboard_arrow_right</button>
   </div>
 </template>

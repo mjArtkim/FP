@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { ref, computed, watch } from 'vue'
-import MonthNavigator from '@/components/parttwo/MonthNavigator.vue'
-import CalendarGrid from '@/components/parttwo/CalendarGrid.vue'
+import MonthNavigator from '@/components/part/MonthNavigator.vue'
+import CalendarGrid from '@/components/part/CalendarGrid.vue'
+import festivals from '@/testdata/festivals.json'
+const allFestivalData = festivals as Record<string, EventItem[]>
 const viewMode = ref<'list' | 'calendar'>('calendar') 
 type EventItem = {
   id: number
@@ -23,59 +25,9 @@ const currentList = computed<EventItem[]>(() => {
   return monthData.value[currentMonth.value] || []
 })
 const loadMonthEventsFromDB = async (month: string): Promise<EventItem[]> => {
-  // 여기서 실제 API/Firebase/SQL 호출하면 됨
-  // 예: const res = await fetch(`/api/events?month=${month}`)
-  //     return await res.json()
-
-  // 더미 데이터
-  // month에 따라 다르게 주고 싶으면 조건 분기하면 됨
-  if (month === '2025-12') {
-    return [
-      {     id: 1,
-    title: 'Festival Name',
-    start: '2025-12-03',
-    end: '2025-12-22'},
-      {     id: 2,
-    title: '다른 페스티벌',
-    start: '2025-12-15',
-    end: '2025-12-16'},
-      {     id: 3,
-    title: '다른 페스티벌',
-    start: '2025-12-22',
-    end: '2025-12-22' },
-          {     id: 3,
-    title: '다른 페스티벌',
-    start: '2025-12-22',
-    end: '2025-12-22' },
-          {     id: 3,
-    title: '다른 페스티벌',
-    start: '2025-12-22',
-    end: '2025-12-22' },
-          {     id: 3,
-    title: '다른 페스티벌',
-    start: '2025-12-22',
-    end: '2025-12-22' },
-          {     id: 3,
-    title: '다른 페스티벌',
-    start: '2025-12-22',
-    end: '2025-12-22' },
-    ]
-  }
-  if (month === '2025-11') {
-    return [
-      {     id: 1,
-    title: 'Festival Name',
-    start: '2025-11-03',
-    end: '2025-11-12'},
-      {     id: 1,
-    title: '다른 페스티벌',
-    start: '2025-11-15',
-    end: '2025-11-16'},
-    ]
-  }
-  return []
+  // JSON에서 해당 월 데이터 가져오기
+  return allFestivalData[month] || []
 }
-
 watch(
   currentMonth,
   async (newMonth) => {
@@ -104,29 +56,29 @@ watch(
       <ul></ul>
     </div>
     <div>
-      <div>What Festival Here?</div>
+      <div class="text-xs font-semibold">What Festival Here?</div>
       <div>
-
-        <div class="max-w-xl mx-auto p-4 space-y-4">
-          <div>
-            <MonthNavigator v-model="currentMonth" />
-            <div class="flex justify-end mb-3 gap-2">
-              <button
-                type="button"
-                @click="viewMode = 'list'"
-                class="px-3 py-1 rounded-full text-sm border"
-                :class="viewMode === 'list' ? 'bg-black text-white border-black' : 'bg-white text-gray-600 border-gray-300'"
-              >
-                리스트형
-              </button>
+        <div class="w-full mx-auto p-4 space-y-4">
+          <div class="flex items-center justify-between">
+            <MonthNavigator v-model="currentMonth" class="w-8/10" />
+            <div class="flex justify-end w-2/10 h-[32px] shadow-[0px_0px_3px_rgba(0,0,0,0.2)] p-[2px] rounded-[5px]">
               <button
                 type="button"
                 @click="viewMode = 'calendar'"
-                class="px-3 py-1 rounded-full text-sm border"
-                :class="viewMode === 'calendar' ? 'bg-black text-white border-black' : 'bg-white text-gray-600 border-gray-300'"
+                class="material-symbols-rounded w-[32px] py-[4px] rounded-[5px] text-sm text-center"
+                :class="viewMode === 'calendar' ? 'bg-neonpink text-white' : 'bg-white text-gray-600 border-gray-300'"
               >
-                달력형
+                calendar_month
               </button>
+              <button
+                type="button"
+                @click="viewMode = 'list'"
+                class="material-symbols-rounded w-[32px] py-[4px] rounded-[5px] text-sm text-center"
+                :class="viewMode === 'list' ? 'bg-neonpink text-white' : 'bg-white text-gray-600 border-gray-300'"
+              >
+                lists
+              </button>
+
             </div>
           </div>
           <div v-if="isLoading" class="text-center text-sm text-gray-500 mb-2">
@@ -152,9 +104,13 @@ watch(
                 </div>
               </li>
             </ul>
-            <p v-if="!currentList.length" class="text-sm text-gray-400 mt-4 text-center">
-              이 달에는 등록된 일정이 없어요.
-            </p>
+            <div v-if="!currentList.length" class="text-sm text-gray-400 mt-4 text-center">
+              <div>
+                OOPS &#58;&#40;
+                <br>No events this month.
+              </div>
+              <button></button>
+            </div>
           </div>
           <div v-else>
             <CalendarGrid :month="currentMonth" :events="currentList" />
