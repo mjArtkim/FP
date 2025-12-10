@@ -98,8 +98,6 @@ ol, ul {
   list-style-type: none;
 }
 button {
-  border: 0;
-  background-color: transparent;
   cursor: pointer;
   transition: border-color 0.25s;
 }

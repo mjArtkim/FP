@@ -65,13 +65,13 @@ watch(
 
 <template>
   <div>
-    <div class="px-5 w-screen">
-      <div class="text-xs font-semibold py-2">Today Festival</div>
-      <ul v-if="todayEvents.length" class="flex flex-nowrap gap-6 overflow-auto w-screen px-1 py-3">
+    <div class="px-5 w-screen overflow-hidden">
+      <div class="text-xs font-bold py-2">Today Festival</div>
+      <ul v-if="todayEvents.length" class="flex flex-nowrap gap-6 overflow-auto w-screen pl-1 py-3 pr-10">
         <li
           v-for="item in todayEvents"
           :key="item.id"
-          class="w-[130px] h-[130px] flex-shrink-0 p-[10px] rounded-lg bg-white shadow-[0_0_3px_rgba(1,1,6,0.2)] flex flex-col content-center"
+          class="w-[130px] h-[130px] flex-shrink-0 p-[10px] rounded-lg bg-white shadow-[1px_1px_6px_rgba(0,0,0,0.2)] flex flex-col content-center"
         >
           <router-link to="#">
             <img
@@ -90,10 +90,10 @@ watch(
           </router-link>
         </li>
       </ul>
-      <div v-else class="text-xs text-gray-400">Let’s focus on work today 💪</div>
+      <div v-else class="text-base text-gray-400 text-center py-8 border-b">Let’s focus on work today 💪</div>
     </div>
     <div class="px-5">
-      <div class="text-xs font-semibold py-2">What Festival Here?</div>
+      <div class="text-xs font-bold pt-5 pb-2">What Festival Here?</div>
       <div>
         <div class="w-full mx-auto py-4 space-y-4 mb-[100px]">
           <div class="flex items-center justify-between">
@@ -152,12 +152,12 @@ watch(
                 </div>
               </li>
             </ul>
-            <div v-if="!currentList.length" class="text-sm text-gray-400 mt-4 text-center">
-              <div>
+            <div v-if="!currentList.length" class="h-[450px] flex flex-col content-center justify-center items-center">
+              <div class="text-3xl text-gray-400 my-4 text-center">
                 OOPS &#58;&#40;
                 <br>No events this month.
               </div>
-              <button></button>
+              <button class="w-3/5 text-xl text-blue-200 mt-4 text-center border border-blue-200 rounded-md py-1 shadow-[0_0_3px_rgba(0,0,0,0.1)]">View other days 👀</button>
             </div>
           </div>
           <div v-else>
