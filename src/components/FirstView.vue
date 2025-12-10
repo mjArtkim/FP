@@ -4,6 +4,7 @@ import MonthNavigator from '@/components/part/MonthNavigator.vue'
 import CalendarGrid from '@/components/part/CalendarGrid.vue'
 import festivals from '@/testdata/festivals.json'
 
+
 type EventItem = {
   id: number
   title: string
@@ -14,8 +15,11 @@ type EventItem = {
   contry: string
 }
 const shortText = (text: string, limit = 12) => {
-  return text.length > limit ? text.slice(0, limit) + '...' : text;
-};
+  return text.length > limit ? text.slice(0, limit) + '...' : text
+}
+const formatMD = (dateStr: string) => {
+  return dateStr.slice(5)
+}
 const allFestivalData = festivals as Record<string, EventItem[]>
 const viewMode = ref<'list' | 'calendar'>('calendar') 
 
@@ -73,7 +77,7 @@ watch(
           :key="item.id"
           class="w-[130px] h-[130px] flex-shrink-0 p-[10px] rounded-lg bg-white shadow-[1px_1px_6px_rgba(0,0,0,0.2)] flex flex-col content-center"
         >
-          <router-link to="#">
+          <router-link to="/festivaldetail">
             <img
               :src="item.image"
               alt="festival"
@@ -136,20 +140,29 @@ watch(
             {{ errorMessage }}
           </div>
           <div v-if="viewMode === 'list'">
-            <ul class="space-y-2">
+            <ul class="space-y-7">
               <li
                 v-for="item in currentList"
                 :key="item.id"
-                class="p-3 rounded-lg bg-white border flex items-center justify-between"
+                class="p-[10px] rounded-lg bg-white border grid grid-cols-[30%_50%_20%] shadow-[1px_1px_6px_rgba(0,0,0,0.2)]"
               >
-                <div>
-                  <div class="text-sm font-semibold">
+                <img
+                  :src="item.image"
+                  alt="festival"
+                  class="w-[100px] object-cover rounded-[10px] shadow-[2px_2px_3px_rgba(0,0,0,0.2)]"
+                />
+                <div class="flex flex-col justify-between px-2">
+                  <div class="text-sm font-semibold ">
                     {{ item.title }}
                   </div>
-                  <div class="text-xs text-gray-500">
-                    {{ item.start }} ~ {{ item.end }}
+                  <div class="text-xs">
+                    {{ formatMD(item.start) }} ~ {{ formatMD(item.end) }}
+                  </div>
+                  <div class="text-xs">
+                    {{ item.city }} / {{ item.contry }}
                   </div>
                 </div>
+                <button class="p-[8px] text-sm text-pulseblue  text-center border border-pulseblue rounded-md self-center justify-self-center">Detail</button>
               </li>
             </ul>
             <div v-if="!currentList.length" class="h-[450px] flex flex-col content-center justify-center items-center">

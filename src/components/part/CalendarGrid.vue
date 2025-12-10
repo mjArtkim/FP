@@ -1,5 +1,14 @@
 <script setup lang="ts">
 import { computed } from 'vue'
+import { useRouter } from 'vue-router'  
+const router = useRouter()
+
+const goToFestivalDetail = (id: number) => {
+  router.push({
+    name: 'festivaldetail', 
+    params: { id },
+  })
+}
 
 type EventItem = {
   id: number
@@ -16,12 +25,14 @@ type WeekSegment = {
   title: string
   startCol: number
   span: number
+  event: EventItem 
 }
 type WeekLane = WeekSegment[]
 type Week = {
   days: WeekDay[]
   lanes: WeekLane[]
   hiddenByCol: number[] 
+  hiddenEventsByCol: EventItem[][]
 }
 
 const props = defineProps<{
@@ -105,12 +116,14 @@ const weeks = computed<Week[]>(() => {
           title: e.title,
           startCol,
           span: endCol - startCol + 1,
+          event: e,                // 🔹 원본 이벤트 저장
         })
       }
     }
 
     const lanes: WeekLane[] = []
     const hiddenByCol = Array(7).fill(0) as number[]
+    const hiddenEventsByCol: EventItem[][] = Array.from({ length: 7 }, () => [])
 
     const isOverlap = (a: WeekSegment, b: WeekSegment) => {
       const aEnd = a.startCol + a.span - 1
@@ -130,16 +143,16 @@ const weeks = computed<Week[]>(() => {
       }
 
       if (!placed) {
-        // 새 lane을 만들 여유가 있으면 만들고 넣기
         if (lanes.length < MAX_LANES_PER_WEEK) {
           lanes.push([seg])
         } else {
-          // lane 제한 때문에 숨겨진 bar → 해당 날짜 컬럼들에 +1씩
+          // 🔹 lane 초과 → 숨김 처리 + 날짜별로 이벤트 저장
           const start = seg.startCol
           const end = seg.startCol + seg.span - 1
           for (let col = start; col <= end && col < 7; col++) {
             if (col >= 0 && col < hiddenByCol.length) {
               hiddenByCol[col] = (hiddenByCol[col] ?? 0) + 1
+              hiddenEventsByCol[col].push(seg.event)
             }
           }
         }
@@ -150,6 +163,7 @@ const weeks = computed<Week[]>(() => {
       days: weekDays,
       lanes,
       hiddenByCol,
+      hiddenEventsByCol,
     })
   }
 
@@ -205,21 +219,47 @@ const weeks = computed<Week[]>(() => {
             <div
               v-for="seg in lane"
               :key="seg.id"
-              class="h-[16px] flex items-center text-[12px] bg-indigo-100 text-slate-700 rounded-[3px] px-2 overflow-hidden whitespace-nowrap text-ellipsis"
+              class="h-[16px] flex items-center text-[12px] bg-indigo-100 text-slate-700 rounded-[3px] px-2 overflow-hidden whitespace-nowrap text-ellipsis cursor-pointer"
               :style="{ gridColumn: `${seg.startCol + 1} / span ${seg.span}` }"
+              @click="goToFestivalDetail(seg.id)" 
             >
               {{ seg.title }}
             </div>
           </div>
 
-          <!-- 날짜별 +n -->
-          <div class="grid grid-cols-7 text-[10px] text-pulsegray">
+          <!-- +n -->
+          <div class="grid grid-cols-7 text-[10px] text-pulsegray mt-1">
             <div
               v-for="(cnt, ci) in week.hiddenByCol"
               :key="ci"
-              class="h-3 flex items-center"
+              class="h-4 flex items-center justify-start relative"
             >
-              <span v-if="cnt > 0">+{{ cnt }}</span>
+              <div
+                v-if="cnt > 0"
+                class="relative group inline-flex"
+              >
+                <!-- +n 뱃지-->
+                <div
+                  class="inline-flex items-center justify-center px-1.5 py-[1px] text-[10px] cursor-pointer"
+                >
+                  +{{ cnt }}
+                </div>
+
+                <!-- hover 시 제목 리스트만 보여주는 툴팁-->
+                <div
+                  class="absolute left-0 top-4 z-20 hidden group-hover:block
+                        bg-white border border-gray-200 rounded-md shadow-md
+                        min-w-[140px] text-[10px] py-1 cursor-pointer text-neonpink"
+                >
+                  <div
+                    v-for="ev in week.hiddenEventsByCol[ci]"
+                    :key="ev.id"
+                    class="px-2 py-[2px] hover:bg-gray-100 whitespace-nowrap"
+                  >
+                    {{ ev.title }}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

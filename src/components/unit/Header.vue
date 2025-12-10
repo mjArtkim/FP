@@ -11,7 +11,7 @@ const DateText = ref(formattedDate)
 <template>
   <div class="p-5">
     <div class="flex justify-between items-center">
-      <img :src="topLogo" class="h-8"/>
+      <router-link to="/"><img :src="topLogo" class="h-8"/></router-link>
       <ul class="flex">
         <li class="flex items-center px-1">
           <div class="material-symbols-rounded text-sm px-2">location_on</div>
