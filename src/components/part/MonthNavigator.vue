@@ -9,11 +9,8 @@ const emit = defineEmits<{
   (e: 'update:modelValue', value: string): void
 }>()
 
-// year / month 분해
 const year = computed(() => Number(props.modelValue.split('-')[0]))
 const month = computed(() => Number(props.modelValue.split('-')[1]))
-
-// 화면에 보여줄 라벨 (ex: 2025.12)
 const label = computed(() => {
   return `${year.value}.${String(month.value).padStart(2, '0')}`
 })

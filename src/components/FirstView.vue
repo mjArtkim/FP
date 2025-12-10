@@ -3,19 +3,25 @@ import { ref, computed, watch } from 'vue'
 import MonthNavigator from '@/components/part/MonthNavigator.vue'
 import CalendarGrid from '@/components/part/CalendarGrid.vue'
 import festivals from '@/testdata/festivals.json'
-const allFestivalData = festivals as Record<string, EventItem[]>
-const viewMode = ref<'list' | 'calendar'>('calendar') 
+
 type EventItem = {
   id: number
   title: string
-  start: string // "YYYY-MM-DD"
-  end: string   // "YYYY-MM-DD"
+  start: string 
+  end: string  
+  image: string
+  city: string
+  contry: string
 }
+const shortText = (text: string, limit = 12) => {
+  return text.length > limit ? text.slice(0, limit) + '...' : text;
+};
+const allFestivalData = festivals as Record<string, EventItem[]>
+const viewMode = ref<'list' | 'calendar'>('calendar') 
 
 const now = new Date()
-const currentMonth = ref(
-  `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`
-)
+const todayMonthKey = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`
+const currentMonth = ref(todayMonthKey)
 const monthData = ref<Record<string, EventItem[]>>({})
 
 const isLoading = ref(false)
@@ -28,12 +34,20 @@ const loadMonthEventsFromDB = async (month: string): Promise<EventItem[]> => {
   // JSON에서 해당 월 데이터 가져오기
   return allFestivalData[month] || []
 }
+const todayList = computed<EventItem[]>(() => {
+  return monthData.value[todayMonthKey] || allFestivalData[todayMonthKey] || []
+})
+const todayEvents = computed<EventItem[]>(() => {
+  const today = now.toISOString().slice(0, 10)
+  return todayList.value.filter(
+    (event) => event.start <= today && today <= event.end
+  )
+})
 watch(
   currentMonth,
   async (newMonth) => {
     errorMessage.value = ''
     if (monthData.value[newMonth]) return
-
     try {
       isLoading.value = true
       const events = await loadMonthEventsFromDB(newMonth)
@@ -51,34 +65,68 @@ watch(
 
 <template>
   <div>
-    <div>
-      <div>Today Festival</div>
-      <ul></ul>
+    <div class="px-5 w-screen">
+      <div class="text-xs font-semibold py-2">Today Festival</div>
+      <ul v-if="todayEvents.length" class="flex flex-nowrap gap-6 overflow-auto w-screen px-1 py-3">
+        <li
+          v-for="item in todayEvents"
+          :key="item.id"
+          class="w-[130px] h-[130px] flex-shrink-0 p-[10px] rounded-lg bg-white shadow-[0_0_3px_rgba(1,1,6,0.2)] flex flex-col content-center"
+        >
+          <router-link to="#">
+            <img
+              :src="item.image"
+              alt="festival"
+              class="w-full h-[60px] object-cover rounded-[10px]"
+            />
+            <div class="flex flex-col">
+              <div class="text-xs font-black py-[10px]">
+                {{ shortText(item.title) }}
+              </div>
+            <div class="text-xs truncate">
+              {{ shortText(item.city + ' / ' + item.contry) }}
+            </div>
+            </div>
+          </router-link>
+        </li>
+      </ul>
+      <div v-else class="text-xs text-gray-400">Let’s focus on work today 💪</div>
     </div>
-    <div>
-      <div class="text-xs font-semibold">What Festival Here?</div>
+    <div class="px-5">
+      <div class="text-xs font-semibold py-2">What Festival Here?</div>
       <div>
-        <div class="w-full mx-auto p-4 space-y-4">
+        <div class="w-full mx-auto py-4 space-y-4 mb-[100px]">
           <div class="flex items-center justify-between">
             <MonthNavigator v-model="currentMonth" class="w-8/10" />
-            <div class="flex justify-end w-2/10 h-[32px] shadow-[0px_0px_3px_rgba(0,0,0,0.2)] p-[2px] rounded-[5px]">
-              <button
-                type="button"
-                @click="viewMode = 'calendar'"
-                class="material-symbols-rounded w-[32px] py-[4px] rounded-[5px] text-sm text-center"
-                :class="viewMode === 'calendar' ? 'bg-neonpink text-white' : 'bg-white text-gray-600 border-gray-300'"
-              >
-                calendar_month
-              </button>
-              <button
-                type="button"
-                @click="viewMode = 'list'"
-                class="material-symbols-rounded w-[32px] py-[4px] rounded-[5px] text-sm text-center"
-                :class="viewMode === 'list' ? 'bg-neonpink text-white' : 'bg-white text-gray-600 border-gray-300'"
-              >
-                lists
-              </button>
-
+            <div class="flex justify-end w-2/10 h-[32px] shadow-[0_0_3px_rgba(0,0,0,0.2)] p-[2px] rounded-[5px]">
+              <div id="viewToggle" class="relative w-[64px] h-full">
+                <input
+                  type="checkbox"
+                  class="chlist absolute inset-0 w-full h-full opacity-0 cursor-pointer z-30"
+                  :checked="viewMode === 'list'"
+                  @change="viewMode = $event.target.checked ? 'list' : 'calendar'"
+                />
+                <div class="absolute inset-0 z-10 flex justify-between items-center ">
+                  <div class="material-symbols-rounded w-[32px] py-[4px] rounded-[5px] text-sm text-center"
+                    :class="viewMode === 'calendar' ? 'text-transparent' : 'text-black'">
+                    calendar_month
+                  </div>
+                  <div class="material-symbols-rounded w-[32px] py-[4px] rounded-[5px] text-sm text-center"
+                    :class="viewMode === 'list' ? 'text-transparent' : 'text-black'">
+                    lists
+                  </div>
+                </div>
+                <div
+                  class="cltogl absolute top-[0px] left-[0px] w-[32px] h-[28px] rounded-[4px] flex items-center justify-center bg-[#F61979]  transition-all duration-300 ease-out z-20"
+                  :class="viewMode === 'calendar'
+                    ? 'text-white left-[0px]'
+                    : 'text-white left-[32px]'"
+                >
+                  <div class="material-symbols-rounded w-[32px] py-[4px] rounded-[5px] text-sm text-center">
+                    {{ viewMode === 'calendar' ? 'calendar_month' : 'lists' }}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div v-if="isLoading" class="text-center text-sm text-gray-500 mb-2">
@@ -113,7 +161,7 @@ watch(
             </div>
           </div>
           <div v-else>
-            <CalendarGrid :month="currentMonth" :events="currentList" />
+            <CalendarGrid :month="currentMonth" :events="currentList"/>
           </div>
         </div>
       </div>

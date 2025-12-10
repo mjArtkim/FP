@@ -1,16 +1,19 @@
 {
   "2025-12": [
-    { "id": 1, "title": "Festival Name", "start": "2025-12-03", "end": "2025-12-22" },
-    { "id": 2, "title": "다른 페스티벌", "start": "2025-12-15", "end": "2025-12-16" },
-    { "id": 3, "title": "다른 페스티벌", "start": "2025-12-22", "end": "2025-12-22" },
-    { "id": 4, "title": "다른 페스티벌", "start": "2025-12-22", "end": "2025-12-22" },
-    { "id": 5, "title": "다른 페스티벌", "start": "2025-12-22", "end": "2025-12-22" },
-    { "id": 6, "title": "다른 페스티벌", "start": "2025-12-22", "end": "2025-12-22" },
-    { "id": 7, "title": "다른 페스티벌", "start": "2025-12-22", "end": "2025-12-22" }
+    { "id": 1, "title": "Festival Name", "start": "2025-12-03", "end": "2025-12-22", "image": "/img/testimg.png" , "contry":"Korea", "city":"Amsterdam"},
+    { "id": 2, "title": "다른 페스티벌", "start": "2025-12-15", "end": "2025-12-16", "image": "/img/testimg.png", "contry":"Korea", "city":"Seoul" },
+    { "id": 3, "title": "다른 페스티벌", "start": "2025-12-22", "end": "2025-12-22", "image": "/img/testimg.png", "contry":"Korea", "city":"Seoul" },
+    { "id": 4, "title": "다른 페스티벌", "start": "2025-12-22", "end": "2025-12-22", "image": "/img/testimg.png", "contry":"Korea", "city":"Seoul" },
+    { "id": 5, "title": "다른 페스티벌", "start": "2025-12-22", "end": "2025-12-22", "image": "/img/testimg.png", "contry":"Korea", "city":"Seoul" },
+    { "id": 6, "title": "다른 페스티벌", "start": "2025-12-22", "end": "2025-12-22", "image": "/img/testimg.png", "contry":"Korea", "city":"Seoul" },
+    { "id": 7, "title": "다른 페스티벌", "start": "2025-12-22", "end": "2025-12-22", "image": "/img/testimg.png", "contry":"Korea", "city":"Seoul" },
+    { "id": 8, "title": "Test Festival", "start": "2025-12-03", "end": "2025-12-16", "image": "/img/testimg.png", "contry":"Korea", "city":"Seoul" },
+    { "id": 9, "title": "EDC KOREA", "start": "2025-12-01", "end": "2025-12-16", "image": "/img/testimg.png", "contry":"Korea", "city":"Seoul" },
+    { "id": 10, "title": "ULTRA MUSIC FESTIVAL", "start": "2025-12-10", "end": "2025-12-16", "image": "/img/testimg.png", "contry":"Korea", "city":"Seoul"}
   ],
 
   "2025-11": [
-    { "id": 8, "title": "Festival Name", "start": "2025-11-03", "end": "2025-11-12" },
-    { "id": 9, "title": "다른 페스티벌", "start": "2025-11-15", "end": "2025-11-16" }
+    { "id": 8, "title": "Festival Name", "start": "2025-11-03", "end": "2025-11-12", "image": "/img/testimg.png", "contry":"Korea", "city":"Seoul" },
+    { "id": 9, "title": "다른 페스티벌", "start": "2025-11-15", "end": "2025-11-16", "image": "/img/testimg.png", "contry":"Korea", "city":"Seoul" }
   ]
 }
