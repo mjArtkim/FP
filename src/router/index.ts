@@ -8,10 +8,11 @@ const routes = [
     name: 'home',
     component: FirstView,
   },
-    {
-    path: '/festivaldetail',
+  {
+    path: '/festivaldetail/:id',
     name: 'festivaldetail',
     component: FestivalDetail,
+    props: true,
   },
 ]
 

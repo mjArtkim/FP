@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import { useRouter } from 'vue-router'  
 const router = useRouter()
 
@@ -34,7 +34,9 @@ type Week = {
   hiddenByCol: number[] 
   hiddenEventsByCol: EventItem[][]
 }
-
+const formatMD = (dateStr: string) => {
+  return dateStr.slice(5)
+}
 const props = defineProps<{
   month: string 
   events: EventItem[]
@@ -169,6 +171,22 @@ const weeks = computed<Week[]>(() => {
 
   return result
 })
+
+const openMore = ref<{ weekIndex: number; colIndex: number } | null>(null)
+
+const toggleMore = (weekIndex: number, colIndex: number) => {
+  if (
+    openMore.value &&
+    openMore.value.weekIndex === weekIndex &&
+    openMore.value.colIndex === colIndex
+  ) {
+    // 같은 +n 다시 클릭 → 닫기
+    openMore.value = null
+  } else {
+    // 새로 열기
+    openMore.value = { weekIndex, colIndex }
+  }
+}
 </script>
 
 <template>
@@ -210,7 +228,7 @@ const weeks = computed<Week[]>(() => {
         </div>
 
         <!-- 이벤트 bar 줄 -->
-        <div class="space-y-1">
+        <div class="space-y-1 relative">
           <div
             v-for="(lane, li) in week.lanes"
             :key="li"
@@ -228,34 +246,47 @@ const weeks = computed<Week[]>(() => {
           </div>
 
           <!-- +n -->
-          <div class="grid grid-cols-7 text-[10px] text-pulsegray mt-1">
+          <div class="grid grid-cols-7 text-[10px] text-pulsegray mt-2 ">
             <div
               v-for="(cnt, ci) in week.hiddenByCol"
               :key="ci"
-              class="h-4 flex items-center justify-start relative"
+              class="h-4 flex items-center justify-start"
             >
               <div
                 v-if="cnt > 0"
-                class="relative group inline-flex"
+                class="group inline-flex md:relative"
               >
                 <!-- +n 뱃지-->
-                <div
-                  class="inline-flex items-center justify-center px-1.5 py-[1px] text-[10px] cursor-pointer"
+                <button
+                  type="button"
+                  class="inline-flex items-center justify-center px-1.5 py-[1px] text-[12px] cursor-pointer"
+                  @click.stop="toggleMore(wi, ci)"
                 >
                   +{{ cnt }}
-                </div>
-
-                <!-- hover 시 제목 리스트만 보여주는 툴팁-->
+                </button>
+                <!-- 클릭 시 제목 리스트만 보여주는 툴팁-->
                 <div
-                  class="absolute left-0 top-4 z-20 hidden group-hover:block
-                        bg-white border border-gray-200 rounded-md shadow-md
-                        min-w-[140px] text-[10px] py-1 cursor-pointer text-neonpink"
+                  v-if="openMore && openMore.weekIndex === wi && openMore.colIndex === ci"
+                  class="absolute top-4 z-20 shadow-[2px_2px_5px_rgba(0,0,0,0.2),inset_1px_1px_5px_rgba(255,255,255,0.5)]
+                      bg-black/50 border backdrop-blur-[5px] border-white/30 rounded-md shadow-md
+                        w-full md:w-[350px] text-[12px] py-1 cursor-pointer text-white"
+                  :class="ci >= 5 ? 'right-0' : 'left-0'"
                 >
+                  <div class="flex justify-between items-center px-2 py-1 border-b border-white/30 text-[12px] font-semibold">
+                    <span>More Events</span>
+                    <button
+                      type="button"
+                      class="material-symbols-rounded text-white hover:text-gray text-[16px] leading-none"
+                      @click.stop="openMore = null"
+                    >close</button>
+                  </div>
                   <div
                     v-for="ev in week.hiddenEventsByCol[ci]"
                     :key="ev.id"
                     class="px-2 py-[2px] hover:bg-gray-100 whitespace-nowrap"
+                    @click="goToFestivalDetail(ev.id)"
                   >
+                    {{ formatMD(ev.start) }} ~ {{ formatMD(ev.end) }}
                     {{ ev.title }}
                   </div>
                 </div>

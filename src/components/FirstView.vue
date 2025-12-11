@@ -69,7 +69,7 @@ watch(
 
 <template>
   <div>
-    <div class="px-5 w-screen overflow-hidden">
+    <div class="px-5 w-full overflow-hidden">
       <div class="text-xs font-bold py-2">Today Festival</div>
       <ul v-if="todayEvents.length" class="flex flex-nowrap gap-6 overflow-auto w-screen pl-1 py-3 pr-10">
         <li
@@ -77,7 +77,7 @@ watch(
           :key="item.id"
           class="w-[130px] h-[130px] flex-shrink-0 p-[10px] rounded-lg bg-white shadow-[1px_1px_6px_rgba(0,0,0,0.2)] flex flex-col content-center"
         >
-          <router-link to="/festivaldetail">
+          <router-link :to="{ name: 'festivaldetail', params: { id: item.id } }">
             <img
               :src="item.image"
               alt="festival"

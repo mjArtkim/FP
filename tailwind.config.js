@@ -11,10 +11,15 @@ export default {
         pulsedarkblue: '#2D5DAA',
         pulseblue: '#1F51FF',
         pulsered: '#EA6466',
-        pulsegray: '#CCCCCC'
+        pulsegray: '#CCCCCC',
+        bgdash: '#F5F5F5',
+        pulsedarkgray: '#707070'
       },
       fontSize: {
         xss: '10px',
+      },
+      screens: {
+        pc: '1300px',
       },
     },
   },
