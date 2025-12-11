@@ -68,28 +68,42 @@ watch(
 </script>
 
 <template>
-  <div>
-    <div class="px-5 w-full overflow-hidden">
-      <div class="text-xs font-bold py-2">Today Festival</div>
-      <ul v-if="todayEvents.length" class="flex flex-nowrap gap-6 overflow-auto w-screen pl-1 py-3 pr-10">
+  <div class="pc:grid pc:p-8 pc:grid-cols-[40%_60%]">
+    <div class="px-5 w-full overflow-hidden pc:px-0">
+      <div class="text-xs font-bold py-2
+      pc:text-base
+      ">Today Festival</div>
+      <ul v-if="todayEvents.length" class="flex flex-nowrap gap-6 overflow-auto w-screen pl-1 py-3 pr-10
+      pc:flex-col pc:w-full pc:gap-5">
         <li
           v-for="item in todayEvents"
           :key="item.id"
-          class="w-[130px] h-[130px] flex-shrink-0 p-[10px] rounded-lg bg-white shadow-[1px_1px_6px_rgba(0,0,0,0.2)] flex flex-col content-center"
+          class="w-[130px] h-[130px] flex-shrink-0 p-[10px] rounded-lg bg-white shadow-[1px_1px_6px_rgba(0,0,0,0.2)] flex flex-col content-center 
+          pc:w-full pc:flex-row pc:shadow-none pc:h-[220px] pc:border-b pc:rounded-none pc:bg-transparent pc:px-0 pc:pt-0 pc:pb-[20px]"
         >
-          <router-link :to="{ name: 'festivaldetail', params: { id: item.id } }">
+          <router-link :to="{ name: 'festivaldetail', params: { id: item.id } }" class="pc:flex">
             <img
               :src="item.image"
               alt="festival"
-              class="w-full h-[60px] object-cover rounded-[10px]"
+              class="w-full h-[60px] object-cover rounded-[10px] pc:w-[150px] pc:h-full"
             />
-            <div class="flex flex-col">
-              <div class="text-xs font-black py-[10px]">
-                {{ shortText(item.title) }}
+            <div>
+              <div class="flex flex-col pc:hidden">
+                <div class="text-xs font-black py-[10px]">
+                  {{ shortText(item.title) }}
+                </div>
+                <div class="text-xs truncate">
+                  {{ shortText(item.city + ' / ' + item.contry) }}
+                </div>
               </div>
-            <div class="text-xs truncate">
-              {{ shortText(item.city + ' / ' + item.contry) }}
-            </div>
+              <div class="hidden pc:flex pc:flex-col pc:shrink-0">
+                <div class="text-xs font-black py-[10px]">
+                  {{ item.title }}
+                </div>
+                <div class="text-xs truncate">
+                  {{ item.city + ' / ' + item.contry }}
+                </div>
+              </div>
             </div>
           </router-link>
         </li>
