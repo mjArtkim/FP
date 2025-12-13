@@ -1,15 +1,15 @@
 {
   "2025-12": [
-    { "id": 1, "title": "Festival Name", "start": "2025-12-03", "end": "2025-12-22", "image": "/img/testimg.png" , "contry":"Korea", "city":"Amsterdam"},
-    { "id": 2, "title": "다른 페스티벌", "start": "2025-12-15", "end": "2025-12-16", "image": "/img/testimg.png", "contry":"Korea", "city":"Seoul" },
-    { "id": 3, "title": "다른 페스티벌", "start": "2025-12-22", "end": "2025-12-22", "image": "/img/testimg.png", "contry":"Korea", "city":"Seoul" },
-    { "id": 4, "title": "다른 페스티벌", "start": "2025-12-22", "end": "2025-12-22", "image": "/img/testimg.png", "contry":"Korea", "city":"Seoul" },
-    { "id": 5, "title": "다른 페스티벌", "start": "2025-12-22", "end": "2025-12-22", "image": "/img/testimg.png", "contry":"Korea", "city":"Seoul" },
-    { "id": 6, "title": "다른 페스티벌", "start": "2025-12-22", "end": "2025-12-22", "image": "/img/testimg.png", "contry":"Korea", "city":"Seoul" },
-    { "id": 7, "title": "다른 페스티벌", "start": "2025-12-22", "end": "2025-12-22", "image": "/img/testimg.png", "contry":"Korea", "city":"Seoul" },
-    { "id": 8, "title": "Test Festival", "start": "2025-12-03", "end": "2025-12-16", "image": "/img/testimg.png", "contry":"Korea", "city":"Seoul" },
-    { "id": 9, "title": "EDC KOREA", "start": "2025-12-01", "end": "2025-12-16", "image": "/img/testimg.png", "contry":"Korea", "city":"Seoul" },
-    { "id": 10, "title": "ULTRA MUSIC FESTIVAL MAIAMI", "start": "2025-12-10", "end": "2025-12-16", "image": "/img/testimg.png", "contry":"Korea", "city":"Seoul"}
+    { "id": 1, "title": "Festival Name", "start": "2025-12-03", "end": "2025-12-22", "image": "/img/testimg.png" , "contry":"Korea", "city":"Amsterdam", "lineup":"Martin Garrix, Hardwell, Afrojack, ANYMA"},
+    { "id": 2, "title": "다른 페스티벌", "start": "2025-12-15", "end": "2025-12-16", "image": "/img/testimg.png", "contry":"Korea", "city":"Seoul" , "lineup":"Martin Garrix, Hardwell, Afrojack, ANYMA"},
+    { "id": 3, "title": "다른 페스티벌", "start": "2025-12-22", "end": "2025-12-22", "image": "/img/testimg.png", "contry":"Korea", "city":"Seoul" , "lineup":"Martin Garrix, Hardwell, Afrojack, ANYMA"},
+    { "id": 4, "title": "다른 페스티벌", "start": "2025-12-22", "end": "2025-12-22", "image": "/img/testimg.png", "contry":"Korea", "city":"Seoul" , "lineup":"Martin Garrix, Hardwell, Afrojack, ANYMA"},
+    { "id": 5, "title": "다른 페스티벌", "start": "2025-12-22", "end": "2025-12-22", "image": "/img/testimg.png", "contry":"Korea", "city":"Seoul" , "lineup":"Martin Garrix, Hardwell, Afrojack, ANYMA"},
+    { "id": 6, "title": "다른 페스티벌", "start": "2025-12-22", "end": "2025-12-22", "image": "/img/testimg.png", "contry":"Korea", "city":"Seoul" , "lineup":"Martin Garrix, Hardwell, Afrojack, ANYMA"},
+    { "id": 7, "title": "다른 페스티벌", "start": "2025-12-22", "end": "2025-12-22", "image": "/img/testimg.png", "contry":"Korea", "city":"Seoul" , "lineup":"Martin Garrix, Hardwell, Afrojack, ANYMA"},
+    { "id": 8, "title": "Test Festival", "start": "2025-12-03", "end": "2025-12-16", "image": "/img/testimg.png", "contry":"Korea", "city":"Seoul" , "lineup":"Martin Garrix, Hardwell, Afrojack, ANYMA"},
+    { "id": 9, "title": "EDC KOREA", "start": "2025-12-01", "end": "2025-12-16", "image": "/img/testimg.png", "contry":"Korea", "city":"Seoul" , "lineup":"Martin Garrix, Hardwell, Afrojack, ANYMA"},
+    { "id": 10, "title": "ULTRA MUSIC FESTIVAL MAIAMI", "start": "2025-12-10", "end": "2025-12-16", "image": "/img/testimg.png", "contry":"Korea", "city":"Seoul", "lineup":"Martin Garrix, Hardwell, Afrojack, ANYMA"}
   ],
 
   "2025-11": [

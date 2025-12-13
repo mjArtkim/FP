@@ -13,8 +13,12 @@ type EventItem = {
   image: string
   city: string
   contry: string
+  lineup: string
 }
 const shortText = (text: string, limit = 12) => {
+  return text.length > limit ? text.slice(0, limit) + '...' : text
+}
+const lineText = (text: string, limit = 30) => {
   return text.length > limit ? text.slice(0, limit) + '...' : text
 }
 const formatMD = (dateStr: string) => {
@@ -68,13 +72,13 @@ watch(
 </script>
 
 <template>
-  <div class="pc:grid pc:p-8 pc:grid-cols-[40%_60%]">
+  <div class="pc:grid pc:p-8 pc:grid-cols-[40%_60%] pc:h-screen pc:overflow-hidden">
     <div class="px-5 w-full overflow-hidden pc:px-0">
       <div class="text-xs font-bold py-2
       pc:text-base
       ">Today Festival</div>
       <ul v-if="todayEvents.length" class="flex flex-nowrap gap-6 overflow-auto w-screen pl-1 py-3 pr-10
-      pc:flex-col pc:w-full pc:gap-5">
+      pc:flex-col pc:w-full pc:gap-5 pc:h-[90vh] pc:overflow-auto">
         <li
           v-for="item in todayEvents"
           :key="item.id"
@@ -87,7 +91,7 @@ watch(
               alt="festival"
               class="w-full h-[60px] object-cover rounded-[10px] pc:w-[150px] pc:h-full"
             />
-            <div>
+            <div class="pc:pl-5">
               <div class="flex flex-col pc:hidden">
                 <div class="text-xs font-black py-[10px]">
                   {{ shortText(item.title) }}
@@ -96,12 +100,18 @@ watch(
                   {{ shortText(item.city + ' / ' + item.contry) }}
                 </div>
               </div>
-              <div class="hidden pc:flex pc:flex-col pc:shrink-0">
-                <div class="text-xs font-black py-[10px]">
+              <div class="hidden pc:flex pc:flex-col pc:shrink-0 pc:justify-between pc:h-[90%]">
+                <div class="text-xl font-black py-[10px]">
                   {{ item.title }}
                 </div>
-                <div class="text-xs truncate">
+                <div class="text-base truncate">
+                    {{ formatMD(item.start) }} ~ {{ formatMD(item.end) }}
+                </div>
+                <div class="text-base truncate">
                   {{ item.city + ' / ' + item.contry }}
+                </div>
+                <div class="text-base truncate">
+                  {{ lineText(item.lineup) }}
                 </div>
               </div>
             </div>
@@ -111,12 +121,12 @@ watch(
       <div v-else class="text-base text-gray-400 text-center py-8 border-b">Let’s focus on work today 💪</div>
     </div>
     <div class="px-5">
-      <div class="text-xs font-bold pt-5 pb-2">What Festival Here?</div>
+      <div class="text-xs font-bold pt-5 pb-2 pc:text-base">What Festival Here?</div>
       <div>
-        <div class="w-full mx-auto py-4 space-y-4 mb-[100px]">
+        <div class="w-full mx-auto py-4 space-y-4 mb-[100px] pc:h-[90vh] pc:overflow-auto pc:max-w-[700px]">
           <div class="flex items-center justify-between">
             <MonthNavigator v-model="currentMonth" class="w-8/10" />
-            <div class="flex justify-end w-2/10 h-[32px] shadow-[0_0_3px_rgba(0,0,0,0.2)] p-[2px] rounded-[5px]">
+            <div class="flex justify-end w-2/10 h-[32px] shadow-[0_0_3px_rgba(0,0,0,0.2)] p-[2px] rounded-[5px] pc:mr-2">
               <div id="viewToggle" class="relative w-[64px] h-full">
                 <input
                   type="checkbox"

@@ -270,7 +270,7 @@ const toggleMore = (weekIndex: number, colIndex: number) => {
                   class="absolute top-4 z-20 shadow-[2px_2px_5px_rgba(0,0,0,0.2),inset_1px_1px_5px_rgba(255,255,255,0.5)]
                       bg-black/50 border backdrop-blur-[5px] border-white/30 rounded-md shadow-md
                         w-full md:w-[350px] text-[12px] py-1 cursor-pointer text-white"
-                  :class="ci >= 5 ? 'right-0' : 'left-0'"
+                  :class="ci >= 4 ? 'right-0' : 'left-0'"
                 >
                   <div class="flex justify-between items-center px-2 py-1 border-b border-white/30 text-[12px] font-semibold">
                     <span>More Events</span>
