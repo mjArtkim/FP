@@ -8,13 +8,13 @@
 
 
 <template>
-  <div class="min-h-screen pc:flex pc:overflow-hidden">
+  <div class="min-h-screen pc:flex pc:overflow-hidden bg-[var(--bg)] text-[var(--text)]">
     <aside
-      class="hidden pc:flex pc:flex-col pc:shrink-0 border-r pc:border-gray-200 bg-bgdash"
+      class="hidden pc:flex pc:flex-col pc:shrink-0 border-r border-[var(--stroke)] bg-[var(--surface)] text-[var(--text)]"
     >
       <PcNavigatorVue/>
     </aside>
-    <div class="flex-1 h-screen overflow-y-auto relative bg-slate-50">
+    <div class="flex-1 h-screen overflow-y-auto relative bg-[var(--bg)] text-[var(--text)]">
       <div class="block pc:hidden">
         <Header />
       </div>

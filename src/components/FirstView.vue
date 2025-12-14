@@ -18,7 +18,7 @@ type EventItem = {
 const shortText = (text: string, limit = 12) => {
   return text.length > limit ? text.slice(0, limit) + '...' : text
 }
-const lineText = (text: string, limit = 30) => {
+const lineText = (text: string, limit = 25) => {
   return text.length > limit ? text.slice(0, limit) + '...' : text
 }
 const formatMD = (dateStr: string) => {
@@ -39,7 +39,6 @@ const currentList = computed<EventItem[]>(() => {
   return monthData.value[currentMonth.value] || []
 })
 const loadMonthEventsFromDB = async (month: string): Promise<EventItem[]> => {
-  // JSON에서 해당 월 데이터 가져오기
   return allFestivalData[month] || []
 }
 const todayList = computed<EventItem[]>(() => {
@@ -123,10 +122,10 @@ watch(
     <div class="px-5">
       <div class="text-xs font-bold pt-5 pb-2 pc:text-base">What Festival Here?</div>
       <div>
-        <div class="w-full mx-auto py-4 space-y-4 mb-[100px] pc:h-[90vh] pc:overflow-auto pc:max-w-[700px]">
+        <div class="w-full mx-auto py-4 space-y-4 mb-[100px] pc:h-[90vh] pc:overflow-auto pc:max-w-[700px] pc:mx-2">
           <div class="flex items-center justify-between">
             <MonthNavigator v-model="currentMonth" class="w-8/10" />
-            <div class="flex justify-end w-2/10 h-[32px] shadow-[0_0_3px_rgba(0,0,0,0.2)] p-[2px] rounded-[5px] pc:mr-2">
+            <div class="flex justify-end w-2/10 h-[32px] shadow-[0_0_3px_var(--shadow-weak)] p-[2px] rounded-[5px] pc:mr-2">
               <div id="viewToggle" class="relative w-[64px] h-full">
                 <input
                   type="checkbox"
@@ -136,11 +135,11 @@ watch(
                 />
                 <div class="absolute inset-0 z-10 flex justify-between items-center ">
                   <div class="material-symbols-rounded w-[32px] py-[4px] rounded-[5px] text-sm text-center"
-                    :class="viewMode === 'calendar' ? 'text-transparent' : 'text-black'">
+                    :class="viewMode === 'calendar' ? 'text-transparent' : 'text-[var(--text)]'">
                     calendar_month
                   </div>
                   <div class="material-symbols-rounded w-[32px] py-[4px] rounded-[5px] text-sm text-center"
-                    :class="viewMode === 'list' ? 'text-transparent' : 'text-black'">
+                    :class="viewMode === 'list' ? 'text-transparent' : 'text-[var(--text)]'">
                     lists
                   </div>
                 </div>
@@ -168,12 +167,12 @@ watch(
               <li
                 v-for="item in currentList"
                 :key="item.id"
-                class="p-[10px] rounded-lg bg-white border grid grid-cols-[30%_50%_20%] shadow-[1px_1px_6px_rgba(0,0,0,0.2)]"
+                class="p-[10px] rounded-lg bg-white border grid grid-cols-[30%_50%_20%] shadow-[1px_1px_6px_rgba(0,0,0,0.2)] pc:max-w-[98%]"
               >
                 <img
                   :src="item.image"
                   alt="festival"
-                  class="w-[100px] object-cover rounded-[10px] shadow-[2px_2px_3px_rgba(0,0,0,0.2)]"
+                  class="w-[100px] object-cover rounded-[10px] shadow-[2px_2px_3px_rgba(0,0,0,0.2)] pc:w-[150px] pc:h-[80px]"
                 />
                 <div class="flex flex-col justify-between px-2">
                   <div class="text-sm font-semibold ">
