@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 import festivals from '@/data/festivals.json'
 import artists from '@/data/artists.json'
+import { isFestivalFavorite, loadFavorites, toggleFestivalFavorite } from '@/utils/favorites'
 
 type FestivalItem = {
   id: number
@@ -44,6 +45,7 @@ const festivalId = computed(() => Number(props.id))
 const festival = computed<FestivalItem | undefined>(() =>
   allFestivals.value.find((item) => item.id === festivalId.value)
 )
+const isBookmarked = computed(() => !!festival.value && isFestivalFavorite(festival.value.id))
 
 const dateRange = computed(() => {
   if (!festival.value) return ''
@@ -65,6 +67,13 @@ const lineupEntries = computed(() => {
     image: slugs[idx] ? artistImageMap.value[slugs[idx]] : undefined,
   }))
 })
+
+loadFavorites()
+
+const onToggleFavorite = () => {
+  if (!festival.value) return
+  toggleFestivalFavorite(festival.value.id)
+}
 </script>
 
 <template>
@@ -83,6 +92,16 @@ const lineupEntries = computed(() => {
           <div class="text-sm text-gray-500 pc:text-base">{{ dateRange }}</div>
           <h1 class="text-2xl font-black pc:text-3xl">{{ festival.title }}</h1>
           <div class="text-base text-gray-700 pc:text-lg">{{ locationText }}</div>
+          <button
+            type="button"
+            class="inline-flex items-center gap-2 px-3 py-1 rounded-md border border-[var(--stroke)] text-sm hover:bg-neonpink hover:text-white transition-colors"
+            @click="onToggleFavorite"
+          >
+            <span class="material-symbols-rounded text-base">
+              {{ isBookmarked ? 'favorite' : 'favorite_border' }}
+            </span>
+            <span>{{ isBookmarked ? 'Bookmarked' : 'Bookmark' }}</span>
+          </button>
         </div>
 
         <div class="grid gap-6 pc:grid-cols-2">

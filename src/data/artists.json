@@ -13,7 +13,10 @@
       ],
       "links": {
         "musicbrainz": "https://musicbrainz.org/artist/a3ee920f-4e7f-4993-8aca-4b8538cfaa4a"
-      }
+      },
+      "gender": "Male",
+      "debutYear": 1987,
+      "careerYears": 38
     },
     "spotify": {
       "spotifyId": "4D75GcNG95ebPtNvoNVXhz",
@@ -26,6 +29,303 @@
         "electronic",
         "house",
         "progressive house"
+      ],
+      "albums": [
+        {
+          "id": "75RGowCIexodcFrLNjnYCv",
+          "name": "AFROJACK presents NLW",
+          "albumType": "album",
+          "releaseDate": "2022-07-29",
+          "totalTracks": 7,
+          "image": "https://i.scdn.co/image/ab67616d0000b273934e793621ba3a124bf54dea",
+          "url": "https://open.spotify.com/album/75RGowCIexodcFrLNjnYCv"
+        },
+        {
+          "id": "0uFjuvvPvAogvwXnxp4HyS",
+          "name": "Press Play",
+          "albumType": "album",
+          "releaseDate": "2018-08-31",
+          "totalTracks": 14,
+          "image": "https://i.scdn.co/image/ab67616d0000b27394f5eca7743ad5fdadd6693c",
+          "url": "https://open.spotify.com/album/0uFjuvvPvAogvwXnxp4HyS"
+        },
+        {
+          "id": "7G1441qDQeERZDyMipQPE8",
+          "name": "Forget The World (Deluxe)",
+          "albumType": "album",
+          "releaseDate": "2014-01-01",
+          "totalTracks": 16,
+          "image": "https://i.scdn.co/image/ab67616d0000b273b3d1511a14dbfb2ba74bdf18",
+          "url": "https://open.spotify.com/album/7G1441qDQeERZDyMipQPE8"
+        },
+        {
+          "id": "2lqmfENhUyY0OMYvrqkxpB",
+          "name": "Forget The World",
+          "albumType": "album",
+          "releaseDate": "2014-01-01",
+          "totalTracks": 13,
+          "image": "https://i.scdn.co/image/ab67616d0000b2730e59a3d6665ffdcc2c51e2ff",
+          "url": "https://open.spotify.com/album/2lqmfENhUyY0OMYvrqkxpB"
+        },
+        {
+          "id": "3yItqF5ObIWqO3fhvmknP4",
+          "name": "Lost & Found",
+          "albumType": "album",
+          "releaseDate": "2010-12-21",
+          "totalTracks": 9,
+          "image": "https://i.scdn.co/image/ab67616d0000b27377fd96ba12b53b5bf2f7411c",
+          "url": "https://open.spotify.com/album/3yItqF5ObIWqO3fhvmknP4"
+        },
+        {
+          "id": "2dpzLiq8oeOXb4HkjZJnse",
+          "name": "Out Of The Darkness",
+          "albumType": "single",
+          "releaseDate": "2025-11-14",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273e3a93ac56758b61b388d78a6",
+          "url": "https://open.spotify.com/album/2dpzLiq8oeOXb4HkjZJnse"
+        },
+        {
+          "id": "62HVrOiM7xK5hH87G6KRQ8",
+          "name": "Louder For The People (with AFROJACK)",
+          "albumType": "single",
+          "releaseDate": "2025-11-07",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b2737d675fbc36e2225c64d3b77e",
+          "url": "https://open.spotify.com/album/62HVrOiM7xK5hH87G6KRQ8"
+        },
+        {
+          "id": "4cf08XQ3LKfQcjBq6YSUj4",
+          "name": "Hold On (feat. EVIE)",
+          "albumType": "single",
+          "releaseDate": "2025-10-31",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273fc3a8e4137c83b431647577b",
+          "url": "https://open.spotify.com/album/4cf08XQ3LKfQcjBq6YSUj4"
+        },
+        {
+          "id": "6N0PJlglcuxkSedg5mE6ms",
+          "name": "Take Over Control (feat. Eva Simons) [The Remixes 2025]",
+          "albumType": "single",
+          "releaseDate": "2025-10-24",
+          "totalTracks": 7,
+          "image": "https://i.scdn.co/image/ab67616d0000b273b7fdab6f35730e8f3ff32cda",
+          "url": "https://open.spotify.com/album/6N0PJlglcuxkSedg5mE6ms"
+        },
+        {
+          "id": "29Vb4cBiTl6Szc5HEOLk7P",
+          "name": "Take Over Control (feat. Eva Simons) [Maddix Remix]",
+          "albumType": "single",
+          "releaseDate": "2025-10-17",
+          "totalTracks": 2,
+          "image": "https://i.scdn.co/image/ab67616d0000b273c44292917f06b2ba695d62d4",
+          "url": "https://open.spotify.com/album/29Vb4cBiTl6Szc5HEOLk7P"
+        },
+        {
+          "id": "0RjevZ5UL21eqgEhNYbvjp",
+          "name": "In My World",
+          "albumType": "single",
+          "releaseDate": "2025-10-03",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273b2dc696fc02c5697d4a7000c",
+          "url": "https://open.spotify.com/album/0RjevZ5UL21eqgEhNYbvjp"
+        },
+        {
+          "id": "6pBa0aSKNjbMPOrd2joAfi",
+          "name": "KUTMUG (Hardwell & AFROJACK Edit)",
+          "albumType": "single",
+          "releaseDate": "2025-09-05",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273719c366466397628237b914e",
+          "url": "https://open.spotify.com/album/6pBa0aSKNjbMPOrd2joAfi"
+        }
+      ],
+      "topTracks": [
+        {
+          "id": "4QNpBfC0zvjKqPJcyqBy9W",
+          "name": "Give Me Everything (feat. Nayer)",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/4QNpBfC0zvjKqPJcyqBy9W",
+          "durationMs": 252306,
+          "popularity": 88,
+          "album": {
+            "id": "4rG0MhkU6UojACJxkMHIXB",
+            "name": "Planet Pit (Deluxe Version)",
+            "releaseDate": "2011-06-17",
+            "image": "https://i.scdn.co/image/ab67616d0000b2731dc7483a9fcfce54822a2f19"
+          },
+          "artists": [
+            "Pitbull",
+            "AFROJACK",
+            "Ne-Yo",
+            "Nayer"
+          ]
+        },
+        {
+          "id": "5Nc6m1EVQmz5vIlM4ukE4I",
+          "name": "Hey Mama (feat. Nicki Minaj, Bebe Rexha & Afrojack) - Afrojack Remix",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/5Nc6m1EVQmz5vIlM4ukE4I",
+          "durationMs": 197040,
+          "popularity": 28,
+          "album": {
+            "id": "6iQsW6Jf1zg7qwrgI323gn",
+            "name": "Hey Mama (feat. Nicki Minaj, Bebe Rexha & Afrojack)",
+            "releaseDate": "2015-05-12",
+            "image": "https://i.scdn.co/image/ab67616d0000b273d7600a5e15b4b3f0b12d07fc"
+          },
+          "artists": [
+            "David Guetta",
+            "AFROJACK",
+            "Bebe Rexha",
+            "Nicki Minaj"
+          ]
+        },
+        {
+          "id": "3MUFebos5drIwrUHxUorhP",
+          "name": "Our Time",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/3MUFebos5drIwrUHxUorhP",
+          "durationMs": 161367,
+          "popularity": 69,
+          "album": {
+            "id": "1R0CAZwCU6rRvMsmaerCjz",
+            "name": "Our Time",
+            "releaseDate": "2025-07-11",
+            "image": "https://i.scdn.co/image/ab67616d0000b2738ba37597495fd2111e163913"
+          },
+          "artists": [
+            "AFROJACK",
+            "Martin Garrix",
+            "David Guetta",
+            "Amél"
+          ]
+        },
+        {
+          "id": "5VtRjcZYvXj1VdT3FWG3ZD",
+          "name": "Maldito Alcohol (Pitbull vs. Afrojack)",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/5VtRjcZYvXj1VdT3FWG3ZD",
+          "durationMs": 201320,
+          "popularity": 55,
+          "album": {
+            "id": "0kv3Rm7PODqJBQaVJiezuB",
+            "name": "I Am Armando - Armando Reloaded",
+            "releaseDate": "2010",
+            "image": "https://i.scdn.co/image/ab67616d0000b2731091bce0b9d981cac5e4091c"
+          },
+          "artists": [
+            "Pitbull",
+            "AFROJACK"
+          ]
+        },
+        {
+          "id": "4PsccFihLkDU7bNv26H0CI",
+          "name": "Take Over Control (Dutch Edit) [feat. Eva Simons]",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/4PsccFihLkDU7bNv26H0CI",
+          "durationMs": 210293,
+          "popularity": 49,
+          "album": {
+            "id": "68TnHmMjGBt4u4HpX4EmbS",
+            "name": "Take over Control (feat. Eva Simons)",
+            "releaseDate": "2011-01-04",
+            "image": "https://i.scdn.co/image/ab67616d0000b273e0320d534c3d40e45e5869ed"
+          },
+          "artists": [
+            "AFROJACK",
+            "Eva Simons"
+          ]
+        },
+        {
+          "id": "2gXZufRsrkTS2MOAnPkTXB",
+          "name": "In My World",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/2gXZufRsrkTS2MOAnPkTXB",
+          "durationMs": 215849,
+          "popularity": 56,
+          "album": {
+            "id": "0RjevZ5UL21eqgEhNYbvjp",
+            "name": "In My World",
+            "releaseDate": "2025-10-03",
+            "image": "https://i.scdn.co/image/ab67616d0000b273b2dc696fc02c5697d4a7000c"
+          },
+          "artists": [
+            "AFROJACK",
+            "Aloe Blacc"
+          ]
+        },
+        {
+          "id": "2ldAdghnrO34HPcZ0IWfTu",
+          "name": "Ten Feet Tall",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/2ldAdghnrO34HPcZ0IWfTu",
+          "durationMs": 229149,
+          "popularity": 62,
+          "album": {
+            "id": "7G1441qDQeERZDyMipQPE8",
+            "name": "Forget The World (Deluxe)",
+            "releaseDate": "2014-01-01",
+            "image": "https://i.scdn.co/image/ab67616d0000b273b3d1511a14dbfb2ba74bdf18"
+          },
+          "artists": [
+            "AFROJACK",
+            "WRABEL"
+          ]
+        },
+        {
+          "id": "2WDTGOTHmpzkLKBae5NBUx",
+          "name": "Never Forget You",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/2WDTGOTHmpzkLKBae5NBUx",
+          "durationMs": 184349,
+          "popularity": 54,
+          "album": {
+            "id": "7jogH009r3SWIcCj1Wt4Oh",
+            "name": "Never Forget You",
+            "releaseDate": "2025-03-21",
+            "image": "https://i.scdn.co/image/ab67616d0000b2730bceecfe0ae7db37db88b68b"
+          },
+          "artists": [
+            "AFROJACK"
+          ]
+        },
+        {
+          "id": "158HiKvIXaXuMnU5t3Or3h",
+          "name": "Take Over Control feat. Eva Simons [Radio Edit]",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/158HiKvIXaXuMnU5t3Or3h",
+          "durationMs": 221226,
+          "popularity": 50,
+          "album": {
+            "id": "5xgsK1fb750KfBnYVVPZTd",
+            "name": "Take over Control",
+            "releaseDate": "2010-10-05",
+            "image": "https://i.scdn.co/image/ab67616d0000b273fb89dbff069e9ce96ca14be6"
+          },
+          "artists": [
+            "AFROJACK",
+            "Eva Simons"
+          ]
+        },
+        {
+          "id": "17WMOvV72qNwwEIHxE1Kio",
+          "name": "Louder For The People",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/17WMOvV72qNwwEIHxE1Kio",
+          "durationMs": 164769,
+          "popularity": 57,
+          "album": {
+            "id": "5KtqixaETmnEiyG1Pyzp42",
+            "name": "Bassment Sessions Vol. 1",
+            "releaseDate": "2025-11-07",
+            "image": "https://i.scdn.co/image/ab67616d0000b273bb8c02f173fff9cb4bf2423b"
+          },
+          "artists": [
+            "R3HAB",
+            "AFROJACK"
+          ]
+        }
       ]
     }
   },
@@ -41,7 +341,10 @@
       ],
       "links": {
         "musicbrainz": "https://musicbrainz.org/artist/788307a8-ca6a-4775-b9a2-8d27d2af71ce"
-      }
+      },
+      "gender": "Male",
+      "debutYear": 1988,
+      "careerYears": 37
     },
     "spotify": {
       "spotifyId": "4iBwchw0U0GZv5RfVYSMxN",
@@ -50,6 +353,303 @@
         "electronic",
         "melodic house",
         "melodic techno"
+      ],
+      "albums": [
+        {
+          "id": "5S4MqmLI8xaLzLBH0wgxEu",
+          "name": "The End Of Genesys",
+          "albumType": "album",
+          "releaseDate": "2025-05-30",
+          "totalTracks": 15,
+          "image": "https://i.scdn.co/image/ab67616d0000b27389eb33651363c8e1f2abdf86",
+          "url": "https://open.spotify.com/album/5S4MqmLI8xaLzLBH0wgxEu"
+        },
+        {
+          "id": "4jkiarZE3b7c3a5D3L2LZy",
+          "name": "Genesys II",
+          "albumType": "album",
+          "releaseDate": "2024-03-29",
+          "totalTracks": 21,
+          "image": "https://i.scdn.co/image/ab67616d0000b273d2454ff9b99989ac16faf007",
+          "url": "https://open.spotify.com/album/4jkiarZE3b7c3a5D3L2LZy"
+        },
+        {
+          "id": "7rCb8j8kaVvoKE44Dxf21y",
+          "name": "Genesys",
+          "albumType": "album",
+          "releaseDate": "2023-08-11",
+          "totalTracks": 14,
+          "image": "https://i.scdn.co/image/ab67616d0000b2732f952feea610a910c7daf561",
+          "url": "https://open.spotify.com/album/7rCb8j8kaVvoKE44Dxf21y"
+        },
+        {
+          "id": "5PbhaD1xmVRzslSBrI43cK",
+          "name": "Till I Die (feat. Claudia Valentina)",
+          "albumType": "single",
+          "releaseDate": "2025-11-07",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273fb7da903ea03b236af410caf",
+          "url": "https://open.spotify.com/album/5PbhaD1xmVRzslSBrI43cK"
+        },
+        {
+          "id": "03tdh9rQx07Yh0HQGLqvf1",
+          "name": "DOGS † VETEMENTS SS26 SHOW",
+          "albumType": "single",
+          "releaseDate": "2025-10-07",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b2737122779ab011fa72fce657f9",
+          "url": "https://open.spotify.com/album/03tdh9rQx07Yh0HQGLqvf1"
+        },
+        {
+          "id": "54bjkUTJnTTktRXEBnMfJc",
+          "name": "Girls MIA",
+          "albumType": "single",
+          "releaseDate": "2025-09-19",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273f046cf205159787b15721bf8",
+          "url": "https://open.spotify.com/album/54bjkUTJnTTktRXEBnMfJc"
+        },
+        {
+          "id": "0Vuh5UNwqz3ObGMGhCiQr9",
+          "name": "Voices In My Head (Amelie Lens Remix)",
+          "albumType": "single",
+          "releaseDate": "2025-08-01",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b2730a6944d7ff5f43308cede1ac",
+          "url": "https://open.spotify.com/album/0Vuh5UNwqz3ObGMGhCiQr9"
+        },
+        {
+          "id": "0pOs24vzDeIobtd78HbZjS",
+          "name": "At Night (Anyma x Layton Giordani Remix)",
+          "albumType": "single",
+          "releaseDate": "2025-06-27",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b2731b4c9137918882e6509a1f7f",
+          "url": "https://open.spotify.com/album/0pOs24vzDeIobtd78HbZjS"
+        },
+        {
+          "id": "7eAP4zYstmwZ0OZf9zPC4K",
+          "name": "Dreamin (feat. Daya) [Anyma Remix]",
+          "albumType": "single",
+          "releaseDate": "2025-03-19",
+          "totalTracks": 2,
+          "image": "https://i.scdn.co/image/ab67616d0000b27392bbe6ce35566973031ce9aa",
+          "url": "https://open.spotify.com/album/7eAP4zYstmwZ0OZf9zPC4K"
+        },
+        {
+          "id": "2eZyOgXmahrzJwNeYiilwQ",
+          "name": "Hypnotized (John Summit Remix)",
+          "albumType": "single",
+          "releaseDate": "2025-02-28",
+          "totalTracks": 2,
+          "image": "https://i.scdn.co/image/ab67616d0000b2731496eabdcc91b768abca87a3",
+          "url": "https://open.spotify.com/album/2eZyOgXmahrzJwNeYiilwQ"
+        },
+        {
+          "id": "3XNLi9xalekB3v4swIj7zN",
+          "name": "Eusexua (Anyma Remix)",
+          "albumType": "single",
+          "releaseDate": "2024-12-06",
+          "totalTracks": 2,
+          "image": "https://i.scdn.co/image/ab67616d0000b27329fe8df103c4bfd198b8de1b",
+          "url": "https://open.spotify.com/album/3XNLi9xalekB3v4swIj7zN"
+        },
+        {
+          "id": "001JSP4fD2dw3KA95XFxOa",
+          "name": "Last Night (Anyma x Layton Giordani Remix)",
+          "albumType": "single",
+          "releaseDate": "2024-05-17",
+          "totalTracks": 2,
+          "image": "https://i.scdn.co/image/ab67616d0000b2733d5709200b8d7b2612210186",
+          "url": "https://open.spotify.com/album/001JSP4fD2dw3KA95XFxOa"
+        }
+      ],
+      "topTracks": [
+        {
+          "id": "6mAIXsvt8eEIKSskw3YPth",
+          "name": "Hypnotized (feat. Ellie Goulding)",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/6mAIXsvt8eEIKSskw3YPth",
+          "durationMs": 180540,
+          "popularity": 69,
+          "album": {
+            "id": "5S4MqmLI8xaLzLBH0wgxEu",
+            "name": "The End Of Genesys",
+            "releaseDate": "2025-05-30",
+            "image": "https://i.scdn.co/image/ab67616d0000b27389eb33651363c8e1f2abdf86"
+          },
+          "artists": [
+            "Anyma",
+            "Ellie Goulding"
+          ]
+        },
+        {
+          "id": "4ptnQ0kQnN1U1Ig8TSslj6",
+          "name": "Turn On The Lights again.. (feat. Future & Fred again..) - Anyma Remix",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/4ptnQ0kQnN1U1Ig8TSslj6",
+          "durationMs": 253433,
+          "popularity": 67,
+          "album": {
+            "id": "71yJ0XH2iQA1uOk5CE95fx",
+            "name": "Turn On The Lights again.. (feat. Future & Fred again..) [Remixes]",
+            "releaseDate": "2022-09-12",
+            "image": "https://i.scdn.co/image/ab67616d0000b2736e9ee7f3ab0cd0d77c5368a9"
+          },
+          "artists": [
+            "Swedish House Mafia",
+            "Anyma",
+            "Future",
+            "Fred again.."
+          ]
+        },
+        {
+          "id": "51a3PbfoqGIQsqZXKd2YWf",
+          "name": "Alive - Anyma Remix",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/51a3PbfoqGIQsqZXKd2YWf",
+          "durationMs": 311345,
+          "popularity": 67,
+          "album": {
+            "id": "73TcBRSRsPLKmxnjnVsSV3",
+            "name": "Surrender (Remixes)",
+            "releaseDate": "2022-08-12",
+            "image": "https://i.scdn.co/image/ab67616d0000b273b73fe8d1ede1d94961074685"
+          },
+          "artists": [
+            "RÜFÜS DU SOL",
+            "Anyma"
+          ]
+        },
+        {
+          "id": "1GBBbKOarAJ38HwIfLcOji",
+          "name": "Eternity",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/1GBBbKOarAJ38HwIfLcOji",
+          "durationMs": 186240,
+          "popularity": 66,
+          "album": {
+            "id": "7rCb8j8kaVvoKE44Dxf21y",
+            "name": "Genesys",
+            "releaseDate": "2023-08-11",
+            "image": "https://i.scdn.co/image/ab67616d0000b2732f952feea610a910c7daf561"
+          },
+          "artists": [
+            "Anyma",
+            "Chris Avantgarde"
+          ]
+        },
+        {
+          "id": "4pawR52ONFQTCYUzI6C2xZ",
+          "name": "Till I Die (feat. Claudia Valentina)",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/4pawR52ONFQTCYUzI6C2xZ",
+          "durationMs": 203076,
+          "popularity": 66,
+          "album": {
+            "id": "5PbhaD1xmVRzslSBrI43cK",
+            "name": "Till I Die (feat. Claudia Valentina)",
+            "releaseDate": "2025-11-07",
+            "image": "https://i.scdn.co/image/ab67616d0000b273fb7da903ea03b236af410caf"
+          },
+          "artists": [
+            "Anyma",
+            "Solomun",
+            "Claudia Valentina"
+          ]
+        },
+        {
+          "id": "0QQBgAXdLm0hfk9aBJe97f",
+          "name": "Pictures Of You",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/0QQBgAXdLm0hfk9aBJe97f",
+          "durationMs": 175312,
+          "popularity": 65,
+          "album": {
+            "id": "4jkiarZE3b7c3a5D3L2LZy",
+            "name": "Genesys II",
+            "releaseDate": "2024-03-29",
+            "image": "https://i.scdn.co/image/ab67616d0000b273d2454ff9b99989ac16faf007"
+          },
+          "artists": [
+            "Anyma"
+          ]
+        },
+        {
+          "id": "05y9EYjVL7lcxesRLAKkvb",
+          "name": "Voices In My Head",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/05y9EYjVL7lcxesRLAKkvb",
+          "durationMs": 146308,
+          "popularity": 65,
+          "album": {
+            "id": "5S4MqmLI8xaLzLBH0wgxEu",
+            "name": "The End Of Genesys",
+            "releaseDate": "2025-05-30",
+            "image": "https://i.scdn.co/image/ab67616d0000b27389eb33651363c8e1f2abdf86"
+          },
+          "artists": [
+            "Anyma",
+            "Argy",
+            "Son of Son"
+          ]
+        },
+        {
+          "id": "3hGXZKj3lYKKRQtKE8XN55",
+          "name": "Syren",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/3hGXZKj3lYKKRQtKE8XN55",
+          "durationMs": 197822,
+          "popularity": 65,
+          "album": {
+            "id": "7rCb8j8kaVvoKE44Dxf21y",
+            "name": "Genesys",
+            "releaseDate": "2023-08-11",
+            "image": "https://i.scdn.co/image/ab67616d0000b2732f952feea610a910c7daf561"
+          },
+          "artists": [
+            "Anyma",
+            "Rebūke"
+          ]
+        },
+        {
+          "id": "5GRJ5mXnz8dalhWY14HZcV",
+          "name": "Angel In The Dark",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/5GRJ5mXnz8dalhWY14HZcV",
+          "durationMs": 199335,
+          "popularity": 63,
+          "album": {
+            "id": "5S4MqmLI8xaLzLBH0wgxEu",
+            "name": "The End Of Genesys",
+            "releaseDate": "2025-05-30",
+            "image": "https://i.scdn.co/image/ab67616d0000b27389eb33651363c8e1f2abdf86"
+          },
+          "artists": [
+            "Anyma",
+            "Massano",
+            "Nathan Nicholson"
+          ]
+        },
+        {
+          "id": "22hOKPKTAegLoLJKM33K4a",
+          "name": "Last Night - Anyma x Layton Giordani Remix",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/22hOKPKTAegLoLJKM33K4a",
+          "durationMs": 256743,
+          "popularity": 63,
+          "album": {
+            "id": "001JSP4fD2dw3KA95XFxOa",
+            "name": "Last Night (Anyma x Layton Giordani Remix)",
+            "releaseDate": "2024-05-17",
+            "image": "https://i.scdn.co/image/ab67616d0000b2733d5709200b8d7b2612210186"
+          },
+          "artists": [
+            "Loofy",
+            "Anyma",
+            "Layton Giordani"
+          ]
+        }
       ]
     }
   },
@@ -72,7 +672,10 @@
       ],
       "links": {
         "musicbrainz": "https://musicbrainz.org/artist/477b8c0c-c5fc-4ad2-b5b2-191f0bf2a9df"
-      }
+      },
+      "gender": "Male",
+      "debutYear": 1976,
+      "careerYears": 49
     },
     "spotify": {
       "spotifyId": "0SfsnGyD8FpIN4U4WCkBZ5",
@@ -88,6 +691,302 @@
         "electronica",
         "melodic house",
         "melodic techno"
+      ],
+      "albums": [
+        {
+          "id": "11hKL1GmHT30riBDSoNLoE",
+          "name": "A State of Trance Year Mix 2025 (Mixed by Armin van Buuren)",
+          "albumType": "album",
+          "releaseDate": "2025-12-12",
+          "totalTracks": 113,
+          "image": "https://i.scdn.co/image/ab67616d0000b273201da5e7d7c35dc7ac52041c",
+          "url": "https://open.spotify.com/album/11hKL1GmHT30riBDSoNLoE"
+        },
+        {
+          "id": "1SUwemNwyhakv6k13ptoPP",
+          "name": "ASOT 1255 - A State of Trance Episode 1255 (Including A State Of Trance Showcase - Mix 027: Ferry Tayle)",
+          "albumType": "album",
+          "releaseDate": "2025-12-11",
+          "totalTracks": 59,
+          "image": "https://i.scdn.co/image/ab67616d0000b27394994f54055570c5220361c9",
+          "url": "https://open.spotify.com/album/1SUwemNwyhakv6k13ptoPP"
+        },
+        {
+          "id": "1wlgE0nsGZJBbpFzW0BWxk",
+          "name": "ASOT 1254 - A State of Trance Episode 1254 (Including A State Of Trance Showcase - Mix 026: Beatsole)",
+          "albumType": "album",
+          "releaseDate": "2025-12-04",
+          "totalTracks": 54,
+          "image": "https://i.scdn.co/image/ab67616d0000b27315b0ad4d5f6779cdaefa2bba",
+          "url": "https://open.spotify.com/album/1wlgE0nsGZJBbpFzW0BWxk"
+        },
+        {
+          "id": "3JhnckLTu8InehvWkcuwFN",
+          "name": "A State of Trance: Future Favorite - 2025",
+          "albumType": "album",
+          "releaseDate": "2025-11-21",
+          "totalTracks": 28,
+          "image": "https://i.scdn.co/image/ab67616d0000b273fbf063b17a9925796e26fc84",
+          "url": "https://open.spotify.com/album/3JhnckLTu8InehvWkcuwFN"
+        },
+        {
+          "id": "0cvt9oZv91NHEbVwGxfWax",
+          "name": "Piano",
+          "albumType": "album",
+          "releaseDate": "2025-11-07",
+          "totalTracks": 15,
+          "image": "https://i.scdn.co/image/ab67616d0000b273d4968f72af1e68ec95a8df8c",
+          "url": "https://open.spotify.com/album/0cvt9oZv91NHEbVwGxfWax"
+        },
+        {
+          "id": "24R86JeSuTwj6Dfjd3AxkY",
+          "name": "A State of Trance Radio Top 50 - 2025, Vol. 3 (Selected by Armin van Buuren)",
+          "albumType": "album",
+          "releaseDate": "2025-10-10",
+          "totalTracks": 51,
+          "image": "https://i.scdn.co/image/ab67616d0000b2739deb7d2b5f832c50e3bb5812",
+          "url": "https://open.spotify.com/album/24R86JeSuTwj6Dfjd3AxkY"
+        },
+        {
+          "id": "2IIrUhVc102RV1FpYtxsHJ",
+          "name": "A State of Trance, Ibiza 2025 (Mixed by Armin van Buuren)",
+          "albumType": "album",
+          "releaseDate": "2025-08-22",
+          "totalTracks": 42,
+          "image": "https://i.scdn.co/image/ab67616d0000b27310a1adc017d4ea6450000305",
+          "url": "https://open.spotify.com/album/2IIrUhVc102RV1FpYtxsHJ"
+        },
+        {
+          "id": "3xNkhdkWDlMDLMfUIOx8hJ",
+          "name": "Live at Tomorrowland 2025 (Freedom Stage) [Highlights]",
+          "albumType": "album",
+          "releaseDate": "2025-08-01",
+          "totalTracks": 34,
+          "image": "https://i.scdn.co/image/ab67616d0000b2737e465ea0664afca7ec213fe5",
+          "url": "https://open.spotify.com/album/3xNkhdkWDlMDLMfUIOx8hJ"
+        },
+        {
+          "id": "4Zm5Fyg6bArdD1QCEjLVpx",
+          "name": "A State of Trance Radio Top 50 - 2025, Vol. 2 (Selected by Armin van Buuren)",
+          "albumType": "album",
+          "releaseDate": "2025-08-01",
+          "totalTracks": 51,
+          "image": "https://i.scdn.co/image/ab67616d0000b273134613a46d25ce77fc7420e6",
+          "url": "https://open.spotify.com/album/4Zm5Fyg6bArdD1QCEjLVpx"
+        },
+        {
+          "id": "1Yk2t3t2iBnuZyDQN0svPe",
+          "name": "Armin van Buuren Classics Mini Mix",
+          "albumType": "album",
+          "releaseDate": "2025-07-11",
+          "totalTracks": 29,
+          "image": "https://i.scdn.co/image/ab67616d0000b27325d97d25ba2812b84ab12af4",
+          "url": "https://open.spotify.com/album/1Yk2t3t2iBnuZyDQN0svPe"
+        },
+        {
+          "id": "0S1SKVI7D7OKqSgTVFQeku",
+          "name": "Breathe",
+          "albumType": "album",
+          "releaseDate": "2025-06-27",
+          "totalTracks": 51,
+          "image": "https://i.scdn.co/image/ab67616d0000b273cedb19ab41dfcfcb2336a13f",
+          "url": "https://open.spotify.com/album/0S1SKVI7D7OKqSgTVFQeku"
+        },
+        {
+          "id": "7srQvBiklTQCchAVatNUg4",
+          "name": "A State of Trance 2025 (Mixed by Armin van Buuren)",
+          "albumType": "album",
+          "releaseDate": "2025-03-28",
+          "totalTracks": 43,
+          "image": "https://i.scdn.co/image/ab67616d0000b2738c8ebbd70ebd99e439626e92",
+          "url": "https://open.spotify.com/album/7srQvBiklTQCchAVatNUg4"
+        }
+      ],
+      "topTracks": [
+        {
+          "id": "5GjnIpUlLGEIYk052ISOw9",
+          "name": "This Is What It Feels Like",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/5GjnIpUlLGEIYk052ISOw9",
+          "durationMs": 204360,
+          "popularity": 73,
+          "album": {
+            "id": "5ZsK5SUsZilbAJ4B0vRVxF",
+            "name": "Intense",
+            "releaseDate": "2013-05-03",
+            "image": "https://i.scdn.co/image/ab67616d0000b273048012a99d7a62440392f529"
+          },
+          "artists": [
+            "Armin van Buuren",
+            "Trevor Guthrie"
+          ]
+        },
+        {
+          "id": "1moFkZDqcjQNeXtyoanLHv",
+          "name": "Blah Blah Blah",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/1moFkZDqcjQNeXtyoanLHv",
+          "durationMs": 183518,
+          "popularity": 69,
+          "album": {
+            "id": "5cqwXF2j9LkvFInBFlnQd3",
+            "name": "Balance",
+            "releaseDate": "2019-10-25",
+            "image": "https://i.scdn.co/image/ab67616d0000b273faa63ea176654ac7f8e30b4d"
+          },
+          "artists": [
+            "Armin van Buuren"
+          ]
+        },
+        {
+          "id": "1FzbOPWCZiNxnLjAhY1jAR",
+          "name": "In And Out Of Love",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/1FzbOPWCZiNxnLjAhY1jAR",
+          "durationMs": 181680,
+          "popularity": 66,
+          "album": {
+            "id": "07UKYOTXfIdPwnL7iO0lJB",
+            "name": "In And Out of Love",
+            "releaseDate": "2008-08-04",
+            "image": "https://i.scdn.co/image/ab67616d0000b27361dadc433336e3c332288c00"
+          },
+          "artists": [
+            "Armin van Buuren",
+            "Sharon Den Adel"
+          ]
+        },
+        {
+          "id": "6wLqNGHQIja6xqT0cfrzBB",
+          "name": "On & On",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/6wLqNGHQIja6xqT0cfrzBB",
+          "durationMs": 170578,
+          "popularity": 65,
+          "album": {
+            "id": "2uqVgoe1PcKmwx3ihlbevM",
+            "name": "Feel Again",
+            "releaseDate": "2023-03-30",
+            "image": "https://i.scdn.co/image/ab67616d0000b273961a402a592d0c2b7dd820e8"
+          },
+          "artists": [
+            "Armin van Buuren",
+            "Punctual",
+            "Alika"
+          ]
+        },
+        {
+          "id": "2DgQUPTincZnoRT5CJxTKi",
+          "name": "Set Me Free",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/2DgQUPTincZnoRT5CJxTKi",
+          "durationMs": 184938,
+          "popularity": 66,
+          "album": {
+            "id": "2oRqHz1SKj1CcccfeyASOF",
+            "name": "Set Me Free",
+            "releaseDate": "2025-10-03",
+            "image": "https://i.scdn.co/image/ab67616d0000b27374a3ba33643bd8aa7b0ac338"
+          },
+          "artists": [
+            "Armin van Buuren",
+            "SACHA"
+          ]
+        },
+        {
+          "id": "7nxTzZJmf2lLplk5pfV64h",
+          "name": "In And Out Of Love",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/7nxTzZJmf2lLplk5pfV64h",
+          "durationMs": 226621,
+          "popularity": 63,
+          "album": {
+            "id": "3ieuC2fT9bBITfYugxOkwK",
+            "name": "In And Out Of Love",
+            "releaseDate": "2024-06-28",
+            "image": "https://i.scdn.co/image/ab67616d0000b27385837fe3208fc7b79f73dd47"
+          },
+          "artists": [
+            "Rivo",
+            "Armin van Buuren",
+            "Sharon Den Adel"
+          ]
+        },
+        {
+          "id": "3Nku6gLNqnwUuq8GLkqyhW",
+          "name": "Great Spirit",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/3Nku6gLNqnwUuq8GLkqyhW",
+          "durationMs": 215773,
+          "popularity": 64,
+          "album": {
+            "id": "3d18JaxDfbuCD8AyoG07Yt",
+            "name": "Great Spirit",
+            "releaseDate": "2016-12-12",
+            "image": "https://i.scdn.co/image/ab67616d0000b27365136cbf37de99af8963793b"
+          },
+          "artists": [
+            "Armin van Buuren",
+            "Vini Vici",
+            "Hilight Tribe"
+          ]
+        },
+        {
+          "id": "39pgWHKvgtSlvEI0AWvi62",
+          "name": "Sleepless Nights",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/39pgWHKvgtSlvEI0AWvi62",
+          "durationMs": 180422,
+          "popularity": 60,
+          "album": {
+            "id": "7oqrJHKyfWOJGJqLSG4iDW",
+            "name": "Sleepless Nights",
+            "releaseDate": "2025-08-08",
+            "image": "https://i.scdn.co/image/ab67616d0000b2738e67cf2fff092dbc66935875"
+          },
+          "artists": [
+            "Armin van Buuren",
+            "Martin Garrix",
+            "Libby Whitehouse"
+          ]
+        },
+        {
+          "id": "20XNDz0YtYrplL0oLb3zKh",
+          "name": "In And Out Of Love - Slowed Version",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/20XNDz0YtYrplL0oLb3zKh",
+          "durationMs": 133770,
+          "popularity": 64,
+          "album": {
+            "id": "6ej6eeA9uw0sX96aiSFc0h",
+            "name": "In And Out Of Love (Slowed Version)",
+            "releaseDate": "2008-08-25",
+            "image": "https://i.scdn.co/image/ab67616d0000b2739b8194d5eab61432c16802c2"
+          },
+          "artists": [
+            "Armin van Buuren",
+            "Sharon Den Adel"
+          ]
+        },
+        {
+          "id": "0BLxPjFEOG8G1q8AKLuz3V",
+          "name": "Easy To Love",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/0BLxPjFEOG8G1q8AKLuz3V",
+          "durationMs": 151820,
+          "popularity": 61,
+          "album": {
+            "id": "2uqVgoe1PcKmwx3ihlbevM",
+            "name": "Feel Again",
+            "releaseDate": "2023-03-30",
+            "image": "https://i.scdn.co/image/ab67616d0000b273961a402a592d0c2b7dd820e8"
+          },
+          "artists": [
+            "Armin van Buuren",
+            "Matoma",
+            "Teddy Swims"
+          ]
+        }
       ]
     }
   },
@@ -101,7 +1000,9 @@
       "aliases": [],
       "links": {
         "musicbrainz": "https://musicbrainz.org/artist/0b33f22d-b4b6-400e-90af-c593e0f395b6"
-      }
+      },
+      "debutYear": 1995,
+      "careerYears": 30
     },
     "spotify": {
       "spotifyId": "3XINWZaloea97SIRiyTJxX",
@@ -112,6 +1013,305 @@
         "electronic",
         "house",
         "progressive house"
+      ],
+      "albums": [
+        {
+          "id": "6Egd2NFSkzvNiOyi19Yxwm",
+          "name": "Another World (Deluxe)",
+          "albumType": "album",
+          "releaseDate": "2025-03-07",
+          "totalTracks": 14,
+          "image": "https://i.scdn.co/image/ab67616d0000b27343cca4b4a4b62e4159cdcb8e",
+          "url": "https://open.spotify.com/album/6Egd2NFSkzvNiOyi19Yxwm"
+        },
+        {
+          "id": "7xw88Upi5WLLiopOMEBAze",
+          "name": "Another World (Deluxe Extended Mixes)",
+          "albumType": "album",
+          "releaseDate": "2025-03-07",
+          "totalTracks": 14,
+          "image": "https://i.scdn.co/image/ab67616d0000b273c52115d0c7532ac498fea1b1",
+          "url": "https://open.spotify.com/album/7xw88Upi5WLLiopOMEBAze"
+        },
+        {
+          "id": "1zS4ssyuOpe7CIJh1LJ6DX",
+          "name": "Another World",
+          "albumType": "album",
+          "releaseDate": "2024-07-26",
+          "totalTracks": 10,
+          "image": "https://i.scdn.co/image/ab67616d0000b27339b636665429264da30b891f",
+          "url": "https://open.spotify.com/album/1zS4ssyuOpe7CIJh1LJ6DX"
+        },
+        {
+          "id": "7bbBoHVOHGFz1PY7Tb8fzq",
+          "name": "Belgrado",
+          "albumType": "album",
+          "releaseDate": "2018-02-19",
+          "totalTracks": 5,
+          "image": "https://i.scdn.co/image/ab67616d0000b2735ed7f1aec944582e59a93205",
+          "url": "https://open.spotify.com/album/7bbBoHVOHGFz1PY7Tb8fzq"
+        },
+        {
+          "id": "1zLeA22SMF1e0KyY0R4FnN",
+          "name": "Belgrado",
+          "albumType": "album",
+          "releaseDate": "2017-01-12",
+          "totalTracks": 5,
+          "image": "https://i.scdn.co/image/ab67616d0000b273b407c78d3aeccf38a57da1f0",
+          "url": "https://open.spotify.com/album/1zLeA22SMF1e0KyY0R4FnN"
+        },
+        {
+          "id": "7naG2YGyd9qSQHA2SD6N52",
+          "name": "Anthology",
+          "albumType": "album",
+          "releaseDate": "2015-07-24",
+          "totalTracks": 7,
+          "image": "https://i.scdn.co/image/ab67616d0000b2733b4cad90214c4419b5d0fd69",
+          "url": "https://open.spotify.com/album/7naG2YGyd9qSQHA2SD6N52"
+        },
+        {
+          "id": "1jgFc0y9nmQ2AyuBgDrPlZ",
+          "name": "Rise Again (Extended Mix)",
+          "albumType": "single",
+          "releaseDate": "2025-10-31",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b27363902706ee3bc2967d3bc296",
+          "url": "https://open.spotify.com/album/1jgFc0y9nmQ2AyuBgDrPlZ"
+        },
+        {
+          "id": "31RFPlVpvUuAxL5ZozLYEk",
+          "name": "Rise Again",
+          "albumType": "single",
+          "releaseDate": "2025-10-31",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b27301f90396c82d8c18318827df",
+          "url": "https://open.spotify.com/album/31RFPlVpvUuAxL5ZozLYEk"
+        },
+        {
+          "id": "5qDP2lwNYjLTRv9zgQaaIr",
+          "name": "Follow Your Heart (Extended Mix)",
+          "albumType": "single",
+          "releaseDate": "2025-09-12",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273e465345693a34a25b837150e",
+          "url": "https://open.spotify.com/album/5qDP2lwNYjLTRv9zgQaaIr"
+        },
+        {
+          "id": "0QHZJqcumw0ckKXYIbPKmk",
+          "name": "Follow Your Heart",
+          "albumType": "single",
+          "releaseDate": "2025-09-12",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273eceeaa6eda4913a1eeb1a419",
+          "url": "https://open.spotify.com/album/0QHZJqcumw0ckKXYIbPKmk"
+        },
+        {
+          "id": "3Ct22wGaDRhLA6ifA6cApl",
+          "name": "Right Here (WDJF 2025 Anthem) [Extended Mix]",
+          "albumType": "single",
+          "releaseDate": "2025-06-20",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273da06e284ad4abccc81c143cf",
+          "url": "https://open.spotify.com/album/3Ct22wGaDRhLA6ifA6cApl"
+        },
+        {
+          "id": "264wweFMoT7afupXT9z8EU",
+          "name": "Right Here (WDJF 2025 Anthem)",
+          "albumType": "single",
+          "releaseDate": "2025-06-20",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b27312bfe164556b6c5e2ad0801f",
+          "url": "https://open.spotify.com/album/264wweFMoT7afupXT9z8EU"
+        }
+      ],
+      "topTracks": [
+        {
+          "id": "7js0KdTFdV92eswDxs8zYQ",
+          "name": "Starlight (Keep Me Afloat)",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/7js0KdTFdV92eswDxs8zYQ",
+          "durationMs": 202670,
+          "popularity": 50,
+          "album": {
+            "id": "45gsxfnJ5Nt2RZp82SQenc",
+            "name": "Sentio",
+            "releaseDate": "2022-04-29",
+            "image": "https://i.scdn.co/image/ab67616d0000b273edba220be76f96d51bd38838"
+          },
+          "artists": [
+            "Martin Garrix",
+            "DubVision",
+            "Shaun Farrugia"
+          ]
+        },
+        {
+          "id": "4FkWg5D4lOzelnjYIjy2Ur",
+          "name": "Wherever You Are",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/4FkWg5D4lOzelnjYIjy2Ur",
+          "durationMs": 207992,
+          "popularity": 45,
+          "album": {
+            "id": "1zS4ssyuOpe7CIJh1LJ6DX",
+            "name": "Another World",
+            "releaseDate": "2024-07-26",
+            "image": "https://i.scdn.co/image/ab67616d0000b27339b636665429264da30b891f"
+          },
+          "artists": [
+            "DubVision",
+            "Martin Garrix",
+            "Shaun Farrugia"
+          ]
+        },
+        {
+          "id": "3wfNiPBrzDwuanE75Ar6pS",
+          "name": "Anywhere With You",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/3wfNiPBrzDwuanE75Ar6pS",
+          "durationMs": 158807,
+          "popularity": 54,
+          "album": {
+            "id": "6kLYOTLTjIjADp2VfU9qGQ",
+            "name": "Anywhere With You",
+            "releaseDate": "2021-12-17",
+            "image": "https://i.scdn.co/image/ab67616d0000b2732028367e5c1f2cd913170fa1"
+          },
+          "artists": [
+            "AFROJACK",
+            "Lucas & Steve",
+            "DubVision"
+          ]
+        },
+        {
+          "id": "2uNwaXIVVfAIzL1HmcUxSz",
+          "name": "Empty",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/2uNwaXIVVfAIzL1HmcUxSz",
+          "durationMs": 198425,
+          "popularity": 42,
+          "album": {
+            "id": "1zS4ssyuOpe7CIJh1LJ6DX",
+            "name": "Another World",
+            "releaseDate": "2024-07-26",
+            "image": "https://i.scdn.co/image/ab67616d0000b27339b636665429264da30b891f"
+          },
+          "artists": [
+            "DubVision",
+            "Martin Garrix",
+            "Jaimes"
+          ]
+        },
+        {
+          "id": "0NNSpmyyr0I4lrMaXS8Tba",
+          "name": "Electricity",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/0NNSpmyyr0I4lrMaXS8Tba",
+          "durationMs": 154285,
+          "popularity": 52,
+          "album": {
+            "id": "1ofN1B9x8lwUSbb2eS65fV",
+            "name": "Electricity",
+            "releaseDate": "2022-08-19",
+            "image": "https://i.scdn.co/image/ab67616d0000b273ffe4f0aceb02566e1b2d1916"
+          },
+          "artists": [
+            "DubVision",
+            "Otto Knows",
+            "Alex Aris"
+          ]
+        },
+        {
+          "id": "6WV3aI7MZ2olmOj8E4Ff25",
+          "name": "Follow Your Heart",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/6WV3aI7MZ2olmOj8E4Ff25",
+          "durationMs": 214784,
+          "popularity": 51,
+          "album": {
+            "id": "0QHZJqcumw0ckKXYIbPKmk",
+            "name": "Follow Your Heart",
+            "releaseDate": "2025-09-12",
+            "image": "https://i.scdn.co/image/ab67616d0000b273eceeaa6eda4913a1eeb1a419"
+          },
+          "artists": [
+            "DubVision",
+            "Jordan Jade"
+          ]
+        },
+        {
+          "id": "2ThOrFQx3T5omQ1b71aoHS",
+          "name": "Rise Again",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/2ThOrFQx3T5omQ1b71aoHS",
+          "durationMs": 180937,
+          "popularity": 49,
+          "album": {
+            "id": "31RFPlVpvUuAxL5ZozLYEk",
+            "name": "Rise Again",
+            "releaseDate": "2025-10-31",
+            "image": "https://i.scdn.co/image/ab67616d0000b27301f90396c82d8c18318827df"
+          },
+          "artists": [
+            "DubVision"
+          ]
+        },
+        {
+          "id": "2a0Az8oSMkiZjOpWNzXICs",
+          "name": "Live My Life",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/2a0Az8oSMkiZjOpWNzXICs",
+          "durationMs": 241920,
+          "popularity": 48,
+          "album": {
+            "id": "7C4dHLELP7ivO6HXeLltK3",
+            "name": "Live My Life",
+            "releaseDate": "2025-04-04",
+            "image": "https://i.scdn.co/image/ab67616d0000b273a8169d116d671e87c99b66e3"
+          },
+          "artists": [
+            "DubVision",
+            "Nicky Romero",
+            "Oaks"
+          ]
+        },
+        {
+          "id": "0mV5JWhyUFANd9qpwLkM8d",
+          "name": "No Sleep (feat. Bonn) - DubVision Remix",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/0mV5JWhyUFANd9qpwLkM8d",
+          "durationMs": 239062,
+          "popularity": 47,
+          "album": {
+            "id": "3z4efVJv1e3GmoR7PybqHR",
+            "name": "2019 Remixed",
+            "releaseDate": "2019-12-31",
+            "image": "https://i.scdn.co/image/ab67616d0000b2739d5a692b7a70508595e944ba"
+          },
+          "artists": [
+            "Martin Garrix",
+            "Bonn",
+            "DubVision"
+          ]
+        },
+        {
+          "id": "7HnozJfCXo4H21kZNRYv5V",
+          "name": "Time After Time",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/7HnozJfCXo4H21kZNRYv5V",
+          "durationMs": 169788,
+          "popularity": 47,
+          "album": {
+            "id": "1Wk9LOhvSz6RQ0Cq8pcnyW",
+            "name": "Time After Time",
+            "releaseDate": "2022-12-16",
+            "image": "https://i.scdn.co/image/ab67616d0000b273f1596020d4d9ee53a2167403"
+          },
+          "artists": [
+            "Dash Berlin",
+            "DubVision",
+            "Emma Hewitt"
+          ]
+        }
       ]
     }
   },
@@ -127,7 +1327,10 @@
       ],
       "links": {
         "musicbrainz": "https://musicbrainz.org/artist/170d6637-36e0-49dd-a225-c4fd5b77a285"
-      }
+      },
+      "gender": "Male",
+      "debutYear": 1988,
+      "careerYears": 37
     },
     "spotify": {
       "spotifyId": "6BrvowZBreEkXzJQMpL174",
@@ -143,6 +1346,304 @@
         "progressive house",
         "techno",
         "trance"
+      ],
+      "albums": [
+        {
+          "id": "6giiV9q6odKQWeR6tfBgyX",
+          "name": "REBELS NEVER DIE (Deluxe Edition)",
+          "albumType": "album",
+          "releaseDate": "2022-12-23",
+          "totalTracks": 19,
+          "image": "https://i.scdn.co/image/ab67616d0000b27324d03806413bb1e8230af7a5",
+          "url": "https://open.spotify.com/album/6giiV9q6odKQWeR6tfBgyX"
+        },
+        {
+          "id": "5OU4esREA0HLwNekPigYeZ",
+          "name": "REBELS NEVER DIE",
+          "albumType": "album",
+          "releaseDate": "2022-09-09",
+          "totalTracks": 14,
+          "image": "https://i.scdn.co/image/ab67616d0000b27360ad5611345900c2179cdcd0",
+          "url": "https://open.spotify.com/album/5OU4esREA0HLwNekPigYeZ"
+        },
+        {
+          "id": "2xvDXuIdsnq1iFT5YIFi1h",
+          "name": "Revealed 10 Year Anniversary Remixed",
+          "albumType": "album",
+          "releaseDate": "2021-05-21",
+          "totalTracks": 7,
+          "image": "https://i.scdn.co/image/ab67616d0000b2736434a721edbc1c11d6fc908e",
+          "url": "https://open.spotify.com/album/2xvDXuIdsnq1iFT5YIFi1h"
+        },
+        {
+          "id": "3MnBKsNCW5X5Qyi5GSVgPk",
+          "name": "United We Are (Remixed)",
+          "albumType": "album",
+          "releaseDate": "2015-12-04",
+          "totalTracks": 15,
+          "image": "https://i.scdn.co/image/ab67616d0000b2738735486e84ce574a0443a85f",
+          "url": "https://open.spotify.com/album/3MnBKsNCW5X5Qyi5GSVgPk"
+        },
+        {
+          "id": "7r60bob6PntrVxl1iuIFmF",
+          "name": "United We Are (Commentary Version)",
+          "albumType": "album",
+          "releaseDate": "2015-01-23",
+          "totalTracks": 14,
+          "image": "https://i.scdn.co/image/ab67616d0000b2734e63c0cc8b2c444b99fd8f15",
+          "url": "https://open.spotify.com/album/7r60bob6PntrVxl1iuIFmF"
+        },
+        {
+          "id": "3QTVsIyjtbHhXGxwh7H6j3",
+          "name": "United We Are",
+          "albumType": "album",
+          "releaseDate": "2015-01-23",
+          "totalTracks": 15,
+          "image": "https://i.scdn.co/image/ab67616d0000b273599a64d07e40223c12b9cdc8",
+          "url": "https://open.spotify.com/album/3QTVsIyjtbHhXGxwh7H6j3"
+        },
+        {
+          "id": "1c8VPF74qax6iaGsf74cQ8",
+          "name": "I Am Hardwell (Original Soundtrack)",
+          "albumType": "album",
+          "releaseDate": "2013-11-15",
+          "totalTracks": 13,
+          "image": "https://i.scdn.co/image/ab67616d0000b2735c7be953d274066adb8d78aa",
+          "url": "https://open.spotify.com/album/1c8VPF74qax6iaGsf74cQ8"
+        },
+        {
+          "id": "1R4ANAFrHwOdYG1tmz3gla",
+          "name": "Spaceman",
+          "albumType": "album",
+          "releaseDate": "2012-02-06",
+          "totalTracks": 8,
+          "image": "https://i.scdn.co/image/ab67616d0000b2737b93264217481ae62439c676",
+          "url": "https://open.spotify.com/album/1R4ANAFrHwOdYG1tmz3gla"
+        },
+        {
+          "id": "4rwbRBvVsKL96gZQcaHTCT",
+          "name": "The Partycrasher",
+          "albumType": "single",
+          "releaseDate": "2025-12-05",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273b8b10e86bc3c0c76cb732665",
+          "url": "https://open.spotify.com/album/4rwbRBvVsKL96gZQcaHTCT"
+        },
+        {
+          "id": "0vvJGpfaHyZyejMclE080B",
+          "name": "Rise Again",
+          "albumType": "single",
+          "releaseDate": "2025-12-05",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273c83400f5d9ae78cb3fe5e903",
+          "url": "https://open.spotify.com/album/0vvJGpfaHyZyejMclE080B"
+        },
+        {
+          "id": "6oYOLYAzpu7Ty5R9mSIVtZ",
+          "name": "Lights Out",
+          "albumType": "single",
+          "releaseDate": "2025-12-05",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b2730a69b0b368251b0d00d10e88",
+          "url": "https://open.spotify.com/album/6oYOLYAzpu7Ty5R9mSIVtZ"
+        },
+        {
+          "id": "1atOybtiD07Wvu1nJmaXip",
+          "name": "Hardwell & Friends Vol. 04",
+          "albumType": "single",
+          "releaseDate": "2025-12-05",
+          "totalTracks": 3,
+          "image": "https://i.scdn.co/image/ab67616d0000b273b87078796418814cc6162ca4",
+          "url": "https://open.spotify.com/album/1atOybtiD07Wvu1nJmaXip"
+        }
+      ],
+      "topTracks": [
+        {
+          "id": "0l6fM0B3KDdGRj7R8vo4hK",
+          "name": "Satisfaction - Hardwell & Maddix Remix",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/0l6fM0B3KDdGRj7R8vo4hK",
+          "durationMs": 204436,
+          "popularity": 51,
+          "album": {
+            "id": "3PAjzJeHTZw0OeG9miBhc0",
+            "name": "Satisfaction (Hardwell & Maddix Remix)",
+            "releaseDate": "2023-01-05",
+            "image": "https://i.scdn.co/image/ab67616d0000b273aeda38e0b14b3ec238c6545e"
+          },
+          "artists": [
+            "David Guetta",
+            "Benny Benassi",
+            "Hardwell",
+            "Maddix"
+          ]
+        },
+        {
+          "id": "49ZuJYjop8st6JwHWquK0u",
+          "name": "Everytime We Touch (Mix Cut) - Hardwell & Maurice West Remix",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/49ZuJYjop8st6JwHWquK0u",
+          "durationMs": 225390,
+          "popularity": 44,
+          "album": {
+            "id": "7BQEGjIXPweLF3gH80n8VD",
+            "name": "Hardwell presents Revealed Vol. 9",
+            "releaseDate": "2018-10-12",
+            "image": "https://i.scdn.co/image/ab67616d0000b273ed8772652d3da639cd9ded05"
+          },
+          "artists": [
+            "Cascada",
+            "Maurice West",
+            "Hardwell"
+          ]
+        },
+        {
+          "id": "0GOXlShsWOp7BQ7nt9uwUL",
+          "name": "I Don't Wanna Wait - Hardwell & Olly James Remix",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/0GOXlShsWOp7BQ7nt9uwUL",
+          "durationMs": 183200,
+          "popularity": 63,
+          "album": {
+            "id": "2Y4Tm0KdcUWNnPpphhhGZ4",
+            "name": "I Don't Wanna Wait (Hardwell & Olly James Remix)",
+            "releaseDate": "2024-05-03",
+            "image": "https://i.scdn.co/image/ab67616d0000b27310c0a531472978927135a901"
+          },
+          "artists": [
+            "David Guetta",
+            "OneRepublic",
+            "Hardwell",
+            "Olly James"
+          ]
+        },
+        {
+          "id": "5NYejXf1mwigePilCGLjdM",
+          "name": "Call Me A Spaceman",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/5NYejXf1mwigePilCGLjdM",
+          "durationMs": 189375,
+          "popularity": 61,
+          "album": {
+            "id": "1R4ANAFrHwOdYG1tmz3gla",
+            "name": "Spaceman",
+            "releaseDate": "2012-02-06",
+            "image": "https://i.scdn.co/image/ab67616d0000b2737b93264217481ae62439c676"
+          },
+          "artists": [
+            "Hardwell",
+            "Mitch Crown"
+          ]
+        },
+        {
+          "id": "1tMKOSjEH8xDccWhfNj0d3",
+          "name": "Follow The Light",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/1tMKOSjEH8xDccWhfNj0d3",
+          "durationMs": 192890,
+          "popularity": 55,
+          "album": {
+            "id": "0S1SKVI7D7OKqSgTVFQeku",
+            "name": "Breathe",
+            "releaseDate": "2025-06-27",
+            "image": "https://i.scdn.co/image/ab67616d0000b273cedb19ab41dfcfcb2336a13f"
+          },
+          "artists": [
+            "Armin van Buuren",
+            "Hardwell"
+          ]
+        },
+        {
+          "id": "5L5kU9WFu7IPZQXzzxaRQV",
+          "name": "Falling In Love",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/5L5kU9WFu7IPZQXzzxaRQV",
+          "durationMs": 181874,
+          "popularity": 61,
+          "album": {
+            "id": "7oVRn6cgrbWYBXl4LnsEAf",
+            "name": "Falling In Love",
+            "releaseDate": "2024-10-11",
+            "image": "https://i.scdn.co/image/ab67616d0000b2731dded4223a9324a6b4db9679"
+          },
+          "artists": [
+            "Hardwell",
+            "Outsiders"
+          ]
+        },
+        {
+          "id": "6JkQb1qCCJDBV7kW5vJUAH",
+          "name": "ACID",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/6JkQb1qCCJDBV7kW5vJUAH",
+          "durationMs": 181333,
+          "popularity": 60,
+          "album": {
+            "id": "7LAUJxkEQOBf6rbS0MXUi6",
+            "name": "ACID",
+            "releaseDate": "2023-05-05",
+            "image": "https://i.scdn.co/image/ab67616d0000b27337d8edae9f22963c480e8729"
+          },
+          "artists": [
+            "Hardwell",
+            "Maddix",
+            "Luciana"
+          ]
+        },
+        {
+          "id": "7oFDeK5yp5iM4YQvOLpknd",
+          "name": "Not Alone",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/7oFDeK5yp5iM4YQvOLpknd",
+          "durationMs": 227200,
+          "popularity": 58,
+          "album": {
+            "id": "22ynWRwFarwFNpZR8mng6H",
+            "name": "Not Alone",
+            "releaseDate": "2025-11-07",
+            "image": "https://i.scdn.co/image/ab67616d0000b2736b986ae9e9ee7f6614e5f362"
+          },
+          "artists": [
+            "Hardwell",
+            "Dyro"
+          ]
+        },
+        {
+          "id": "7EdxI2Yro4AW2HH3akwqms",
+          "name": "Apollo",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/7EdxI2Yro4AW2HH3akwqms",
+          "durationMs": 209765,
+          "popularity": 57,
+          "album": {
+            "id": "1c8VPF74qax6iaGsf74cQ8",
+            "name": "I Am Hardwell (Original Soundtrack)",
+            "releaseDate": "2013-11-15",
+            "image": "https://i.scdn.co/image/ab67616d0000b2735c7be953d274066adb8d78aa"
+          },
+          "artists": [
+            "Hardwell",
+            "Amba Shepherd"
+          ]
+        },
+        {
+          "id": "2uHGci4XJywAICJ1D54Xgq",
+          "name": "The Partycrasher",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/2uHGci4XJywAICJ1D54Xgq",
+          "durationMs": 167111,
+          "popularity": 56,
+          "album": {
+            "id": "4rwbRBvVsKL96gZQcaHTCT",
+            "name": "The Partycrasher",
+            "releaseDate": "2025-12-05",
+            "image": "https://i.scdn.co/image/ab67616d0000b273b8b10e86bc3c0c76cb732665"
+          },
+          "artists": [
+            "Hardwell",
+            "Chuckie"
+          ]
+        }
       ]
     }
   },
@@ -163,7 +1664,10 @@
       ],
       "links": {
         "musicbrainz": "https://musicbrainz.org/artist/3e1f2ee4-16be-4406-bf18-6173840cf2b1"
-      }
+      },
+      "gender": "Male",
+      "debutYear": 1996,
+      "careerYears": 29
     },
     "spotify": {
       "spotifyId": "60d24wfXkVzDSfLS6hyCjZ",
@@ -175,6 +1679,300 @@
         "electro house",
         "festival progressive house",
         "tropical house"
+      ],
+      "albums": [
+        {
+          "id": "45gsxfnJ5Nt2RZp82SQenc",
+          "name": "Sentio",
+          "albumType": "album",
+          "releaseDate": "2022-04-29",
+          "totalTracks": 11,
+          "image": "https://i.scdn.co/image/ab67616d0000b273edba220be76f96d51bd38838",
+          "url": "https://open.spotify.com/album/45gsxfnJ5Nt2RZp82SQenc"
+        },
+        {
+          "id": "60ynd1iwc4DlimvgbYNk6A",
+          "name": "ORIGO",
+          "albumType": "single",
+          "releaseDate": "2025-10-24",
+          "totalTracks": 8,
+          "image": "https://i.scdn.co/image/ab67616d0000b2738d057671868ff8b1da983d6b",
+          "url": "https://open.spotify.com/album/60ynd1iwc4DlimvgbYNk6A"
+        },
+        {
+          "id": "4eH62GumJ81Hddar6Zlz3X",
+          "name": "Ain't Letting You Down (Extended Mix)",
+          "albumType": "single",
+          "releaseDate": "2025-10-24",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b2736c338e4a1dbef30a5d39e65c",
+          "url": "https://open.spotify.com/album/4eH62GumJ81Hddar6Zlz3X"
+        },
+        {
+          "id": "6Gihz6RXvLYLFxHPMJC7nf",
+          "name": "Ain't Letting You Down",
+          "albumType": "single",
+          "releaseDate": "2025-10-24",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b27370969b566dd6d6646a6b42cb",
+          "url": "https://open.spotify.com/album/6Gihz6RXvLYLFxHPMJC7nf"
+        },
+        {
+          "id": "44PmYvNGDqTh8w3aUCqj6q",
+          "name": "Butterflies (Extended Mix)",
+          "albumType": "single",
+          "releaseDate": "2025-09-26",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273239f181f0dd5eecb2bd906f4",
+          "url": "https://open.spotify.com/album/44PmYvNGDqTh8w3aUCqj6q"
+        },
+        {
+          "id": "0e1KpmhEst3f1TPw8xJY8S",
+          "name": "Butterflies",
+          "albumType": "single",
+          "releaseDate": "2025-09-26",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273654151030adcbda019dcba22",
+          "url": "https://open.spotify.com/album/0e1KpmhEst3f1TPw8xJY8S"
+        },
+        {
+          "id": "1zCARQitoxDADRROH53M2I",
+          "name": "Voodoo (Extended Mix)",
+          "albumType": "single",
+          "releaseDate": "2025-09-19",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273d5af38d05f0023b92b8d80d8",
+          "url": "https://open.spotify.com/album/1zCARQitoxDADRROH53M2I"
+        },
+        {
+          "id": "0JnmszyYOgIIF7x4GLILSM",
+          "name": "Voodoo",
+          "albumType": "single",
+          "releaseDate": "2025-09-19",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b2735463877b909d6eaf35e27d96",
+          "url": "https://open.spotify.com/album/0JnmszyYOgIIF7x4GLILSM"
+        },
+        {
+          "id": "28YMaSE5kx5tM9HpdafuCh",
+          "name": "Peace of Flood",
+          "albumType": "single",
+          "releaseDate": "2025-09-12",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273df5b37e4b4d0365f111c8296",
+          "url": "https://open.spotify.com/album/28YMaSE5kx5tM9HpdafuCh"
+        },
+        {
+          "id": "4obbdNRvSbjPA4FmO76mcu",
+          "name": "MAD (Matt Pridgyn Remix)",
+          "albumType": "single",
+          "releaseDate": "2025-09-05",
+          "totalTracks": 2,
+          "image": "https://i.scdn.co/image/ab67616d0000b2730c4bfbffbe4e2d61fb70d935",
+          "url": "https://open.spotify.com/album/4obbdNRvSbjPA4FmO76mcu"
+        },
+        {
+          "id": "0UNAwF3wsXRaebPcIkP1c7",
+          "name": "Set Me Free (Extended Mix)",
+          "albumType": "single",
+          "releaseDate": "2025-08-22",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b2737c4f19e76f83f39d5d1aed9c",
+          "url": "https://open.spotify.com/album/0UNAwF3wsXRaebPcIkP1c7"
+        },
+        {
+          "id": "1duRCWQVzDQXiM5PVHcXVF",
+          "name": "Set Me Free",
+          "albumType": "single",
+          "releaseDate": "2025-08-22",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273485c12dbdcb35cb9c0c55804",
+          "url": "https://open.spotify.com/album/1duRCWQVzDQXiM5PVHcXVF"
+        }
+      ],
+      "topTracks": [
+        {
+          "id": "23L5CiUhw2jV1OIMwthR3S",
+          "name": "In the Name of Love",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/23L5CiUhw2jV1OIMwthR3S",
+          "durationMs": 198815,
+          "popularity": 79,
+          "album": {
+            "id": "1FOJ5IXGXe8dl0cXvCU6wK",
+            "name": "In the Name of Love",
+            "releaseDate": "2016-07-29",
+            "image": "https://i.scdn.co/image/ab67616d0000b273b3d48927d5a423bdbdb20166"
+          },
+          "artists": [
+            "Martin Garrix",
+            "Bebe Rexha"
+          ]
+        },
+        {
+          "id": "3ebXMykcMXOcLeJ9xZ17XH",
+          "name": "Scared to Be Lonely",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/3ebXMykcMXOcLeJ9xZ17XH",
+          "durationMs": 220883,
+          "popularity": 77,
+          "album": {
+            "id": "2v9rQe4F8fVSh5v8bAq0jF",
+            "name": "Scared to Be Lonely",
+            "releaseDate": "2017-01-27",
+            "image": "https://i.scdn.co/image/ab67616d0000b2736a1cba0e39d52540add955c6"
+          },
+          "artists": [
+            "Martin Garrix",
+            "Dua Lipa"
+          ]
+        },
+        {
+          "id": "0A9mHc7oYUoCECqByV8cQR",
+          "name": "Animals",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/0A9mHc7oYUoCECqByV8cQR",
+          "durationMs": 304228,
+          "popularity": 72,
+          "album": {
+            "id": "4Xs4NI3J2Nf9eSUqvW7GBn",
+            "name": "Animals",
+            "releaseDate": "2013-06-17",
+            "image": "https://i.scdn.co/image/ab67616d0000b2736abad6915a2216dc18e7e3a7"
+          },
+          "artists": [
+            "Martin Garrix"
+          ]
+        },
+        {
+          "id": "4ut5G4rgB1ClpMTMfjoIuy",
+          "name": "High On Life (feat. Bonn)",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/4ut5G4rgB1ClpMTMfjoIuy",
+          "durationMs": 230761,
+          "popularity": 71,
+          "album": {
+            "id": "1GUfof1gHsqYjoHFym3aim",
+            "name": "High On Life (feat. Bonn)",
+            "releaseDate": "2018-07-29",
+            "image": "https://i.scdn.co/image/ab67616d0000b273def05abd2a12cd19243e2b6d"
+          },
+          "artists": [
+            "Martin Garrix",
+            "Bonn"
+          ]
+        },
+        {
+          "id": "7Feaw9WAEREY0DUOSXJLOM",
+          "name": "Summer Days (feat. Macklemore & Patrick Stump of Fall Out Boy)",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/7Feaw9WAEREY0DUOSXJLOM",
+          "durationMs": 163804,
+          "popularity": 71,
+          "album": {
+            "id": "0xbuJLlb5afBcmCpdOaszR",
+            "name": "Summer Days (feat. Macklemore & Patrick Stump of Fall Out Boy)",
+            "releaseDate": "2019-04-25",
+            "image": "https://i.scdn.co/image/ab67616d0000b27351528c08d64e44497cb007c0"
+          },
+          "artists": [
+            "Martin Garrix",
+            "Macklemore",
+            "Fall Out Boy"
+          ]
+        },
+        {
+          "id": "52dEZA0A4siRTuA4e8w3ll",
+          "name": "Told You So",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/52dEZA0A4siRTuA4e8w3ll",
+          "durationMs": 187031,
+          "popularity": 70,
+          "album": {
+            "id": "3peq5CPlvCF11LKMDN4k8H",
+            "name": "Told You So",
+            "releaseDate": "2024-11-22",
+            "image": "https://i.scdn.co/image/ab67616d0000b27374ed367a3007b962487f89bb"
+          },
+          "artists": [
+            "Martin Garrix",
+            "Jex"
+          ]
+        },
+        {
+          "id": "6vM1GSndPtQk7AmqEmNAPH",
+          "name": "MAD",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/6vM1GSndPtQk7AmqEmNAPH",
+          "durationMs": 199804,
+          "popularity": 69,
+          "album": {
+            "id": "6e3hxK9NnMP08e6GBC1WIV",
+            "name": "MAD",
+            "releaseDate": "2025-05-27",
+            "image": "https://i.scdn.co/image/ab67616d0000b2735c0e5abe73559c2de9d2eee0"
+          },
+          "artists": [
+            "Martin Garrix",
+            "Lauv"
+          ]
+        },
+        {
+          "id": "3MUFebos5drIwrUHxUorhP",
+          "name": "Our Time",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/3MUFebos5drIwrUHxUorhP",
+          "durationMs": 161367,
+          "popularity": 69,
+          "album": {
+            "id": "1R0CAZwCU6rRvMsmaerCjz",
+            "name": "Our Time",
+            "releaseDate": "2025-07-11",
+            "image": "https://i.scdn.co/image/ab67616d0000b2738ba37597495fd2111e163913"
+          },
+          "artists": [
+            "AFROJACK",
+            "Martin Garrix",
+            "David Guetta",
+            "Amél"
+          ]
+        },
+        {
+          "id": "4g6m1iaAsgdgDqgxGtvY0C",
+          "name": "Animals - Radio Edit",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/4g6m1iaAsgdgDqgxGtvY0C",
+          "durationMs": 176117,
+          "popularity": 67,
+          "album": {
+            "id": "4Xs4NI3J2Nf9eSUqvW7GBn",
+            "name": "Animals",
+            "releaseDate": "2013-06-17",
+            "image": "https://i.scdn.co/image/ab67616d0000b2736abad6915a2216dc18e7e3a7"
+          },
+          "artists": [
+            "Martin Garrix"
+          ]
+        },
+        {
+          "id": "1vQolNYci1yfPZccu6mqIB",
+          "name": "Ain't Letting You Down",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/1vQolNYci1yfPZccu6mqIB",
+          "durationMs": 261958,
+          "popularity": 67,
+          "album": {
+            "id": "6Gihz6RXvLYLFxHPMJC7nf",
+            "name": "Ain't Letting You Down",
+            "releaseDate": "2025-10-24",
+            "image": "https://i.scdn.co/image/ab67616d0000b27370969b566dd6d6646a6b42cb"
+          },
+          "artists": [
+            "Martin Garrix",
+            "Saksham",
+            "Scott Quinn"
+          ]
+        }
       ]
     }
   },
@@ -190,13 +1988,313 @@
       ],
       "links": {
         "musicbrainz": "https://musicbrainz.org/artist/c02a6ce9-452c-4df5-a065-4928e6bf07e6"
-      }
+      },
+      "debutYear": 2011,
+      "careerYears": 14
     },
     "spotify": {
       "spotifyId": "2QMCcKIPHnjQaPPgoEst88",
       "image": "https://i.scdn.co/image/ab6761610000e5eb39c52cbbd9033dc5d2f04aa4",
       "genres": [
         "progressive house"
+      ],
+      "albums": [
+        {
+          "id": "4E1JCkcy7luyq55lEztPVW",
+          "name": "Harmony (Remixes)",
+          "albumType": "single",
+          "releaseDate": "2025-11-14",
+          "totalTracks": 2,
+          "image": "https://i.scdn.co/image/ab67616d0000b273e7963b02138d37fbc46071b6",
+          "url": "https://open.spotify.com/album/4E1JCkcy7luyq55lEztPVW"
+        },
+        {
+          "id": "3iRA5e1mvQoc4BrY8YdO8f",
+          "name": "Higher",
+          "albumType": "single",
+          "releaseDate": "2025-10-31",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273353342e2c365e904ac27e8c1",
+          "url": "https://open.spotify.com/album/3iRA5e1mvQoc4BrY8YdO8f"
+        },
+        {
+          "id": "44PmYvNGDqTh8w3aUCqj6q",
+          "name": "Butterflies (Extended Mix)",
+          "albumType": "single",
+          "releaseDate": "2025-09-26",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273239f181f0dd5eecb2bd906f4",
+          "url": "https://open.spotify.com/album/44PmYvNGDqTh8w3aUCqj6q"
+        },
+        {
+          "id": "0e1KpmhEst3f1TPw8xJY8S",
+          "name": "Butterflies",
+          "albumType": "single",
+          "releaseDate": "2025-09-26",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273654151030adcbda019dcba22",
+          "url": "https://open.spotify.com/album/0e1KpmhEst3f1TPw8xJY8S"
+        },
+        {
+          "id": "1407RKhcxe58TPTwOtp9vF",
+          "name": "Take Me There",
+          "albumType": "single",
+          "releaseDate": "2025-07-11",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b2738e37004b02f07bbe0c86383d",
+          "url": "https://open.spotify.com/album/1407RKhcxe58TPTwOtp9vF"
+        },
+        {
+          "id": "0CnwOtw9uDFMQyGkg71jdk",
+          "name": "Harmony",
+          "albumType": "single",
+          "releaseDate": "2025-06-20",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b2736dbc7323f016ed51d36124b0",
+          "url": "https://open.spotify.com/album/0CnwOtw9uDFMQyGkg71jdk"
+        },
+        {
+          "id": "0Y66R648DZw5pk3e92KhJd",
+          "name": "Verve (Acoustic Mix)",
+          "albumType": "single",
+          "releaseDate": "2025-01-31",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273cc9a552d6749b6bfa2585da1",
+          "url": "https://open.spotify.com/album/0Y66R648DZw5pk3e92KhJd"
+        },
+        {
+          "id": "0Mq3FLxqNef4F6xmhA6yy9",
+          "name": "Himalaya (Extended Mix)",
+          "albumType": "single",
+          "releaseDate": "2024-12-13",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b27367141f9ec0d0d83427554523",
+          "url": "https://open.spotify.com/album/0Mq3FLxqNef4F6xmhA6yy9"
+        },
+        {
+          "id": "7zzq5fe5RxidA8L36MuaCy",
+          "name": "Himalaya",
+          "albumType": "single",
+          "releaseDate": "2024-12-13",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b27355768b78e78f03f63b7766b4",
+          "url": "https://open.spotify.com/album/7zzq5fe5RxidA8L36MuaCy"
+        },
+        {
+          "id": "477VIk754bKJSDS6pLvKuU",
+          "name": "Once Again (Extended Mix)",
+          "albumType": "single",
+          "releaseDate": "2024-08-23",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b27301cfb277a76477ed6468dde1",
+          "url": "https://open.spotify.com/album/477VIk754bKJSDS6pLvKuU"
+        },
+        {
+          "id": "1vGtCq8naz9opCmCPLbtxX",
+          "name": "Once Again",
+          "albumType": "single",
+          "releaseDate": "2024-08-23",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b2739ac310fd33d15af13faa50a3",
+          "url": "https://open.spotify.com/album/1vGtCq8naz9opCmCPLbtxX"
+        },
+        {
+          "id": "6dUvDEE4nep3Bcvy03dx7X",
+          "name": "Discohall",
+          "albumType": "single",
+          "releaseDate": "2024-06-28",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b2736cc99921829f9621eae69bd8",
+          "url": "https://open.spotify.com/album/6dUvDEE4nep3Bcvy03dx7X"
+        }
+      ],
+      "topTracks": [
+        {
+          "id": "129zR3hX9D2BYXOMtk2jaT",
+          "name": "⁠⁠Butterflies",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/129zR3hX9D2BYXOMtk2jaT",
+          "durationMs": 227735,
+          "popularity": 64,
+          "album": {
+            "id": "0e1KpmhEst3f1TPw8xJY8S",
+            "name": "Butterflies",
+            "releaseDate": "2025-09-26",
+            "image": "https://i.scdn.co/image/ab67616d0000b273654151030adcbda019dcba22"
+          },
+          "artists": [
+            "Martin Garrix",
+            "Matisse & Sadko",
+            "BARBZ"
+          ]
+        },
+        {
+          "id": "2cgdfL5C5P3xSm4tooGBXu",
+          "name": "Take Me There",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/2cgdfL5C5P3xSm4tooGBXu",
+          "durationMs": 201284,
+          "popularity": 58,
+          "album": {
+            "id": "1407RKhcxe58TPTwOtp9vF",
+            "name": "Take Me There",
+            "releaseDate": "2025-07-11",
+            "image": "https://i.scdn.co/image/ab67616d0000b2738e37004b02f07bbe0c86383d"
+          },
+          "artists": [
+            "Sick Individuals",
+            "Matisse & Sadko",
+            "Third Party"
+          ]
+        },
+        {
+          "id": "4KX39APEOO2EgiZFkcJOfR",
+          "name": "Together",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/4KX39APEOO2EgiZFkcJOfR",
+          "durationMs": 221274,
+          "popularity": 51,
+          "album": {
+            "id": "0hqMOru1WMB5gkHS7eJequ",
+            "name": "Together",
+            "releaseDate": "2016-10-20",
+            "image": "https://i.scdn.co/image/ab67616d0000b2731c151e39ceedfa1c77788c1c"
+          },
+          "artists": [
+            "Martin Garrix",
+            "Matisse & Sadko"
+          ]
+        },
+        {
+          "id": "5EwwwdsQfKI8ZnFG93j5Zu",
+          "name": "Forever",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/5EwwwdsQfKI8ZnFG93j5Zu",
+          "durationMs": 218437,
+          "popularity": 54,
+          "album": {
+            "id": "7zFHC5p1ylePX7dNxln5iJ",
+            "name": "Forever",
+            "releaseDate": "2017-10-20",
+            "image": "https://i.scdn.co/image/ab67616d0000b273fc7c5d5c997a0440dcac1174"
+          },
+          "artists": [
+            "Martin Garrix",
+            "Matisse & Sadko"
+          ]
+        },
+        {
+          "id": "2PhlrsYp7TSkK96ngbmL38",
+          "name": "Into You",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/2PhlrsYp7TSkK96ngbmL38",
+          "durationMs": 161538,
+          "popularity": 52,
+          "album": {
+            "id": "25zpnw9BaDhdjURrYD9dkh",
+            "name": "Into You",
+            "releaseDate": "2017-12-08",
+            "image": "https://i.scdn.co/image/ab67616d0000b27353d6374e3edda261e9ba1d7b"
+          },
+          "artists": [
+            "Matisse & Sadko",
+            "Hanne Mjøen"
+          ]
+        },
+        {
+          "id": "02c0NbxXc8b3TWxUObpNUt",
+          "name": "Higher",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/02c0NbxXc8b3TWxUObpNUt",
+          "durationMs": 185581,
+          "popularity": 52,
+          "album": {
+            "id": "3iRA5e1mvQoc4BrY8YdO8f",
+            "name": "Higher",
+            "releaseDate": "2025-10-31",
+            "image": "https://i.scdn.co/image/ab67616d0000b273353342e2c365e904ac27e8c1"
+          },
+          "artists": [
+            "Matisse & Sadko"
+          ]
+        },
+        {
+          "id": "6Bz6Rsp8GyeK4yL7APYYX3",
+          "name": "Dreamer - Matisse & Sadko Remix",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/6Bz6Rsp8GyeK4yL7APYYX3",
+          "durationMs": 250809,
+          "popularity": 51,
+          "album": {
+            "id": "6DWBzXE4ccUNtpKXdvU2tA",
+            "name": "Dreamer (Remixes)",
+            "releaseDate": "2018-02-02",
+            "image": "https://i.scdn.co/image/ab67616d0000b27320ca5a7ca51559d75122529b"
+          },
+          "artists": [
+            "Axwell /\\ Ingrosso",
+            "Axwell",
+            "Sebastian Ingrosso",
+            "Matisse & Sadko"
+          ]
+        },
+        {
+          "id": "18KjYhghq6K3ZmfcewWDp6",
+          "name": "Mistaken (feat. Alex Aris)",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/18KjYhghq6K3ZmfcewWDp6",
+          "durationMs": 282480,
+          "popularity": 48,
+          "album": {
+            "id": "36EtVEn1SVViW6Pi8rD9n8",
+            "name": "Mistaken (feat. Alex Aris)",
+            "releaseDate": "2019-03-31",
+            "image": "https://i.scdn.co/image/ab67616d0000b27346a81c3b2a02678d5ca6b41c"
+          },
+          "artists": [
+            "Martin Garrix",
+            "Matisse & Sadko",
+            "Alex Aris"
+          ]
+        },
+        {
+          "id": "5UZA39t4lX42ApegVubl7f",
+          "name": "Won’t Let You Go",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/5UZA39t4lX42ApegVubl7f",
+          "durationMs": 217261,
+          "popularity": 47,
+          "album": {
+            "id": "4QxfiUo90NEmUnyNHE1x8h",
+            "name": "Won’t Let You Go",
+            "releaseDate": "2021-12-10",
+            "image": "https://i.scdn.co/image/ab67616d0000b27380498b63e98960e2dbac41ea"
+          },
+          "artists": [
+            "Martin Garrix",
+            "Matisse & Sadko",
+            "John Martin"
+          ]
+        },
+        {
+          "id": "22zxLxXlXrBIm7XaazHNrg",
+          "name": "Hold On (feat. Michel Zitron)",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/22zxLxXlXrBIm7XaazHNrg",
+          "durationMs": 244453,
+          "popularity": 47,
+          "album": {
+            "id": "2BxWklE9D6hPhvPgcvLWtZ",
+            "name": "Hold On (feat. Michel Zitron)",
+            "releaseDate": "2019-12-27",
+            "image": "https://i.scdn.co/image/ab67616d0000b2738778f5322c5c841b8ff4c39e"
+          },
+          "artists": [
+            "Martin Garrix",
+            "Matisse & Sadko",
+            "Michel Zitron"
+          ]
+        }
       ]
     }
   },
@@ -213,7 +2311,9 @@
       ],
       "links": {
         "musicbrainz": "https://musicbrainz.org/artist/580f4a91-b75b-4e63-ae8d-38485ac1bb78"
-      }
+      },
+      "debutYear": 2010,
+      "careerYears": 15
     },
     "spotify": {
       "spotifyId": "2J80qXI4NHKpq5RT3xUF7V",
@@ -221,6 +2321,297 @@
       "genres": [
         "house",
         "progressive house"
+      ],
+      "albums": [
+        {
+          "id": "00a5EKAAd7gfrblq8gY3WZ",
+          "name": "TOGETHER",
+          "albumType": "album",
+          "releaseDate": "2019-03-15",
+          "totalTracks": 9,
+          "image": "https://i.scdn.co/image/ab67616d0000b2732225ad2001e70fb7ea0065ae",
+          "url": "https://open.spotify.com/album/00a5EKAAd7gfrblq8gY3WZ"
+        },
+        {
+          "id": "1DwFjjaJSW7OIbiCoJu05D",
+          "name": "HOPE",
+          "albumType": "album",
+          "releaseDate": "2017-02-24",
+          "totalTracks": 11,
+          "image": "https://i.scdn.co/image/ab67616d0000b273914d7e26a2a121e5a5017bb4",
+          "url": "https://open.spotify.com/album/1DwFjjaJSW7OIbiCoJu05D"
+        },
+        {
+          "id": "7dD0fmofCZ5wIGdeUD5ZWP",
+          "name": "ENEMY (Extended Mix)",
+          "albumType": "single",
+          "releaseDate": "2025-10-03",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b27321baded5ea2189304d1956ec",
+          "url": "https://open.spotify.com/album/7dD0fmofCZ5wIGdeUD5ZWP"
+        },
+        {
+          "id": "1q3ZgIPzs2Y8O9ktPsUiyy",
+          "name": "ENEMY",
+          "albumType": "single",
+          "releaseDate": "2025-10-03",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b27339dcded184a6055fbec39658",
+          "url": "https://open.spotify.com/album/1q3ZgIPzs2Y8O9ktPsUiyy"
+        },
+        {
+          "id": "1407RKhcxe58TPTwOtp9vF",
+          "name": "Take Me There",
+          "albumType": "single",
+          "releaseDate": "2025-07-11",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b2738e37004b02f07bbe0c86383d",
+          "url": "https://open.spotify.com/album/1407RKhcxe58TPTwOtp9vF"
+        },
+        {
+          "id": "6xDbkZNGfGx5SOi0fbag3c",
+          "name": "Shut Up (Nicky Romero Edit)",
+          "albumType": "single",
+          "releaseDate": "2025-04-11",
+          "totalTracks": 2,
+          "image": "https://i.scdn.co/image/ab67616d0000b2739c2dcb9437824bc4a4beab26",
+          "url": "https://open.spotify.com/album/6xDbkZNGfGx5SOi0fbag3c"
+        },
+        {
+          "id": "0B4jFHwwaQyBE9RWDXAgPo",
+          "name": "Paradise (Extended Mix)",
+          "albumType": "single",
+          "releaseDate": "2024-12-06",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273cb5ac8288c1e342e61041a94",
+          "url": "https://open.spotify.com/album/0B4jFHwwaQyBE9RWDXAgPo"
+        },
+        {
+          "id": "3VY0mErp4L6ZsufkFl9DSw",
+          "name": "Paradise",
+          "albumType": "single",
+          "releaseDate": "2024-12-06",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b27325cac94a21d59198594b0cea",
+          "url": "https://open.spotify.com/album/3VY0mErp4L6ZsufkFl9DSw"
+        },
+        {
+          "id": "7GXKO4RUsmcTc0cOncmOgj",
+          "name": "We Can Find A Way (Radio Edit)",
+          "albumType": "single",
+          "releaseDate": "2024-07-12",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273216da2d762a4969c2d47bf83",
+          "url": "https://open.spotify.com/album/7GXKO4RUsmcTc0cOncmOgj"
+        },
+        {
+          "id": "0sWfMsoSshIRZYdMxzBzaZ",
+          "name": "Bad Boy",
+          "albumType": "single",
+          "releaseDate": "2024-06-14",
+          "totalTracks": 2,
+          "image": "https://i.scdn.co/image/ab67616d0000b2733e39b3e7ac1e9fd8decfc401",
+          "url": "https://open.spotify.com/album/0sWfMsoSshIRZYdMxzBzaZ"
+        },
+        {
+          "id": "3PtFlfnnLTzZoXucrJ5MGx",
+          "name": "Believe (Extended Mix)",
+          "albumType": "single",
+          "releaseDate": "2024-05-03",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273c31c58869b9f5a3b36c45d0d",
+          "url": "https://open.spotify.com/album/3PtFlfnnLTzZoXucrJ5MGx"
+        },
+        {
+          "id": "0gdOg7Dga6Mf0LiDZxWGmk",
+          "name": "Believe",
+          "albumType": "single",
+          "releaseDate": "2024-05-03",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273b057b00e66c013853c00d2dc",
+          "url": "https://open.spotify.com/album/0gdOg7Dga6Mf0LiDZxWGmk"
+        }
+      ],
+      "topTracks": [
+        {
+          "id": "31ZO9XuKt48Qb2eUTBynd2",
+          "name": "Carry You",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/31ZO9XuKt48Qb2eUTBynd2",
+          "durationMs": 215905,
+          "popularity": 64,
+          "album": {
+            "id": "1EHfXHtB9Ynnia0yZhV6HO",
+            "name": "Carry You",
+            "releaseDate": "2024-02-16",
+            "image": "https://i.scdn.co/image/ab67616d0000b2732cd834c826d484dcb3414699"
+          },
+          "artists": [
+            "Martin Garrix",
+            "Third Party",
+            "Oaks",
+            "Declan J Donovan"
+          ]
+        },
+        {
+          "id": "2cgdfL5C5P3xSm4tooGBXu",
+          "name": "Take Me There",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/2cgdfL5C5P3xSm4tooGBXu",
+          "durationMs": 201284,
+          "popularity": 58,
+          "album": {
+            "id": "1407RKhcxe58TPTwOtp9vF",
+            "name": "Take Me There",
+            "releaseDate": "2025-07-11",
+            "image": "https://i.scdn.co/image/ab67616d0000b2738e37004b02f07bbe0c86383d"
+          },
+          "artists": [
+            "Sick Individuals",
+            "Matisse & Sadko",
+            "Third Party"
+          ]
+        },
+        {
+          "id": "6lBQ0SMCrJ7zy1LSCuXqwV",
+          "name": "Lions in the Wild",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/6lBQ0SMCrJ7zy1LSCuXqwV",
+          "durationMs": 211889,
+          "popularity": 55,
+          "album": {
+            "id": "2x8X4Dq12rXdQsmk41F3VV",
+            "name": "Lions in the Wild",
+            "releaseDate": "2016-05-27",
+            "image": "https://i.scdn.co/image/ab67616d0000b2734c187f2a29d248a335504b2c"
+          },
+          "artists": [
+            "Martin Garrix",
+            "Third Party"
+          ]
+        },
+        {
+          "id": "55bRlRgB1055cuJ0xnvo8R",
+          "name": "Believe",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/55bRlRgB1055cuJ0xnvo8R",
+          "durationMs": 211905,
+          "popularity": 51,
+          "album": {
+            "id": "0gdOg7Dga6Mf0LiDZxWGmk",
+            "name": "Believe",
+            "releaseDate": "2024-05-03",
+            "image": "https://i.scdn.co/image/ab67616d0000b273b057b00e66c013853c00d2dc"
+          },
+          "artists": [
+            "Third Party"
+          ]
+        },
+        {
+          "id": "3UidkynpEshXFzYKo5ahAd",
+          "name": "Live Forever",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/3UidkynpEshXFzYKo5ahAd",
+          "durationMs": 241875,
+          "popularity": 49,
+          "album": {
+            "id": "1DwFjjaJSW7OIbiCoJu05D",
+            "name": "HOPE",
+            "releaseDate": "2017-02-24",
+            "image": "https://i.scdn.co/image/ab67616d0000b273914d7e26a2a121e5a5017bb4"
+          },
+          "artists": [
+            "Third Party"
+          ]
+        },
+        {
+          "id": "4LKSa6eS413HVzxnZeJV3P",
+          "name": "Paradise",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/4LKSa6eS413HVzxnZeJV3P",
+          "durationMs": 204921,
+          "popularity": 48,
+          "album": {
+            "id": "3VY0mErp4L6ZsufkFl9DSw",
+            "name": "Paradise",
+            "releaseDate": "2024-12-06",
+            "image": "https://i.scdn.co/image/ab67616d0000b27325cac94a21d59198594b0cea"
+          },
+          "artists": [
+            "Third Party",
+            "Romeo Blanco"
+          ]
+        },
+        {
+          "id": "1tOTq5hXlLeKbqOVn8ddMF",
+          "name": "Free",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/1tOTq5hXlLeKbqOVn8ddMF",
+          "durationMs": 228971,
+          "popularity": 46,
+          "album": {
+            "id": "00a5EKAAd7gfrblq8gY3WZ",
+            "name": "TOGETHER",
+            "releaseDate": "2019-03-15",
+            "image": "https://i.scdn.co/image/ab67616d0000b2732225ad2001e70fb7ea0065ae"
+          },
+          "artists": [
+            "Third Party"
+          ]
+        },
+        {
+          "id": "2OQRu1AgZIzzTLleEOX2Tz",
+          "name": "Have No Fear",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/2OQRu1AgZIzzTLleEOX2Tz",
+          "durationMs": 256023,
+          "popularity": 43,
+          "album": {
+            "id": "1DwFjjaJSW7OIbiCoJu05D",
+            "name": "HOPE",
+            "releaseDate": "2017-02-24",
+            "image": "https://i.scdn.co/image/ab67616d0000b273914d7e26a2a121e5a5017bb4"
+          },
+          "artists": [
+            "Third Party"
+          ]
+        },
+        {
+          "id": "0tCXnyfs5y0uh9AKnqnP2v",
+          "name": "Remember",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/0tCXnyfs5y0uh9AKnqnP2v",
+          "durationMs": 228661,
+          "popularity": 42,
+          "album": {
+            "id": "00a5EKAAd7gfrblq8gY3WZ",
+            "name": "TOGETHER",
+            "releaseDate": "2019-03-15",
+            "image": "https://i.scdn.co/image/ab67616d0000b2732225ad2001e70fb7ea0065ae"
+          },
+          "artists": [
+            "Third Party"
+          ]
+        },
+        {
+          "id": "3XfLlsAV9QYVREjzCjKFFn",
+          "name": "Nation (Rise Again) (feat. Daniel Gidlund) - Radio Edit",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/3XfLlsAV9QYVREjzCjKFFn",
+          "durationMs": 219869,
+          "popularity": 42,
+          "album": {
+            "id": "5KC3h3joZ5639zxVoJXgON",
+            "name": "Nation",
+            "releaseDate": "2015-09-25",
+            "image": "https://i.scdn.co/image/ab67616d0000b2737ed5267a9df2d19ad412c7a3"
+          },
+          "artists": [
+            "Third Party",
+            "Arias",
+            "Daniel Gidlund"
+          ]
+        }
       ]
     }
   },
@@ -236,7 +2627,10 @@
       ],
       "links": {
         "musicbrainz": "https://musicbrainz.org/artist/8d21bf69-ed2a-44f2-a8eb-383803cc3d01"
-      }
+      },
+      "gender": "Male",
+      "debutYear": 2018,
+      "careerYears": 7
     },
     "spotify": {
       "spotifyId": "0ClkclGbzsEY0aBtqq8MrB",
@@ -244,6 +2638,299 @@
       "genres": [
         "bass house",
         "future bass"
+      ],
+      "albums": [
+        {
+          "id": "11wt4xByKJzHWnOKwvoZVu",
+          "name": "Anyway (Extended Mix)",
+          "albumType": "single",
+          "releaseDate": "2025-10-17",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273d1451b3c3b6cc3a152b610f5",
+          "url": "https://open.spotify.com/album/11wt4xByKJzHWnOKwvoZVu"
+        },
+        {
+          "id": "5BTornzfofZqUyBcN2HdhW",
+          "name": "Anyway",
+          "albumType": "single",
+          "releaseDate": "2025-10-17",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b2736401ce3c9a4753e4fdd0feaf",
+          "url": "https://open.spotify.com/album/5BTornzfofZqUyBcN2HdhW"
+        },
+        {
+          "id": "4lptfkspZ5ASko0TwyJacT",
+          "name": "All Night (Extended Mix)",
+          "albumType": "single",
+          "releaseDate": "2025-05-30",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273cdd7a752e990493b342c363c",
+          "url": "https://open.spotify.com/album/4lptfkspZ5ASko0TwyJacT"
+        },
+        {
+          "id": "7hmuaX4utQQELTvPIovNUn",
+          "name": "All Night & Gemini",
+          "albumType": "single",
+          "releaseDate": "2025-05-30",
+          "totalTracks": 2,
+          "image": "https://i.scdn.co/image/ab67616d0000b2732b1c11807ac8b030615da0af",
+          "url": "https://open.spotify.com/album/7hmuaX4utQQELTvPIovNUn"
+        },
+        {
+          "id": "3Wi9Znar9tNFwRMyfjLHcQ",
+          "name": "Lost & Found (Extended Mixes)",
+          "albumType": "single",
+          "releaseDate": "2025-04-25",
+          "totalTracks": 3,
+          "image": "https://i.scdn.co/image/ab67616d0000b27384f2318d87a30718d27c66ae",
+          "url": "https://open.spotify.com/album/3Wi9Znar9tNFwRMyfjLHcQ"
+        },
+        {
+          "id": "5mlqyvX5BttbJDhdL96mqU",
+          "name": "Lost & Found",
+          "albumType": "single",
+          "releaseDate": "2025-04-25",
+          "totalTracks": 3,
+          "image": "https://i.scdn.co/image/ab67616d0000b2731427813f903a183e088db136",
+          "url": "https://open.spotify.com/album/5mlqyvX5BttbJDhdL96mqU"
+        },
+        {
+          "id": "5scxx8QV9r5m3QBeVbvH4d",
+          "name": "Senses (Now We Go) [Extended Mix]",
+          "albumType": "single",
+          "releaseDate": "2025-01-31",
+          "totalTracks": 2,
+          "image": "https://i.scdn.co/image/ab67616d0000b273b588fd52f410be4bd6d2456c",
+          "url": "https://open.spotify.com/album/5scxx8QV9r5m3QBeVbvH4d"
+        },
+        {
+          "id": "7mRcRoOlROslZtjpnke7BO",
+          "name": "Senses (Now We Go)",
+          "albumType": "single",
+          "releaseDate": "2025-01-31",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b2733895d9aedfc7639184933868",
+          "url": "https://open.spotify.com/album/7mRcRoOlROslZtjpnke7BO"
+        },
+        {
+          "id": "4HO381S9itXfAU2vnPDVx2",
+          "name": "Ascend (VIP Mix)",
+          "albumType": "single",
+          "releaseDate": "2024-12-20",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273e2f9c07c6ac0e32425e7a6db",
+          "url": "https://open.spotify.com/album/4HO381S9itXfAU2vnPDVx2"
+        },
+        {
+          "id": "6WCZ3ml5bFQGaRf9O7iWto",
+          "name": "Ascend (Extended VIP Mix)",
+          "albumType": "single",
+          "releaseDate": "2024-12-20",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273a222e432a087b2cd82f3d061",
+          "url": "https://open.spotify.com/album/6WCZ3ml5bFQGaRf9O7iWto"
+        },
+        {
+          "id": "3vrR6Kuf8gCpTfthUjSqBS",
+          "name": "High Enough (Extended Mix)",
+          "albumType": "single",
+          "releaseDate": "2024-12-06",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273f9676e085635776703dc401f",
+          "url": "https://open.spotify.com/album/3vrR6Kuf8gCpTfthUjSqBS"
+        },
+        {
+          "id": "5ov8hEzGJlq6k84wiNTCn4",
+          "name": "High Enough",
+          "albumType": "single",
+          "releaseDate": "2024-12-06",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273cee8d25430b3d6713e519355",
+          "url": "https://open.spotify.com/album/5ov8hEzGJlq6k84wiNTCn4"
+        }
+      ],
+      "topTracks": [
+        {
+          "id": "69mAhvOXSSpKRSYFtdWpE4",
+          "name": "Reboot",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/69mAhvOXSSpKRSYFtdWpE4",
+          "durationMs": 163928,
+          "popularity": 40,
+          "album": {
+            "id": "45gsxfnJ5Nt2RZp82SQenc",
+            "name": "Sentio",
+            "releaseDate": "2022-04-29",
+            "image": "https://i.scdn.co/image/ab67616d0000b273edba220be76f96d51bd38838"
+          },
+          "artists": [
+            "Martin Garrix",
+            "Vluarr"
+          ]
+        },
+        {
+          "id": "6vNs3dzBtzLec8eZJOWYhS",
+          "name": "Anyway",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/6vNs3dzBtzLec8eZJOWYhS",
+          "durationMs": 157968,
+          "popularity": 40,
+          "album": {
+            "id": "5BTornzfofZqUyBcN2HdhW",
+            "name": "Anyway",
+            "releaseDate": "2025-10-17",
+            "image": "https://i.scdn.co/image/ab67616d0000b2736401ce3c9a4753e4fdd0feaf"
+          },
+          "artists": [
+            "Vluarr",
+            "Merow"
+          ]
+        },
+        {
+          "id": "0KnoZARszd7dcic61claEn",
+          "name": "Ascend",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/0KnoZARszd7dcic61claEn",
+          "durationMs": 166588,
+          "popularity": 39,
+          "album": {
+            "id": "3IGKNxB664yDCJUpVj7gp0",
+            "name": "Ascend",
+            "releaseDate": "2024-09-20",
+            "image": "https://i.scdn.co/image/ab67616d0000b27316de74cea05f80e5c761fd16"
+          },
+          "artists": [
+            "Vluarr",
+            "Arcando",
+            "Felix Samuel"
+          ]
+        },
+        {
+          "id": "6wpIGFUcDUSg2l75npKFdU",
+          "name": "All Night",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/6wpIGFUcDUSg2l75npKFdU",
+          "durationMs": 151384,
+          "popularity": 38,
+          "album": {
+            "id": "7hmuaX4utQQELTvPIovNUn",
+            "name": "All Night & Gemini",
+            "releaseDate": "2025-05-30",
+            "image": "https://i.scdn.co/image/ab67616d0000b2732b1c11807ac8b030615da0af"
+          },
+          "artists": [
+            "Mesto",
+            "Vluarr"
+          ]
+        },
+        {
+          "id": "0kE6DMsgVSb6oHJzQlGEFC",
+          "name": "Senses (Now We Go)",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/0kE6DMsgVSb6oHJzQlGEFC",
+          "durationMs": 153750,
+          "popularity": 37,
+          "album": {
+            "id": "7mRcRoOlROslZtjpnke7BO",
+            "name": "Senses (Now We Go)",
+            "releaseDate": "2025-01-31",
+            "image": "https://i.scdn.co/image/ab67616d0000b2733895d9aedfc7639184933868"
+          },
+          "artists": [
+            "Vluarr",
+            "ONEDUO"
+          ]
+        },
+        {
+          "id": "4xSb9uKdFFfxoWVuPicgpt",
+          "name": "Let Me",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/4xSb9uKdFFfxoWVuPicgpt",
+          "durationMs": 183634,
+          "popularity": 35,
+          "album": {
+            "id": "3C9PbfEATg7bjDNbWiPcDf",
+            "name": "Let Me",
+            "releaseDate": "2020-03-09",
+            "image": "https://i.scdn.co/image/ab67616d0000b27318c52a42881bfb130241b28d"
+          },
+          "artists": [
+            "Vluarr"
+          ]
+        },
+        {
+          "id": "6KYAjSvbUR9ODsnNJH3O6P",
+          "name": "No More",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/6KYAjSvbUR9ODsnNJH3O6P",
+          "durationMs": 163809,
+          "popularity": 35,
+          "album": {
+            "id": "1HSw1aVWGMkh1vi7fBG6bo",
+            "name": "No More",
+            "releaseDate": "2023-06-23",
+            "image": "https://i.scdn.co/image/ab67616d0000b2737907f1e493eb7583e1f47e22"
+          },
+          "artists": [
+            "Vluarr",
+            "GRX",
+            "Thomas Nan",
+            "ZANA"
+          ]
+        },
+        {
+          "id": "3dRQOTwTKWix4SQN6QJECQ",
+          "name": "High Enough",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/3dRQOTwTKWix4SQN6QJECQ",
+          "durationMs": 191250,
+          "popularity": 31,
+          "album": {
+            "id": "5ov8hEzGJlq6k84wiNTCn4",
+            "name": "High Enough",
+            "releaseDate": "2024-12-06",
+            "image": "https://i.scdn.co/image/ab67616d0000b273cee8d25430b3d6713e519355"
+          },
+          "artists": [
+            "Mike Williams",
+            "Vluarr"
+          ]
+        },
+        {
+          "id": "0iozVuK3Q7gUPDENSFIzOh",
+          "name": "Gemini",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/0iozVuK3Q7gUPDENSFIzOh",
+          "durationMs": 166153,
+          "popularity": 30,
+          "album": {
+            "id": "7hmuaX4utQQELTvPIovNUn",
+            "name": "All Night & Gemini",
+            "releaseDate": "2025-05-30",
+            "image": "https://i.scdn.co/image/ab67616d0000b2732b1c11807ac8b030615da0af"
+          },
+          "artists": [
+            "Vluarr",
+            "Mesto"
+          ]
+        },
+        {
+          "id": "7wPLlenIz7xLZwYDgS2nG7",
+          "name": "By Myself",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/7wPLlenIz7xLZwYDgS2nG7",
+          "durationMs": 155624,
+          "popularity": 28,
+          "album": {
+            "id": "7wbpSjbRgHsjtT7Gb8VRa7",
+            "name": "By Myself",
+            "releaseDate": "2023-11-10",
+            "image": "https://i.scdn.co/image/ab67616d0000b273a9530a2f83916c76999625ce"
+          },
+          "artists": [
+            "Vluarr"
+          ]
+        }
       ]
     }
   }

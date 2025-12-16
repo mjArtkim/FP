@@ -45,7 +45,7 @@ const goBack = () => {
             <div class="material-symbols-rounded pb-1 text-[30px]">map</div>
             <div class="text-xss font-gugi">MAP</div>
           </router-link>
-          <router-link to="#" class="min-w-[40px] flex flex-col items-center cursor-pointer hover:text-neonpink">
+          <router-link to="/favorite" class="min-w-[40px] flex flex-col items-center cursor-pointer hover:text-neonpink">
             <div class="material-symbols-rounded pb-1 text-[30px]">star</div>
             <div class="text-xss font-gugi">FAVORIT</div>
           </router-link>
