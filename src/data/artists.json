@@ -1,196 +1,250 @@
 [
   {
     "slug": "afrojack",
-    "name": "Afrojack",
-    "mbid": "a3ee920f-4e7f-4993-8aca-4b8538cfaa4a",
-    "type": "Person",
-    "country": "NL",
-    "aliases": [
-      "Afrojack feat. Wrabel",
-      "Afrojacks",
-      "N. van de Wall"
-    ],
-    "genres": [
-      "big room house",
-      "dance-pop",
-      "dutch house",
-      "electro house",
-      "electronic",
-      "house",
-      "progressive house"
-    ],
-    "links": {
-      "musicbrainz": "https://musicbrainz.org/artist/a3ee920f-4e7f-4993-8aca-4b8538cfaa4a"
+    "identity": {
+      "name": "Afrojack",
+      "mbid": "a3ee920f-4e7f-4993-8aca-4b8538cfaa4a",
+      "type": "Person",
+      "country": "NL",
+      "aliases": [
+        "Afrojack feat. Wrabel",
+        "Afrojacks",
+        "N. van de Wall"
+      ],
+      "links": {
+        "musicbrainz": "https://musicbrainz.org/artist/a3ee920f-4e7f-4993-8aca-4b8538cfaa4a"
+      }
+    },
+    "spotify": {
+      "spotifyId": "4D75GcNG95ebPtNvoNVXhz",
+      "image": "https://i.scdn.co/image/ab6761610000e5eb78484e23002e1607039af9b9",
+      "genres": [
+        "big room house",
+        "dance-pop",
+        "dutch house",
+        "electro house",
+        "electronic",
+        "house",
+        "progressive house"
+      ]
     }
   },
   {
     "slug": "anyma",
-    "name": "Anyma",
-    "mbid": "788307a8-ca6a-4775-b9a2-8d27d2af71ce",
-    "type": "Person",
-    "country": "DE",
-    "aliases": [
-      "Anyma (ofc)"
-    ],
-    "genres": [
-      "electronic",
-      "melodic house",
-      "melodic techno"
-    ],
-    "links": {
-      "musicbrainz": "https://musicbrainz.org/artist/788307a8-ca6a-4775-b9a2-8d27d2af71ce"
+    "identity": {
+      "name": "Anyma",
+      "mbid": "788307a8-ca6a-4775-b9a2-8d27d2af71ce",
+      "type": "Person",
+      "country": "DE",
+      "aliases": [
+        "Anyma (ofc)"
+      ],
+      "links": {
+        "musicbrainz": "https://musicbrainz.org/artist/788307a8-ca6a-4775-b9a2-8d27d2af71ce"
+      }
+    },
+    "spotify": {
+      "spotifyId": "4iBwchw0U0GZv5RfVYSMxN",
+      "image": "https://i.scdn.co/image/ab6761610000e5eb7f93152e853393d8c7cc71a0",
+      "genres": [
+        "electronic",
+        "melodic house",
+        "melodic techno"
+      ]
     }
   },
   {
     "slug": "armin-van-burren",
-    "name": "Armin van Buuren",
-    "mbid": "477b8c0c-c5fc-4ad2-b5b2-191f0bf2a9df",
-    "type": "Person",
-    "country": "NL",
-    "aliases": [
-      "Armand van Burren",
-      "Armin",
-      "Armin Jozef Jacobus Daniël van Buuren",
-      "Armin Van Buren",
-      "Armin Van Johnston",
-      "Armin van Burren",
-      "Arminvan Buuren",
-      "AvB"
-    ],
-    "genres": [
-      "afro house",
-      "dance",
-      "dance-pop",
-      "drum and bass",
-      "edm",
-      "electro house",
-      "electronic",
-      "electronica",
-      "melodic house",
-      "melodic techno"
-    ],
-    "links": {
-      "musicbrainz": "https://musicbrainz.org/artist/477b8c0c-c5fc-4ad2-b5b2-191f0bf2a9df"
+    "identity": {
+      "name": "Armin van Buuren",
+      "mbid": "477b8c0c-c5fc-4ad2-b5b2-191f0bf2a9df",
+      "type": "Person",
+      "country": "NL",
+      "aliases": [
+        "Armand van Burren",
+        "Armin",
+        "Armin Jozef Jacobus Daniël van Buuren",
+        "Armin Van Buren",
+        "Armin Van Johnston",
+        "Armin van Burren",
+        "Arminvan Buuren",
+        "AvB"
+      ],
+      "links": {
+        "musicbrainz": "https://musicbrainz.org/artist/477b8c0c-c5fc-4ad2-b5b2-191f0bf2a9df"
+      }
+    },
+    "spotify": {
+      "spotifyId": "0SfsnGyD8FpIN4U4WCkBZ5",
+      "image": "https://i.scdn.co/image/ab6761610000e5eb60f60edeaa78efbf3d335b2c",
+      "genres": [
+        "afro house",
+        "dance",
+        "dance-pop",
+        "drum and bass",
+        "edm",
+        "electro house",
+        "electronic",
+        "electronica",
+        "melodic house",
+        "melodic techno"
+      ]
     }
   },
   {
     "slug": "dubvision",
-    "name": "DubVision",
-    "mbid": "0b33f22d-b4b6-400e-90af-c593e0f395b6",
-    "type": "Group",
-    "country": "NL",
-    "aliases": [],
-    "genres": [
-      "edm",
-      "electro house",
-      "electronic",
-      "house",
-      "progressive house"
-    ],
-    "links": {
-      "musicbrainz": "https://musicbrainz.org/artist/0b33f22d-b4b6-400e-90af-c593e0f395b6"
+    "identity": {
+      "name": "DubVision",
+      "mbid": "0b33f22d-b4b6-400e-90af-c593e0f395b6",
+      "type": "Group",
+      "country": "NL",
+      "aliases": [],
+      "links": {
+        "musicbrainz": "https://musicbrainz.org/artist/0b33f22d-b4b6-400e-90af-c593e0f395b6"
+      }
+    },
+    "spotify": {
+      "spotifyId": "3XINWZaloea97SIRiyTJxX",
+      "image": "https://i.scdn.co/image/ab6761610000e5eb48f4bc0f481bcc07988acf4d",
+      "genres": [
+        "edm",
+        "electro house",
+        "electronic",
+        "house",
+        "progressive house"
+      ]
     }
   },
   {
     "slug": "hardwell",
-    "name": "Hardwell",
-    "mbid": "170d6637-36e0-49dd-a225-c4fd5b77a285",
-    "type": "Person",
-    "country": "NL",
-    "aliases": [
-      "DJ Hardwell"
-    ],
-    "genres": [
-      "big room house",
-      "deep house",
-      "dutch house",
-      "edm",
-      "electro house",
-      "electronic",
-      "house",
-      "progressive house",
-      "techno",
-      "trance"
-    ],
-    "links": {
-      "musicbrainz": "https://musicbrainz.org/artist/170d6637-36e0-49dd-a225-c4fd5b77a285"
+    "identity": {
+      "name": "Hardwell",
+      "mbid": "170d6637-36e0-49dd-a225-c4fd5b77a285",
+      "type": "Person",
+      "country": "NL",
+      "aliases": [
+        "DJ Hardwell"
+      ],
+      "links": {
+        "musicbrainz": "https://musicbrainz.org/artist/170d6637-36e0-49dd-a225-c4fd5b77a285"
+      }
+    },
+    "spotify": {
+      "spotifyId": "6BrvowZBreEkXzJQMpL174",
+      "image": "https://i.scdn.co/image/ab6761610000e5eb950dafd5978fad2718f4aeb6",
+      "genres": [
+        "big room house",
+        "deep house",
+        "dutch house",
+        "edm",
+        "electro house",
+        "electronic",
+        "house",
+        "progressive house",
+        "techno",
+        "trance"
+      ]
     }
   },
   {
     "slug": "martin-garrix",
-    "name": "Martin Garrix",
-    "mbid": "3e1f2ee4-16be-4406-bf18-6173840cf2b1",
-    "type": "Person",
-    "country": "NL",
-    "aliases": [
-      "Area21",
-      "GRX",
-      "Martijn Garritsen",
-      "Martin Garrix",
-      "Ytram",
-      "マーティン・ギャリックス"
-    ],
-    "genres": [
-      "big room house",
-      "dance-pop",
-      "edm",
-      "electro house",
-      "festival progressive house",
-      "tropical house"
-    ],
-    "links": {
-      "musicbrainz": "https://musicbrainz.org/artist/3e1f2ee4-16be-4406-bf18-6173840cf2b1"
+    "identity": {
+      "name": "Martin Garrix",
+      "mbid": "3e1f2ee4-16be-4406-bf18-6173840cf2b1",
+      "type": "Person",
+      "country": "NL",
+      "aliases": [
+        "Area21",
+        "GRX",
+        "Martijn Garritsen",
+        "Martin Garrix",
+        "Ytram",
+        "マーティン・ギャリックス"
+      ],
+      "links": {
+        "musicbrainz": "https://musicbrainz.org/artist/3e1f2ee4-16be-4406-bf18-6173840cf2b1"
+      }
+    },
+    "spotify": {
+      "spotifyId": "60d24wfXkVzDSfLS6hyCjZ",
+      "image": "https://i.scdn.co/image/ab6761610000e5ebf5b8ee60f1f4ee3453aba40b",
+      "genres": [
+        "big room house",
+        "dance-pop",
+        "edm",
+        "electro house",
+        "festival progressive house",
+        "tropical house"
+      ]
     }
   },
   {
     "slug": "matisseandsadko",
-    "name": "Matisse & Sadko",
-    "mbid": "c02a6ce9-452c-4df5-a065-4928e6bf07e6",
-    "type": "Group",
-    "country": "RU",
-    "aliases": [
-      "Matisse"
-    ],
-    "genres": [
-      "progressive house"
-    ],
-    "links": {
-      "musicbrainz": "https://musicbrainz.org/artist/c02a6ce9-452c-4df5-a065-4928e6bf07e6"
+    "identity": {
+      "name": "Matisse & Sadko",
+      "mbid": "c02a6ce9-452c-4df5-a065-4928e6bf07e6",
+      "type": "Group",
+      "country": "RU",
+      "aliases": [
+        "Matisse"
+      ],
+      "links": {
+        "musicbrainz": "https://musicbrainz.org/artist/c02a6ce9-452c-4df5-a065-4928e6bf07e6"
+      }
+    },
+    "spotify": {
+      "spotifyId": "2QMCcKIPHnjQaPPgoEst88",
+      "image": "https://i.scdn.co/image/ab6761610000e5eb39c52cbbd9033dc5d2f04aa4",
+      "genres": [
+        "progressive house"
+      ]
     }
   },
   {
     "slug": "third-party",
-    "name": "Third Party",
-    "mbid": "580f4a91-b75b-4e63-ae8d-38485ac1bb78",
-    "type": "Group",
-    "country": "GB",
-    "aliases": [
-      "TP",
-      "Third ≡ Party"
-    ],
-    "genres": [
-      "house",
-      "progressive house"
-    ],
-    "links": {
-      "musicbrainz": "https://musicbrainz.org/artist/580f4a91-b75b-4e63-ae8d-38485ac1bb78"
+    "identity": {
+      "name": "Third Party",
+      "mbid": "580f4a91-b75b-4e63-ae8d-38485ac1bb78",
+      "type": "Group",
+      "country": "GB",
+      "aliases": [
+        "TP",
+        "Third ≡ Party"
+      ],
+      "links": {
+        "musicbrainz": "https://musicbrainz.org/artist/580f4a91-b75b-4e63-ae8d-38485ac1bb78"
+      }
+    },
+    "spotify": {
+      "spotifyId": "2J80qXI4NHKpq5RT3xUF7V",
+      "image": "https://i.scdn.co/image/ab6761610000e5eb8babc9c5a2e0b373e2483d5e",
+      "genres": [
+        "house",
+        "progressive house"
+      ]
     }
   },
   {
     "slug": "vluarr",
-    "name": "Vluarr",
-    "mbid": "8d21bf69-ed2a-44f2-a8eb-383803cc3d01",
-    "type": "Person",
-    "country": "NL",
-    "aliases": [
-      "Vladimir de Groot"
-    ],
-    "genres": [
-      "bass house",
-      "future bass"
-    ],
-    "links": {
-      "musicbrainz": "https://musicbrainz.org/artist/8d21bf69-ed2a-44f2-a8eb-383803cc3d01"
+    "identity": {
+      "name": "Vluarr",
+      "mbid": "8d21bf69-ed2a-44f2-a8eb-383803cc3d01",
+      "type": "Person",
+      "country": "NL",
+      "aliases": [
+        "Vladimir de Groot"
+      ],
+      "links": {
+        "musicbrainz": "https://musicbrainz.org/artist/8d21bf69-ed2a-44f2-a8eb-383803cc3d01"
+      }
+    },
+    "spotify": {
+      "spotifyId": "0ClkclGbzsEY0aBtqq8MrB",
+      "image": "https://i.scdn.co/image/ab6761610000e5eba7adcccac81c0a948da57094",
+      "genres": [
+        "bass house",
+        "future bass"
+      ]
     }
   }
 ]
