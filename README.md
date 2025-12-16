@@ -135,16 +135,18 @@ Festivals.json
 --- 
 
 ### 1️⃣ Festival Data
-Festival data is stored locally as structured JSON:
-{
-  "id": 1,
-  "title": "Festival Name",
-  "start": "2025-12-03",
-  "end": "2025-12-22",
-  "country": "Korea",
-  "city": "Amsterdam",
-  "lineup": ["Martin Garrix", "Hardwell", "Third Party"]
-}
+```txt
+  Festival data is stored locally as structured JSON:
+  {
+    "id": 1,
+    "title": "Festival Name",
+    "start": "2025-12-03",
+    "end": "2025-12-22",
+    "country": "Korea",
+    "city": "Amsterdam",
+    "lineup": ["Martin Garrix", "Hardwell", "Third Party"]
+  }
+```
 
 ### 2️⃣ Artist Enrichment Pipeline
 
