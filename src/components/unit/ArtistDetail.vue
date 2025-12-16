@@ -75,6 +75,9 @@ const displayAliases = computed(() => artist.value?.identity.aliases || [])
 const displayGenres = computed(() => artist.value?.spotify?.genres || [])
 const displayAlbums = computed(() => artist.value?.spotify?.albums || [])
 const displayTracks = computed(() => artist.value?.spotify?.topTracks || [])
+const showAllAlbums = ref(false)
+const showAllTracks = ref(false)
+const showAllGenres = ref(false)
 
 const activeGenre = ref<string | null>(null)
 const genreArtistsMap = computed<Record<string, Artist[]>>(() => {
@@ -162,7 +165,7 @@ const onToggleFavorite = () => {
         <div class="text-sm font-semibold text-gray-700">Genres</div>
         <div class="flex flex-wrap gap-2">
           <span
-            v-for="genre in displayGenres"
+            v-for="genre in (showAllGenres ? displayGenres : displayGenres.slice(0, 4))"
             :key="genre"
             class="px-3 py-1 rounded-full bg-black/5 text-sm text-[var(--text)] cursor-pointer hover:bg-neonpink/10 hover:text-neonpink transition-colors"
             @click="openGenreModal(genre)"
@@ -170,6 +173,15 @@ const onToggleFavorite = () => {
             {{ genre }}
           </span>
           <div v-if="!displayGenres.length" class="text-sm text-gray-500">장르 정보가 없습니다.</div>
+        </div>
+        <div v-if="displayGenres.length > 4" class="text-right">
+          <button
+            type="button"
+            class="text-sm text-pulseblue hover:underline"
+            @click="showAllGenres = !showAllGenres"
+          >
+            {{ showAllGenres ? '접기' : '더보기' }}
+          </button>
         </div>
       </div>
 
@@ -190,7 +202,10 @@ const onToggleFavorite = () => {
       <div class="p-4 rounded-lg bg-[var(--bg)] shadow-[0_0_6px_var(--shadow-weak)] space-y-4">
         <div class="text-sm font-semibold text-gray-700">Albums & Singles</div>
         <div class="grid grid-cols-2 pc:grid-cols-3 gap-4">
-          <template v-for="album in displayAlbums" :key="album.id">
+          <template
+            v-for="album in (showAllAlbums ? displayAlbums : displayAlbums.slice(0, 4))"
+            :key="album.id"
+          >
             <a
               v-if="album.url"
               :href="album.url"
@@ -231,12 +246,24 @@ const onToggleFavorite = () => {
           </template>
         </div>
         <div v-if="!displayAlbums.length" class="text-sm text-gray-500">앨범 정보가 없습니다.</div>
+        <div v-else-if="displayAlbums.length > 4" class="text-right">
+          <button
+            type="button"
+            class="text-sm text-pulseblue hover:underline"
+            @click="showAllAlbums = !showAllAlbums"
+          >
+            {{ showAllAlbums ? '접기' : '더보기' }}
+          </button>
+        </div>
       </div>
 
       <div class="p-4 rounded-lg bg-[var(--bg)] shadow-[0_0_6px_var(--shadow-weak)] space-y-3">
         <div class="text-sm font-semibold text-gray-700">Top Tracks</div>
         <div class="space-y-3">
-          <template v-for="track in displayTracks" :key="track.id">
+          <template
+            v-for="track in (showAllTracks ? displayTracks : displayTracks.slice(0, 4))"
+            :key="track.id"
+          >
             <a
               v-if="track.url"
               :href="track.url"
@@ -282,6 +309,15 @@ const onToggleFavorite = () => {
             </div>
           </template>
           <div v-if="!displayTracks.length" class="text-sm text-gray-500">트랙 정보가 없습니다.</div>
+        </div>
+        <div v-if="displayTracks.length > 4" class="text-right">
+          <button
+            type="button"
+            class="text-sm text-pulseblue hover:underline"
+            @click="showAllTracks = !showAllTracks"
+          >
+            {{ showAllTracks ? '접기' : '더보기' }}
+          </button>
         </div>
       </div>
 
