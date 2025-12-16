@@ -56,7 +56,7 @@ showcasing how large-scale cultural data can be transformed into **meaningful us
 - Git & GitHub
 
 ### Design
-- Figma (UI/UX & Visual Design)
+- Adobe Suite (UI/UX & Visual Design)
 
 ---
 
