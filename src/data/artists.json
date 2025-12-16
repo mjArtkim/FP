@@ -1,0 +1,196 @@
+[
+  {
+    "slug": "afrojack",
+    "name": "Afrojack",
+    "mbid": "a3ee920f-4e7f-4993-8aca-4b8538cfaa4a",
+    "type": "Person",
+    "country": "NL",
+    "aliases": [
+      "Afrojack feat. Wrabel",
+      "Afrojacks",
+      "N. van de Wall"
+    ],
+    "genres": [
+      "big room house",
+      "dance-pop",
+      "dutch house",
+      "electro house",
+      "electronic",
+      "house",
+      "progressive house"
+    ],
+    "links": {
+      "musicbrainz": "https://musicbrainz.org/artist/a3ee920f-4e7f-4993-8aca-4b8538cfaa4a"
+    }
+  },
+  {
+    "slug": "anyma",
+    "name": "Anyma",
+    "mbid": "788307a8-ca6a-4775-b9a2-8d27d2af71ce",
+    "type": "Person",
+    "country": "DE",
+    "aliases": [
+      "Anyma (ofc)"
+    ],
+    "genres": [
+      "electronic",
+      "melodic house",
+      "melodic techno"
+    ],
+    "links": {
+      "musicbrainz": "https://musicbrainz.org/artist/788307a8-ca6a-4775-b9a2-8d27d2af71ce"
+    }
+  },
+  {
+    "slug": "armin-van-burren",
+    "name": "Armin van Buuren",
+    "mbid": "477b8c0c-c5fc-4ad2-b5b2-191f0bf2a9df",
+    "type": "Person",
+    "country": "NL",
+    "aliases": [
+      "Armand van Burren",
+      "Armin",
+      "Armin Jozef Jacobus Daniël van Buuren",
+      "Armin Van Buren",
+      "Armin Van Johnston",
+      "Armin van Burren",
+      "Arminvan Buuren",
+      "AvB"
+    ],
+    "genres": [
+      "afro house",
+      "dance",
+      "dance-pop",
+      "drum and bass",
+      "edm",
+      "electro house",
+      "electronic",
+      "electronica",
+      "melodic house",
+      "melodic techno"
+    ],
+    "links": {
+      "musicbrainz": "https://musicbrainz.org/artist/477b8c0c-c5fc-4ad2-b5b2-191f0bf2a9df"
+    }
+  },
+  {
+    "slug": "dubvision",
+    "name": "DubVision",
+    "mbid": "0b33f22d-b4b6-400e-90af-c593e0f395b6",
+    "type": "Group",
+    "country": "NL",
+    "aliases": [],
+    "genres": [
+      "edm",
+      "electro house",
+      "electronic",
+      "house",
+      "progressive house"
+    ],
+    "links": {
+      "musicbrainz": "https://musicbrainz.org/artist/0b33f22d-b4b6-400e-90af-c593e0f395b6"
+    }
+  },
+  {
+    "slug": "hardwell",
+    "name": "Hardwell",
+    "mbid": "170d6637-36e0-49dd-a225-c4fd5b77a285",
+    "type": "Person",
+    "country": "NL",
+    "aliases": [
+      "DJ Hardwell"
+    ],
+    "genres": [
+      "big room house",
+      "deep house",
+      "dutch house",
+      "edm",
+      "electro house",
+      "electronic",
+      "house",
+      "progressive house",
+      "techno",
+      "trance"
+    ],
+    "links": {
+      "musicbrainz": "https://musicbrainz.org/artist/170d6637-36e0-49dd-a225-c4fd5b77a285"
+    }
+  },
+  {
+    "slug": "martin-garrix",
+    "name": "Martin Garrix",
+    "mbid": "3e1f2ee4-16be-4406-bf18-6173840cf2b1",
+    "type": "Person",
+    "country": "NL",
+    "aliases": [
+      "Area21",
+      "GRX",
+      "Martijn Garritsen",
+      "Martin Garrix",
+      "Ytram",
+      "マーティン・ギャリックス"
+    ],
+    "genres": [
+      "big room house",
+      "dance-pop",
+      "edm",
+      "electro house",
+      "festival progressive house",
+      "tropical house"
+    ],
+    "links": {
+      "musicbrainz": "https://musicbrainz.org/artist/3e1f2ee4-16be-4406-bf18-6173840cf2b1"
+    }
+  },
+  {
+    "slug": "matisseandsadko",
+    "name": "Matisse & Sadko",
+    "mbid": "c02a6ce9-452c-4df5-a065-4928e6bf07e6",
+    "type": "Group",
+    "country": "RU",
+    "aliases": [
+      "Matisse"
+    ],
+    "genres": [
+      "progressive house"
+    ],
+    "links": {
+      "musicbrainz": "https://musicbrainz.org/artist/c02a6ce9-452c-4df5-a065-4928e6bf07e6"
+    }
+  },
+  {
+    "slug": "third-party",
+    "name": "Third Party",
+    "mbid": "580f4a91-b75b-4e63-ae8d-38485ac1bb78",
+    "type": "Group",
+    "country": "GB",
+    "aliases": [
+      "TP",
+      "Third ≡ Party"
+    ],
+    "genres": [
+      "house",
+      "progressive house"
+    ],
+    "links": {
+      "musicbrainz": "https://musicbrainz.org/artist/580f4a91-b75b-4e63-ae8d-38485ac1bb78"
+    }
+  },
+  {
+    "slug": "vluarr",
+    "name": "Vluarr",
+    "mbid": "8d21bf69-ed2a-44f2-a8eb-383803cc3d01",
+    "type": "Person",
+    "country": "NL",
+    "aliases": [
+      "Vladimir de Groot"
+    ],
+    "genres": [
+      "bass house",
+      "future bass"
+    ],
+    "links": {
+      "musicbrainz": "https://musicbrainz.org/artist/8d21bf69-ed2a-44f2-a8eb-383803cc3d01"
+    }
+  }
+]

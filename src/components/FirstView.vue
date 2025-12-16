@@ -2,7 +2,7 @@
 import { ref, computed, watch, onMounted, onBeforeUnmount } from 'vue'
 import MonthNavigator from '@/components/part/MonthNavigator.vue'
 import CalendarGrid from '@/components/part/CalendarGrid.vue'
-import festivals from '@/testdata/festivals.json'
+import festivals from '@/data/festivals.json'
 
 
 type EventItem = {
@@ -293,7 +293,7 @@ watch(
                     {{ item.city }} / {{ item.contry }}
                   </div>
                 </div>
-                <button class="p-[8px] text-sm text-pulseblue  text-center border border-pulseblue rounded-md self-center justify-self-center pc:w-full pc:hover:bg-pulseblue pc:hover:text-white">Detail</button>
+                <router-link :to="{ name: 'festivaldetail', params: { id: item.id } }" class="p-[8px] text-sm text-pulseblue  text-center border border-pulseblue rounded-md self-center justify-self-center pc:w-full pc:hover:bg-pulseblue pc:hover:text-white">Detail</router-link>
               </li>
             </ul>
             <div v-if="!currentList.length" class="h-[450px] flex flex-col content-center justify-center items-center">

@@ -28,7 +28,7 @@
     { "id": 11, "title": "다른 페스티벌", "start": "2026-01-15", "end": "2026-01-16", "image": "/img/testimg.png", "contry":"Korea", "city":"Seoul" }
   ],
   "2025-12": [
-    { "id": 1, "title": "Festival Name", "start": "2025-12-03", "end": "2025-12-22", "image": "/img/testimg.png" , "contry":"Korea", "city":"Amsterdam", "lineup":"Martin Garrix, Hardwell, Afrojack, ANYMA"},
+    { "id": 1, "title": "Festival Name", "start": "2025-12-03", "end": "2025-12-22", "image": "/img/testimg.png" , "contry":"Korea", "city":"Amsterdam", "lineup":"Martin Garrix, Hardwell, Afrojack, ANYMA, Matisse&Sadko, Dubvision, Armin Van Burren, Third Party, Vluarr", "ticket":"", "infolink":""},
     { "id": 2, "title": "다른 페스티벌", "start": "2025-12-15", "end": "2025-12-16", "image": "/img/testimg.png", "contry":"Korea", "city":"Seoul" , "lineup":"Martin Garrix, Hardwell, Afrojack, ANYMA"},
     { "id": 3, "title": "다른 페스티벌", "start": "2025-12-22", "end": "2025-12-22", "image": "/img/testimg.png", "contry":"Korea", "city":"Seoul" , "lineup":"Martin Garrix, Hardwell, Afrojack, ANYMA"},
     { "id": 4, "title": "다른 페스티벌", "start": "2025-12-22", "end": "2025-12-22", "image": "/img/testimg.png", "contry":"Korea", "city":"Seoul" , "lineup":"Martin Garrix, Hardwell, Afrojack, ANYMA"},

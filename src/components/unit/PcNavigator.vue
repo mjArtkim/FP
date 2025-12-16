@@ -31,7 +31,7 @@ watch(
 </script>
 <template>
   <div class="relative transition-all duration-300 p-6 flex flex-col h-screen justify-between text-[var(--text)] bg-[var(--surface)]"
-    :class="isSidebarOpen ? 'w-[280px]' : 'w-[80px]'"
+    :class="isSidebarOpen ? 'w-[270px]' : 'w-[80px]'"
     >
     <div>
       <div class="flex flex-col">
