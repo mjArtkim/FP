@@ -8,6 +8,7 @@
       "image": "/img/testimg.png",
       "contry": "Korea",
       "city": "Amsterdam",
+      "lineup": "Martin Garrix, Hardwell, Afrojack, ANYMA, Matisse&Sadko, Dubvision, Armin Van Burren, Third Party, Vluarr",
       "artistSlugs": [
         "martin-garrix",
         "hardwell",
@@ -19,7 +20,6 @@
         "third-party",
         "vluarr"
       ],
-      "lineup": "Martin Garrix, Hardwell, Afrojack, ANYMA, Matisse&Sadko, Dubvision, Armin Van Burren, Third Party, Vluarr",
       "ticket": "",
       "infolink": ""
     },
@@ -37,7 +37,9 @@
         "hardwell",
         "afrojack",
         "anyma"
-      ]
+      ],
+      "ticket": "",
+      "infolink": ""
     },
     {
       "id": 3,
@@ -53,7 +55,9 @@
         "hardwell",
         "afrojack",
         "anyma"
-      ]
+      ],
+      "ticket": "",
+      "infolink": ""
     },
     {
       "id": 4,
@@ -69,7 +73,9 @@
         "hardwell",
         "afrojack",
         "anyma"
-      ]
+      ],
+      "ticket": "",
+      "infolink": ""
     },
     {
       "id": 5,
@@ -85,7 +91,9 @@
         "hardwell",
         "afrojack",
         "anyma"
-      ]
+      ],
+      "ticket": "",
+      "infolink": ""
     },
     {
       "id": 6,
@@ -101,7 +109,9 @@
         "hardwell",
         "afrojack",
         "anyma"
-      ]
+      ],
+      "ticket": "",
+      "infolink": ""
     },
     {
       "id": 7,
@@ -117,7 +127,9 @@
         "hardwell",
         "afrojack",
         "anyma"
-      ]
+      ],
+      "ticket": "",
+      "infolink": ""
     },
     {
       "id": 8,
@@ -133,7 +145,9 @@
         "hardwell",
         "afrojack",
         "anyma"
-      ]
+      ],
+      "ticket": "",
+      "infolink": ""
     },
     {
       "id": 9,
@@ -149,7 +163,9 @@
         "hardwell",
         "afrojack",
         "anyma"
-      ]
+      ],
+      "ticket": "",
+      "infolink": ""
     },
     {
       "id": 10,
@@ -165,7 +181,9 @@
         "hardwell",
         "afrojack",
         "anyma"
-      ]
+      ],
+      "ticket": "",
+      "infolink": ""
     }
   ],
   "2025-11": [
@@ -177,7 +195,9 @@
       "image": "/img/testimg.png",
       "contry": "Korea",
       "city": "Seoul",
-      "artistSlugs": []
+      "artistSlugs": [],
+      "ticket": "",
+      "infolink": ""
     },
     {
       "id": 12,
@@ -187,10 +207,12 @@
       "image": "/img/testimg.png",
       "contry": "Korea",
       "city": "Seoul",
-      "artistSlugs": []
+      "artistSlugs": [],
+      "ticket": "",
+      "infolink": ""
     }
   ],
-   "2026-09": [
+  "2026-09": [
     {
       "id": 13,
       "title": "September Festival Name",
@@ -199,7 +221,9 @@
       "image": "/img/testimg.png",
       "contry": "Korea",
       "city": "Seoul",
-      "artistSlugs": []
+      "artistSlugs": [],
+      "ticket": "",
+      "infolink": ""
     },
     {
       "id": 14,
@@ -209,7 +233,9 @@
       "image": "/img/testimg.png",
       "contry": "Korea",
       "city": "Seoul",
-      "artistSlugs": []
+      "artistSlugs": [],
+      "ticket": "",
+      "infolink": ""
     }
   ],
   "2026-06": [
@@ -221,7 +247,9 @@
       "image": "/img/testimg.png",
       "contry": "Korea",
       "city": "Seoul",
-      "artistSlugs": []
+      "artistSlugs": [],
+      "ticket": "",
+      "infolink": ""
     },
     {
       "id": 16,
@@ -231,7 +259,9 @@
       "image": "/img/testimg.png",
       "contry": "Korea",
       "city": "Seoul",
-      "artistSlugs": []
+      "artistSlugs": [],
+      "ticket": "",
+      "infolink": ""
     }
   ],
   "2026-10": [
@@ -243,7 +273,9 @@
       "image": "/img/testimg.png",
       "contry": "Korea",
       "city": "Seoul",
-      "artistSlugs": []
+      "artistSlugs": [],
+      "ticket": "",
+      "infolink": ""
     },
     {
       "id": 18,
@@ -253,7 +285,9 @@
       "image": "/img/testimg.png",
       "contry": "Korea",
       "city": "Seoul",
-      "artistSlugs": []
+      "artistSlugs": [],
+      "ticket": "",
+      "infolink": ""
     }
   ],
   "2026-04": [
@@ -265,7 +299,9 @@
       "image": "/img/testimg.png",
       "contry": "Korea",
       "city": "Seoul",
-      "artistSlugs": []
+      "artistSlugs": [],
+      "ticket": "",
+      "infolink": ""
     },
     {
       "id": 20,
@@ -275,7 +311,9 @@
       "image": "/img/testimg.png",
       "contry": "Korea",
       "city": "Seoul",
-      "artistSlugs": []
+      "artistSlugs": [],
+      "ticket": "",
+      "infolink": ""
     }
   ],
   "2026-03": [
@@ -287,7 +325,9 @@
       "image": "/img/testimg.png",
       "contry": "Korea",
       "city": "Seoul",
-      "artistSlugs": []
+      "artistSlugs": [],
+      "ticket": "",
+      "infolink": ""
     },
     {
       "id": 22,
@@ -297,7 +337,9 @@
       "image": "/img/testimg.png",
       "contry": "Korea",
       "city": "Seoul",
-      "artistSlugs": []
+      "artistSlugs": [],
+      "ticket": "",
+      "infolink": ""
     }
   ],
   "2026-02": [
@@ -309,7 +351,9 @@
       "image": "/img/testimg.png",
       "contry": "Korea",
       "city": "Seoul",
-      "artistSlugs": []
+      "artistSlugs": [],
+      "ticket": "",
+      "infolink": ""
     },
     {
       "id": 24,
@@ -319,7 +363,9 @@
       "image": "/img/testimg.png",
       "contry": "Korea",
       "city": "Seoul",
-      "artistSlugs": []
+      "artistSlugs": [],
+      "ticket": "",
+      "infolink": ""
     }
   ],
   "2026-01": [
@@ -331,7 +377,9 @@
       "image": "/img/testimg.png",
       "contry": "Korea",
       "city": "Seoul",
-      "artistSlugs": []
+      "artistSlugs": [],
+      "ticket": "",
+      "infolink": ""
     },
     {
       "id": 26,
@@ -341,7 +389,9 @@
       "image": "/img/testimg.png",
       "contry": "Korea",
       "city": "Seoul",
-      "artistSlugs": []
+      "artistSlugs": [],
+      "ticket": "",
+      "infolink": ""
     }
   ]
 }
