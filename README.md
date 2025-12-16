@@ -131,7 +131,7 @@ Festivals.json
       └─ artists.json
            ├─ MusicBrainz API (MBID)
            └─ Spotify Web API (artist metadata)
-
+```
 --- 
 
 ### 1️⃣ Festival Data
@@ -179,6 +179,7 @@ This project uses the Spotify Web API for non-commercial,
 educational and portfolio purposes only.
 No audio content is stored or redistributed.
 
+``` 
 ---
 
 ## 🎨 Design Concept & UX Intent
