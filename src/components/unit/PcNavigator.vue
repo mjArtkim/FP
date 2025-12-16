@@ -50,26 +50,26 @@ watch(
           </li>
         </ul>
       </div>
-      <div class="flex flex-col gap-8">
+      <div class="flex flex-col gap-9">
         <router-link to="/" class="flex items-center cursor-pointer hover:text-[var(--accent)]">
           <div class="material-symbols-rounded text-2xl pr-5">home</div>
-          <div v-if="isSidebarOpen" class="text-lg font-gugi">HOME</div>
+          <div v-if="isSidebarOpen" class="text-lg font-semibold">HOME</div>
         </router-link>
         <router-link to="#" class="flex items-center cursor-pointer hover:text-[var(--accent)]">
-          <div class="material-symbols-rounded pb-1 text-2xl pr-5">map</div>
-          <div v-if="isSidebarOpen" class="text-lg font-gugi">MAP</div>
+          <div class="material-symbols-rounded text-2xl pr-5">map</div>
+          <div v-if="isSidebarOpen" class="text-lg font-semibold">MAP</div>
         </router-link>
         <router-link to="#" class="flex items-center cursor-pointer hover:text-[var(--accent)]">
-          <div class="material-symbols-rounded pb-1 text-2xl pr-5">star</div>
-          <div v-if="isSidebarOpen" class="text-lg font-gugi">FAVORIT</div>
+          <div class="material-symbols-rounded text-2xl pr-5">star</div>
+          <div v-if="isSidebarOpen" class="text-lg font-semibold">FAVORIT</div>
         </router-link>
         <router-link to="#" class="flex items-center cursor-pointer hover:text-[var(--accent)]">
-          <div class="material-symbols-rounded pb-1 text-2xl pr-5">insert_chart</div>
-          <div v-if="isSidebarOpen" class="text-lg font-gugi">INSIGHTS</div>
+          <div class="material-symbols-rounded text-2xl pr-5">insert_chart</div>
+          <div v-if="isSidebarOpen" class="text-lg font-semibold">INSIGHTS</div>
         </router-link>
         <router-link to="#" class="flex items-center cursor-pointer hover:text-[var(--accent)]">
-          <div class="material-symbols-rounded pb-1 text-2xl pr-5">account_box</div>
-          <div v-if="isSidebarOpen" class="text-lg font-gugi">MYPAGE</div>
+          <div class="material-symbols-rounded text-2xl pr-5">account_box</div>
+          <div v-if="isSidebarOpen" class="text-lg font-semibold">MYPAGE</div>
         </router-link>
       </div>
       <div class="flex items-center py-8">

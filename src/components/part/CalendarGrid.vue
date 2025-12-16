@@ -237,7 +237,7 @@ const toggleMore = (weekIndex: number, colIndex: number) => {
             <div
               v-for="seg in lane"
               :key="seg.id"
-              class="h-[16px] flex items-center text-[12px] bg-indigo-100 text-slate-700 rounded-[3px] px-2 overflow-hidden whitespace-nowrap text-ellipsis cursor-pointer"
+              class="h-[16px] flex items-center text-[12px] bg-indigo-100 text-slate-700 rounded-[3px] px-2 overflow-hidden whitespace-nowrap text-ellipsis cursor-pointer pc:hover:bg-indigo-300"
               :style="{ gridColumn: `${seg.startCol + 1} / span ${seg.span}` }"
               @click="goToFestivalDetail(seg.id)" 
             >
@@ -259,7 +259,7 @@ const toggleMore = (weekIndex: number, colIndex: number) => {
                 <!-- +n 뱃지-->
                 <button
                   type="button"
-                  class="inline-flex items-center justify-center px-1.5 py-[1px] text-[12px] cursor-pointer"
+                  class="inline-flex items-center justify-center px-1.5 py-[1px] text-[12px] cursor-pointer pc:hover:text-neonpink"
                   @click.stop="toggleMore(wi, ci)"
                 >
                   +{{ cnt }}
@@ -276,14 +276,14 @@ const toggleMore = (weekIndex: number, colIndex: number) => {
                     <span>More Events</span>
                     <button
                       type="button"
-                      class="material-symbols-rounded text-white hover:text-gray text-[16px] leading-none"
+                      class="material-symbols-rounded text-white hover:text-gray text-[16px] leading-none pc:hover:text-neonpink"
                       @click.stop="openMore = null"
                     >close</button>
                   </div>
                   <div
                     v-for="ev in week.hiddenEventsByCol[ci]"
                     :key="ev.id"
-                    class="px-2 py-[2px] hover:bg-gray-900 whitespace-nowrap"
+                    class="px-2 py-[2px] hover:bg-gray-900 whitespace-nowrap pc:hover:text-neonpink"
                     @click="goToFestivalDetail(ev.id)"
                   >
                     {{ formatMD(ev.start) }} ~ {{ formatMD(ev.end) }}

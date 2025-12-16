@@ -7,6 +7,7 @@ const props = defineProps<{
 
 const emit = defineEmits<{
   (e: 'update:modelValue', value: string): void
+  (e: 'click'): void
 }>()
 
 const year = computed(() => Number(props.modelValue.split('-')[0]))
@@ -34,10 +35,10 @@ const changeMonth = (delta: number) => {
 
 <template>
   <div class="flex items-center font-gugi">
-    <button @click="changeMonth(-1)" class="material-symbols-rounded text-3xl">keyboard_arrow_left</button>
-    <div class="text-xl font-semibold px-2">
+    <button @click="changeMonth(-1)" class="material-symbols-rounded text-3xl pc:hover:text-neonpink">keyboard_arrow_left</button>
+    <div class="text-xl font-semibold px-2 cursor-pointer select-none pc:hover:text-neonpink" @click="emit('click')">
       {{ label }}
     </div>
-    <button @click="changeMonth(1)" class="material-symbols-rounded text-3xl">keyboard_arrow_right</button>
+    <button @click="changeMonth(1)" class="material-symbols-rounded text-3xl pc:hover:text-neonpink">keyboard_arrow_right</button>
   </div>
 </template>
