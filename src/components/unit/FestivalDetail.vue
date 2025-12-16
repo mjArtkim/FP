@@ -74,6 +74,15 @@ const onToggleFavorite = () => {
   if (!festival.value) return
   toggleFestivalFavorite(festival.value.id)
 }
+
+const relatedByLocation = computed(() => {
+  if (!festival.value) return []
+  const key = `${festival.value.city}|||${festival.value.contry}`
+  return allFestivals.value
+    .filter((item) => item.id !== festival.value!.id)
+    .filter((item) => `${item.city}|||${item.contry}` === key)
+    .slice(0, 6)
+})
 </script>
 
 <template>
@@ -102,6 +111,34 @@ const onToggleFavorite = () => {
             </span>
             <span>{{ isBookmarked ? 'Bookmarked' : 'Bookmark' }}</span>
           </button>
+        </div>
+
+        <div class="p-4 rounded-lg bg-[var(--bg)] shadow-[0_0_6px_var(--shadow-weak)] space-y-3">
+          <div class="text-sm font-semibold text-gray-700">Same Location Festivals</div>
+          <div v-if="relatedByLocation.length" class="grid grid-cols-1 pc:grid-cols-2 gap-3">
+            <router-link
+              v-for="item in relatedByLocation"
+              :key="item.id"
+              :to="{ name: 'festivaldetail', params: { id: item.id } }"
+              class="flex gap-3 p-3 rounded-lg bg-black/5 hover:bg-neonpink/10 transition-colors"
+            >
+              <img
+                v-if="item.image"
+                :src="item.image"
+                :alt="item.title"
+                class="w-16 h-16 object-cover rounded-md"
+              />
+              <div v-else class="w-16 h-16 rounded-md bg-black/10 flex items-center justify-center text-xs font-semibold uppercase">
+                {{ item.title?.[0] || '?' }}
+              </div>
+              <div class="flex flex-col">
+                <div class="text-sm font-semibold line-clamp-2">{{ item.title }}</div>
+                <div class="text-xs text-gray-500">{{ item.city }} / {{ item.contry }}</div>
+                <div class="text-xs text-gray-500">{{ item.start }} ~ {{ item.end }}</div>
+              </div>
+            </router-link>
+          </div>
+          <div v-else class="text-sm text-gray-500">같은 지역의 다른 페스티벌이 없습니다.</div>
         </div>
 
         <div class="grid gap-6 pc:grid-cols-2">
