@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import FirstView from '@/components/FirstView.vue'
 import FestivalDetail from '@/components/unit/FestivalDetail.vue'
+import ArtistDetail from '@/components/unit/ArtistDetail.vue'
 
 const routes = [
   {
@@ -12,6 +13,12 @@ const routes = [
     path: '/festivaldetail/:id',
     name: 'festivaldetail',
     component: FestivalDetail,
+    props: true,
+  },
+  {
+    path: '/artist/:slug',
+    name: 'artistdetail',
+    component: ArtistDetail,
     props: true,
   },
 ]
