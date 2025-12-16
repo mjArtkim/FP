@@ -161,8 +161,6 @@ Festivals.json
 - Genres
 - Popularity score
 - External Spotify artist link
-- 30-second track previews (`preview_url` only)
-
 ---
 
 ### 3️⃣ Why This Architecture?
