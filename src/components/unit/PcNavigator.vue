@@ -59,7 +59,7 @@ watch(
           <div class="material-symbols-rounded text-2xl pr-5">map</div>
           <div v-if="isSidebarOpen" class="text-lg font-semibold">MAP</div>
         </router-link>
-        <router-link to="#" class="flex items-center cursor-pointer hover:text-[var(--accent)]">
+        <router-link to="/favorite" class="flex items-center cursor-pointer hover:text-[var(--accent)]">
           <div class="material-symbols-rounded text-2xl pr-5">star</div>
           <div v-if="isSidebarOpen" class="text-lg font-semibold">FAVORIT</div>
         </router-link>

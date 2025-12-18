@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, onBeforeUnmount, ref } from 'vue'
+import { useRouter } from 'vue-router'
 import festivals from '@/data/festivals.json'
 import artists from '@/data/artists.json'
 import { isFestivalFavorite, loadFavorites, toggleFestivalFavorite } from '@/utils/favorites'
@@ -28,6 +29,8 @@ type ArtistItem = {
 const props = defineProps<{
   id: string | number
 }>()
+
+const router = useRouter()
 
 const allFestivalData = festivals as Record<string, FestivalItem[]>
 const artistList = artists as ArtistItem[]
@@ -70,10 +73,58 @@ const lineupEntries = computed(() => {
 
 loadFavorites()
 
+const shareFeedback = ref('')
+let feedbackTimer: number | undefined
+
+const shareUrl = computed(() => {
+  if (typeof window === 'undefined') return ''
+  const resolved = router.resolve({ name: 'festivaldetail', params: { id: festivalId.value } })
+  return new URL(resolved.href, window.location.origin).toString()
+})
+
 const onToggleFavorite = () => {
   if (!festival.value) return
   toggleFestivalFavorite(festival.value.id)
 }
+
+const onShareLink = async () => {
+  if (!shareUrl.value) return
+
+  if (feedbackTimer) {
+    window.clearTimeout(feedbackTimer)
+  }
+
+  try {
+    if (typeof navigator !== 'undefined' && navigator.share) {
+      await navigator.share({ title: festival.value?.title, url: shareUrl.value })
+      shareFeedback.value = '공유 다이얼로그를 열었어요.'
+    } else if (typeof navigator !== 'undefined' && navigator.clipboard?.writeText) {
+      await navigator.clipboard.writeText(shareUrl.value)
+      shareFeedback.value = '링크를 복사했어요.'
+    } else {
+      const textarea = document.createElement('textarea')
+      textarea.value = shareUrl.value
+      document.body.appendChild(textarea)
+      textarea.select()
+      document.execCommand('copy')
+      document.body.removeChild(textarea)
+      shareFeedback.value = '링크를 복사했어요.'
+    }
+  } catch (error) {
+    console.error(error)
+    shareFeedback.value = '공유에 실패했어요. 다시 시도해주세요.'
+  } finally {
+    feedbackTimer = window.setTimeout(() => {
+      shareFeedback.value = ''
+    }, 2400)
+  }
+}
+
+onBeforeUnmount(() => {
+  if (feedbackTimer) {
+    window.clearTimeout(feedbackTimer)
+  }
+})
 
 const relatedByLocation = computed(() => {
   if (!festival.value) return []
@@ -92,25 +143,42 @@ const relatedByLocation = computed(() => {
         <img
           :src="festival.image"
           :alt="festival.title"
-          class="w-full h-[240px] object-cover pc:h-[360px]"
+          class="w-full h-[450px] object-cover pc:h-[360px]"
         />
       </div>
 
       <div class="flex flex-col gap-6">
         <div class="space-y-2">
-          <div class="text-sm text-gray-500 pc:text-base">{{ dateRange }}</div>
           <h1 class="text-2xl font-black pc:text-3xl">{{ festival.title }}</h1>
-          <div class="text-base text-gray-700 pc:text-lg">{{ locationText }}</div>
-          <button
-            type="button"
-            class="inline-flex items-center gap-2 px-3 py-1 rounded-md border border-[var(--stroke)] text-sm hover:bg-neonpink hover:text-white transition-colors"
-            @click="onToggleFavorite"
-          >
-            <span class="material-symbols-rounded text-base">
-              {{ isBookmarked ? 'favorite' : 'favorite_border' }}
-            </span>
-            <span>{{ isBookmarked ? 'Bookmarked' : 'Bookmark' }}</span>
-          </button>
+          <div class="pt-3 text-sm black pc:text-base">{{ dateRange }}</div>
+          <div class="py-3">
+            <div class="text-sm black pc:text-base">LOCATION</div>
+            <div class="text-base text-gray-700 pc:text-lg">{{ locationText }}</div>
+          </div>
+          <div class="flex flex-wrap items-center gap-3">
+            <button
+              type="button"
+              class="inline-flex items-center gap-2 px-3 py-1 rounded-md border border-[var(--stroke)] text-sm pc:hover:bg-neonpink pc:hover:text-white transition-colors [text-shadow:1px_1px_2px_var(--shadow-weak)]"
+              @click="onToggleFavorite"
+              :class="isBookmarked ? 'bg-neonpink text-white' : 'border-neonpink text-neonpink'"
+            >
+              <div class="material-symbols-rounded text-xl">
+                {{ isBookmarked ? 'bookmark' : 'bookmark_border' }}
+              </div>
+              <div>{{ isBookmarked ? 'Bookmarked' : 'Bookmark' }}</div>
+            </button>
+            <button
+              type="button"
+              class="inline-flex items-center gap-2 px-3 py-1 rounded-md border border-[var(--stroke)] text-sm pc:hover:bg-pulseblue pc:hover:text-white transition-colors"
+              @click="onShareLink"
+            >
+              <div class="material-symbols-rounded text-xl">share</div>
+              <div>링크 복사/공유</div>
+            </button>
+            <div v-if="shareFeedback" class="text-xs text-gray-500">
+              {{ shareFeedback }}
+            </div>
+          </div>
         </div>
 
         <div class="p-4 rounded-lg bg-[var(--bg)] shadow-[0_0_6px_var(--shadow-weak)] space-y-3">
@@ -181,7 +249,7 @@ const relatedByLocation = computed(() => {
           </div>
         </div>
 
-        <div class="p-4 rounded-lg bg-[var(--bg)] shadow-[0_0_6px_var(--shadow-weak)] space-y-3">
+        <div class="p-4 rounded-lg bg-[var(--bg)] shadow-[0_0_6px_var(--shadow-weak)] space-y-3 mb-[100px]">
           <div class="text-sm font-semibold text-gray-700">Links</div>
           <div class="flex flex-wrap gap-3">
             <a
