@@ -15,6 +15,9 @@ type FestivalItem = {
   contry: string
   lineup: string
   artistSlugs: string[]
+  venue?: string
+  address?: string
+  mapQuery?: string
   ticket?: string
   infolink?: string
 }
@@ -60,6 +63,22 @@ const locationText = computed(() => {
   return `${festival.value.city} / ${festival.value.contry}`
 })
 
+const mapQuery = computed(() => {
+  if (!festival.value) return ''
+  if (festival.value.mapQuery) return festival.value.mapQuery
+  if (festival.value.address && festival.value.venue) {
+    return `${festival.value.venue} ${festival.value.address}`
+  }
+  if (festival.value.address) return festival.value.address
+  if (festival.value.venue) return `${festival.value.venue} ${festival.value.city}`
+  return `${festival.value.city} ${festival.value.contry}`
+})
+
+const mapEmbedSrc = computed(() => {
+  if (!mapQuery.value) return ''
+  return `https://www.google.com/maps?q=${encodeURIComponent(mapQuery.value)}&output=embed`
+})
+
 const lineupEntries = computed(() => {
   if (!festival.value) return []
   const names = festival.value.lineup.split(',').map((name) => name.trim()).filter(Boolean)
@@ -72,7 +91,7 @@ const lineupEntries = computed(() => {
 })
 
 loadFavorites()
-
+ 
 const shareFeedback = ref('')
 let feedbackTimer: number | undefined
 
@@ -181,33 +200,36 @@ const relatedByLocation = computed(() => {
           </div>
         </div>
 
-        <div class="p-4 rounded-lg bg-[var(--bg)] shadow-[0_0_6px_var(--shadow-weak)] space-y-3">
-          <div class="text-sm font-semibold text-gray-700">Same Location Festivals</div>
-          <div v-if="relatedByLocation.length" class="grid grid-cols-1 pc:grid-cols-2 gap-3">
-            <router-link
-              v-for="item in relatedByLocation"
-              :key="item.id"
-              :to="{ name: 'festivaldetail', params: { id: item.id } }"
-              class="flex gap-3 p-3 rounded-lg bg-black/5 hover:bg-neonpink/10 transition-colors"
+        <div class="rounded-lg bg-[var(--bg)] space-y-3">
+          <div class="text-sm font-semibold text-gray-700">Links</div>
+          <div class="flex gap-3 flex-col text-center">
+            <a
+              v-if="festival.ticket"
+              :href="festival.ticket"
+              target="_blank"
+              rel="noopener"
+              class="h-[30px] flex items-center justify-center gap-5 rounded-md bg-neonpink text-white text-sm shadow-[0_4px_12px_rgba(0,0,0,0.12)] font-gugi"
             >
-              <img
-                v-if="item.image"
-                :src="item.image"
-                :alt="item.title"
-                class="w-16 h-16 object-cover rounded-md"
-              />
-              <div v-else class="w-16 h-16 rounded-md bg-black/10 flex items-center justify-center text-xs font-semibold uppercase">
-                {{ item.title?.[0] || '?' }}
-              </div>
-              <div class="flex flex-col">
-                <div class="text-sm font-semibold line-clamp-2">{{ item.title }}</div>
-                <div class="text-xs text-gray-500">{{ item.city }} / {{ item.contry }}</div>
-                <div class="text-xs text-gray-500">{{ item.start }} ~ {{ item.end }}</div>
-              </div>
-            </router-link>
+              <div class="material-symbols-rounded">confirmation_number</div>
+              <div>Get Ticket</div>
+            </a>
+            <a
+              v-if="festival.infolink"
+              :href="festival.infolink"
+              target="_blank"
+              rel="noopener"
+              class="h-[30px] flex items-center justify-center gap-5 rounded-md border border-pulseblue text-pulseblue text-sm pc:hover:bg-pulseblue pc:hover:text-white transition-colors font-gugi"
+            >
+              <div class="material-symbols-rounded">link</div>
+              <div>LINK PAGE</div>
+            </a>
+            <div v-if="!festival.ticket && !festival.infolink" class="text-sm text-gray-500">
+              등록된 링크가 없습니다.
+            </div>
           </div>
-          <div v-else class="text-sm text-gray-500">같은 지역의 다른 페스티벌이 없습니다.</div>
         </div>
+
+      
 
         <div class="grid gap-6 pc:grid-cols-2">
           <div class="p-4 rounded-lg bg-[var(--bg)] shadow-[0_0_6px_var(--shadow-weak)] space-y-3">
@@ -244,37 +266,51 @@ const relatedByLocation = computed(() => {
           </div>
 
           <div class="p-4 rounded-lg bg-[var(--bg)] shadow-[0_0_6px_var(--shadow-weak)] space-y-3">
-            <div class="text-sm font-semibold text-gray-700">Artists</div>
-            <div class="text-sm text-gray-500">라인업 이름을 눌러 아티스트 정보를 확인하세요.</div>
-          </div>
-        </div>
-
-        <div class="p-4 rounded-lg bg-[var(--bg)] shadow-[0_0_6px_var(--shadow-weak)] space-y-3 mb-[100px]">
-          <div class="text-sm font-semibold text-gray-700">Links</div>
-          <div class="flex flex-wrap gap-3">
-            <a
-              v-if="festival.ticket"
-              :href="festival.ticket"
-              target="_blank"
-              rel="noopener"
-              class="px-4 py-2 rounded-md bg-neonpink text-white text-sm shadow-[0_4px_12px_rgba(0,0,0,0.12)]"
-            >
-              Get Ticket
-            </a>
-            <a
-              v-if="festival.infolink"
-              :href="festival.infolink"
-              target="_blank"
-              rel="noopener"
-              class="px-4 py-2 rounded-md border border-pulseblue text-pulseblue text-sm hover:bg-pulseblue hover:text-white transition-colors"
-            >
-              Info Page
-            </a>
-            <div v-if="!festival.ticket && !festival.infolink" class="text-sm text-gray-500">
-              등록된 링크가 없습니다.
+            <div class="text-sm font-semibold text-gray-700">MAP</div>
+            <div v-if="mapEmbedSrc" class="space-y-2">
+              <div class="text-sm text-gray-500">{{ mapQuery }}</div>
+              <div class="w-full h-64 rounded-lg overflow-hidden bg-black/5">
+                <iframe
+                  :src="mapEmbedSrc"
+                  class="w-full h-full"
+                  style="border: 0"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  title="festival location map"
+                ></iframe>
+              </div>
             </div>
+            <div v-else class="text-sm text-gray-500">지도를 표시할 위치 정보가 없습니다.</div>
           </div>
         </div>
+        <div class="p-4 rounded-lg bg-[var(--bg)] shadow-[0_0_6px_var(--shadow-weak)] space-y-3 mb-[100px]">
+          <div class="text-sm font-semibold text-gray-700">Same Location Festivals</div>
+          <div v-if="relatedByLocation.length" class="grid grid-cols-1 pc:grid-cols-2 gap-3">
+            <router-link
+              v-for="item in relatedByLocation"
+              :key="item.id"
+              :to="{ name: 'festivaldetail', params: { id: item.id } }"
+              class="flex gap-3 p-3 rounded-lg bg-black/5 hover:bg-neonpink/10 transition-colors"
+            >
+              <img
+                v-if="item.image"
+                :src="item.image"
+                :alt="item.title"
+                class="w-16 h-16 object-cover rounded-md"
+              />
+              <div v-else class="w-16 h-16 rounded-md bg-black/10 flex items-center justify-center text-xs font-semibold uppercase">
+                {{ item.title?.[0] || '?' }}
+              </div>
+              <div class="flex flex-col">
+                <div class="text-sm font-semibold line-clamp-2">{{ item.title }}</div>
+                <div class="text-xs text-gray-500">{{ item.city }} / {{ item.contry }}</div>
+                <div class="text-xs text-gray-500">{{ item.start }} ~ {{ item.end }}</div>
+              </div>
+            </router-link>
+          </div>
+          <div v-else class="text-sm text-gray-500">같은 지역의 다른 페스티벌이 없습니다.</div>
+        </div>
+        
       </div>
     </div>
 

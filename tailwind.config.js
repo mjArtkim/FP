@@ -13,7 +13,8 @@ export default {
         pulsered: '#EA6466',
         pulsegray: '#CCCCCC',
         bgdash: '#F5F5F5',
-        pulsedarkgray: '#707070'
+        pulsedarkgray: '#707070',
+        pulsebrown:'#482317'
       },
       fontSize: {
         xss: '10px',
