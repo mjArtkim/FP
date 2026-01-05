@@ -4685,5 +4685,984 @@
         }
       ]
     }
+  },
+  {
+    "slug": "crankdat",
+    "identity": {
+      "name": "Crankdat",
+      "mbid": "00b21266-918d-434c-b31e-3f1a3e96cad5",
+      "type": "Person",
+      "gender": "Male",
+      "aliases": [
+        "Christian John Smith"
+      ],
+      "labels": [
+        {
+          "name": "CRANKDAT MUSIC",
+          "mbid": "2043f4c5-7c0d-4284-8bea-13acd1e65fec",
+          "relationType": "personal label"
+        }
+      ],
+      "debutYear": 1997,
+      "careerYears": 29,
+      "links": {
+        "musicbrainz": "https://musicbrainz.org/artist/00b21266-918d-434c-b31e-3f1a3e96cad5"
+      }
+    },
+    "spotify": {
+      "spotifyId": "5lCekoJW9jNq01B1wiqdAb",
+      "image": "https://i.scdn.co/image/ab6761610000e5eb2ddfb40a95abbf5337f9ec06",
+      "genres": [
+        "dubstep",
+        "riddim",
+        "edm",
+        "deathstep",
+        "bass house"
+      ],
+      "followers": 208396,
+      "popularity": 55,
+      "spotifyUrl": "https://open.spotify.com/artist/5lCekoJW9jNq01B1wiqdAb",
+      "albums": [
+        {
+          "id": "2hZMNkORYtip8Avb4wtqeZ",
+          "name": "Candy Shop Remix (feat. Olivia)",
+          "albumType": "single",
+          "releaseDate": "2025-12-12",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273d049726d732a1edde3fa7eda",
+          "url": "https://open.spotify.com/album/2hZMNkORYtip8Avb4wtqeZ"
+        },
+        {
+          "id": "78bvzzE2E47QhUUoYhmJ4g",
+          "name": "TYPE SH*T",
+          "albumType": "single",
+          "releaseDate": "2025-06-06",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b2731c86b566c87e038b1b42f4c3",
+          "url": "https://open.spotify.com/album/78bvzzE2E47QhUUoYhmJ4g"
+        },
+        {
+          "id": "3JYuC5TTDbobgRCKo38xW9",
+          "name": "Whiplash",
+          "albumType": "single",
+          "releaseDate": "2025-03-14",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b2733e1c520b7590500a9db1f3d5",
+          "url": "https://open.spotify.com/album/3JYuC5TTDbobgRCKo38xW9"
+        },
+        {
+          "id": "5wiAY7ul5fy4xdzfKq9BV6",
+          "name": "Open The Pit",
+          "albumType": "single",
+          "releaseDate": "2024-11-01",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b27356ba06a6e43af5de199fd777",
+          "url": "https://open.spotify.com/album/5wiAY7ul5fy4xdzfKq9BV6"
+        },
+        {
+          "id": "2DpZjtwH8GG964mwPfVHQ7",
+          "name": "Big Bang (with Crankdat)",
+          "albumType": "single",
+          "releaseDate": "2024-04-10",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273d44f15d65962a01332ab44bc",
+          "url": "https://open.spotify.com/album/2DpZjtwH8GG964mwPfVHQ7"
+        },
+        {
+          "id": "1nlVk6AHkm9WdF0BZ9iGuB",
+          "name": "STFU",
+          "albumType": "single",
+          "releaseDate": "2023-09-22",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b2733c98abd8e9f4c1497aef171b",
+          "url": "https://open.spotify.com/album/1nlVk6AHkm9WdF0BZ9iGuB"
+        },
+        {
+          "id": "6V7CNeWqNS46lpur8SRXjJ",
+          "name": "Hollow (Crankdat Remix)",
+          "albumType": "single",
+          "releaseDate": "2023-07-14",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b27353a7279f68521c013154d493",
+          "url": "https://open.spotify.com/album/6V7CNeWqNS46lpur8SRXjJ"
+        },
+        {
+          "id": "0LNjCowJXfTpBCyNyG65vR",
+          "name": "HEAT",
+          "albumType": "single",
+          "releaseDate": "2023-07-07",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b2736a58a9ddb4d0fbcb1cf078cf",
+          "url": "https://open.spotify.com/album/0LNjCowJXfTpBCyNyG65vR"
+        },
+        {
+          "id": "63G2PgaJYMpzrsvQ9G3Uek",
+          "name": "Slaughter House",
+          "albumType": "single",
+          "releaseDate": "2023-04-14",
+          "totalTracks": 7,
+          "image": "https://i.scdn.co/image/ab67616d0000b2732767e83cf8c282fe2c5fa4d2",
+          "url": "https://open.spotify.com/album/63G2PgaJYMpzrsvQ9G3Uek"
+        },
+        {
+          "id": "0d2xyxHilLmIIqfugVYOVI",
+          "name": "Move Back",
+          "albumType": "single",
+          "releaseDate": "2023-02-16",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b2734fa732834455949fa5913e57",
+          "url": "https://open.spotify.com/album/0d2xyxHilLmIIqfugVYOVI"
+        },
+        {
+          "id": "44Drb1IMP5Ah4VXgndZojP",
+          "name": "far away (Crankdat Remix)",
+          "albumType": "single",
+          "releaseDate": "2022-12-02",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273260b00f83526e2477dd5eaa3",
+          "url": "https://open.spotify.com/album/44Drb1IMP5Ah4VXgndZojP"
+        },
+        {
+          "id": "0gUYlQaHWvJrmX6zEHLrQB",
+          "name": "Underneath My Skin (Crankdat Remix)",
+          "albumType": "single",
+          "releaseDate": "2022-11-11",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b2734bd5dbd65814ba28586d66a8",
+          "url": "https://open.spotify.com/album/0gUYlQaHWvJrmX6zEHLrQB"
+        }
+      ],
+      "topTracks": [
+        {
+          "id": "6aBm5lBiBcEBc8moW055LI",
+          "name": "TYPE SH*T",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/6aBm5lBiBcEBc8moW055LI",
+          "durationMs": 212870,
+          "popularity": 59,
+          "album": {
+            "id": "78bvzzE2E47QhUUoYhmJ4g",
+            "name": "TYPE SH*T",
+            "releaseDate": "2025-06-06",
+            "image": "https://i.scdn.co/image/ab67616d0000b2731c86b566c87e038b1b42f4c3"
+          },
+          "artists": [
+            "Crankdat",
+            "NGHTMRE",
+            "Duke Deuce"
+          ]
+        },
+        {
+          "id": "2K1Grx3at2GH9ErGX1o9NV",
+          "name": "Whiplash",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/2K1Grx3at2GH9ErGX1o9NV",
+          "durationMs": 195114,
+          "popularity": 57,
+          "album": {
+            "id": "3JYuC5TTDbobgRCKo38xW9",
+            "name": "Whiplash",
+            "releaseDate": "2025-03-14",
+            "image": "https://i.scdn.co/image/ab67616d0000b2733e1c520b7590500a9db1f3d5"
+          },
+          "artists": [
+            "Crankdat",
+            "SOFI"
+          ]
+        },
+        {
+          "id": "0v1nobrUSVLIXrYaI4zwkw",
+          "name": "STFU",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/0v1nobrUSVLIXrYaI4zwkw",
+          "durationMs": 156924,
+          "popularity": 54,
+          "album": {
+            "id": "1nlVk6AHkm9WdF0BZ9iGuB",
+            "name": "STFU",
+            "releaseDate": "2023-09-22",
+            "image": "https://i.scdn.co/image/ab67616d0000b2733c98abd8e9f4c1497aef171b"
+          },
+          "artists": [
+            "Crankdat"
+          ]
+        },
+        {
+          "id": "3sZky3MDf3hY6ZTO94gWbe",
+          "name": "Candy Shop Remix (feat. Olivia)",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/3sZky3MDf3hY6ZTO94gWbe",
+          "durationMs": 186947,
+          "popularity": 54,
+          "album": {
+            "id": "2hZMNkORYtip8Avb4wtqeZ",
+            "name": "Candy Shop Remix (feat. Olivia)",
+            "releaseDate": "2025-12-12",
+            "image": "https://i.scdn.co/image/ab67616d0000b273d049726d732a1edde3fa7eda"
+          },
+          "artists": [
+            "Crankdat",
+            "Olivia"
+          ]
+        },
+        {
+          "id": "4pRnMMMzvjj9uqMZa0YO7U",
+          "name": "Ding Dong",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/4pRnMMMzvjj9uqMZa0YO7U",
+          "durationMs": 177656,
+          "popularity": 52,
+          "album": {
+            "id": "4g7lD5NvinPkSPj5PElwdp",
+            "name": "Ding Dong",
+            "releaseDate": "2022-06-23",
+            "image": "https://i.scdn.co/image/ab67616d0000b273f440e8722a6cb25600ed60d0"
+          },
+          "artists": [
+            "Crankdat"
+          ]
+        },
+        {
+          "id": "1HComaUOXdl7jRuGB3KsVB",
+          "name": "Open The Pit",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/1HComaUOXdl7jRuGB3KsVB",
+          "durationMs": 226069,
+          "popularity": 52,
+          "album": {
+            "id": "5wiAY7ul5fy4xdzfKq9BV6",
+            "name": "Open The Pit",
+            "releaseDate": "2024-11-01",
+            "image": "https://i.scdn.co/image/ab67616d0000b27356ba06a6e43af5de199fd777"
+          },
+          "artists": [
+            "Crankdat",
+            "Juicy J"
+          ]
+        },
+        {
+          "id": "6NZunfz5wbY8pYeDDlJUas",
+          "name": "Redo",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/6NZunfz5wbY8pYeDDlJUas",
+          "durationMs": 197260,
+          "popularity": 49,
+          "album": {
+            "id": "2AMprxvEKfL1MX46QFgHR7",
+            "name": "Redo",
+            "releaseDate": "2020-02-13",
+            "image": "https://i.scdn.co/image/ab67616d0000b273754c4f7b3c75446a5c378ea8"
+          },
+          "artists": [
+            "Crankdat"
+          ]
+        },
+        {
+          "id": "0qwMoAstkTXlWE8lQJBRzY",
+          "name": "Kneel Before Me",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/0qwMoAstkTXlWE8lQJBRzY",
+          "durationMs": 201600,
+          "popularity": 49,
+          "album": {
+            "id": "6LebF31h6hxienjBsnFEMf",
+            "name": "Kneel Before Me",
+            "releaseDate": "2018-08-09",
+            "image": "https://i.scdn.co/image/ab67616d0000b2731252f246522f354e229b8cef"
+          },
+          "artists": [
+            "SLANDER",
+            "Crankdat",
+            "Asking Alexandria"
+          ]
+        },
+        {
+          "id": "0h2ZSu1j6YFsGj85eSyrI4",
+          "name": "Ground Shake",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/0h2ZSu1j6YFsGj85eSyrI4",
+          "durationMs": 185379,
+          "popularity": 49,
+          "album": {
+            "id": "4lN9hIcBH3lBzlpWyim3Ud",
+            "name": "Ground Shake",
+            "releaseDate": "2022-10-07",
+            "image": "https://i.scdn.co/image/ab67616d0000b27306c271c88702cd569b0e5496"
+          },
+          "artists": [
+            "Crankdat",
+            "Bandlez"
+          ]
+        },
+        {
+          "id": "68Gszh9enogLwJUbTcjjWe",
+          "name": "Wobble",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/68Gszh9enogLwJUbTcjjWe",
+          "durationMs": 188000,
+          "popularity": 48,
+          "album": {
+            "id": "2AwBq94beluoQOYzHvIeMb",
+            "name": "Wobble",
+            "releaseDate": "2018-09-27",
+            "image": "https://i.scdn.co/image/ab67616d0000b273b725b69e52c331f36fa27f8c"
+          },
+          "artists": [
+            "Crankdat",
+            "Tisoki"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "slug": "hugel",
+    "identity": {
+      "name": "HUGEL",
+      "mbid": "eead7215-59da-45f5-b719-62f349ef4133",
+      "type": "Person",
+      "gender": "Male",
+      "country": "FR",
+      "aliases": [
+        "Florent Hugel"
+      ],
+      "debutYear": 1987,
+      "careerYears": 39,
+      "links": {
+        "musicbrainz": "https://musicbrainz.org/artist/eead7215-59da-45f5-b719-62f349ef4133"
+      }
+    },
+    "spotify": {
+      "spotifyId": "5PlfkPxwCpRRWQJBxCa0By",
+      "image": "https://i.scdn.co/image/ab6761610000e5eb38a0345317801e06c10dcb7b",
+      "genres": [
+        "latin house",
+        "afro house",
+        "techengue"
+      ],
+      "followers": 716383,
+      "popularity": 79,
+      "spotifyUrl": "https://open.spotify.com/artist/5PlfkPxwCpRRWQJBxCa0By",
+      "albums": [
+        {
+          "id": "7GI2B06iMtjtzt1pK6FtR2",
+          "name": "Samarkand",
+          "albumType": "single",
+          "releaseDate": "2026-01-02",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b2736e1e5f6b7e265c7349f56664",
+          "url": "https://open.spotify.com/album/7GI2B06iMtjtzt1pK6FtR2"
+        },
+        {
+          "id": "3juID04WxZ0HXE3sTsM1kA",
+          "name": "Pull Up",
+          "albumType": "single",
+          "releaseDate": "2025-12-26",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273e9b246fad384459a7b325b3b",
+          "url": "https://open.spotify.com/album/3juID04WxZ0HXE3sTsM1kA"
+        },
+        {
+          "id": "3KNPIlEwgUt4yItD67akmB",
+          "name": "YAMA BY NIGHT",
+          "albumType": "single",
+          "releaseDate": "2025-12-19",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b2730902c42399f5d47e1f14c2cc",
+          "url": "https://open.spotify.com/album/3KNPIlEwgUt4yItD67akmB"
+        },
+        {
+          "id": "5PiCSPmJtYQSnAGBtWaLyZ",
+          "name": "Loosen Up (BENJAMIN BLUES Remix)",
+          "albumType": "single",
+          "releaseDate": "2025-12-19",
+          "totalTracks": 2,
+          "image": "https://i.scdn.co/image/ab67616d0000b27310b256c202ef32643244a055",
+          "url": "https://open.spotify.com/album/5PiCSPmJtYQSnAGBtWaLyZ"
+        },
+        {
+          "id": "0V07kae1K63UGyBDfiTDDU",
+          "name": "Free (You Got To Live)",
+          "albumType": "single",
+          "releaseDate": "2025-11-28",
+          "totalTracks": 2,
+          "image": "https://i.scdn.co/image/ab67616d0000b273d2474029fbd15317e0af0f44",
+          "url": "https://open.spotify.com/album/0V07kae1K63UGyBDfiTDDU"
+        },
+        {
+          "id": "1BweAtoAn6XFcPa4iJtO6G",
+          "name": "Jamaican (Bam Bam)",
+          "albumType": "single",
+          "releaseDate": "2025-11-07",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273121f28faa2fca034a4028a16",
+          "url": "https://open.spotify.com/album/1BweAtoAn6XFcPa4iJtO6G"
+        },
+        {
+          "id": "0WbAHwxG0nuxQsXqe4QYWD",
+          "name": "FMX",
+          "albumType": "single",
+          "releaseDate": "2025-10-24",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273b351e5bc850da7c6cfb4c07d",
+          "url": "https://open.spotify.com/album/0WbAHwxG0nuxQsXqe4QYWD"
+        },
+        {
+          "id": "6QHnkcW4h53aBl41i1rAxj",
+          "name": "PYHU (Put Your Hands Up)",
+          "albumType": "single",
+          "releaseDate": "2025-10-03",
+          "totalTracks": 2,
+          "image": "https://i.scdn.co/image/ab67616d0000b273a524fa59b1d2c690d128edcd",
+          "url": "https://open.spotify.com/album/6QHnkcW4h53aBl41i1rAxj"
+        },
+        {
+          "id": "5KHjyMQSWKxmeEQrtzuriq",
+          "name": "Two Aladins",
+          "albumType": "single",
+          "releaseDate": "2025-09-19",
+          "totalTracks": 2,
+          "image": "https://i.scdn.co/image/ab67616d0000b273a121d84294bffc995beda9fd",
+          "url": "https://open.spotify.com/album/5KHjyMQSWKxmeEQrtzuriq"
+        },
+        {
+          "id": "2KdfVnZkgh8D9uKw4PZYr6",
+          "name": "Loosen Up (Acoustic Version)",
+          "albumType": "single",
+          "releaseDate": "2025-09-12",
+          "totalTracks": 2,
+          "image": "https://i.scdn.co/image/ab67616d0000b2735071461902667d607f592d4d",
+          "url": "https://open.spotify.com/album/2KdfVnZkgh8D9uKw4PZYr6"
+        },
+        {
+          "id": "2bOUGFE8kyfQ7oZUt47v2h",
+          "name": "Caje",
+          "albumType": "single",
+          "releaseDate": "2025-09-05",
+          "totalTracks": 2,
+          "image": "https://i.scdn.co/image/ab67616d0000b273a3a4f072082a68c5c9f6ba72",
+          "url": "https://open.spotify.com/album/2bOUGFE8kyfQ7oZUt47v2h"
+        },
+        {
+          "id": "4R75YG45pQcjsVA4pYQRh2",
+          "name": "Work That Body",
+          "albumType": "single",
+          "releaseDate": "2025-08-22",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b2736d2bc0460783e4ff8d9bc18f",
+          "url": "https://open.spotify.com/album/4R75YG45pQcjsVA4pYQRh2"
+        }
+      ],
+      "topTracks": [
+        {
+          "id": "5nPbKG04fhLkIAjcPFaZq7",
+          "name": "I Adore You (feat. Daecolm)",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/5nPbKG04fhLkIAjcPFaZq7",
+          "durationMs": 214000,
+          "popularity": 85,
+          "album": {
+            "id": "5MrdEMJrBnauBJsd1nYY00",
+            "name": "I Adore You (feat. Daecolm)",
+            "releaseDate": "2024-07-19",
+            "image": "https://i.scdn.co/image/ab67616d0000b27305005dc483e9f8a73ccc6d3d"
+          },
+          "artists": [
+            "HUGEL",
+            "Topic",
+            "Arash",
+            "Daecolm"
+          ]
+        },
+        {
+          "id": "7xFy1kfgGWJWTpx1vSHBLi",
+          "name": "It Feels So Good",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/7xFy1kfgGWJWTpx1vSHBLi",
+          "durationMs": 160973,
+          "popularity": 79,
+          "album": {
+            "id": "5DkTpze7FxkVlsNgD3jKYO",
+            "name": "It Feels So Good",
+            "releaseDate": "2024-11-01",
+            "image": "https://i.scdn.co/image/ab67616d0000b273aa7df9183be7f3bb8c8ad4bc"
+          },
+          "artists": [
+            "Matt Sassari",
+            "HUGEL",
+            "Sonique"
+          ]
+        },
+        {
+          "id": "1ExjoMeJQxAYtHFke6eW31",
+          "name": "Jamaican (Bam Bam)",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/1ExjoMeJQxAYtHFke6eW31",
+          "durationMs": 156393,
+          "popularity": 77,
+          "album": {
+            "id": "1BweAtoAn6XFcPa4iJtO6G",
+            "name": "Jamaican (Bam Bam)",
+            "releaseDate": "2025-11-07",
+            "image": "https://i.scdn.co/image/ab67616d0000b273121f28faa2fca034a4028a16"
+          },
+          "artists": [
+            "HUGEL",
+            "SOLTO (FR)"
+          ]
+        },
+        {
+          "id": "2YHUlS8D0qH6GUUMNBHFgT",
+          "name": "Forever (feat. Malou & Yuna)",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/2YHUlS8D0qH6GUUMNBHFgT",
+          "durationMs": 140500,
+          "popularity": 70,
+          "album": {
+            "id": "5Vg7VGD673yE2mDt4SxZD2",
+            "name": "Forever (feat. Malou & Yuna)",
+            "releaseDate": "2024-09-20",
+            "image": "https://i.scdn.co/image/ab67616d0000b273ee33ec7e18100fb2382f6152"
+          },
+          "artists": [
+            "HUGEL",
+            "Diplo",
+            "Malou",
+            "Yuna"
+          ]
+        },
+        {
+          "id": "2jWZ9NZotZb2hN5obKx2FA",
+          "name": "Loosen Up",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/2jWZ9NZotZb2hN5obKx2FA",
+          "durationMs": 180000,
+          "popularity": 74,
+          "album": {
+            "id": "0zVdQCWZh8j3FARvnNr6sZ",
+            "name": "Loosen Up",
+            "releaseDate": "2025-06-27",
+            "image": "https://i.scdn.co/image/ab67616d0000b273b0a80ce0fe8ca96c3ae33e37"
+          },
+          "artists": [
+            "HUGEL",
+            "Dawty",
+            "Preston Harris"
+          ]
+        },
+        {
+          "id": "2iamvJ8dFSfapKYEtEYFun",
+          "name": "una noche con hugel",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/2iamvJ8dFSfapKYEtEYFun",
+          "durationMs": 191475,
+          "popularity": 72,
+          "album": {
+            "id": "2TWRbmPRKGGp3iiREkKyjT",
+            "name": "una noche con hugel",
+            "releaseDate": "2025-03-14",
+            "image": "https://i.scdn.co/image/ab67616d0000b2739d871d0684b96efbe9c7713a"
+          },
+          "artists": [
+            "HUGEL",
+            "Alleh",
+            "Yorghaki"
+          ]
+        },
+        {
+          "id": "14S2VMZRhekYGluotZ4pqg",
+          "name": "Patadas de Ahogado / LATÍN MAFIA, HUMBE - Rework",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/14S2VMZRhekYGluotZ4pqg",
+          "durationMs": 186341,
+          "popularity": 71,
+          "album": {
+            "id": "4XNpw8KZFcml3E0wz4ZyYx",
+            "name": "Patadas de Ahogado / LATÍN MAFIA, HUMBE (Rework)",
+            "releaseDate": "2024-02-22",
+            "image": "https://i.scdn.co/image/ab67616d0000b273cddd0ce08ade5bacba430992"
+          },
+          "artists": [
+            "HUGEL"
+          ]
+        },
+        {
+          "id": "5PL7k9QH7Kj7B4527dHvon",
+          "name": "La Verdolaga",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/5PL7k9QH7Kj7B4527dHvon",
+          "durationMs": 150987,
+          "popularity": 70,
+          "album": {
+            "id": "6NC1xi5hipWfyrwkq3fe4r",
+            "name": "La Verdolaga",
+            "releaseDate": "2024-06-28",
+            "image": "https://i.scdn.co/image/ab67616d0000b2738bdf0f9cca6bcb0b8d9cc051"
+          },
+          "artists": [
+            "HUGEL",
+            "Totó La Momposina"
+          ]
+        },
+        {
+          "id": "2KVAO2OAH6a9Tr2DqYL65g",
+          "name": "CORAÇAO - 20th Anniversary Mix",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/2KVAO2OAH6a9Tr2DqYL65g",
+          "durationMs": 175714,
+          "popularity": 69,
+          "album": {
+            "id": "76jQdtc4MNArbcZxWgZU3p",
+            "name": "CORAÇAO (20th Anniversary Mix)",
+            "releaseDate": "2024-08-09",
+            "image": "https://i.scdn.co/image/ab67616d0000b27337a7e2d40d3900ceaedeb6d8"
+          },
+          "artists": [
+            "Jerry Ropero",
+            "HUGEL",
+            "Mijangos",
+            "Jesús Fernández"
+          ]
+        },
+        {
+          "id": "2s2NJlQfNF77nQcQvb4sBk",
+          "name": "Bad Dreams - HUGEL Remix",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/2s2NJlQfNF77nQcQvb4sBk",
+          "durationMs": 182875,
+          "popularity": 69,
+          "album": {
+            "id": "0ssTX65vCg6WGt6NsGHzZd",
+            "name": "Bad Dreams (HUGEL Remix)",
+            "releaseDate": "2025-04-11",
+            "image": "https://i.scdn.co/image/ab67616d0000b2732ea151c19130965680b0c1a5"
+          },
+          "artists": [
+            "Teddy Swims",
+            "HUGEL"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "slug": "peggy-gou",
+    "identity": {
+      "name": "Peggy Gou",
+      "mbid": "4c41d78d-9dd5-430d-81ea-286052158293",
+      "type": "Person",
+      "gender": "Female",
+      "country": "DE",
+      "aliases": [
+        "김민지",
+        "페기 구"
+      ],
+      "labels": [
+        {
+          "name": "Gudu",
+          "mbid": "28f48a86-cdc0-40cc-9729-0204c2628697",
+          "relationType": "label founder"
+        }
+      ],
+      "debutYear": 1991,
+      "careerYears": 35,
+      "links": {
+        "musicbrainz": "https://musicbrainz.org/artist/4c41d78d-9dd5-430d-81ea-286052158293"
+      }
+    },
+    "spotify": {
+      "spotifyId": "2mLA48B366zkELXYx7hcDN",
+      "image": "https://i.scdn.co/image/ab6761610000e5ebffbd43b1e54eb09a8c824f53",
+      "genres": [],
+      "followers": 1080441,
+      "popularity": 65,
+      "spotifyUrl": "https://open.spotify.com/artist/2mLA48B366zkELXYx7hcDN",
+      "albums": [
+        {
+          "id": "5EGfRfeXfcrx6la5ZYNmjx",
+          "name": "I Hear You – Bonus Tracks Edition",
+          "albumType": "album",
+          "releaseDate": "2024-09-26",
+          "totalTracks": 15,
+          "image": "https://i.scdn.co/image/ab67616d0000b27392962a23e27072a8084d31a3",
+          "url": "https://open.spotify.com/album/5EGfRfeXfcrx6la5ZYNmjx"
+        },
+        {
+          "id": "5pnr4GOQkBuGuYPeiLw1T6",
+          "name": "I Hear You",
+          "albumType": "album",
+          "releaseDate": "2024-06-07",
+          "totalTracks": 10,
+          "image": "https://i.scdn.co/image/ab67616d0000b273b58857b06c0d9ebf76458dc1",
+          "url": "https://open.spotify.com/album/5pnr4GOQkBuGuYPeiLw1T6"
+        },
+        {
+          "id": "14BFEPRu1ERewCV8dhRQ6R",
+          "name": "DJ-Kicks (Peggy Gou) [DJ Mix]",
+          "albumType": "album",
+          "releaseDate": "2019-06-28",
+          "totalTracks": 19,
+          "image": "https://i.scdn.co/image/ab67616d0000b273e152b1a98e4cca94fbe742e7",
+          "url": "https://open.spotify.com/album/14BFEPRu1ERewCV8dhRQ6R"
+        },
+        {
+          "id": "2AgQHiCnhTpiOwZ29rrZ6v",
+          "name": "D.A.N.C.E (From F1® The Movie)",
+          "albumType": "single",
+          "releaseDate": "2025-06-24",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273ffa4ade0ed262efb46c36fb0",
+          "url": "https://open.spotify.com/album/2AgQHiCnhTpiOwZ29rrZ6v"
+        },
+        {
+          "id": "4AzXyYHVGI7OHC2B6u0MbC",
+          "name": "like JENNIE",
+          "albumType": "single",
+          "releaseDate": "2025-04-25",
+          "totalTracks": 3,
+          "image": "https://i.scdn.co/image/ab67616d0000b273ba8d5d911598c406b4aa806b",
+          "url": "https://open.spotify.com/album/4AzXyYHVGI7OHC2B6u0MbC"
+        },
+        {
+          "id": "0VGwTefFVC2h5X9UBQ3qm8",
+          "name": "Find The Way (Smokey Bubblin' B Remix)",
+          "albumType": "single",
+          "releaseDate": "2024-11-20",
+          "totalTracks": 3,
+          "image": "https://i.scdn.co/image/ab67616d0000b273d095ff21b010986026219893",
+          "url": "https://open.spotify.com/album/0VGwTefFVC2h5X9UBQ3qm8"
+        },
+        {
+          "id": "798ipPSqEJLh6uIRCqAtcK",
+          "name": "Find The Way (DJ Q Remix)",
+          "albumType": "single",
+          "releaseDate": "2024-10-30",
+          "totalTracks": 2,
+          "image": "https://i.scdn.co/image/ab67616d0000b273a88af86e58641399f414de85",
+          "url": "https://open.spotify.com/album/798ipPSqEJLh6uIRCqAtcK"
+        },
+        {
+          "id": "11pq24uahxvbUMhXhmRdcN",
+          "name": "Find The Way",
+          "albumType": "single",
+          "releaseDate": "2024-08-16",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273182ca67e553ac38fd9a28924",
+          "url": "https://open.spotify.com/album/11pq24uahxvbUMhXhmRdcN"
+        },
+        {
+          "id": "5SmaAe7mkfMRyfjw1emgZp",
+          "name": "Lobster Telephone (Edit)",
+          "albumType": "single",
+          "releaseDate": "2024-05-16",
+          "totalTracks": 2,
+          "image": "https://i.scdn.co/image/ab67616d0000b273e40b077a4f607bbdfa008ba3",
+          "url": "https://open.spotify.com/album/5SmaAe7mkfMRyfjw1emgZp"
+        },
+        {
+          "id": "4jLAzkokPOXLjGMLaLhryc",
+          "name": "1+1=11",
+          "albumType": "single",
+          "releaseDate": "2024-04-04",
+          "totalTracks": 2,
+          "image": "https://i.scdn.co/image/ab67616d0000b27329e6bc4461bea38b991a9b35",
+          "url": "https://open.spotify.com/album/4jLAzkokPOXLjGMLaLhryc"
+        },
+        {
+          "id": "5HRtN5JcxONyY8WlvayG2g",
+          "name": "I Believe In Love Again (Jex Opolis Remix)",
+          "albumType": "single",
+          "releaseDate": "2023-12-01",
+          "totalTracks": 2,
+          "image": "https://i.scdn.co/image/ab67616d0000b27353da239062d119e730473438",
+          "url": "https://open.spotify.com/album/5HRtN5JcxONyY8WlvayG2g"
+        },
+        {
+          "id": "4j8paHpWXq0sgm5jcWl84R",
+          "name": "I Believe In Love Again",
+          "albumType": "single",
+          "releaseDate": "2023-11-08",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273aa54578ae163a7342b6a82c5",
+          "url": "https://open.spotify.com/album/4j8paHpWXq0sgm5jcWl84R"
+        }
+      ],
+      "topTracks": [
+        {
+          "id": "1BktkzhQ6rhP1jTREtUdPK",
+          "name": "(It Goes Like) Nanana - Edit",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/1BktkzhQ6rhP1jTREtUdPK",
+          "durationMs": 231545,
+          "popularity": 66,
+          "album": {
+            "id": "5pnr4GOQkBuGuYPeiLw1T6",
+            "name": "I Hear You",
+            "releaseDate": "2024-06-07",
+            "image": "https://i.scdn.co/image/ab67616d0000b273b58857b06c0d9ebf76458dc1"
+          },
+          "artists": [
+            "Peggy Gou"
+          ]
+        },
+        {
+          "id": "5Hijdt7rmbj9fUJdXEs6Nz",
+          "name": "(It Goes Like) Nanana",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/5Hijdt7rmbj9fUJdXEs6Nz",
+          "durationMs": 367613,
+          "popularity": 65,
+          "album": {
+            "id": "6v3I0eftpzoc1VNR9JoVyc",
+            "name": "(It Goes Like) Nanana",
+            "releaseDate": "2023-09-29",
+            "image": "https://i.scdn.co/image/ab67616d0000b273a658ab0f60cc249da0b97de5"
+          },
+          "artists": [
+            "Peggy Gou"
+          ]
+        },
+        {
+          "id": "6FwPQVdtjwfORrrFkpGhrz",
+          "name": "Starry Night - Edit",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/6FwPQVdtjwfORrrFkpGhrz",
+          "durationMs": 233978,
+          "popularity": 63,
+          "album": {
+            "id": "0bYW9weJ7SXRaBFbWuBQeI",
+            "name": "Starry Night",
+            "releaseDate": "2019-03-22",
+            "image": "https://i.scdn.co/image/ab67616d0000b2739714a3b22d67b58b7f442818"
+          },
+          "artists": [
+            "Peggy Gou"
+          ]
+        },
+        {
+          "id": "41JiYRL2Ahnbjy0WRExDge",
+          "name": "like JENNIE - Peggy Gou Remix",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/41JiYRL2Ahnbjy0WRExDge",
+          "durationMs": 208375,
+          "popularity": 58,
+          "album": {
+            "id": "2PxwTnSJW1mXpnb1HO2Tsf",
+            "name": "like JENNIE",
+            "releaseDate": "2025-04-11",
+            "image": "https://i.scdn.co/image/ab67616d0000b273244a9c144cd1d39ae1416d98"
+          },
+          "artists": [
+            "JENNIE",
+            "Peggy Gou"
+          ]
+        },
+        {
+          "id": "1GZJu6ciZ55S8Kp1s8Z5ex",
+          "name": "It Makes You Forget (Itgehane) - Edit",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/1GZJu6ciZ55S8Kp1s8Z5ex",
+          "durationMs": 236160,
+          "popularity": 59,
+          "album": {
+            "id": "6KQHrwJdcPIUx1mb97b1Nj",
+            "name": "It Makes You Forget (Itgehane)",
+            "releaseDate": "2018-01-23",
+            "image": "https://i.scdn.co/image/ab67616d0000b273ca6eb064be8e68ec47e621bd"
+          },
+          "artists": [
+            "Peggy Gou"
+          ]
+        },
+        {
+          "id": "15cIdgwfMw0YRunjzxtui9",
+          "name": "D.A.N.C.E - From F1® The Movie",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/15cIdgwfMw0YRunjzxtui9",
+          "durationMs": 195404,
+          "popularity": 55,
+          "album": {
+            "id": "2AgQHiCnhTpiOwZ29rrZ6v",
+            "name": "D.A.N.C.E (From F1® The Movie)",
+            "releaseDate": "2025-06-24",
+            "image": "https://i.scdn.co/image/ab67616d0000b273ffa4ade0ed262efb46c36fb0"
+          },
+          "artists": [
+            "Peggy Gou",
+            "F1 The Album"
+          ]
+        },
+        {
+          "id": "46KG2wmw38sYm1GoRHIsOW",
+          "name": "Starry Night",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/46KG2wmw38sYm1GoRHIsOW",
+          "durationMs": 398598,
+          "popularity": 56,
+          "album": {
+            "id": "0bYW9weJ7SXRaBFbWuBQeI",
+            "name": "Starry Night",
+            "releaseDate": "2019-03-22",
+            "image": "https://i.scdn.co/image/ab67616d0000b2739714a3b22d67b58b7f442818"
+          },
+          "artists": [
+            "Peggy Gou"
+          ]
+        },
+        {
+          "id": "1Rnx52PUuhrLrj306hOZHb",
+          "name": "Can't Get You out of My Head - Peggy Gou’s Midnight Remix",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/1Rnx52PUuhrLrj306hOZHb",
+          "durationMs": 271240,
+          "popularity": 54,
+          "album": {
+            "id": "046ZhN1OxrBDq9KSUQTzm3",
+            "name": "Can't Get You out of My Head (Peggy Gou’s Midnight Remix)",
+            "releaseDate": "2022-05-19",
+            "image": "https://i.scdn.co/image/ab67616d0000b273e964a0bd5c22b5691ef177b8"
+          },
+          "artists": [
+            "Kylie Minogue",
+            "Peggy Gou"
+          ]
+        },
+        {
+          "id": "0f7ROOquhmSpNgbBeWh0hn",
+          "name": "Find The Way",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/0f7ROOquhmSpNgbBeWh0hn",
+          "durationMs": 237160,
+          "popularity": 54,
+          "album": {
+            "id": "11pq24uahxvbUMhXhmRdcN",
+            "name": "Find The Way",
+            "releaseDate": "2024-08-16",
+            "image": "https://i.scdn.co/image/ab67616d0000b273182ca67e553ac38fd9a28924"
+          },
+          "artists": [
+            "Peggy Gou"
+          ]
+        },
+        {
+          "id": "1xYsgHPHiR3IIdpRzkfKcE",
+          "name": "I Believe In Love Again",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/1xYsgHPHiR3IIdpRzkfKcE",
+          "durationMs": 176524,
+          "popularity": 49,
+          "album": {
+            "id": "5pnr4GOQkBuGuYPeiLw1T6",
+            "name": "I Hear You",
+            "releaseDate": "2024-06-07",
+            "image": "https://i.scdn.co/image/ab67616d0000b273b58857b06c0d9ebf76458dc1"
+          },
+          "artists": [
+            "Peggy Gou",
+            "Lenny Kravitz"
+          ]
+        }
+      ]
+    }
   }
 ]
