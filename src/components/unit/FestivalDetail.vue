@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onBeforeUnmount, ref } from 'vue'
+import { computed, onBeforeUnmount, ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import festivals from '@/data/festivals.json'
 import artists from '@/data/artists.json'
@@ -92,9 +92,20 @@ const lineupEntries = computed(() => {
   }))
 })
 
+const showAllLineup = ref(false)
+const visibleLineupEntries = computed(() =>
+  showAllLineup.value ? lineupEntries.value : lineupEntries.value.slice(0, 6)
+)
+const hasMoreLineup = computed(() => lineupEntries.value.length > 6)
+
 loadFavorites()
+
+watch(festivalId, () => {
+  showAllLineup.value = false
+})
  
 const shareFeedback = ref('')
+const shareFeedbackType = ref<'success' | 'error' | ''>('')
 let feedbackTimer: number | undefined
 
 const shareUrl = computed(() => {
@@ -118,10 +129,12 @@ const onShareLink = async () => {
   try {
     if (typeof navigator !== 'undefined' && navigator.share) {
       await navigator.share({ title: festival.value?.title, url: shareUrl.value })
-      shareFeedback.value = t('festivalDetail.shareOpened')
+      shareFeedback.value = t('festivalDetail.shareSuccess')
+      shareFeedbackType.value = 'success'
     } else if (typeof navigator !== 'undefined' && navigator.clipboard?.writeText) {
       await navigator.clipboard.writeText(shareUrl.value)
       shareFeedback.value = t('festivalDetail.shareCopied')
+      shareFeedbackType.value = 'success'
     } else {
       const textarea = document.createElement('textarea')
       textarea.value = shareUrl.value
@@ -130,13 +143,16 @@ const onShareLink = async () => {
       document.execCommand('copy')
       document.body.removeChild(textarea)
       shareFeedback.value = t('festivalDetail.shareCopied')
+      shareFeedbackType.value = 'success'
     }
   } catch (error) {
     console.error(error)
     shareFeedback.value = t('festivalDetail.shareFailed')
+    shareFeedbackType.value = 'error'
   } finally {
     feedbackTimer = window.setTimeout(() => {
       shareFeedback.value = ''
+      shareFeedbackType.value = ''
     }, 2400)
   }
 }
@@ -173,13 +189,13 @@ const relatedByLocation = computed(() => {
           <h1 class="text-2xl font-black pc:text-3xl">{{ festival.title }}</h1>
           <div class="pt-3 text-sm black pc:text-base">{{ dateRange }}</div>
           <div class="py-3">
-            <div class="text-sm black pc:text-base">{{ t('festivalDetail.location') }}</div>
+            <div class="text-sm font-semibold black pc:text-base">{{ t('festivalDetail.location') }}</div>
             <div class="text-base text-gray-700 pc:text-lg">{{ locationText }}</div>
           </div>
-          <div class="flex flex-wrap items-center gap-3">
+          <div class="flex items-center gap-3">
             <button
               type="button"
-              class="inline-flex items-center gap-2 px-3 py-1 rounded-md border border-[var(--stroke)] text-sm pc:hover:bg-neonpink pc:hover:text-white transition-colors [text-shadow:1px_1px_2px_var(--shadow-weak)]"
+              class="w-[50%] inline-flex justify-center items-center gap-2 px-3 py-1 rounded-md border border-[var(--stroke)] text-sm pc:hover:bg-neonpink pc:hover:text-white transition-colors [text-shadow:1px_1px_2px_var(--shadow-weak)]"
               @click="onToggleFavorite"
               :class="isBookmarked ? 'bg-neonpink text-white' : 'border-neonpink text-neonpink'"
             >
@@ -188,22 +204,28 @@ const relatedByLocation = computed(() => {
               </div>
               <div>{{ isBookmarked ? t('common.bookmarked') : t('common.bookmark') }}</div>
             </button>
-            <button
-              type="button"
-              class="inline-flex items-center gap-2 px-3 py-1 rounded-md border border-[var(--stroke)] text-sm pc:hover:bg-pulseblue pc:hover:text-white transition-colors"
-              @click="onShareLink"
+            <div class="relative w-[50%]">
+              <button
+                type="button"
+                class="w-full inline-flex justify-center items-center gap-2 px-3 py-1 rounded-md border border-[var(--stroke)] text-pulseblue border-pulseblue text-sm pc:hover:bg-pulseblue pc:hover:text-white transition-colors  [text-shadow:1px_1px_2px_var(--shadow-weak)]"
+                @click="onShareLink"
+              >
+                <div class="material-symbols-rounded text-xl">share</div>
+                <div>{{ t('festivalDetail.share') }}</div>
+              </button>
+            <div
+              v-if="shareFeedback"
+              class="absolute text-xs -bottom-[20px] left-[5px]"
+              :class="shareFeedbackType === 'error' ? 'text-red-500' : 'text-pulseblue'"
             >
-              <div class="material-symbols-rounded text-xl">share</div>
-              <div>{{ t('festivalDetail.share') }}</div>
-            </button>
-            <div v-if="shareFeedback" class="text-xs text-gray-500">
               {{ shareFeedback }}
+            </div>
             </div>
           </div>
         </div>
 
         <div class="rounded-lg bg-[var(--bg)] space-y-3">
-          <div class="text-sm font-semibold text-gray-700">{{ t('festivalDetail.linkSection') }}</div>
+          <div class="text-sm font-bold text-gray-700">{{ t('festivalDetail.linkSection') }}</div>
           <div class="flex gap-3 flex-col text-center">
             <a
               v-if="festival.ticket"
@@ -231,25 +253,23 @@ const relatedByLocation = computed(() => {
           </div>
         </div>
 
-      
-
         <div class="grid gap-6 pc:grid-cols-2">
-          <div class="p-4 rounded-lg bg-[var(--bg)] shadow-[0_0_6px_var(--shadow-weak)] space-y-3">
-            <div class="text-sm font-semibold text-gray-700">{{ t('festivalDetail.lineup') }}</div>
-            <div class="flex flex-wrap gap-2">
-              <template v-for="item in lineupEntries" :key="item.name">
+          <div class="space-y-3 relative mb-[30px]">
+            <div class="text-sm font-bold text-gray-700">{{ t('festivalDetail.lineup') }}</div>
+            <div class="grid grid-cols-2 gap-3">
+              <template v-for="item in visibleLineupEntries" :key="item.name">
                 <router-link
                   v-if="item.slug"
                   :to="{ name: 'artistdetail', params: { slug: item.slug } }"
-                  class="px-3 py-1 rounded-full bg-black/5 text-sm text-[var(--text)] hover:bg-neonpink hover:text-white transition-colors flex items-center gap-2"
+                  class=" rounded-md text-sm text-[var(--text)] pc:hover:bg-neonpink pc:hover:text-white transition-colors flex items-center gap-2"
                 >
                   <img
                     v-if="item.image"
                     :src="item.image"
                     :alt="item.name"
-                    class="w-7 h-7 rounded-full object-cover"
+                    class="w-8 h-8 rounded-md object-cover shadow-[1px_1px_4px_var(--shadow-weak)]"
                   />
-                  <div v-else class="w-7 h-7 rounded-full bg-black/10 flex items-center justify-center text-xs font-semibold uppercase">
+                  <div v-else class="w-7 h-7 rounded-md bg-black/10 flex items-center justify-center text-xs font-semibold uppercase">
                     {{ item.name?.[0] || '?' }}
                   </div>
                   {{ item.name }}
@@ -265,6 +285,15 @@ const relatedByLocation = computed(() => {
                 </span>
               </template>
             </div>
+            <button
+              v-if="hasMoreLineup"
+              type="button"
+              class="absolute flex items-center right-0 text-xs font-semibold text-gray-400 pc:hover:text-neonpink transition-colors"
+              @click="showAllLineup = !showAllLineup"
+            >
+              <div>{{ showAllLineup ? t('festivalDetail.showLess') : t('festivalDetail.showMore') }}</div>
+              <span class="material-symbols-rounded">{{ showAllLineup ? t('arrow_drop_up') : t('arrow_drop_down') }}</span>
+            </button>
           </div>
 
           <div class="p-4 rounded-lg bg-[var(--bg)] shadow-[0_0_6px_var(--shadow-weak)] space-y-3">
@@ -296,7 +325,7 @@ const relatedByLocation = computed(() => {
               v-for="item in relatedByLocation"
               :key="item.id"
               :to="{ name: 'festivaldetail', params: { id: item.id } }"
-              class="flex gap-3 p-3 rounded-lg bg-black/5 hover:bg-neonpink/10 transition-colors"
+              class="flex gap-3 p-3 rounded-lg bg-black/5 pc:hover:bg-neonpink/10 transition-colors"
             >
               <img
                 v-if="item.image"
