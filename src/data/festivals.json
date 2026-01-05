@@ -492,14 +492,14 @@
     },
     {
       "id": 27,
-      "title": "Festival Name",
+      "title": "Festival Namesss",
       "start": "2026-01-03",
       "end": "2026-01-22",
       "image": "/img/testimg.png",
       "contry": "Netherlands",
       "city": "Amsterdam",
       "mapQuery": "Amsterdam, Netherlands",
-      "lineup": "Martin Garrix, Hardwell, Afrojack, ANYMA, Matisse&Sadko, Dubvision, Armin Van Burren, Third Party, Vluarr",
+      "lineup": "Martin Garrix, Hardwell, Afrojack, ANYMA, Matisse&Sadko, Dubvision, Armin Van Burren, Third Party, Vluarr, Peggy Gou, HUGLE, Crankdat, Sullivan King, Said The Sky, Slander, Zedd, Illenium",
       "artistSlugs": [
         "martin-garrix",
         "hardwell",
@@ -509,7 +509,15 @@
         "dubvision",
         "armin-van-burren",
         "third-party",
-        "vluarr"
+        "vluarr",
+        "peggy-gou",
+        "hugel",
+        "crankdat",
+        "sullivan-king",
+        "said-the-Sky",
+        "slander",
+        "zedd",
+        "illenium"
       ],
       "ticket": "https://www.ideartm.com",
       "infolink": "https://www.ideartm.com"

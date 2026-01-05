@@ -708,7 +708,8 @@
         "electronic",
         "electronica",
         "melodic house",
-        "melodic techno"
+        "melodic techno",
+        "trance"
       ],
       "albums": [
         {
@@ -5373,7 +5374,7 @@
     "spotify": {
       "spotifyId": "2mLA48B366zkELXYx7hcDN",
       "image": "https://i.scdn.co/image/ab6761610000e5ebffbd43b1e54eb09a8c824f53",
-      "genres": [],
+      "genres": ["dance", "edm"],
       "followers": 1080441,
       "popularity": 65,
       "spotifyUrl": "https://open.spotify.com/artist/2mLA48B366zkELXYx7hcDN",

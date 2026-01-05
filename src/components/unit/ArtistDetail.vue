@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
-import { useRoute } from 'vue-router'
+import { computed, onBeforeUnmount, ref } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 import artists from '@/data/artists.json'
 import festivals from '@/data/festivals.json'
 import { favorites, loadFavorites, toggleFavorite } from '@/utils/favorites'
@@ -67,6 +67,7 @@ type FestivalItem = {
 }
 
 const route = useRoute()
+const router = useRouter()
 const props = defineProps<{
   slug?: string
 }>()
@@ -138,10 +139,64 @@ const onToggleFavorite = () => {
   if (!slug.value) return
   toggleFavorite(slug.value)
 }
+
+const shareFeedback = ref('')
+const shareFeedbackType = ref<'success' | 'error' | ''>('')
+let feedbackTimer: number | undefined
+
+const shareUrl = computed(() => {
+  if (typeof window === 'undefined' || !slug.value) return ''
+  const resolved = router.resolve({ name: 'artistdetail', params: { slug: slug.value } })
+  return new URL(resolved.href, window.location.origin).toString()
+})
+
+const onShareLink = async () => {
+  if (!shareUrl.value) return
+
+  if (feedbackTimer) {
+    window.clearTimeout(feedbackTimer)
+  }
+
+  try {
+    if (typeof navigator !== 'undefined' && navigator.share) {
+      await navigator.share({ title: artist.value?.identity.name, url: shareUrl.value })
+      shareFeedback.value = t('artistDetail.shareSuccess')
+      shareFeedbackType.value = 'success'
+    } else if (typeof navigator !== 'undefined' && navigator.clipboard?.writeText) {
+      await navigator.clipboard.writeText(shareUrl.value)
+      shareFeedback.value = t('artistDetail.shareCopied')
+      shareFeedbackType.value = 'success'
+    } else {
+      const textarea = document.createElement('textarea')
+      textarea.value = shareUrl.value
+      document.body.appendChild(textarea)
+      textarea.select()
+      document.execCommand('copy')
+      document.body.removeChild(textarea)
+      shareFeedback.value = t('artistDetail.shareCopied')
+      shareFeedbackType.value = 'success'
+    }
+  } catch (error) {
+    console.error(error)
+    shareFeedback.value = t('artistDetail.shareFailed')
+    shareFeedbackType.value = 'error'
+  } finally {
+    feedbackTimer = window.setTimeout(() => {
+      shareFeedback.value = ''
+      shareFeedbackType.value = ''
+    }, 2400)
+  }
+}
+
+onBeforeUnmount(() => {
+  if (feedbackTimer) {
+    window.clearTimeout(feedbackTimer)
+  }
+})
 </script>
 
 <template>
-  <div class="px-5 py-8 pc:px-14 pc:py-10">
+  <div class="px-5 pb-8 pc:px-14 pc:py-10">
     <div v-if="artist" class="max-w-4xl mx-auto space-y-6">
       <div class="rounded-xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.12)]">
         <img
@@ -170,16 +225,35 @@ const onToggleFavorite = () => {
             {{ t('artistDetail.labels', { value: displayLabelText }) }}
           </div>
         </div>
-        <button
-          type="button"
-          class="inline-flex items-center gap-2 px-3 py-1 rounded-md border border-[var(--stroke)] text-sm hover:bg-neonpink hover:text-white transition-colors"
-          @click="onToggleFavorite"
-        >
-          <span class="material-symbols-rounded text-base">
-            {{ isBookmarked ? 'favorite' : 'favorite_border' }}
-          </span>
-          <span>{{ isBookmarked ? t('common.bookmarked') : t('common.bookmark') }}</span>
-        </button>
+        <div class="flex items-center gap-3">
+          <button
+            type="button"
+            class="inline-flex items-center gap-2 px-3 py-1 rounded-md border border-[var(--stroke)] text-sm hover:bg-neonpink hover:text-white transition-colors"
+            @click="onToggleFavorite"
+          >
+            <span class="material-symbols-rounded text-base">
+              {{ isBookmarked ? 'favorite' : 'favorite_border' }}
+            </span>
+            <span>{{ isBookmarked ? t('common.bookmarked') : t('common.bookmark') }}</span>
+          </button>
+          <div class="relative">
+            <button
+              type="button"
+              class="inline-flex items-center gap-2 px-3 py-1 rounded-md border border-[var(--stroke)] text-pulseblue border-pulseblue text-sm hover:bg-pulseblue hover:text-white transition-colors"
+              @click="onShareLink"
+            >
+              <span class="material-symbols-rounded text-base">share</span>
+              <span>{{ t('artistDetail.share') }}</span>
+            </button>
+            <div
+              v-if="shareFeedback"
+              class="absolute text-xs -bottom-[20px] left-[5px]"
+              :class="shareFeedbackType === 'error' ? 'text-red-500' : 'text-pulseblue'"
+            >
+              {{ shareFeedback }}
+            </div>
+          </div>
+        </div>
       </div>
       <div class="p-4 rounded-lg bg-[var(--bg)] shadow-[0_0_6px_var(--shadow-weak)] space-y-3">
         <div class="text-sm font-semibold text-gray-700">{{ t('artistDetail.genres') }}</div>
