@@ -4,7 +4,7 @@
     "identity": {
       "name": "Afrojack",
       "mbid": "a3ee920f-4e7f-4993-8aca-4b8538cfaa4a",
-      "type": "Person",
+      "type": "Solo",
       "country": "NL",
       "aliases": [
         "Afrojack feat. Wrabel",
@@ -15,15 +15,16 @@
         "musicbrainz": "https://musicbrainz.org/artist/a3ee920f-4e7f-4993-8aca-4b8538cfaa4a"
       },
       "gender": "Male",
-      "debutYear": 1987,
-      "careerYears": 39,
+      "debutYear": 2006,
+      "careerYears": 20,
       "labels": [
         {
           "name": "Afrojack Music",
           "mbid": "0ffa4a6f-6b14-49b1-8853-f5fe4aa54e0b",
           "relationType": "personal publisher"
         }
-      ]
+      ],
+      "birthYear": 1987
     },
     "spotify": {
       "spotifyId": "4D75GcNG95ebPtNvoNVXhz",
@@ -341,7 +342,7 @@
     "identity": {
       "name": "Anyma",
       "mbid": "788307a8-ca6a-4775-b9a2-8d27d2af71ce",
-      "type": "Person",
+      "type": "Solo",
       "country": "DE",
       "aliases": [
         "Anyma (ofc)"
@@ -350,8 +351,9 @@
         "musicbrainz": "https://musicbrainz.org/artist/788307a8-ca6a-4775-b9a2-8d27d2af71ce"
       },
       "gender": "Male",
-      "debutYear": 1988,
-      "careerYears": 38
+      "debutYear": 2021,
+      "careerYears": 5,
+      "birthYear": 1988
     },
     "spotify": {
       "spotifyId": "4iBwchw0U0GZv5RfVYSMxN",
@@ -664,7 +666,7 @@
     "identity": {
       "name": "Armin van Buuren",
       "mbid": "477b8c0c-c5fc-4ad2-b5b2-191f0bf2a9df",
-      "type": "Person",
+      "type": "Solo",
       "country": "NL",
       "aliases": [
         "Armand van Burren",
@@ -680,8 +682,8 @@
         "musicbrainz": "https://musicbrainz.org/artist/477b8c0c-c5fc-4ad2-b5b2-191f0bf2a9df"
       },
       "gender": "Male",
-      "debutYear": 1976,
-      "careerYears": 50,
+      "debutYear": 2003,
+      "careerYears": 23,
       "labels": [
         {
           "name": "Armada Music B.V.",
@@ -693,7 +695,8 @@
           "mbid": "5a5acac3-a09f-4ff3-88c0-a459d3b122b9",
           "relationType": "label founder"
         }
-      ]
+      ],
+      "birthYear": 1976
     },
     "spotify": {
       "spotifyId": "0SfsnGyD8FpIN4U4WCkBZ5",
@@ -1339,7 +1342,7 @@
     "identity": {
       "name": "Hardwell",
       "mbid": "170d6637-36e0-49dd-a225-c4fd5b77a285",
-      "type": "Person",
+      "type": "Solo",
       "country": "NL",
       "aliases": [
         "DJ Hardwell"
@@ -1348,8 +1351,8 @@
         "musicbrainz": "https://musicbrainz.org/artist/170d6637-36e0-49dd-a225-c4fd5b77a285"
       },
       "gender": "Male",
-      "debutYear": 1988,
-      "careerYears": 38,
+      "debutYear": 2003,
+      "careerYears": 23,
       "labels": [
         {
           "name": "Revealed Recordings",
@@ -1371,7 +1374,8 @@
           "mbid": "6c11ef30-2db5-4701-91b0-ecbc8786d8e8",
           "relationType": "owner"
         }
-      ]
+      ],
+      "birthYear": 1988
     },
     "spotify": {
       "spotifyId": "6BrvowZBreEkXzJQMpL174",
@@ -1694,7 +1698,7 @@
     "identity": {
       "name": "Martin Garrix",
       "mbid": "3e1f2ee4-16be-4406-bf18-6173840cf2b1",
-      "type": "Person",
+      "type": "Solo",
       "country": "NL",
       "aliases": [
         "Area21",
@@ -1708,8 +1712,8 @@
         "musicbrainz": "https://musicbrainz.org/artist/3e1f2ee4-16be-4406-bf18-6173840cf2b1"
       },
       "gender": "Male",
-      "debutYear": 1996,
-      "careerYears": 30,
+      "debutYear": 2012,
+      "careerYears": 14,
       "labels": [
         {
           "name": "STMPD RCRDS",
@@ -1726,7 +1730,8 @@
           "mbid": "2b10df17-702d-4d0e-a779-2e4ae95c4a37",
           "relationType": "recording contract"
         }
-      ]
+      ],
+      "birthYear": 1996
     },
     "spotify": {
       "spotifyId": "60d24wfXkVzDSfLS6hyCjZ",
@@ -2685,7 +2690,7 @@
     "identity": {
       "name": "Vluarr",
       "mbid": "8d21bf69-ed2a-44f2-a8eb-383803cc3d01",
-      "type": "Person",
+      "type": "Solo",
       "country": "NL",
       "aliases": [
         "Vladimir de Groot"
@@ -3005,7 +3010,7 @@
     "identity": {
       "name": "ILLENIUM",
       "mbid": "5f43abf6-92a5-468a-a633-b73f94627972",
-      "type": "Person",
+      "type": "Solo",
       "gender": "Male",
       "country": "US",
       "aliases": [
@@ -3027,11 +3032,12 @@
           "relationType": "recording contract"
         }
       ],
-      "debutYear": 1990,
-      "careerYears": 36,
+      "debutYear": 2013,
+      "careerYears": 13,
       "links": {
         "musicbrainz": "https://musicbrainz.org/artist/5f43abf6-92a5-468a-a633-b73f94627972"
-      }
+      },
+      "birthYear": 1990
     },
     "spotify": {
       "spotifyId": "45eNHdiiabvmbp4erw26rg",
@@ -3039,7 +3045,8 @@
       "genres": [
         "melodic bass",
         "future bass",
-        "edm"
+        "edm",
+        "dubstep"
       ],
       "followers": 1654194,
       "popularity": 73,
@@ -3348,7 +3355,7 @@
     "identity": {
       "name": "Zedd",
       "mbid": "56c4b861-0922-4c3a-a9b9-3bfcb00f8274",
-      "type": "Person",
+      "type": "Solo",
       "gender": "Male",
       "country": "DE",
       "aliases": [
@@ -3363,11 +3370,12 @@
           "relationType": "personal publisher"
         }
       ],
-      "debutYear": 1989,
-      "careerYears": 37,
+      "debutYear": 2010,
+      "careerYears": 16,
       "links": {
         "musicbrainz": "https://musicbrainz.org/artist/56c4b861-0922-4c3a-a9b9-3bfcb00f8274"
-      }
+      },
+      "birthYear": 1989
     },
     "spotify": {
       "spotifyId": "2qxJFvFYMEDqd7ui6kSAcq",
@@ -3678,7 +3686,7 @@
     "identity": {
       "name": "Said the Sky",
       "mbid": "8187cde0-bc0d-4669-b435-2664c2f5cab1",
-      "type": "Person",
+      "type": "Solo",
       "gender": "Male",
       "country": "US",
       "aliases": [
@@ -3691,11 +3699,12 @@
           "relationType": "personal label"
         }
       ],
-      "debutYear": 1993,
-      "careerYears": 33,
+      "debutYear": 2013,
+      "careerYears": 13,
       "links": {
         "musicbrainz": "https://musicbrainz.org/artist/8187cde0-bc0d-4669-b435-2664c2f5cab1"
-      }
+      },
+      "birthYear": 1993
     },
     "spotify": {
       "spotifyId": "4LZ4De2MoO3lP6QaNCfvcu",
@@ -4364,7 +4373,7 @@
     "identity": {
       "name": "Sullivan King",
       "mbid": "f1e0c3fb-1ecb-49fa-bebd-5b0aedb33737",
-      "type": "Person",
+      "type": "Solo",
       "gender": "Male",
       "country": "US",
       "aliases": [
@@ -4692,7 +4701,7 @@
     "identity": {
       "name": "Crankdat",
       "mbid": "00b21266-918d-434c-b31e-3f1a3e96cad5",
-      "type": "Person",
+      "type": "Solo",
       "gender": "Male",
       "aliases": [
         "Christian John Smith"
@@ -4704,18 +4713,18 @@
           "relationType": "personal label"
         }
       ],
-      "debutYear": 1997,
-      "careerYears": 29,
+      "debutYear": 2015,
+      "careerYears": 11,
       "links": {
         "musicbrainz": "https://musicbrainz.org/artist/00b21266-918d-434c-b31e-3f1a3e96cad5"
-      }
+      },
+      "birthYear": 1997
     },
     "spotify": {
       "spotifyId": "5lCekoJW9jNq01B1wiqdAb",
       "image": "https://i.scdn.co/image/ab6761610000e5eb2ddfb40a95abbf5337f9ec06",
       "genres": [
         "dubstep",
-        "riddim",
         "edm",
         "deathstep",
         "bass house"
@@ -5021,17 +5030,18 @@
     "identity": {
       "name": "HUGEL",
       "mbid": "eead7215-59da-45f5-b719-62f349ef4133",
-      "type": "Person",
+      "type": "Solo",
       "gender": "Male",
       "country": "FR",
       "aliases": [
         "Florent Hugel"
       ],
-      "debutYear": 1987,
-      "careerYears": 39,
+      "debutYear": 2015,
+      "careerYears": 11,
       "links": {
         "musicbrainz": "https://musicbrainz.org/artist/eead7215-59da-45f5-b719-62f349ef4133"
-      }
+      },
+      "birthYear": 1987
     },
     "spotify": {
       "spotifyId": "5PlfkPxwCpRRWQJBxCa0By",
@@ -5351,7 +5361,7 @@
     "identity": {
       "name": "Peggy Gou",
       "mbid": "4c41d78d-9dd5-430d-81ea-286052158293",
-      "type": "Person",
+      "type": "Solo",
       "gender": "Female",
       "country": "DE",
       "aliases": [
@@ -5365,16 +5375,20 @@
           "relationType": "label founder"
         }
       ],
-      "debutYear": 1991,
-      "careerYears": 35,
+      "debutYear": 2016,
+      "careerYears": 10,
       "links": {
         "musicbrainz": "https://musicbrainz.org/artist/4c41d78d-9dd5-430d-81ea-286052158293"
-      }
+      },
+      "birthYear": 1991
     },
     "spotify": {
       "spotifyId": "2mLA48B366zkELXYx7hcDN",
       "image": "https://i.scdn.co/image/ab6761610000e5ebffbd43b1e54eb09a8c824f53",
-      "genres": ["dance", "edm"],
+      "genres": [
+        "dance",
+        "edm"
+      ],
       "followers": 1080441,
       "popularity": 65,
       "spotifyUrl": "https://open.spotify.com/artist/2mLA48B366zkELXYx7hcDN",

@@ -62,6 +62,7 @@ const messages = {
     artistDetail: {
       country: 'Country: {value}',
       type: 'Type: {value}',
+      birth: 'Born: {value}',
       debut: 'Debut: {value}',
       career: 'Career: {years}y',
       labels: 'Labels: {value}',
@@ -156,6 +157,7 @@ const messages = {
     artistDetail: {
       country: '국가: {value}',
       type: '유형: {value}',
+      birth: '출생: {value}',
       debut: '데뷔: {value}',
       career: '활동: {years}년',
       labels: '레이블: {value}',

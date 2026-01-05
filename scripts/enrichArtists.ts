@@ -41,6 +41,7 @@ type Artist = {
     gender?: string
     country?: string
     aliases?: string[]
+    birthYear?: number
     labels?: { name: string; mbid?: string; relationType?: string }[]
     links?: Record<string, string>
     debutYear?: number
@@ -141,8 +142,11 @@ async function getEarliestReleaseGroupYear(mbid: string): Promise<number | undef
     // aliases + url-rels 유지
     const data = await mbFetch(`${MB_BASE}/artist/${mbid}?inc=aliases+url-rels+label-rels&fmt=json`)
 
-    // 1) 기본: life-span.begin
-    let debutYear = extractDebutYearFromLifeSpan(data)
+    const isPerson = data?.type === 'Person'
+    const lifeSpanYear = extractDebutYearFromLifeSpan(data)
+
+    // 1) 기본: 그룹/단체는 life-span.begin을 데뷔로, 개인은 birthYear로
+    let debutYear = !isPerson ? lifeSpanYear : undefined
 
     // 2) fallback: release-group first-release-date 중 최소 연도
     if (!debutYear && ENABLE_RELEASEGROUP_FALLBACK) {
@@ -156,17 +160,19 @@ async function getEarliestReleaseGroupYear(mbid: string): Promise<number | undef
 
     const careerYears = calcCareerYears(debutYear)
     const labels = extractLabels(data.relations)
+    const birthYear = isPerson ? lifeSpanYear : undefined
 
     a.identity = {
       ...(a.identity ?? { name: a.slug }),
       name: data.name ?? a.identity.name,
 
-      type: data.type ?? a.identity.type,
+      type: (data.type === 'Person' ? 'Solo' : data.type) ?? a.identity.type,
       gender: data.gender ?? a.identity.gender,
       country: data.country ?? a.identity.country,
 
       aliases: (data.aliases ?? []).map((x: any) => x.name).slice(0, 10),
       labels: labels.length > 0 ? labels : a.identity.labels,
+      birthYear: birthYear ?? a.identity.birthYear,
 
       debutYear: debutYear ?? a.identity.debutYear,
       careerYears: careerYears ?? a.identity.careerYears,

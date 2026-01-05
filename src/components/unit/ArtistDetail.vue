@@ -4,6 +4,7 @@ import { useRoute, useRouter } from 'vue-router'
 import artists from '@/data/artists.json'
 import festivals from '@/data/festivals.json'
 import { favorites, loadFavorites, toggleFavorite } from '@/utils/favorites'
+import { getGenreToneClass } from '@/utils/genreTone'
 import { useI18n } from '@/i18n'
 
 type Artist = {
@@ -19,6 +20,7 @@ type Artist = {
       mbid?: string
       relationType?: string
     }>
+    birthYear?: number
     debutYear?: number
     careerYears?: number
     links?: {
@@ -89,6 +91,8 @@ const displayLabelText = computed(() => displayLabels.value.map((label) => label
 const showAllAlbums = ref(false)
 const showAllTracks = ref(false)
 const showAllGenres = ref(false)
+
+const genreToneClass = (genre: string) => getGenreToneClass(genre)
 
 const activeGenre = ref<string | null>(null)
 const genreArtistsMap = computed<Record<string, Artist[]>>(() => {
@@ -209,37 +213,31 @@ onBeforeUnmount(() => {
       <div class="space-y-2">
         <h1 class="text-2xl font-black pc:text-3xl">{{ artist.identity.name }}</h1>
         <div class="text-sm text-gray-600">
-          <div v-if="artist.identity.country">
-            {{ t('artistDetail.country', { value: artist.identity.country }) }}
-          </div>
-          <div v-if="artist.identity.type" class="ml-2">
-            {{ t('artistDetail.type', { value: artist.identity.type }) }}
-          </div>
-          <div v-if="artist.identity.debutYear" class="ml-2">
-            {{ t('artistDetail.debut', { value: artist.identity.debutYear }) }}
-          </div>
-          <div v-if="artist.identity.careerYears" class="ml-2">
-            {{ t('artistDetail.career', { years: artist.identity.careerYears }) }}
-          </div>
-          <div v-if="displayLabels.length" class="ml-2">
-            {{ t('artistDetail.labels', { value: displayLabelText }) }}
-          </div>
+          <div v-if="artist.identity.country">{{ t('artistDetail.country', { value: artist.identity.country }) }}</div>
+          <div v-if="artist.identity.birthYear" class="ml-2">{{ t('artistDetail.birth', { value: artist.identity.birthYear }) }}</div>
+        </div>
+          <div v-if="artist.identity.type" class="ml-2">{{ t('artistDetail.type', { value: artist.identity.type }) }}</div>
+        <div>
+          <div>{{ t('artistDetail.labels') }}</div>
+          <div v-if="displayLabels.length" class="ml-2">{{ displayLabelText }}</div>
+
         </div>
         <div class="flex items-center gap-3">
           <button
             type="button"
-            class="inline-flex items-center gap-2 px-3 py-1 rounded-md border border-[var(--stroke)] text-sm hover:bg-neonpink hover:text-white transition-colors"
+            class="w-[50%] inline-flex justify-center items-center gap-2 px-3 py-1 rounded-md border border-[var(--stroke)] shadow-[1px_1px_2px_var(--shadow-weak)] text-sm pc:hover:bg-[#EA6466] pc:hover:text-white transition-colors [text-shadow:1px_1px_2px_var(--shadow-weak)]"
             @click="onToggleFavorite"
+            :class="isBookmarked ? 'bg-[#EA6466] text-white' : 'border-[#EA6466] text-[#EA6466]'"
           >
-            <span class="material-symbols-rounded text-base">
+            <div class="material-symbols-rounded text-xl">
               {{ isBookmarked ? 'favorite' : 'favorite_border' }}
-            </span>
+            </div>
             <span>{{ isBookmarked ? t('common.bookmarked') : t('common.bookmark') }}</span>
           </button>
-          <div class="relative">
+          <div class="relative w-[50%]">
             <button
               type="button"
-              class="inline-flex items-center gap-2 px-3 py-1 rounded-md border border-[var(--stroke)] text-pulseblue border-pulseblue text-sm hover:bg-pulseblue hover:text-white transition-colors"
+              class="w-full inline-flex justify-center items-center gap-2 px-3 py-1 rounded-md border border-[var(--stroke)] shadow-[1px_1px_2px_var(--shadow-weak)] text-pulseblue border-pulseblue text-sm pc:hover:bg-pulseblue pc:hover:text-white transition-colors  [text-shadow:1px_1px_2px_var(--shadow-weak)]"
               @click="onShareLink"
             >
               <span class="material-symbols-rounded text-base">share</span>
@@ -255,29 +253,64 @@ onBeforeUnmount(() => {
           </div>
         </div>
       </div>
-      <div class="p-4 rounded-lg bg-[var(--bg)] shadow-[0_0_6px_var(--shadow-weak)] space-y-3">
+
+      <div class="space-y-3">
         <div class="text-sm font-semibold text-gray-700">{{ t('artistDetail.genres') }}</div>
-        <div class="flex flex-wrap gap-2">
-          <span
-            v-for="genre in (showAllGenres ? displayGenres : displayGenres.slice(0, 4))"
+        <div class="flex flex-wrap gap-3">
+          <div
+            v-for="genre in (showAllGenres ? displayGenres : displayGenres.slice(0, 6))"
             :key="genre"
-            class="px-3 py-1 rounded-full bg-black/5 text-sm text-[var(--text)] cursor-pointer hover:bg-neonpink/10 hover:text-neonpink transition-colors"
+            class="px-3 py-1 rounded-md border text-sm cursor-pointer transition-colors [text-shadow:1px_1px_3px_var(--shadow-weak)] shadow-[1px_1px_3px_var(--shadow-weak)]"
+            :class="genreToneClass(genre)"
             @click="openGenreModal(genre)"
           >
             {{ genre }}
-          </span>
+        </div>
           <div v-if="!displayGenres.length" class="text-sm text-gray-500">
             {{ t('artistDetail.noGenres') }}
           </div>
         </div>
-        <div v-if="displayGenres.length > 4" class="text-right">
+        <div v-if="displayGenres.length > 6" class="w-full">
           <button
             type="button"
-            class="text-sm text-pulseblue hover:underline"
+            class="w-full text-sm text-gray-400 flex items-center justify-end"
             @click="showAllGenres = !showAllGenres"
           >
-            {{ showAllGenres ? t('artistDetail.showLess') : t('artistDetail.showMore') }}
+            <div>{{ showAllGenres ? t('artistDetail.showLess') : t('artistDetail.showMore') }}</div>
+            <span class="material-symbols-rounded">{{ showAllGenres ? t('arrow_drop_up') : t('arrow_drop_down') }}</span>
           </button>
+        </div>
+      </div>
+      <div>
+        <div v-if="artist.identity.debutYear" class="ml-2">
+          {{ t('artistDetail.debut', { value: artist.identity.debutYear }) }}
+        </div>
+        <div v-if="artist.identity.careerYears" class="ml-2">
+          {{ t('artistDetail.career', { years: artist.identity.careerYears }) }}
+        </div>
+      </div>
+      <div class="p-4 rounded-lg bg-[var(--bg)] shadow-[0_0_6px_var(--shadow-weak)] space-y-3">
+        <div class="text-sm font-semibold text-gray-700">{{ t('artistDetail.latestFestival') }}</div>
+        <template v-if="latestFestival">
+          <router-link
+            :to="{ name: 'festivaldetail', params: { id: latestFestival.id } }"
+            class="flex items-center gap-3 p-3 rounded-lg bg-black/5 hover:bg-neonpink/10 transition-colors"
+          >
+            <img
+              v-if="latestFestival.image"
+              :src="latestFestival.image"
+              :alt="latestFestival.title"
+              class="w-14 h-14 object-cover rounded-md"
+            />
+            <div class="flex flex-col">
+              <div class="text-sm font-semibold">{{ latestFestival.title }}</div>
+              <div class="text-xs text-gray-500">{{ latestFestival.city }} / {{ latestFestival.contry }}</div>
+              <div class="text-xs text-gray-500">{{ latestFestival.start }} ~ {{ latestFestival.end }}</div>
+            </div>
+          </router-link>
+        </template>
+        <div v-else class="text-sm text-gray-500">
+          {{ t('artistDetail.noFestival') }}
         </div>
       </div>
 
@@ -287,7 +320,7 @@ onBeforeUnmount(() => {
           <span
             v-for="alias in displayAliases"
             :key="alias"
-            class="px-3 py-1 rounded-full bg-neonpink/10 text-sm text-neonpink"
+            class="px-3 py-1 rounded-md bg-gray-200 text-sm text-gray-700"
           >
             {{ alias }}
           </span>
@@ -474,30 +507,7 @@ onBeforeUnmount(() => {
         </div>
       </div>
 
-      <div class="p-4 rounded-lg bg-[var(--bg)] shadow-[0_0_6px_var(--shadow-weak)] space-y-3">
-        <div class="text-sm font-semibold text-gray-700">{{ t('artistDetail.latestFestival') }}</div>
-        <template v-if="latestFestival">
-          <router-link
-            :to="{ name: 'festivaldetail', params: { id: latestFestival.id } }"
-            class="flex items-center gap-3 p-3 rounded-lg bg-black/5 hover:bg-neonpink/10 transition-colors"
-          >
-            <img
-              v-if="latestFestival.image"
-              :src="latestFestival.image"
-              :alt="latestFestival.title"
-              class="w-14 h-14 object-cover rounded-md"
-            />
-            <div class="flex flex-col">
-              <div class="text-sm font-semibold">{{ latestFestival.title }}</div>
-              <div class="text-xs text-gray-500">{{ latestFestival.city }} / {{ latestFestival.contry }}</div>
-              <div class="text-xs text-gray-500">{{ latestFestival.start }} ~ {{ latestFestival.end }}</div>
-            </div>
-          </router-link>
-        </template>
-        <div v-else class="text-sm text-gray-500">
-          {{ t('artistDetail.noFestival') }}
-        </div>
-      </div>
+      
     </div>
 
     <div v-else class="max-w-3xl mx-auto text-center text-gray-500 py-20">
