@@ -3,6 +3,7 @@ import { ref, computed, watch, onMounted, onBeforeUnmount } from 'vue'
 import MonthNavigator from '@/components/part/MonthNavigator.vue'
 import CalendarGrid from '@/components/part/CalendarGrid.vue'
 import festivals from '@/data/festivals.json'
+import { useI18n } from '@/i18n'
 
 
 type EventItem = {
@@ -26,6 +27,7 @@ const formatMD = (dateStr: string) => {
 }
 const allFestivalData = festivals as Record<string, EventItem[]>
 const viewMode = ref<'list' | 'calendar'>('calendar') 
+const { t } = useI18n()
 
 const showMonthPicker = ref(false)
 const monthChoice = ref('')
@@ -169,7 +171,7 @@ watch(
       monthData.value[newMonth] = events
     } catch (e) {
       console.error(e)
-      errorMessage.value = '데이터를 불러오는 중 오류가 발생했습니다.'
+      errorMessage.value = t('firstView.loadError')
     } finally {
       isLoading.value = false
     }
@@ -183,7 +185,7 @@ watch(
     <div class="px-5 w-full overflow-hidden pc:px-0">
       <div class="text-xs font-bold py-2
       pc:text-base
-      ">Today Festival</div>
+      ">{{ t('firstView.todayFestival') }}</div>
       <ul v-if="todayEvents.length" class="flex flex-nowrap gap-6 overflow-auto w-screen pl-1 py-3 pr-10
       pc:flex-col pc:w-full pc:gap-2 pc:h-[90vh] pc:overflow-auto">
         <li
@@ -225,10 +227,14 @@ watch(
           </router-link>
         </li>
       </ul>
-      <div v-else class="text-base text-gray-400 text-center py-8 border-b pc:h-[50vh] pc:flex pc:flex-col pc:justify-center pc:text-2xl">Let’s focus on work today 💪</div>
+      <div v-else class="text-base text-gray-400 text-center py-8 border-b pc:h-[50vh] pc:flex pc:flex-col pc:justify-center pc:text-2xl">
+        {{ t('firstView.emptyToday') }}
+      </div>
     </div>
     <div class="px-5">
-      <div class="text-xs font-bold pt-5 pb-2 pc:text-base">What Festival Here?</div>
+      <div class="text-xs font-bold pt-5 pb-2 pc:text-base">
+        {{ t('firstView.whatFestivalHere') }}
+      </div>
       <div>
         <div class="w-full mx-auto py-4 mb-[100px] pc:h-[90vh] pc:overflow-auto pc:mx-2 pc:px-2">
           <div class="flex items-center justify-between">
@@ -265,7 +271,7 @@ watch(
             </div>
           </div>
           <div v-if="isLoading" class="text-center text-sm text-gray-500 mb-2">
-            Loading...
+            {{ t('common.loading') }}
           </div>
           <div v-if="errorMessage" class="text-center text-sm text-red-500 mb-2">
             {{ errorMessage }}
@@ -293,19 +299,21 @@ watch(
                     {{ item.city }} / {{ item.contry }}
                   </div>
                 </div>
-                <router-link :to="{ name: 'festivaldetail', params: { id: item.id } }" class="p-[8px] text-sm text-pulseblue  text-center border border-pulseblue rounded-md self-center justify-self-center pc:w-full pc:hover:bg-pulseblue pc:hover:text-white">Detail</router-link>
+                <router-link :to="{ name: 'festivaldetail', params: { id: item.id } }" class="p-[8px] text-sm text-pulseblue  text-center border border-pulseblue rounded-md self-center justify-self-center pc:w-full pc:hover:bg-pulseblue pc:hover:text-white">
+                  {{ t('common.detail') }}
+                </router-link>
               </li>
             </ul>
             <div v-if="!currentList.length" class="h-[450px] flex flex-col content-center justify-center items-center">
               <div class="text-3xl text-gray-400 my-4 text-center">
-                OOPS &#58;&#40;
-                <br>No events this month.
+                {{ t('firstView.oops') }}
+                <br>{{ t('firstView.noEventsThisMonth') }}
               </div>
               <button
                 class="w-3/5 text-xl text-blue-200 mt-4 text-center border border-blue-200 rounded-md py-1 shadow-[0_0_3px_rgba(0,0,0,0.1)]"
                 @click="openMonthPicker"
               >
-                View other months 👀
+                {{ t('firstView.viewOtherMonths') }}
               </button>
             </div>
           </div>
@@ -318,13 +326,13 @@ watch(
           >
             <div class="w-full max-w-[360px] rounded-[12px] bg-[var(--bg)] shadow-[0_12px_30px_rgba(0,0,0,0.18)] p-5">
               <div class="flex items-center justify-between">
-                <div class="text-lg font-semibold">Select a month</div>
+                <div class="text-lg font-semibold">{{ t('firstView.monthPickerTitle') }}</div>
                 <button class="material-symbols-rounded text-2xl" @click="closeMonthPicker">
                   close
                 </button>
               </div>
               <div class="space-y-2">
-                <label class="text-sm text-gray-500">Month</label>
+                <label class="text-sm text-gray-500">{{ t('common.month') }}</label>
                 <div ref="pickerRef" class="relative">
                   <button
                     type="button"
@@ -334,7 +342,7 @@ watch(
                     @keydown="onKeydown"
                   >
                     <span>
-                      {{ monthChoice === '' ? 'Select a month' : formatMonthLabel(monthChoice) }}
+                      {{ monthChoice === '' ? t('common.selectMonth') : formatMonthLabel(monthChoice) }}
                     </span>
                     <span class="material-symbols-rounded pointer-events-none absolute right-3 top-1/2 -translate-y-1/2">
                       keyboard_arrow_down
@@ -344,7 +352,7 @@ watch(
                     v-if="isDropdownOpen"
                     class="absolute left-0 right-0 max-h-56 overflow-auto rounded-md border bg-[var(--bg)] shadow-lg z-50"
                     role="listbox"
-                    aria-label="Month options"
+                    :aria-label="t('firstView.monthOptions')"
                   >
                     <button
                       v-for="(m, idx) in availableMonths"
@@ -367,10 +375,10 @@ watch(
               </div>
               <div class="flex justify-end gap-3 pt-2">
                 <button class="px-4 py-2 rounded-md border border-gray-300 text-sm" @click="closeMonthPicker">
-                  Cancel
+                  {{ t('common.cancel') }}
                 </button>
                 <button class="px-4 py-2 rounded-md bg-neonpink text-white text-sm" @click="confirmMonthPicker">
-                  Move
+                  {{ t('common.move') }}
                 </button>
               </div>
             </div>

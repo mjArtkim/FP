@@ -9,6 +9,7 @@ import {
 } from '@/utils/favorites'
 import artists from '@/data/artists.json'
 import festivals from '@/data/festivals.json'
+import { useI18n } from '@/i18n'
 
 type Artist = {
   slug: string
@@ -33,6 +34,7 @@ type FestivalItem = {
 const artistList = artists as Artist[]
 const festivalData = festivals as Record<string, FestivalItem[]>
 loadFavorites()
+const { t } = useI18n()
 
 const favoriteArtists = computed(() =>
   artistList.filter((artist) => favorites.value.includes(artist.slug))
@@ -55,7 +57,7 @@ const handleRemoveFestival = (id: number) => {
   <div class="px-5 py-8 pc:px-14 pc:py-10">
     <div class="max-w-5xl mx-auto space-y-8">
       <div class="space-y-4">
-        <div class="text-2xl font-black pc:text-3xl">Favorite Artists</div>
+        <div class="text-2xl font-black pc:text-3xl">{{ t('favorites.favoriteArtists') }}</div>
         <div v-if="favoriteArtists.length" class="grid grid-cols-1 pc:grid-cols-2 gap-4">
           <router-link
             v-for="artist in favoriteArtists"
@@ -84,11 +86,11 @@ const handleRemoveFestival = (id: number) => {
             </button>
           </router-link>
         </div>
-        <div v-else class="text-gray-500">아직 북마크한 아티스트가 없습니다.</div>
+        <div v-else class="text-gray-500">{{ t('favorites.noFavoriteArtists') }}</div>
       </div>
 
       <div class="space-y-4">
-        <div class="text-2xl font-black pc:text-3xl">Favorite Festivals</div>
+        <div class="text-2xl font-black pc:text-3xl">{{ t('favorites.favoriteFestivals') }}</div>
         <div v-if="favoriteFestivals.length" class="grid grid-cols-1 pc:grid-cols-2 gap-4">
           <router-link
             v-for="fest in favoriteFestivals"
@@ -119,7 +121,7 @@ const handleRemoveFestival = (id: number) => {
             </button>
           </router-link>
         </div>
-        <div v-else class="text-gray-500">아직 북마크한 페스티벌이 없습니다.</div>
+        <div v-else class="text-gray-500">{{ t('favorites.noFavoriteFestivals') }}</div>
       </div>
     </div>
   </div>

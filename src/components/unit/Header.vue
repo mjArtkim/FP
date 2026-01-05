@@ -2,6 +2,7 @@
 import topLogo from '@/assets/img/top_logo_b.svg'
 import topLogow from '@/assets/img/top_logo_w.svg'
 import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
+import LanguageToggle from '@/components/unit/LanguageToggle.vue'
 
 const locations = ref('SEOUL.S.KOREA')
 const today = new Date()
@@ -34,7 +35,7 @@ const currentLogo = computed(() => (themeMode.value === 'dark' ? topLogow : topL
   <div class="p-5">
     <div class="flex justify-between items-center">
       <router-link to="/"><img :src="currentLogo" class="h-8"/></router-link>
-      <ul class="flex">
+      <ul class="flex items-center gap-2">
         <li class="flex items-center px-1">
           <div class="material-symbols-rounded text-sm px-2">location_on</div>
           <div class="font-gugi text-xs">{{ locations }}</div>
@@ -42,6 +43,9 @@ const currentLogo = computed(() => (themeMode.value === 'dark' ? topLogow : topL
         <li class="flex items-center px-1">
           <div class="material-symbols-rounded text-sm px-2">date_range</div>
           <div class="font-gugi text-xs">{{ DateText }}</div>
+        </li>
+        <li class="flex items-center">
+          <LanguageToggle />
         </li>
       </ul>
     </div>

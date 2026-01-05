@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import { useRouter } from 'vue-router'  
+import { useI18n } from '@/i18n'
 const router = useRouter()
+const { t, currentLocale } = useI18n()
 
 const goToFestivalDetail = (id: number) => {
   router.push({
@@ -96,8 +98,21 @@ const weeks = computed<Week[]>(() => {
   for (let i = 0; i < days.length; i += 7) {
     const weekDays = days.slice(i, i + 7)
 
-    const weekStartStr = weekDays[0]?.dateStr ?? null
-    const weekEndStr = weekDays[weekDays.length - 1]?.dateStr ?? null
+    let weekStartStr: string | null = null
+    let weekEndStr: string | null = null
+    for (const d of weekDays) {
+      if (d.dateStr) {
+        weekStartStr = d.dateStr
+        break
+      }
+    }
+    for (let idx = weekDays.length - 1; idx >= 0; idx--) {
+      const d = weekDays[idx]
+      if (d?.dateStr) {
+        weekEndStr = d.dateStr
+        break
+      }
+    }
 
     const segments: WeekSegment[] = []
 
@@ -122,6 +137,10 @@ const weeks = computed<Week[]>(() => {
         })
       }
     }
+
+    segments.sort(
+      (a, b) => a.startCol - b.startCol || b.span - a.span || a.id - b.id
+    )
 
     const lanes: WeekLane[] = []
     const hiddenByCol = Array(7).fill(0) as number[]
@@ -174,6 +193,12 @@ const weeks = computed<Week[]>(() => {
 
 const openMore = ref<{ weekIndex: number; colIndex: number } | null>(null)
 
+const dayLabels = computed(() =>
+  currentLocale.value === 'ko'
+    ? ['일', '월', '화', '수', '목', '금', '토']
+    : ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT']
+)
+
 const toggleMore = (weekIndex: number, colIndex: number) => {
   if (
     openMore.value &&
@@ -192,13 +217,13 @@ const toggleMore = (weekIndex: number, colIndex: number) => {
 <template>
   <div class="w-full">
     <div class="grid grid-cols-7 text-center mb-2 text-sm font-gugi">
-      <div class="text-pulsered">SUN</div>
-      <div>MON</div>
-      <div>TUE</div>
-      <div>WED</div>
-      <div>THD</div>
-      <div>FRI</div>
-      <div class="text-pulsedarkblue">SAT</div>
+      <div class="text-pulsered">{{ dayLabels[0] }}</div>
+      <div>{{ dayLabels[1] }}</div>
+      <div>{{ dayLabels[2] }}</div>
+      <div>{{ dayLabels[3] }}</div>
+      <div>{{ dayLabels[4] }}</div>
+      <div>{{ dayLabels[5] }}</div>
+      <div class="text-pulsedarkblue">{{ dayLabels[6] }}</div>
     </div>
 
     <!-- 주 -->
@@ -273,7 +298,7 @@ const toggleMore = (weekIndex: number, colIndex: number) => {
                   :class="ci >= 4 ? 'right-0' : 'left-0'"
                 >
                   <div class="flex justify-between items-center px-2 py-1 border-b border-white/30 text-[12px] font-semibold">
-                    <span>More Events</span>
+                    <span>{{ t('calendar.moreEvents') }}</span>
                     <button
                       type="button"
                       class="material-symbols-rounded text-white hover:text-gray text-[16px] leading-none pc:hover:text-neonpink"

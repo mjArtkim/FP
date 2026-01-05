@@ -4,6 +4,7 @@ import { useRouter } from 'vue-router'
 import festivals from '@/data/festivals.json'
 import artists from '@/data/artists.json'
 import { isFestivalFavorite, loadFavorites, toggleFestivalFavorite } from '@/utils/favorites'
+import { useI18n } from '@/i18n'
 
 type FestivalItem = {
   id: number
@@ -34,6 +35,7 @@ const props = defineProps<{
 }>()
 
 const router = useRouter()
+const { t } = useI18n()
 
 const allFestivalData = festivals as Record<string, FestivalItem[]>
 const artistList = artists as ArtistItem[]
@@ -116,10 +118,10 @@ const onShareLink = async () => {
   try {
     if (typeof navigator !== 'undefined' && navigator.share) {
       await navigator.share({ title: festival.value?.title, url: shareUrl.value })
-      shareFeedback.value = '공유 다이얼로그를 열었어요.'
+      shareFeedback.value = t('festivalDetail.shareOpened')
     } else if (typeof navigator !== 'undefined' && navigator.clipboard?.writeText) {
       await navigator.clipboard.writeText(shareUrl.value)
-      shareFeedback.value = '링크를 복사했어요.'
+      shareFeedback.value = t('festivalDetail.shareCopied')
     } else {
       const textarea = document.createElement('textarea')
       textarea.value = shareUrl.value
@@ -127,11 +129,11 @@ const onShareLink = async () => {
       textarea.select()
       document.execCommand('copy')
       document.body.removeChild(textarea)
-      shareFeedback.value = '링크를 복사했어요.'
+      shareFeedback.value = t('festivalDetail.shareCopied')
     }
   } catch (error) {
     console.error(error)
-    shareFeedback.value = '공유에 실패했어요. 다시 시도해주세요.'
+    shareFeedback.value = t('festivalDetail.shareFailed')
   } finally {
     feedbackTimer = window.setTimeout(() => {
       shareFeedback.value = ''
@@ -156,7 +158,7 @@ const relatedByLocation = computed(() => {
 </script>
 
 <template>
-  <div class="px-5 py-8 pc:px-14 pc:py-10 h-screen">
+  <div class="px-5 pb-8 pc:px-14 pc:py-10 h-screen">
     <div v-if="festival" class="max-w-5xl mx-auto space-y-8">
       <div class="rounded-xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.12)]">
         <img
@@ -171,7 +173,7 @@ const relatedByLocation = computed(() => {
           <h1 class="text-2xl font-black pc:text-3xl">{{ festival.title }}</h1>
           <div class="pt-3 text-sm black pc:text-base">{{ dateRange }}</div>
           <div class="py-3">
-            <div class="text-sm black pc:text-base">LOCATION</div>
+            <div class="text-sm black pc:text-base">{{ t('festivalDetail.location') }}</div>
             <div class="text-base text-gray-700 pc:text-lg">{{ locationText }}</div>
           </div>
           <div class="flex flex-wrap items-center gap-3">
@@ -184,7 +186,7 @@ const relatedByLocation = computed(() => {
               <div class="material-symbols-rounded text-xl">
                 {{ isBookmarked ? 'bookmark' : 'bookmark_border' }}
               </div>
-              <div>{{ isBookmarked ? 'Bookmarked' : 'Bookmark' }}</div>
+              <div>{{ isBookmarked ? t('common.bookmarked') : t('common.bookmark') }}</div>
             </button>
             <button
               type="button"
@@ -192,7 +194,7 @@ const relatedByLocation = computed(() => {
               @click="onShareLink"
             >
               <div class="material-symbols-rounded text-xl">share</div>
-              <div>링크 복사/공유</div>
+              <div>{{ t('festivalDetail.share') }}</div>
             </button>
             <div v-if="shareFeedback" class="text-xs text-gray-500">
               {{ shareFeedback }}
@@ -201,30 +203,30 @@ const relatedByLocation = computed(() => {
         </div>
 
         <div class="rounded-lg bg-[var(--bg)] space-y-3">
-          <div class="text-sm font-semibold text-gray-700">Links</div>
+          <div class="text-sm font-semibold text-gray-700">{{ t('festivalDetail.linkSection') }}</div>
           <div class="flex gap-3 flex-col text-center">
             <a
               v-if="festival.ticket"
               :href="festival.ticket"
               target="_blank"
               rel="noopener"
-              class="h-[30px] flex items-center justify-center gap-5 rounded-md bg-neonpink text-white text-sm shadow-[0_4px_12px_rgba(0,0,0,0.12)] font-gugi"
+              class="h-[30px] flex items-center justify-center gap-5 rounded-md bg-neonpink text-white text-xs shadow-[0_4px_12px_rgba(0,0,0,0.12)] font-gugi pc:text-sm pc:hover:bg-white pc:hover:border pc:hover:text-neonpink pc:hover:border-neonpink"
             >
               <div class="material-symbols-rounded">confirmation_number</div>
-              <div>Get Ticket</div>
+              <div>{{ t('festivalDetail.getTicket') }}</div>
             </a>
             <a
               v-if="festival.infolink"
               :href="festival.infolink"
               target="_blank"
               rel="noopener"
-              class="h-[30px] flex items-center justify-center gap-5 rounded-md border border-pulseblue text-pulseblue text-sm pc:hover:bg-pulseblue pc:hover:text-white transition-colors font-gugi"
+              class="h-[30px] flex items-center justify-center gap-5 rounded-md border bg-[#482317] text-white text-xs pc:text-sm pc:hover:border-[#482317] pc:hover:bg-white pc:hover:text-[#482317] transition-colors font-gugi"
             >
               <div class="material-symbols-rounded">link</div>
-              <div>LINK PAGE</div>
+              <div>{{ t('festivalDetail.linkPage') }}</div>
             </a>
             <div v-if="!festival.ticket && !festival.infolink" class="text-sm text-gray-500">
-              등록된 링크가 없습니다.
+              {{ t('festivalDetail.noLink') }}
             </div>
           </div>
         </div>
@@ -233,7 +235,7 @@ const relatedByLocation = computed(() => {
 
         <div class="grid gap-6 pc:grid-cols-2">
           <div class="p-4 rounded-lg bg-[var(--bg)] shadow-[0_0_6px_var(--shadow-weak)] space-y-3">
-            <div class="text-sm font-semibold text-gray-700">Line-up</div>
+            <div class="text-sm font-semibold text-gray-700">{{ t('festivalDetail.lineup') }}</div>
             <div class="flex flex-wrap gap-2">
               <template v-for="item in lineupEntries" :key="item.name">
                 <router-link
@@ -266,7 +268,7 @@ const relatedByLocation = computed(() => {
           </div>
 
           <div class="p-4 rounded-lg bg-[var(--bg)] shadow-[0_0_6px_var(--shadow-weak)] space-y-3">
-            <div class="text-sm font-semibold text-gray-700">MAP</div>
+            <div class="text-sm font-semibold text-gray-700">{{ t('festivalDetail.map') }}</div>
             <div v-if="mapEmbedSrc" class="space-y-2">
               <div class="text-sm text-gray-500">{{ mapQuery }}</div>
               <div class="w-full h-64 rounded-lg overflow-hidden bg-black/5">
@@ -276,15 +278,19 @@ const relatedByLocation = computed(() => {
                   style="border: 0"
                   loading="lazy"
                   referrerpolicy="no-referrer-when-downgrade"
-                  title="festival location map"
+                  :title="t('festivalDetail.mapTitle')"
                 ></iframe>
               </div>
             </div>
-            <div v-else class="text-sm text-gray-500">지도를 표시할 위치 정보가 없습니다.</div>
+            <div v-else class="text-sm text-gray-500">
+              {{ t('festivalDetail.mapNoInfo') }}
+            </div>
           </div>
         </div>
         <div class="p-4 rounded-lg bg-[var(--bg)] shadow-[0_0_6px_var(--shadow-weak)] space-y-3 mb-[100px]">
-          <div class="text-sm font-semibold text-gray-700">Same Location Festivals</div>
+          <div class="text-sm font-semibold text-gray-700">
+            {{ t('festivalDetail.sameLocation') }}
+          </div>
           <div v-if="relatedByLocation.length" class="grid grid-cols-1 pc:grid-cols-2 gap-3">
             <router-link
               v-for="item in relatedByLocation"
@@ -308,14 +314,16 @@ const relatedByLocation = computed(() => {
               </div>
             </router-link>
           </div>
-          <div v-else class="text-sm text-gray-500">같은 지역의 다른 페스티벌이 없습니다.</div>
+          <div v-else class="text-sm text-gray-500">
+            {{ t('festivalDetail.noSameLocation') }}
+          </div>
         </div>
         
       </div>
     </div>
 
     <div v-else class="max-w-3xl mx-auto text-center text-gray-500 py-20">
-      선택한 페스티벌 정보를 찾을 수 없습니다.
+      {{ t('festivalDetail.notFound') }}
     </div>
   </div>
 </template>

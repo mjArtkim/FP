@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
+import { useI18n } from '@/i18n'
 
 const router = useRouter()
 const route = useRoute()
+const { t } = useI18n()
 
 const isDetailPage = computed(() => {
   const detailRoutes = ['festivaldetail', 'artistdetail']
@@ -29,7 +31,7 @@ const goBack = () => {
           @click="goBack"
         >
           <div class="material-symbols-rounded text-[30px]">arrow_back_ios_new</div>
-          <div class="text-xss font-gugi">BACK</div>
+          <div class="text-xss font-gugi">{{ t('nav.back') }}</div>
         </button>
       </template>
       <template v-else>
@@ -39,23 +41,23 @@ const goBack = () => {
           >
           <router-link to="/" class="min-w-[40px] flex flex-col items-center cursor-pointer hover:text-neonpink">
             <div class="material-symbols-rounded text-[30px]">home</div>
-            <div class="text-xss font-gugi">HOME</div>
+            <div class="text-xss font-gugi">{{ t('nav.home') }}</div>
           </router-link>
           <router-link to="#" class="min-w-[40px] flex flex-col items-center cursor-pointer hover:text-neonpink">
             <div class="material-symbols-rounded pb-1 text-[30px]">map</div>
-            <div class="text-xss font-gugi">MAP</div>
+            <div class="text-xss font-gugi">{{ t('nav.map') }}</div>
           </router-link>
           <router-link to="/favorite" class="min-w-[40px] flex flex-col items-center cursor-pointer hover:text-neonpink">
             <div class="material-symbols-rounded pb-1 text-[30px]">star</div>
-            <div class="text-xss font-gugi">FAVORIT</div>
+            <div class="text-xss font-gugi">{{ t('nav.favorite') }}</div>
           </router-link>
           <router-link to="#" class="min-w-[40px] flex flex-col items-center cursor-pointer hover:text-neonpink">
             <div class="material-symbols-rounded pb-1 text-[30px]">insert_chart</div>
-            <div class="text-xss font-gugi">INSIGHTS</div>
+            <div class="text-xss font-gugi">{{ t('nav.insights') }}</div>
           </router-link>
           <router-link to="#" class="min-w-[40px] flex flex-col items-center cursor-pointer hover:text-neonpink">
             <div class="material-symbols-rounded pb-1 text-[30px]">account_box</div>
-            <div class="text-xss font-gugi">MYPAGE</div>
+            <div class="text-xss font-gugi">{{ t('nav.mypage') }}</div>
           </router-link>
           </div>
         </div>

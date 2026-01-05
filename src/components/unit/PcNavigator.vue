@@ -3,6 +3,8 @@ import topLogo from '@/assets/img/top_logo_b.svg'
 import topLogow from '@/assets/img/top_logo_w.svg'
 import { computed, ref, watch } from 'vue'
 import NeonSwitch from '@/components/unit/NeonSwitch.vue'
+import LanguageToggle from '@/components/unit/LanguageToggle.vue'
+import { useI18n } from '@/i18n'
 const isPowerOn = ref(false)
 const locations = ref('SEOUL.S.KOREA')
 const today = new Date()
@@ -12,6 +14,7 @@ const DateText = ref(formattedDate)
   const toggleSidebar = () => {
     isSidebarOpen.value = !isSidebarOpen.value
   }
+const { t } = useI18n()
 
 const applyTheme = (mode: 'light' | 'dark') => {
   if (typeof document === 'undefined') return
@@ -37,7 +40,7 @@ watch(
       <div class="flex flex-col">
         <div class="flex items-center justify-between">
           <router-link to="/"><img :src="currentLogo" class="h-10"/></router-link>
-          <div v-if="isSidebarOpen" class="font-gugi text-[var(--muted)]">Guest</div>
+          <div v-if="isSidebarOpen" class="font-gugi text-[var(--muted)]">{{ t('nav.guest') }}</div>
         </div>
         <ul class="py-8">
           <li class="flex items-center py-1">
@@ -53,23 +56,23 @@ watch(
       <div class="flex flex-col gap-9">
         <router-link to="/" class="flex items-center cursor-pointer hover:text-[var(--accent)]">
           <div class="material-symbols-rounded text-2xl pr-5">home</div>
-          <div v-if="isSidebarOpen" class="text-lg font-semibold">HOME</div>
+          <div v-if="isSidebarOpen" class="text-lg font-semibold">{{ t('nav.home') }}</div>
         </router-link>
         <router-link to="#" class="flex items-center cursor-pointer hover:text-[var(--accent)]">
           <div class="material-symbols-rounded text-2xl pr-5">map</div>
-          <div v-if="isSidebarOpen" class="text-lg font-semibold">MAP</div>
+          <div v-if="isSidebarOpen" class="text-lg font-semibold">{{ t('nav.map') }}</div>
         </router-link>
         <router-link to="/favorite" class="flex items-center cursor-pointer hover:text-[var(--accent)]">
           <div class="material-symbols-rounded text-2xl pr-5">star</div>
-          <div v-if="isSidebarOpen" class="text-lg font-semibold">FAVORIT</div>
+          <div v-if="isSidebarOpen" class="text-lg font-semibold">{{ t('nav.favorite') }}</div>
         </router-link>
         <router-link to="#" class="flex items-center cursor-pointer hover:text-[var(--accent)]">
           <div class="material-symbols-rounded text-2xl pr-5">insert_chart</div>
-          <div v-if="isSidebarOpen" class="text-lg font-semibold">INSIGHTS</div>
+          <div v-if="isSidebarOpen" class="text-lg font-semibold">{{ t('nav.insights') }}</div>
         </router-link>
         <router-link to="#" class="flex items-center cursor-pointer hover:text-[var(--accent)]">
           <div class="material-symbols-rounded text-2xl pr-5">account_box</div>
-          <div v-if="isSidebarOpen" class="text-lg font-semibold">MYPAGE</div>
+          <div v-if="isSidebarOpen" class="text-lg font-semibold">{{ t('nav.mypage') }}</div>
         </router-link>
       </div>
       <div class="flex items-center py-8">
@@ -80,6 +83,9 @@ watch(
           {{ isPowerOn ? 'dark_mode' : 'light_mode' }}
         </div>
         <NeonSwitch v-model="isPowerOn" v-if="isSidebarOpen"/>
+      </div>
+      <div v-if="isSidebarOpen" class="pb-6">
+        <LanguageToggle />
       </div>
     </div>
     <div class="flex items-center justify-between">

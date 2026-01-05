@@ -4,6 +4,7 @@ import { useRoute } from 'vue-router'
 import artists from '@/data/artists.json'
 import festivals from '@/data/festivals.json'
 import { favorites, loadFavorites, toggleFavorite } from '@/utils/favorites'
+import { useI18n } from '@/i18n'
 
 type Artist = {
   slug: string
@@ -64,6 +65,8 @@ const route = useRoute()
 const props = defineProps<{
   slug?: string
 }>()
+
+const { t } = useI18n()
 
 const slug = computed(() => String(props.slug ?? route.params.slug ?? ''))
 
@@ -143,10 +146,18 @@ const onToggleFavorite = () => {
         <div class="space-y-2">
           <h1 class="text-2xl font-black pc:text-3xl">{{ artist.identity.name }}</h1>
           <div class="text-sm text-gray-600">
-            <span v-if="artist.identity.country">Country: {{ artist.identity.country }}</span>
-            <span v-if="artist.identity.type" class="ml-2">Type: {{ artist.identity.type }}</span>
-            <span v-if="artist.identity.debutYear" class="ml-2">Debut: {{ artist.identity.debutYear }}</span>
-            <span v-if="artist.identity.careerYears" class="ml-2">Career: {{ artist.identity.careerYears }}y</span>
+            <span v-if="artist.identity.country">
+              {{ t('artistDetail.country', { value: artist.identity.country }) }}
+            </span>
+            <span v-if="artist.identity.type" class="ml-2">
+              {{ t('artistDetail.type', { value: artist.identity.type }) }}
+            </span>
+            <span v-if="artist.identity.debutYear" class="ml-2">
+              {{ t('artistDetail.debut', { value: artist.identity.debutYear }) }}
+            </span>
+            <span v-if="artist.identity.careerYears" class="ml-2">
+              {{ t('artistDetail.career', { years: artist.identity.careerYears }) }}
+            </span>
           </div>
           <button
             type="button"
@@ -156,13 +167,13 @@ const onToggleFavorite = () => {
             <span class="material-symbols-rounded text-base">
               {{ isBookmarked ? 'favorite' : 'favorite_border' }}
             </span>
-            <span>{{ isBookmarked ? 'Bookmarked' : 'Bookmark' }}</span>
+            <span>{{ isBookmarked ? t('common.bookmarked') : t('common.bookmark') }}</span>
           </button>
         </div>
       </div>
 
       <div class="p-4 rounded-lg bg-[var(--bg)] shadow-[0_0_6px_var(--shadow-weak)] space-y-3">
-        <div class="text-sm font-semibold text-gray-700">Genres</div>
+        <div class="text-sm font-semibold text-gray-700">{{ t('artistDetail.genres') }}</div>
         <div class="flex flex-wrap gap-2">
           <span
             v-for="genre in (showAllGenres ? displayGenres : displayGenres.slice(0, 4))"
@@ -172,7 +183,9 @@ const onToggleFavorite = () => {
           >
             {{ genre }}
           </span>
-          <div v-if="!displayGenres.length" class="text-sm text-gray-500">장르 정보가 없습니다.</div>
+          <div v-if="!displayGenres.length" class="text-sm text-gray-500">
+            {{ t('artistDetail.noGenres') }}
+          </div>
         </div>
         <div v-if="displayGenres.length > 4" class="text-right">
           <button
@@ -180,13 +193,13 @@ const onToggleFavorite = () => {
             class="text-sm text-pulseblue hover:underline"
             @click="showAllGenres = !showAllGenres"
           >
-            {{ showAllGenres ? '접기' : '더보기' }}
+            {{ showAllGenres ? t('artistDetail.showLess') : t('artistDetail.showMore') }}
           </button>
         </div>
       </div>
 
       <div class="p-4 rounded-lg bg-[var(--bg)] shadow-[0_0_6px_var(--shadow-weak)] space-y-3">
-        <div class="text-sm font-semibold text-gray-700">Aliases</div>
+        <div class="text-sm font-semibold text-gray-700">{{ t('artistDetail.aliases') }}</div>
         <div class="flex flex-wrap gap-2">
           <span
             v-for="alias in displayAliases"
@@ -195,12 +208,16 @@ const onToggleFavorite = () => {
           >
             {{ alias }}
           </span>
-          <div v-if="!displayAliases.length" class="text-sm text-gray-500">다른 이름이 없습니다.</div>
+          <div v-if="!displayAliases.length" class="text-sm text-gray-500">
+            {{ t('artistDetail.noAliases') }}
+          </div>
         </div>
       </div>
 
       <div class="p-4 rounded-lg bg-[var(--bg)] shadow-[0_0_6px_var(--shadow-weak)] space-y-4">
-        <div class="text-sm font-semibold text-gray-700">Albums & Singles</div>
+        <div class="text-sm font-semibold text-gray-700">
+          {{ t('artistDetail.albumsSingles') }}
+        </div>
         <div class="grid grid-cols-2 pc:grid-cols-3 gap-4">
           <template
             v-for="album in (showAllAlbums ? displayAlbums : displayAlbums.slice(0, 4))"
@@ -225,7 +242,13 @@ const onToggleFavorite = () => {
               <div class="flex flex-col gap-1">
                 <div class="text-sm font-semibold line-clamp-2">{{ album.name }}</div>
                 <div class="text-xs text-gray-500">
-                  {{ album.albumType }} • {{ album.releaseDate || '—' }} • {{ album.totalTracks || 0 }} tracks
+                  {{
+                    t('artistDetail.albumMeta', {
+                      type: album.albumType,
+                      date: album.releaseDate || '—',
+                      count: album.totalTracks || 0,
+                    })
+                  }}
                 </div>
               </div>
             </a>
@@ -239,26 +262,34 @@ const onToggleFavorite = () => {
               <div class="flex flex-col gap-1">
                 <div class="text-sm font-semibold line-clamp-2">{{ album.name }}</div>
                 <div class="text-xs text-gray-500">
-                  {{ album.albumType }} • {{ album.releaseDate || '—' }} • {{ album.totalTracks || 0 }} tracks
+                  {{
+                    t('artistDetail.albumMeta', {
+                      type: album.albumType,
+                      date: album.releaseDate || '—',
+                      count: album.totalTracks || 0,
+                    })
+                  }}
                 </div>
               </div>
             </div>
           </template>
         </div>
-        <div v-if="!displayAlbums.length" class="text-sm text-gray-500">앨범 정보가 없습니다.</div>
+        <div v-if="!displayAlbums.length" class="text-sm text-gray-500">
+          {{ t('artistDetail.noAlbums') }}
+        </div>
         <div v-else-if="displayAlbums.length > 4" class="text-right">
           <button
             type="button"
             class="text-sm text-pulseblue hover:underline"
             @click="showAllAlbums = !showAllAlbums"
           >
-            {{ showAllAlbums ? '접기' : '더보기' }}
+            {{ showAllAlbums ? t('artistDetail.showLess') : t('artistDetail.showMore') }}
           </button>
         </div>
       </div>
 
       <div class="p-4 rounded-lg bg-[var(--bg)] shadow-[0_0_6px_var(--shadow-weak)] space-y-3">
-        <div class="text-sm font-semibold text-gray-700">Top Tracks</div>
+        <div class="text-sm font-semibold text-gray-700">{{ t('artistDetail.topTracks') }}</div>
         <div class="space-y-3">
           <template
             v-for="track in (showAllTracks ? displayTracks : displayTracks.slice(0, 4))"
@@ -283,11 +314,16 @@ const onToggleFavorite = () => {
               <div class="flex flex-col">
                 <div class="text-sm font-semibold line-clamp-2">{{ track.name }}</div>
                 <div class="text-xs text-gray-500">
-                  {{ track.album?.name || 'Unknown album' }} • {{ track.album?.releaseDate || '—' }}
+                  {{ track.album?.name || t('artistDetail.unknownAlbum') }} •
+                  {{ track.album?.releaseDate || '—' }}
                 </div>
               </div>
               <div class="ml-auto text-xs text-gray-500">
-                {{ track.durationMs ? Math.round(track.durationMs / 1000) + 's' : '' }}
+                {{
+                  track.durationMs
+                    ? t('artistDetail.durationSeconds', { seconds: Math.round(track.durationMs / 1000) })
+                    : ''
+                }}
               </div>
             </a>
             <div
@@ -300,15 +336,22 @@ const onToggleFavorite = () => {
               <div class="flex flex-col">
                 <div class="text-sm font-semibold line-clamp-2">{{ track.name }}</div>
                 <div class="text-xs text-gray-500">
-                  {{ track.album?.name || 'Unknown album' }} • {{ track.album?.releaseDate || '—' }}
+                  {{ track.album?.name || t('artistDetail.unknownAlbum') }} •
+                  {{ track.album?.releaseDate || '—' }}
                 </div>
               </div>
               <div class="ml-auto text-xs text-gray-500">
-                {{ track.durationMs ? Math.round(track.durationMs / 1000) + 's' : '' }}
+                {{
+                  track.durationMs
+                    ? t('artistDetail.durationSeconds', { seconds: Math.round(track.durationMs / 1000) })
+                    : ''
+                }}
               </div>
             </div>
           </template>
-          <div v-if="!displayTracks.length" class="text-sm text-gray-500">트랙 정보가 없습니다.</div>
+          <div v-if="!displayTracks.length" class="text-sm text-gray-500">
+            {{ t('artistDetail.noTracks') }}
+          </div>
         </div>
         <div v-if="displayTracks.length > 4" class="text-right">
           <button
@@ -316,13 +359,13 @@ const onToggleFavorite = () => {
             class="text-sm text-pulseblue hover:underline"
             @click="showAllTracks = !showAllTracks"
           >
-            {{ showAllTracks ? '접기' : '더보기' }}
+            {{ showAllTracks ? t('artistDetail.showLess') : t('artistDetail.showMore') }}
           </button>
         </div>
       </div>
 
       <div class="p-4 rounded-lg bg-[var(--bg)] shadow-[0_0_6px_var(--shadow-weak)] space-y-3">
-        <div class="text-sm font-semibold text-gray-700">Links</div>
+        <div class="text-sm font-semibold text-gray-700">{{ t('artistDetail.links') }}</div>
         <div class="flex flex-wrap gap-3">
           <a
             v-if="artist.spotify?.spotifyId"
@@ -343,13 +386,13 @@ const onToggleFavorite = () => {
             MusicBrainz
           </a>
           <div v-if="!artist.spotify?.spotifyId && !artist.identity.links?.musicbrainz" class="text-sm text-gray-500">
-            등록된 링크가 없습니다.
+            {{ t('artistDetail.noLinks') }}
           </div>
         </div>
       </div>
 
       <div class="p-4 rounded-lg bg-[var(--bg)] shadow-[0_0_6px_var(--shadow-weak)] space-y-3">
-        <div class="text-sm font-semibold text-gray-700">Latest Festival</div>
+        <div class="text-sm font-semibold text-gray-700">{{ t('artistDetail.latestFestival') }}</div>
         <template v-if="latestFestival">
           <router-link
             :to="{ name: 'festivaldetail', params: { id: latestFestival.id } }"
@@ -368,12 +411,14 @@ const onToggleFavorite = () => {
             </div>
           </router-link>
         </template>
-        <div v-else class="text-sm text-gray-500">참여한 페스티벌 정보가 없습니다.</div>
+        <div v-else class="text-sm text-gray-500">
+          {{ t('artistDetail.noFestival') }}
+        </div>
       </div>
     </div>
 
     <div v-else class="max-w-3xl mx-auto text-center text-gray-500 py-20">
-      선택한 아티스트 정보를 찾을 수 없습니다.
+      {{ t('artistDetail.notFound') }}
     </div>
   </div>
 
@@ -384,7 +429,9 @@ const onToggleFavorite = () => {
     >
       <div class="w-full max-w-3xl bg-[var(--bg)] text-[var(--text)] rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.35)] overflow-hidden">
         <div class="flex items-center justify-between px-5 py-4 border-b border-[var(--stroke)]">
-          <div class="text-lg font-semibold">Genre: {{ activeGenre }}</div>
+          <div class="text-lg font-semibold">
+            {{ t('artistDetail.genreTitle', { name: activeGenre }) }}
+          </div>
           <button class="material-symbols-rounded text-2xl" @click="closeGenreModal">close</button>
         </div>
         <div class="max-h-[70vh] overflow-y-auto p-5">
@@ -412,12 +459,12 @@ const onToggleFavorite = () => {
             </router-link>
           </div>
           <div v-if="!genreMatches.length" class="text-sm text-gray-500 text-center py-6">
-            같은 장르의 다른 아티스트가 없습니다.
+            {{ t('artistDetail.noGenreMatches') }}
           </div>
         </div>
         <div class="px-5 py-3 border-t border-[var(--stroke)] text-right">
           <button class="px-4 py-2 rounded-md bg-neonpink text-white text-sm" @click="closeGenreModal">
-            닫기
+            {{ t('common.close') }}
           </button>
         </div>
       </div>
