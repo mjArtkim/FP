@@ -14,6 +14,11 @@ type Artist = {
     type?: string
     country?: string
     aliases?: string[]
+    labels?: Array<{
+      name: string
+      mbid?: string
+      relationType?: string
+    }>
     debutYear?: number
     careerYears?: number
     links?: {
@@ -78,6 +83,8 @@ const displayAliases = computed(() => artist.value?.identity.aliases || [])
 const displayGenres = computed(() => artist.value?.spotify?.genres || [])
 const displayAlbums = computed(() => artist.value?.spotify?.albums || [])
 const displayTracks = computed(() => artist.value?.spotify?.topTracks || [])
+const displayLabels = computed(() => artist.value?.identity.labels || [])
+const displayLabelText = computed(() => displayLabels.value.map((label) => label.name).join(', '))
 const showAllAlbums = ref(false)
 const showAllTracks = ref(false)
 const showAllGenres = ref(false)
@@ -136,42 +143,44 @@ const onToggleFavorite = () => {
 <template>
   <div class="px-5 py-8 pc:px-14 pc:py-10">
     <div v-if="artist" class="max-w-4xl mx-auto space-y-6">
-      <div class="flex gap-4 items-center">
+      <div class="rounded-xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.12)]">
         <img
           v-if="artist.spotify?.image"
           :src="artist.spotify.image"
           :alt="artist.identity.name"
-          class="w-28 h-28 object-cover rounded-full shadow-[0_10px_25px_rgba(0,0,0,0.18)]"
+          class="w-full h-[450px] object-cover pc:h-[360px]"
         />
-        <div class="space-y-2">
-          <h1 class="text-2xl font-black pc:text-3xl">{{ artist.identity.name }}</h1>
-          <div class="text-sm text-gray-600">
-            <span v-if="artist.identity.country">
-              {{ t('artistDetail.country', { value: artist.identity.country }) }}
-            </span>
-            <span v-if="artist.identity.type" class="ml-2">
-              {{ t('artistDetail.type', { value: artist.identity.type }) }}
-            </span>
-            <span v-if="artist.identity.debutYear" class="ml-2">
-              {{ t('artistDetail.debut', { value: artist.identity.debutYear }) }}
-            </span>
-            <span v-if="artist.identity.careerYears" class="ml-2">
-              {{ t('artistDetail.career', { years: artist.identity.careerYears }) }}
-            </span>
-          </div>
-          <button
-            type="button"
-            class="inline-flex items-center gap-2 px-3 py-1 rounded-md border border-[var(--stroke)] text-sm hover:bg-neonpink hover:text-white transition-colors"
-            @click="onToggleFavorite"
-          >
-            <span class="material-symbols-rounded text-base">
-              {{ isBookmarked ? 'favorite' : 'favorite_border' }}
-            </span>
-            <span>{{ isBookmarked ? t('common.bookmarked') : t('common.bookmark') }}</span>
-          </button>
-        </div>
       </div>
-
+      <div class="space-y-2">
+        <h1 class="text-2xl font-black pc:text-3xl">{{ artist.identity.name }}</h1>
+        <div class="text-sm text-gray-600">
+          <div v-if="artist.identity.country">
+            {{ t('artistDetail.country', { value: artist.identity.country }) }}
+          </div>
+          <div v-if="artist.identity.type" class="ml-2">
+            {{ t('artistDetail.type', { value: artist.identity.type }) }}
+          </div>
+          <div v-if="artist.identity.debutYear" class="ml-2">
+            {{ t('artistDetail.debut', { value: artist.identity.debutYear }) }}
+          </div>
+          <div v-if="artist.identity.careerYears" class="ml-2">
+            {{ t('artistDetail.career', { years: artist.identity.careerYears }) }}
+          </div>
+          <div v-if="displayLabels.length" class="ml-2">
+            {{ t('artistDetail.labels', { value: displayLabelText }) }}
+          </div>
+        </div>
+        <button
+          type="button"
+          class="inline-flex items-center gap-2 px-3 py-1 rounded-md border border-[var(--stroke)] text-sm hover:bg-neonpink hover:text-white transition-colors"
+          @click="onToggleFavorite"
+        >
+          <span class="material-symbols-rounded text-base">
+            {{ isBookmarked ? 'favorite' : 'favorite_border' }}
+          </span>
+          <span>{{ isBookmarked ? t('common.bookmarked') : t('common.bookmark') }}</span>
+        </button>
+      </div>
       <div class="p-4 rounded-lg bg-[var(--bg)] shadow-[0_0_6px_var(--shadow-weak)] space-y-3">
         <div class="text-sm font-semibold text-gray-700">{{ t('artistDetail.genres') }}</div>
         <div class="flex flex-wrap gap-2">

@@ -41,6 +41,7 @@ type Artist = {
     gender?: string
     country?: string
     aliases?: string[]
+    labels?: { name: string; mbid?: string; relationType?: string }[]
     links?: Record<string, string>
     debutYear?: number
     careerYears?: number
@@ -55,6 +56,21 @@ function extractLinks(relations: any[] | undefined) {
     if (r?.type && r?.target) links[r.type] = r.target
   }
   return links
+}
+
+function extractLabels(relations: any[] | undefined) {
+  const list: { name: string; mbid?: string; relationType?: string }[] = []
+  if (!relations) return list
+  const seen = new Set<string>()
+  for (const r of relations) {
+    const label = r?.label
+    if (!label?.name) continue
+    const key = `${label.id ?? label.name}|${r?.type ?? ''}`
+    if (seen.has(key)) continue
+    seen.add(key)
+    list.push({ name: label.name, mbid: label.id, relationType: r?.type })
+  }
+  return list
 }
 
 function yearFromDateStr(s: any): number | undefined {
@@ -123,7 +139,7 @@ async function getEarliestReleaseGroupYear(mbid: string): Promise<number | undef
     if (!mbid) continue
 
     // aliases + url-rels 유지
-    const data = await mbFetch(`${MB_BASE}/artist/${mbid}?inc=aliases+url-rels&fmt=json`)
+    const data = await mbFetch(`${MB_BASE}/artist/${mbid}?inc=aliases+url-rels+label-rels&fmt=json`)
 
     // 1) 기본: life-span.begin
     let debutYear = extractDebutYearFromLifeSpan(data)
@@ -139,6 +155,7 @@ async function getEarliestReleaseGroupYear(mbid: string): Promise<number | undef
     }
 
     const careerYears = calcCareerYears(debutYear)
+    const labels = extractLabels(data.relations)
 
     a.identity = {
       ...(a.identity ?? { name: a.slug }),
@@ -149,6 +166,7 @@ async function getEarliestReleaseGroupYear(mbid: string): Promise<number | undef
       country: data.country ?? a.identity.country,
 
       aliases: (data.aliases ?? []).map((x: any) => x.name).slice(0, 10),
+      labels: labels.length > 0 ? labels : a.identity.labels,
 
       debutYear: debutYear ?? a.identity.debutYear,
       careerYears: careerYears ?? a.identity.careerYears,
