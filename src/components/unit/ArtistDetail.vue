@@ -212,15 +212,14 @@ onBeforeUnmount(() => {
       </div>
       <div class="space-y-2">
         <h1 class="text-2xl font-black pc:text-3xl">{{ artist.identity.name }}</h1>
-        <div class="text-sm text-gray-600">
+        <div class="text-gray-600 flex pt-2 text-base">
           <div v-if="artist.identity.country">{{ t('artistDetail.country', { value: artist.identity.country }) }}</div>
           <div v-if="artist.identity.birthYear" class="ml-2">{{ t('artistDetail.birth', { value: artist.identity.birthYear }) }}</div>
-        </div>
           <div v-if="artist.identity.type" class="ml-2">{{ t('artistDetail.type', { value: artist.identity.type }) }}</div>
-        <div>
-          <div>{{ t('artistDetail.labels') }}</div>
-          <div v-if="displayLabels.length" class="ml-2">{{ displayLabelText }}</div>
-
+        </div>
+        <div class="py-3">
+          <div class="font-semibold">{{ t('artistDetail.labels') }}</div>
+          <div v-if="displayLabels.length">{{ displayLabelText }}</div>
         </div>
         <div class="flex items-center gap-3">
           <button
@@ -255,7 +254,7 @@ onBeforeUnmount(() => {
       </div>
 
       <div class="space-y-3">
-        <div class="text-sm font-semibold text-gray-700">{{ t('artistDetail.genres') }}</div>
+        <div class="text-sm font-semibold">{{ t('artistDetail.genres') }}</div>
         <div class="flex flex-wrap gap-3">
           <div
             v-for="genre in (showAllGenres ? displayGenres : displayGenres.slice(0, 6))"
