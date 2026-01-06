@@ -177,17 +177,16 @@ const relatedByLocation = computed(() => {
 
 <template>
   <div class="px-5 pb-8 pc:px-14 pc:py-10 h-screen">
-    <div v-if="festival" class="max-w-5xl mx-auto space-y-8">
-      <div class="rounded-xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.12)]">
-        <img
-          :src="festival.image"
-          :alt="festival.title"
-          class="w-full h-[450px] object-cover pc:h-[360px]"
-        />
-      </div>
-
-      <div class="flex flex-col gap-6">
-        <div class="space-y-2">
+    <div v-if="festival" class="max-w-5xl mx-auto space-y-8 pc:grid pc:mx-0 pc:grid-cols-3 pc:w-full pc:max-w-full pc:gap-6 pc:space-y-0">
+      <div class="flex flex-col gap-6 pc:gap-4">
+        <div class="rounded-xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.12)]">
+          <img
+            :src="festival.image"
+            :alt="festival.title"
+            class="w-full h-[450px] object-cover pc:h-[500px] pc:w-[400px]"
+          />
+        </div>
+        <div class="space-y-2 ">
           <h1 class="text-2xl font-black pc:text-3xl">{{ festival.title }}</h1>
           <div class="pt-3 text-sm black pc:text-base">{{ dateRange }}</div>
           <div class="py-3">
@@ -226,6 +225,8 @@ const relatedByLocation = computed(() => {
           </div>
         </div>
 
+      </div>
+      <div class="flex flex-col gap-6">
         <div class="rounded-lg bg-[var(--bg)] space-y-3">
           <div class="text-sm font-bold text-gray-700">{{ t('festivalDetail.linkSection') }}</div>
           <div class="flex gap-3 flex-col text-center">
@@ -254,16 +255,15 @@ const relatedByLocation = computed(() => {
             </div>
           </div>
         </div>
-
-        <div class="grid gap-6 pc:grid-cols-2">
+          <div class="grid gap-6">
           <div class="space-y-3 relative mb-[30px]">
             <div class="text-sm font-bold text-gray-700">{{ t('festivalDetail.lineup') }}</div>
-            <div class="grid grid-cols-2 gap-3">
+            <div class="grid grid-cols-2 gap-3 pc:hidden">
               <template v-for="item in visibleLineupEntries" :key="item.name">
                 <router-link
                   v-if="item.slug"
                   :to="{ name: 'artistdetail', params: { slug: item.slug } }"
-                  class=" rounded-md text-sm text-[var(--text)] pc:hover:bg-neonpink pc:hover:text-white transition-colors flex items-center gap-2"
+                  class="rounded-md text-sm text-[var(--text)] pc:hover:bg-neonpink pc:hover:text-white transition-colors flex items-center gap-2"
                 >
                   <img
                     v-if="item.image"
@@ -287,42 +287,74 @@ const relatedByLocation = computed(() => {
                 </span>
               </template>
             </div>
+            <div class="hidden pc:grid pc:grid-cols-2 pc:gap-3 pc:max-h-[600px] pc:overflow-y-auto pc:pr-1">
+              <template v-for="item in lineupEntries" :key="item.name">
+                <router-link
+                  v-if="item.slug"
+                  :to="{ name: 'artistdetail', params: { slug: item.slug } }"
+                  class="rounded-md text-sm text-[var(--text)] pc:hover:bg-neonpink pc:hover:text-white transition-colors flex items-center gap-2"
+                >
+                  <img
+                    v-if="item.image"
+                    :src="item.image"
+                    :alt="item.name"
+                    class="w-8 h-8 rounded-md object-cover shadow-[1px_1px_4px_var(--shadow-weak)]"
+                  />
+                  <div v-else class="w-7 h-7 rounded-md bg-black/10 flex items-center justify-center text-xs font-semibold uppercase">
+                    {{ item.name?.[0] || '?' }}
+                  </div>
+                  {{ item.name }}
+                </router-link>
+                <span
+                  v-else
+                  class="px-3 py-1 rounded-full bg-black/5 text-sm text-[var(--text)] flex items-center gap-2"
+                >
+                  <div class="w-7 h-7 rounded-full bg-black/10 flex items-center justify-center text-xs font-semibold uppercase">
+                    {{ item.name?.[0] || '?' }}
+                  </div>
+                  {{ item.name }}
+                </span>
+              </template>
+              
+            </div>
             <button
               v-if="hasMoreLineup"
               type="button"
-              class="absolute flex items-center right-0 text-xs font-semibold text-gray-400 pc:hover:text-neonpink transition-colors"
+              class="absolute flex items-center right-0 text-xs font-semibold text-gray-400 pc:hidden transition-colors"
               @click="showAllLineup = !showAllLineup"
             >
               <div>{{ showAllLineup ? t('festivalDetail.showLess') : t('festivalDetail.showMore') }}</div>
               <span class="material-symbols-rounded">{{ showAllLineup ? t('arrow_drop_up') : t('arrow_drop_down') }}</span>
             </button>
           </div>
-
-          <div class="p-4 rounded-lg bg-[var(--bg)] shadow-[0_0_6px_var(--shadow-weak)] space-y-3">
-            <div class="text-sm font-semibold text-gray-700">{{ t('festivalDetail.map') }}</div>
-            <div v-if="mapEmbedSrc" class="space-y-2">
-              <div class="text-sm text-gray-500">{{ mapQuery }}</div>
-              <div class="w-full h-64 rounded-lg overflow-hidden bg-black/5">
-                <iframe
-                  :src="mapEmbedSrc"
-                  class="w-full h-full"
-                  style="border: 0"
-                  loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"
-                  :title="t('festivalDetail.mapTitle')"
-                ></iframe>
-              </div>
-            </div>
-            <div v-else class="text-sm text-gray-500">
-              {{ t('festivalDetail.mapNoInfo') }}
+          
+        </div>
+      </div>
+      <div class="flex flex-col gap-6">
+        <div class="p-4 rounded-lg bg-[var(--bg)] shadow-[0_0_6px_var(--shadow-weak)] space-y-3">
+          <div class="text-sm font-semibold text-gray-700">{{ t('festivalDetail.map') }}</div>
+          <div v-if="mapEmbedSrc" class="space-y-2">
+            <div class="text-sm text-gray-500">{{ mapQuery }}</div>
+            <div class="w-full h-64 rounded-lg overflow-hidden bg-black/5">
+              <iframe
+                :src="mapEmbedSrc"
+                class="w-full h-full"
+                style="border: 0"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                :title="t('festivalDetail.mapTitle')"
+              ></iframe>
             </div>
           </div>
+          <div v-else class="text-sm text-gray-500">
+            {{ t('festivalDetail.mapNoInfo') }}
+          </div>
         </div>
-        <div class="p-4 rounded-lg bg-[var(--bg)] shadow-[0_0_6px_var(--shadow-weak)] space-y-3 mb-[100px]">
+        <div class="p-4 rounded-lg bg-[var(--bg)] shadow-[0_0_6px_var(--shadow-weak)] space-y-3 mb-[100px] pc:mb-0">
           <div class="text-sm font-semibold text-gray-700">
             {{ t('festivalDetail.sameLocation') }}
           </div>
-          <div v-if="relatedByLocation.length" class="grid grid-cols-1 pc:grid-cols-2 gap-3">
+          <div v-if="relatedByLocation.length" class="grid grid-cols-1 gap-3 pc:max-h-[320px] pc:overflow-y-auto">
             <router-link
               v-for="item in relatedByLocation"
               :key="item.id"
@@ -349,7 +381,6 @@ const relatedByLocation = computed(() => {
             {{ t('festivalDetail.noSameLocation') }}
           </div>
         </div>
-        
       </div>
     </div>
 

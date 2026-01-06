@@ -23,7 +23,7 @@ const goBack = () => {
 </script>
 <template>
   <div class="p-5">
-    <div class="b-bar">
+    <div class="b-bar z-50">
       <template v-if="isDetailPage">
         <button
           type="button"
@@ -65,3 +65,5 @@ const goBack = () => {
     </div>
   </div>
 </template>
+<style>
+</style>

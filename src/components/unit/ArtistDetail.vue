@@ -309,7 +309,7 @@ onBeforeUnmount(() => {
         </div>
       </div>
 
-      <div class="space-y-3">
+      <div class="space-y-3 p-4 rounded-lg bg-[var(--bg)] shadow-[0_0_6px_var(--shadow-weak)] ">
         <div class="text-sm font-semibold">{{ t('artistDetail.genres') }}</div>
         <div class="flex flex-wrap gap-3 ">
           <div
@@ -337,7 +337,7 @@ onBeforeUnmount(() => {
         </div>
       </div>
 
-      <div class="space-y-3">
+      <div class="space-y-3 p-4 rounded-lg bg-[var(--bg)] shadow-[0_0_6px_var(--shadow-weak)] ">
         <div class="text-sm font-bold text-gray-700">{{ t('artistDetail.latestFestival') }}</div>
         <template v-if="latestFestival">
           <router-link
@@ -362,7 +362,7 @@ onBeforeUnmount(() => {
         </div>
       </div>
 
-      <div class="space-y-3">
+      <div class="space-y-3 p-4 rounded-lg bg-[var(--bg)] shadow-[0_0_6px_var(--shadow-weak)] ">
         <div class="text-sm font-semibold text-gray-700">{{ t('artistDetail.links') }}</div>
         <div class="flex flex-wrap gap-3 justify-between">
           <a
@@ -490,7 +490,7 @@ onBeforeUnmount(() => {
       </div>
 
 
-      <div class="space-y-3">
+      <div class="space-y-3 p-4 rounded-lg bg-[var(--bg)] shadow-[0_0_6px_var(--shadow-weak)] ">
         <div class="text-sm font-semibold text-gray-700">{{ t('artistDetail.aliases') }}</div>
         <div class="flex flex-wrap gap-2">
           <span
