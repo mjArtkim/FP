@@ -135,6 +135,7 @@ const onKeydown = (e: KeyboardEvent) => {
       isDropdownOpen.value = true
     } else {
       const value = availableMonths.value[activeIndex.value]
+      if (!value) return
       selectMonth(value)
     }
   } else if (e.key === 'Escape') {

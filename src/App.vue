@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { ref } from 'vue'
+
   import Header from './components/unit/Header.vue'
   import MobileBar from './components/unit/MobileBar.vue'
   import { RouterView } from 'vue-router'
