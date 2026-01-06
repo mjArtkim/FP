@@ -25,6 +25,12 @@ type Artist = {
     careerYears?: number
     links?: {
       musicbrainz?: string
+      instagram?: string
+      youtube?: string
+      soundcloud?: string
+      applemusic?: string
+      spotify?: string
+      homepage?: string
     }
   }
   spotify?: {
@@ -84,13 +90,45 @@ const isBookmarked = computed(() => favorites.value.includes(slug.value))
 
 const displayAliases = computed(() => artist.value?.identity.aliases || [])
 const displayGenres = computed(() => artist.value?.spotify?.genres || [])
-const displayAlbums = computed(() => artist.value?.spotify?.albums || [])
+function releaseDateKey(value?: string) {
+  if (!value) return -1
+  const parts = String(value).split('-').map(Number)
+  const year = parts[0] ?? 0
+  const month = parts[1] ?? 1
+  const day = parts[2] ?? 1
+  if (!Number.isFinite(year)) return -1
+  return year * 10000 + month * 100 + day
+}
+
+const displayAlbums = computed(() => {
+  const albums = artist.value?.spotify?.albums || []
+  return [...albums].sort((a, b) => releaseDateKey(b.releaseDate) - releaseDateKey(a.releaseDate))
+})
 const displayTracks = computed(() => artist.value?.spotify?.topTracks || [])
 const displayLabels = computed(() => artist.value?.identity.labels || [])
 const displayLabelText = computed(() => displayLabels.value.map((label) => label.name).join(', '))
 const showAllAlbums = ref(false)
 const showAllTracks = ref(false)
 const showAllGenres = ref(false)
+const showAllAliases = ref(false)
+const homepageLink = computed(() => artist.value?.identity.links?.homepage)
+const instagramLink = computed(() => artist.value?.identity.links?.instagram)
+const youtubeLink = computed(() => artist.value?.identity.links?.youtube)
+const applemusicLink = computed(() => artist.value?.identity.links?.applemusic)
+const soundcloudLink = computed(() => artist.value?.identity.links?.soundcloud)
+const spotifyLink = computed(() => {
+  const spotifyId = artist.value?.spotify?.spotifyId
+  if (spotifyId) return `https://open.spotify.com/artist/${spotifyId}`
+  return artist.value?.identity.links?.spotify
+})
+
+function formatDuration(durationMs?: number) {
+  if (!durationMs) return ''
+  const totalSeconds = Math.round(durationMs / 1000)
+  const minutes = Math.floor(totalSeconds / 60)
+  const seconds = totalSeconds % 60
+  return `${minutes}:${String(seconds).padStart(2, '0')}`
+}
 
 const genreToneClass = (genre: string) => getGenreToneClass(genre)
 
@@ -112,11 +150,17 @@ const genreMatches = computed(() => {
   if (!activeGenre.value) return []
   const list = genreArtistsMap.value[activeGenre.value] || []
   const seen = new Set<string>()
-  return list.filter((item) => {
-    if (seen.has(item.slug)) return false
-    seen.add(item.slug)
-    return true
-  })
+  return list
+    .filter((item) => {
+      if (seen.has(item.slug)) return false
+      seen.add(item.slug)
+      return true
+    })
+    .sort((a, b) => {
+      const aName = a.identity?.name ?? a.slug
+      const bName = b.identity?.name ?? b.slug
+      return aName.localeCompare(bName)
+    })
 })
 
 const openGenreModal = (genre: string) => {
@@ -210,16 +254,28 @@ onBeforeUnmount(() => {
           class="w-full h-[450px] object-cover pc:h-[360px]"
         />
       </div>
-      <div class="space-y-2">
+      <div class="space-y-3">
         <h1 class="text-2xl font-black pc:text-3xl">{{ artist.identity.name }}</h1>
-        <div class="text-gray-600 flex pt-2 text-base">
+        <div class="text-gray-700 flex text-base">
           <div v-if="artist.identity.country">{{ t('artistDetail.country', { value: artist.identity.country }) }}</div>
           <div v-if="artist.identity.birthYear" class="ml-2">{{ t('artistDetail.birth', { value: artist.identity.birthYear }) }}</div>
           <div v-if="artist.identity.type" class="ml-2">{{ t('artistDetail.type', { value: artist.identity.type }) }}</div>
         </div>
-        <div class="py-3">
+        <div class="py-2">
+          <div class="text-sm font-bold">{{ t('artistDetail.careerover') }}</div>
+          <div class="flex items-center text-gray-700 text-sm">
+            <div v-if="artist.identity.debutYear">
+              {{ t('artistDetail.debut', { value: artist.identity.debutYear }) }}
+            </div>
+            <div v-if="artist.identity.careerYears" class="ml-2">
+              {{ t('artistDetail.career', { years: artist.identity.careerYears }) }}
+            </div>
+          </div>
+        </div>
+        <div class="py-2">
           <div class="font-semibold">{{ t('artistDetail.labels') }}</div>
           <div v-if="displayLabels.length">{{ displayLabelText }}</div>
+          <div v-else class="text-sm text-gray-500">{{ t('artistDetail.noLabels') }}</div>
         </div>
         <div class="flex items-center gap-3">
           <button
@@ -255,9 +311,9 @@ onBeforeUnmount(() => {
 
       <div class="space-y-3">
         <div class="text-sm font-semibold">{{ t('artistDetail.genres') }}</div>
-        <div class="flex flex-wrap gap-3">
+        <div class="flex flex-wrap gap-3 ">
           <div
-            v-for="genre in (showAllGenres ? displayGenres : displayGenres.slice(0, 6))"
+            v-for="genre in (showAllGenres ? displayGenres : displayGenres.slice(0, 5))"
             :key="genre"
             class="px-3 py-1 rounded-md border text-sm cursor-pointer transition-colors [text-shadow:1px_1px_3px_var(--shadow-weak)] shadow-[1px_1px_3px_var(--shadow-weak)]"
             :class="genreToneClass(genre)"
@@ -269,10 +325,10 @@ onBeforeUnmount(() => {
             {{ t('artistDetail.noGenres') }}
           </div>
         </div>
-        <div v-if="displayGenres.length > 6" class="w-full">
+        <div v-if="displayGenres.length > 5" class="w-full">
           <button
             type="button"
-            class="w-full text-sm text-gray-400 flex items-center justify-end"
+            class="w-full text-sm text-gray-400 flex items-center justify-end pc:hover:text-gray-700"
             @click="showAllGenres = !showAllGenres"
           >
             <div>{{ showAllGenres ? t('artistDetail.showLess') : t('artistDetail.showMore') }}</div>
@@ -280,20 +336,13 @@ onBeforeUnmount(() => {
           </button>
         </div>
       </div>
-      <div>
-        <div v-if="artist.identity.debutYear" class="ml-2">
-          {{ t('artistDetail.debut', { value: artist.identity.debutYear }) }}
-        </div>
-        <div v-if="artist.identity.careerYears" class="ml-2">
-          {{ t('artistDetail.career', { years: artist.identity.careerYears }) }}
-        </div>
-      </div>
-      <div class="p-4 rounded-lg bg-[var(--bg)] shadow-[0_0_6px_var(--shadow-weak)] space-y-3">
-        <div class="text-sm font-semibold text-gray-700">{{ t('artistDetail.latestFestival') }}</div>
+
+      <div class="space-y-3">
+        <div class="text-sm font-bold text-gray-700">{{ t('artistDetail.latestFestival') }}</div>
         <template v-if="latestFestival">
           <router-link
             :to="{ name: 'festivaldetail', params: { id: latestFestival.id } }"
-            class="flex items-center gap-3 p-3 rounded-lg bg-black/5 hover:bg-neonpink/10 transition-colors"
+            class="flex items-center gap-3 p-3 rounded-lg bg-pulsegray/15 pc:hover:bg-neonpink/10 transition-colors"
           >
             <img
               v-if="latestFestival.image"
@@ -313,11 +362,139 @@ onBeforeUnmount(() => {
         </div>
       </div>
 
-      <div class="p-4 rounded-lg bg-[var(--bg)] shadow-[0_0_6px_var(--shadow-weak)] space-y-3">
+      <div class="space-y-3">
+        <div class="text-sm font-semibold text-gray-700">{{ t('artistDetail.links') }}</div>
+        <div class="flex flex-wrap gap-3 justify-between">
+          <a
+            v-if="homepageLink"
+            :href="homepageLink"
+            target="_blank"
+            rel="noopener"
+            class="inline-flex items-center justify-center w-8 h-8 rounded-md border border-[var(--stroke)] border-black text-base text-[var(--text)] pc:hover:bg-[var(--surface)] transition-colors shadow-[1px_1px_3px_var(--shadow-weak)]"
+          >
+            <span class="material-symbols-rounded">home</span>
+          </a>
+          <div
+            v-else
+            :title="t('artistDetail.noLinks')"
+            class="inline-flex items-center justify-center w-8 h-8 rounded-md border border-pulsegray text-base text-pulsegray shadow-[1px_1px_3px_var(--shadow-weak)] cursor-not-allowed"
+          >
+            <span class="material-symbols-rounded">home</span>
+          </div>
+
+          <a
+            v-if="instagramLink"
+            :href="instagramLink"
+            target="_blank"
+            rel="noopener"
+            class="inline-flex items-center justify-center w-8 h-8 rounded-md border border-[#E1306C] text-sm text-[#E1306C] shadow-[1px_1px_3px_var(--shadow-weak)] pc:hover:bg-[#E1306C] pc:hover:text-white transition-colors"
+          >
+            <img src="@/assets/img/insta.svg" alt="Instagram" class="w-4 h-4" />
+          </a>
+          <div
+            v-else
+            :title="t('artistDetail.noLinks')"
+            class="inline-flex items-center justify-center w-8 h-8 rounded-md border border-pulsegray text-sm text-pulsegray shadow-[1px_1px_3px_var(--shadow-weak)] cursor-not-allowed"
+          >
+            <img
+              src="@/assets/img/insta.svg"
+              alt="Instagram"
+              class="w-4 h-4 grayscale opacity-50"
+            />
+          </div>
+
+          <a
+            v-if="youtubeLink"
+            :href="youtubeLink"
+            target="_blank"
+            rel="noopener"
+            class="inline-flex items-center justify-center w-8 h-8 rounded-md border border-[#FF0000] text-sm shadow-[1px_1px_3px_var(--shadow-weak)] text-[#FF0000] pc:hover:bg-[#FF0000] pc:hover:text-white transition-colors"
+          >
+            <img src="@/assets/img/youtube.svg" alt="YouTube" class="w-4 h-4" />
+          </a>
+          <div
+            v-else
+            :title="t('artistDetail.noLinks')"
+            class="inline-flex items-center justify-center w-8 h-8 rounded-md border border-pulsegray text-sm text-pulsegray shadow-[1px_1px_3px_var(--shadow-weak)] cursor-not-allowed"
+          >
+            <img
+              src="@/assets/img/youtube.svg"
+              alt="YouTube"
+              class="w-4 h-4 grayscale opacity-50"
+            />
+          </div>
+
+          <a
+            v-if="applemusicLink"
+            :href="applemusicLink"
+            target="_blank"
+            rel="noopener"
+            class="inline-flex items-center justify-center w-8 h-8 rounded-md border border-[#FA2D48] text-sm shadow-[1px_1px_3px_var(--shadow-weak)] text-[#FA2D48] pc:hover:bg-[#FA2D48] pc:hover:text-white transition-colors"
+          >
+            <img src="@/assets/img/apple.svg" alt="Apple Music" class="w-4 h-4" />
+          </a>
+          <div
+            v-else
+            :title="t('artistDetail.noLinks')"
+            class="inline-flex items-center justify-center w-8 h-8 rounded-md border border-pulsegray text-sm text-pulsegray shadow-[1px_1px_3px_var(--shadow-weak)] cursor-not-allowed"
+          >
+            <img
+              src="@/assets/img/apple.svg"
+              alt="Apple Music"
+              class="w-4 h-4 grayscale opacity-50"
+            />
+          </div>
+
+          <a
+            v-if="spotifyLink"
+            :href="spotifyLink"
+            target="_blank"
+            rel="noopener"
+            class="inline-flex items-center justify-center w-8 h-8 rounded-md border border-pulsspotify shadow-[1px_1px_3px_var(--shadow-weak)] text-sm pc:hover:bg-pulsspotify pc:hover:text-white transition-colors"
+          >
+            <img src="@/assets/img/spotify.svg" alt="Spotify" class="w-4 h-4" />
+          </a>
+          <div
+            v-else
+            :title="t('artistDetail.noLinks')"
+            class="inline-flex items-center justify-center w-8 h-8 rounded-md border border-pulsegray text-sm text-pulsegray shadow-[1px_1px_3px_var(--shadow-weak)] cursor-not-allowed"
+          >
+            <img
+              src="@/assets/img/spotify.svg"
+              alt="Spotify"
+              class="w-4 h-4 grayscale opacity-50"
+            />
+          </div>
+
+          <a
+            v-if="soundcloudLink"
+            :href="soundcloudLink"
+            target="_blank"
+            rel="noopener"
+            class="inline-flex items-center justify-center w-8 h-8 rounded-md border border-[#FBC845] text-sm shadow-[1px_1px_3px_var(--shadow-weak)] text-[#FF5500] pc:hover:bg-[#FF5500] pc:hover:text-white transition-colors"
+          >
+            <img src="@/assets/img/soundcloud.svg" alt="SoundCloud" class="w-4 h-4" />
+          </a>
+          <div
+            v-else
+            :title="t('artistDetail.noLinks')"
+            class="inline-flex items-center justify-center w-8 h-8 rounded-md border border-pulsegray text-sm text-pulsegray shadow-[1px_1px_3px_var(--shadow-weak)] cursor-not-allowed"
+          >
+            <img
+              src="@/assets/img/soundcloud.svg"
+              alt="SoundCloud"
+              class="w-4 h-4 grayscale opacity-50"
+            />
+          </div>
+        </div>
+      </div>
+
+
+      <div class="space-y-3">
         <div class="text-sm font-semibold text-gray-700">{{ t('artistDetail.aliases') }}</div>
         <div class="flex flex-wrap gap-2">
           <span
-            v-for="alias in displayAliases"
+            v-for="alias in (showAllAliases ? displayAliases : displayAliases.slice(0, 3))"
             :key="alias"
             class="px-3 py-1 rounded-md bg-gray-200 text-sm text-gray-700"
           >
@@ -326,6 +503,18 @@ onBeforeUnmount(() => {
           <div v-if="!displayAliases.length" class="text-sm text-gray-500">
             {{ t('artistDetail.noAliases') }}
           </div>
+        </div>
+        <div v-if="displayAliases.length > 3" class="text-right">
+          <button
+            type="button"
+            class="text-sm text-gray-400 inline-flex items-center gap-1 pc:hover:text-gray-700"
+            @click="showAllAliases = !showAllAliases"
+          >
+            <div>{{ showAllAliases ? t('artistDetail.showLess') : t('artistDetail.showMore') }}</div>
+            <span class="material-symbols-rounded">
+              {{ showAllAliases ? t('arrow_drop_up') : t('arrow_drop_down') }}
+            </span>
+          </button>
         </div>
       </div>
 
@@ -343,20 +532,12 @@ onBeforeUnmount(() => {
               :href="album.url"
               target="_blank"
               rel="noopener"
-              class="flex gap-3 p-3 rounded-lg bg-black/5 hover:bg-neonpink/10 transition-colors"
+              class="relative w-50% flex flex-col justify-end gap-1 rounded-lg bg-black/5 pc:hover:bg-neonpink/10 transition-colors bg-cover bg-center aspect-square"
+              :style="album.image ? { backgroundImage: `url(${album.image})` } : undefined"
             >
-              <img
-                v-if="album.image"
-                :src="album.image"
-                :alt="album.name"
-                class="w-16 h-16 object-cover rounded-md"
-              />
-              <div v-else class="w-16 h-16 rounded-md bg-black/10 flex items-center justify-center text-xs font-semibold">
-                {{ album.albumType }}
-              </div>
-              <div class="flex flex-col gap-1">
-                <div class="text-sm font-semibold line-clamp-2">{{ album.name }}</div>
-                <div class="text-xs text-gray-500">
+              <div class="bg-black/40 p-2 rounded-b-md">
+                <div class="text-sm font-semibold line-clamp-2 text-white">{{ album.name }}</div>
+                <div class="text-xs text-bgdash">
                   {{
                     t('artistDetail.albumMeta', {
                       type: album.albumType,
@@ -395,17 +576,20 @@ onBeforeUnmount(() => {
         <div v-else-if="displayAlbums.length > 4" class="text-right">
           <button
             type="button"
-            class="text-sm text-pulseblue hover:underline"
+            class="text-sm text-gray-400 inline-flex items-center gap-1 pc:hover:text-gray-700"
             @click="showAllAlbums = !showAllAlbums"
           >
             {{ showAllAlbums ? t('artistDetail.showLess') : t('artistDetail.showMore') }}
+            <span class="material-symbols-rounded">
+              {{ showAllAlbums ? t('arrow_drop_up') : t('arrow_drop_down') }}
+            </span>
           </button>
         </div>
       </div>
 
       <div class="p-4 rounded-lg bg-[var(--bg)] shadow-[0_0_6px_var(--shadow-weak)] space-y-3">
         <div class="text-sm font-semibold text-gray-700">{{ t('artistDetail.topTracks') }}</div>
-        <div class="space-y-3">
+        <div class="space-y-2">
           <template
             v-for="track in (showAllTracks ? displayTracks : displayTracks.slice(0, 4))"
             :key="track.id"
@@ -415,7 +599,7 @@ onBeforeUnmount(() => {
               :href="track.url"
               target="_blank"
               rel="noopener"
-              class="flex items-center gap-3 p-3 rounded-lg bg-black/5 hover:bg-neonpink/10 transition-colors"
+              class="flex items-center gap-3 p-3 rounded-lg bg-black/5 pc:hover:bg-neonpink/10 transition-colors"
             >
               <img
                 v-if="track.album?.image"
@@ -434,11 +618,7 @@ onBeforeUnmount(() => {
                 </div>
               </div>
               <div class="ml-auto text-xs text-gray-500">
-                {{
-                  track.durationMs
-                    ? t('artistDetail.durationSeconds', { seconds: Math.round(track.durationMs / 1000) })
-                    : ''
-                }}
+                {{ formatDuration(track.durationMs) }}
               </div>
             </a>
             <div
@@ -471,41 +651,16 @@ onBeforeUnmount(() => {
         <div v-if="displayTracks.length > 4" class="text-right">
           <button
             type="button"
-            class="text-sm text-pulseblue hover:underline"
+            class="text-sm text-gray-400 inline-flex items-center gap-1 pc:hover:text-gray-700"
             @click="showAllTracks = !showAllTracks"
           >
-            {{ showAllTracks ? t('artistDetail.showLess') : t('artistDetail.showMore') }}
+            <div>{{ showAllTracks ? t('artistDetail.showLess') : t('artistDetail.showMore') }}</div>
+            <span class="material-symbols-rounded">
+              {{ showAllTracks ? t('arrow_drop_up') : t('arrow_drop_down') }}
+            </span>
           </button>
         </div>
       </div>
-
-      <div class="p-4 rounded-lg bg-[var(--bg)] shadow-[0_0_6px_var(--shadow-weak)] space-y-3">
-        <div class="text-sm font-semibold text-gray-700">{{ t('artistDetail.links') }}</div>
-        <div class="flex flex-wrap gap-3">
-          <a
-            v-if="artist.spotify?.spotifyId"
-            :href="`https://open.spotify.com/artist/${artist.spotify.spotifyId}`"
-            target="_blank"
-            rel="noopener"
-            class="px-4 py-2 rounded-md bg-neonpink text-white text-sm shadow-[0_4px_12px_rgba(0,0,0,0.12)]"
-          >
-            Spotify
-          </a>
-          <a
-            v-if="artist.identity.links?.musicbrainz"
-            :href="artist.identity.links.musicbrainz"
-            target="_blank"
-            rel="noopener"
-            class="px-4 py-2 rounded-md border border-pulseblue text-pulseblue text-sm hover:bg-pulseblue hover:text-white transition-colors"
-          >
-            MusicBrainz
-          </a>
-          <div v-if="!artist.spotify?.spotifyId && !artist.identity.links?.musicbrainz" class="text-sm text-gray-500">
-            {{ t('artistDetail.noLinks') }}
-          </div>
-        </div>
-      </div>
-
       
     </div>
 
@@ -532,7 +687,7 @@ onBeforeUnmount(() => {
               v-for="artistItem in genreMatches"
               :key="artistItem.slug"
               :to="{ name: 'artistdetail', params: { slug: artistItem.slug } }"
-              class="flex items-center gap-3 p-3 rounded-lg bg-black/5 hover:bg-neonpink/10 transition-colors"
+              class="flex items-center gap-3 p-3 rounded-lg bg-black/5 pc:hover:bg-neonpink/10 transition-colors"
               @click="closeGenreModal"
             >
               <img

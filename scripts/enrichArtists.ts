@@ -50,11 +50,64 @@ type Artist = {
   spotify: Record<string, any>
 }
 
-function extractLinks(relations: any[] | undefined) {
+function normalizeRelationUrl(rel: any): string | undefined {
+  const url = rel?.target ?? rel?.url?.resource
+  if (!url || typeof url !== 'string') return undefined
+  return url
+}
+
+function serviceKeyFromUrl(url: string): string | undefined {
+  try {
+    const host = new URL(url).hostname.toLowerCase().replace(/^www\./, '')
+    if (host.endsWith('instagram.com')) return 'instagram'
+    if (host === 'youtu.be' || host.endsWith('youtube.com')) return 'youtube'
+    if (host.endsWith('soundcloud.com')) return 'soundcloud'
+    if (host.endsWith('music.apple.com') || host.endsWith('itunes.apple.com')) return 'applemusic'
+    if (host.endsWith('spotify.com') || host === 'open.spotify.com') return 'spotify'
+  } catch {
+    return undefined
+  }
+  return undefined
+}
+
+function extractSocialLinks(relations: any[] | undefined) {
   const links: Record<string, string> = {}
   if (!relations) return links
   for (const r of relations) {
-    if (r?.type && r?.target) links[r.type] = r.target
+    const url = normalizeRelationUrl(r)
+    if (!url) continue
+    const type = String(r?.type ?? '').toLowerCase()
+
+    const setLink = (key: string) => {
+      if (!links[key]) links[key] = url
+    }
+
+    switch (type) {
+      case 'instagram':
+        setLink('instagram')
+        break
+      case 'youtube':
+        setLink('youtube')
+        break
+      case 'soundcloud':
+        setLink('soundcloud')
+        break
+      case 'apple music':
+        setLink('applemusic')
+        break
+      case 'spotify':
+        setLink('spotify')
+        break
+      case 'official homepage':
+      case 'homepage':
+      case 'official website':
+        setLink('homepage')
+        break
+      default: {
+        const inferred = serviceKeyFromUrl(url)
+        if (inferred) setLink(inferred)
+      }
+    }
   }
   return links
 }
@@ -177,11 +230,15 @@ async function getEarliestReleaseGroupYear(mbid: string): Promise<number | undef
       debutYear: debutYear ?? a.identity.debutYear,
       careerYears: careerYears ?? a.identity.careerYears,
 
-      links: {
-        ...(a.identity.links ?? {}),
-        ...extractLinks(data.relations),
-        musicbrainz: `https://musicbrainz.org/artist/${mbid}`,
-      },
+      links: (() => {
+        const merged = { ...(a.identity.links ?? {}) }
+        const socialLinks = extractSocialLinks(data.relations)
+        for (const [key, val] of Object.entries(socialLinks)) {
+          if (!merged[key]) merged[key] = val
+        }
+        merged.musicbrainz = `https://musicbrainz.org/artist/${mbid}`
+        return merged
+      })(),
     }
 
     count++

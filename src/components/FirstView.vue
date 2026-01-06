@@ -359,7 +359,7 @@ watch(
                       :key="m"
                       type="button"
                       role="option"
-                      class="w-full px-3 py-2 text-left hover:bg-black/5 focus:bg-black/5 focus:outline-none"
+                      class="w-full px-3 py-2 text-left pc:hover:bg-black/5 focus:bg-black/5 focus:outline-none"
                       :class="[
                         m === monthChoice ? 'font-semibold' : '',
                         idx === activeIndex ? 'bg-black/5' : '',

@@ -499,7 +499,7 @@
       "contry": "Netherlands",
       "city": "Amsterdam",
       "mapQuery": "Amsterdam, Netherlands",
-      "lineup": "Martin Garrix, Hardwell, Afrojack, ANYMA, Matisse&Sadko, Dubvision, Armin Van Burren, Third Party, Vluarr, Peggy Gou, HUGLE, Crankdat, Sullivan King, Said The Sky, Slander, Zedd, Illenium",
+      "lineup": "Martin Garrix, Hardwell, Afrojack, ANYMA, Matisse&Sadko, Dubvision, Armin Van Burren, Third Party, Vluarr, Peggy Gou, HUGLE, Crankdat, Sullivan King, Said The Sky, Slander, Zedd, Illenium, E-Force, Mariana BO, Mandy, ARTY, Seth Hills",
       "artistSlugs": [
         "martin-garrix",
         "hardwell",
@@ -517,7 +517,12 @@
         "said-the-Sky",
         "slander",
         "zedd",
-        "illenium"
+        "illenium",
+        "e-force",
+        "mandy",
+        "mariana-bo",
+        "arty",
+        "seth-hills"
       ],
       "ticket": "https://www.ideartm.com",
       "infolink": "https://www.ideartm.com"

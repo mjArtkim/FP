@@ -54,23 +54,23 @@ watch(
         </ul>
       </div>
       <div class="flex flex-col gap-9">
-        <router-link to="/" class="flex items-center cursor-pointer hover:text-[var(--accent)]">
+        <router-link to="/" class="flex items-center cursor-pointer pc:hover:text-[var(--accent)]">
           <div class="material-symbols-rounded text-2xl pr-5">home</div>
           <div v-if="isSidebarOpen" class="text-lg font-semibold">{{ t('nav.home') }}</div>
         </router-link>
-        <router-link to="#" class="flex items-center cursor-pointer hover:text-[var(--accent)]">
+        <router-link to="#" class="flex items-center cursor-pointer pc:hover:text-[var(--accent)]">
           <div class="material-symbols-rounded text-2xl pr-5">map</div>
           <div v-if="isSidebarOpen" class="text-lg font-semibold">{{ t('nav.map') }}</div>
         </router-link>
-        <router-link to="/favorite" class="flex items-center cursor-pointer hover:text-[var(--accent)]">
+        <router-link to="/favorite" class="flex items-center cursor-pointer pc:hover:text-[var(--accent)]">
           <div class="material-symbols-rounded text-2xl pr-5">star</div>
           <div v-if="isSidebarOpen" class="text-lg font-semibold">{{ t('nav.favorite') }}</div>
         </router-link>
-        <router-link to="#" class="flex items-center cursor-pointer hover:text-[var(--accent)]">
+        <router-link to="#" class="flex items-center cursor-pointer pc:hover:text-[var(--accent)]">
           <div class="material-symbols-rounded text-2xl pr-5">insert_chart</div>
           <div v-if="isSidebarOpen" class="text-lg font-semibold">{{ t('nav.insights') }}</div>
         </router-link>
-        <router-link to="#" class="flex items-center cursor-pointer hover:text-[var(--accent)]">
+        <router-link to="#" class="flex items-center cursor-pointer pc:hover:text-[var(--accent)]">
           <div class="material-symbols-rounded text-2xl pr-5">account_box</div>
           <div v-if="isSidebarOpen" class="text-lg font-semibold">{{ t('nav.mypage') }}</div>
         </router-link>
@@ -91,7 +91,7 @@ watch(
     <div class="flex items-center justify-between">
       <div v-if="isSidebarOpen" class="text-xs text-[var(--muted)]">© 2026, Festival Pulse</div>
       <button
-        class="text-[var(--muted)] hover:text-[var(--text)] material-symbols-rounded text-3xl "
+        class="text-[var(--muted)] pc:hover:text-[var(--text)] material-symbols-rounded text-3xl "
         @click="toggleSidebar"
       >
         {{ isSidebarOpen ? 'left_panel_close' : 'left_panel_open' }}

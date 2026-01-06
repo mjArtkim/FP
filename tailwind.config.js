@@ -14,7 +14,8 @@ export default {
         pulsegray: '#CCCCCC',
         bgdash: '#F5F5F5',
         pulsedarkgray: '#707070',
-        pulsebrown:'#482317'
+        pulsebrown:'#482317',
+        pulsspotify: '#0FBF00'
       },
       fontSize: {
         xss: '10px',

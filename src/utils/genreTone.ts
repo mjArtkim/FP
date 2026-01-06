@@ -47,6 +47,7 @@ export const GENRE_TONES: GenreTone[] = [
       'hardstyle',
       'hardcore',
       'deathstep',
+      'frenchcore'
     ],
     classes: 'bg-white text-pulsered border-pulsered pc:hover:bg-pulsered/10',
   },

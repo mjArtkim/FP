@@ -63,7 +63,7 @@ const handleRemoveFestival = (id: number) => {
             v-for="artist in favoriteArtists"
             :key="artist.slug"
             :to="{ name: 'artistdetail', params: { slug: artist.slug } }"
-            class="group flex items-center gap-3 p-3 rounded-lg bg-[var(--bg)] shadow-[0_0_6px_var(--shadow-weak)] hover:bg-neonpink/10 transition-colors"
+            class="group flex items-center gap-3 p-3 rounded-lg bg-[var(--bg)] shadow-[0_0_6px_var(--shadow-weak)] pc:hover:bg-neonpink/10 transition-colors"
           >
             <img
               v-if="artist.spotify?.image"
@@ -79,7 +79,7 @@ const handleRemoveFestival = (id: number) => {
             </div>
             <button
               type="button"
-              class="material-symbols-rounded text-xl text-gray-500 hover:text-neonpink"
+              class="material-symbols-rounded text-xl text-gray-500 pc:hover:text-neonpink"
               @click.stop.prevent="handleRemove(artist.slug)"
             >
               delete
@@ -96,7 +96,7 @@ const handleRemoveFestival = (id: number) => {
             v-for="fest in favoriteFestivals"
             :key="fest.id"
             :to="{ name: 'festivaldetail', params: { id: fest.id } }"
-            class="flex gap-3 p-3 rounded-lg bg-[var(--bg)] shadow-[0_0_6px_var(--shadow-weak)] hover:bg-neonpink/10 transition-colors"
+            class="flex gap-3 p-3 rounded-lg bg-[var(--bg)] shadow-[0_0_6px_var(--shadow-weak)] pc:hover:bg-neonpink/10 transition-colors"
           >
             <img
               v-if="fest.image"
@@ -114,7 +114,7 @@ const handleRemoveFestival = (id: number) => {
             </div>
             <button
               type="button"
-              class="material-symbols-rounded text-xl text-gray-500 hover:text-neonpink"
+              class="material-symbols-rounded text-xl text-gray-500 pc:hover:text-neonpink"
               @click.stop.prevent="handleRemoveFestival(fest.id)"
             >
               delete

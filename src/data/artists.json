@@ -12,7 +12,13 @@
         "N. van de Wall"
       ],
       "links": {
-        "musicbrainz": "https://musicbrainz.org/artist/a3ee920f-4e7f-4993-8aca-4b8538cfaa4a"
+        "musicbrainz": "https://musicbrainz.org/artist/a3ee920f-4e7f-4993-8aca-4b8538cfaa4a",
+        "spotify": "https://open.spotify.com/artist/4D75GcNG95ebPtNvoNVXhz",
+        "homepage": "http://www.afrojack.com/",
+        "applemusic": "https://itunes.apple.com/nl/artist/id211210469",
+        "instagram": "https://www.instagram.com/afrojack/",
+        "soundcloud": "https://soundcloud.com/afrojack",
+        "youtube": "https://www.youtube.com/channel/UChuZAo1RKL85gev3Eal9_zg"
       },
       "gender": "Male",
       "debutYear": 2006,
@@ -36,7 +42,8 @@
         "electro house",
         "electronic",
         "house",
-        "progressive house"
+        "progressive house",
+        "edm"
       ],
       "albums": [
         {
@@ -348,7 +355,13 @@
         "Anyma (ofc)"
       ],
       "links": {
-        "musicbrainz": "https://musicbrainz.org/artist/788307a8-ca6a-4775-b9a2-8d27d2af71ce"
+        "musicbrainz": "https://musicbrainz.org/artist/788307a8-ca6a-4775-b9a2-8d27d2af71ce",
+        "spotify": "https://open.spotify.com/artist/4iBwchw0U0GZv5RfVYSMxN",
+        "homepage": "https://www.anyma.com/",
+        "instagram": "https://www.instagram.com/anyma/",
+        "soundcloud": "https://soundcloud.com/anyma_ofc",
+        "applemusic": "https://music.apple.com/de/artist/1505813449",
+        "youtube": "https://www.youtube.com/channel/UCHXy48aYSYeRaBuMOedwxAQ"
       },
       "gender": "Male",
       "debutYear": 2021,
@@ -361,17 +374,18 @@
       "genres": [
         "electronic",
         "melodic house",
-        "melodic techno"
+        "melodic techno",
+        "edm"
       ],
       "albums": [
         {
-          "id": "2SmN1Ac10MPhwvaSOrzobT",
+          "id": "5mrhEkyhLEU7HCb1msC0bw",
           "name": "The End Of Genesys (Deluxe)",
           "albumType": "album",
           "releaseDate": "2025-12-31",
-          "totalTracks": 27,
-          "image": "https://i.scdn.co/image/ab67616d0000b2730a128379309c5c4a1725cca9",
-          "url": "https://open.spotify.com/album/2SmN1Ac10MPhwvaSOrzobT"
+          "totalTracks": 26,
+          "image": "https://i.scdn.co/image/ab67616d0000b273c738458b95a8a619d90ac10e",
+          "url": "https://open.spotify.com/album/5mrhEkyhLEU7HCb1msC0bw"
         },
         {
           "id": "5S4MqmLI8xaLzLBH0wgxEu",
@@ -679,7 +693,13 @@
         "AvB"
       ],
       "links": {
-        "musicbrainz": "https://musicbrainz.org/artist/477b8c0c-c5fc-4ad2-b5b2-191f0bf2a9df"
+        "musicbrainz": "https://musicbrainz.org/artist/477b8c0c-c5fc-4ad2-b5b2-191f0bf2a9df",
+        "spotify": "https://open.spotify.com/artist/0SfsnGyD8FpIN4U4WCkBZ5",
+        "homepage": "http://www.arminvanbuuren.com/",
+        "applemusic": "https://itunes.apple.com/nl/artist/id17976294",
+        "instagram": "https://www.instagram.com/arminvanbuuren/",
+        "soundcloud": "https://soundcloud.com/arminvanbuuren",
+        "youtube": "https://www.youtube.com/channel/UCu5jfQcpRLm9xhmlSd5S8xw"
       },
       "gender": "Male",
       "debutYear": 2003,
@@ -1021,7 +1041,13 @@
       "country": "NL",
       "aliases": [],
       "links": {
-        "musicbrainz": "https://musicbrainz.org/artist/0b33f22d-b4b6-400e-90af-c593e0f395b6"
+        "musicbrainz": "https://musicbrainz.org/artist/0b33f22d-b4b6-400e-90af-c593e0f395b6",
+        "spotify": "https://open.spotify.com/artist/3XINWZaloea97SIRiyTJxX",
+        "homepage": "http://dubvisionmusic.com/",
+        "applemusic": "https://itunes.apple.com/us/artist/id453713844",
+        "instagram": "https://www.instagram.com/dubvisionmusic/",
+        "soundcloud": "https://soundcloud.com/dubvisionmusic",
+        "youtube": "https://www.youtube.com/user/MusicDubVision"
       },
       "debutYear": 1995,
       "careerYears": 31
@@ -1348,7 +1374,13 @@
         "DJ Hardwell"
       ],
       "links": {
-        "musicbrainz": "https://musicbrainz.org/artist/170d6637-36e0-49dd-a225-c4fd5b77a285"
+        "musicbrainz": "https://musicbrainz.org/artist/170d6637-36e0-49dd-a225-c4fd5b77a285",
+        "spotify": "https://open.spotify.com/artist/6BrvowZBreEkXzJQMpL174",
+        "homepage": "https://www.djhardwell.com/",
+        "applemusic": "https://itunes.apple.com/artist/id270486655",
+        "instagram": "https://www.instagram.com/hardwell/",
+        "soundcloud": "https://soundcloud.com/hardwell",
+        "youtube": "https://www.youtube.com/channel/UCPT5Q93YbgJ_7du1gV7UHQQ"
       },
       "gender": "Male",
       "debutYear": 2003,
@@ -1709,7 +1741,13 @@
         "マーティン・ギャリックス"
       ],
       "links": {
-        "musicbrainz": "https://musicbrainz.org/artist/3e1f2ee4-16be-4406-bf18-6173840cf2b1"
+        "musicbrainz": "https://musicbrainz.org/artist/3e1f2ee4-16be-4406-bf18-6173840cf2b1",
+        "spotify": "https://open.spotify.com/artist/60d24wfXkVzDSfLS6hyCjZ",
+        "homepage": "https://martingarrix.com/",
+        "applemusic": "https://itunes.apple.com/nl/nartist/id430932944",
+        "instagram": "https://www.instagram.com/martingarrix/",
+        "soundcloud": "https://soundcloud.com/martingarrix",
+        "youtube": "https://www.youtube.com/channel/UC5H_KXkPbEsGs0tFt8R35mA"
       },
       "gender": "Male",
       "debutYear": 2012,
@@ -2050,7 +2088,11 @@
         "Matisse"
       ],
       "links": {
-        "musicbrainz": "https://musicbrainz.org/artist/c02a6ce9-452c-4df5-a065-4928e6bf07e6"
+        "musicbrainz": "https://musicbrainz.org/artist/c02a6ce9-452c-4df5-a065-4928e6bf07e6",
+        "spotify": "https://open.spotify.com/artist/2QMCcKIPHnjQaPPgoEst88",
+        "instagram": "https://www.instagram.com/matissesadko/",
+        "soundcloud": "https://soundcloud.com/matissesadko",
+        "applemusic": "https://music.apple.com/us/artist/445823323"
       },
       "debutYear": 2011,
       "careerYears": 15,
@@ -2066,7 +2108,8 @@
       "spotifyId": "2QMCcKIPHnjQaPPgoEst88",
       "image": "https://i.scdn.co/image/ab6761610000e5eb39c52cbbd9033dc5d2f04aa4",
       "genres": [
-        "progressive house"
+        "progressive house",
+        "edm"
       ],
       "albums": [
         {
@@ -2380,7 +2423,9 @@
         "Third ≡ Party"
       ],
       "links": {
-        "musicbrainz": "https://musicbrainz.org/artist/580f4a91-b75b-4e63-ae8d-38485ac1bb78"
+        "musicbrainz": "https://musicbrainz.org/artist/580f4a91-b75b-4e63-ae8d-38485ac1bb78",
+        "spotify": "https://open.spotify.com/artist/2J80qXI4NHKpq5RT3xUF7V",
+        "applemusic": "https://music.apple.com/gb/artist/275078207"
       },
       "debutYear": 2010,
       "careerYears": 16
@@ -2390,7 +2435,8 @@
       "image": "https://i.scdn.co/image/ab6761610000e5eb8babc9c5a2e0b373e2483d5e",
       "genres": [
         "house",
-        "progressive house"
+        "progressive house",
+        "edm"
       ],
       "albums": [
         {
@@ -2696,7 +2742,12 @@
         "Vladimir de Groot"
       ],
       "links": {
-        "musicbrainz": "https://musicbrainz.org/artist/8d21bf69-ed2a-44f2-a8eb-383803cc3d01"
+        "musicbrainz": "https://musicbrainz.org/artist/8d21bf69-ed2a-44f2-a8eb-383803cc3d01",
+        "spotify": "https://open.spotify.com/artist/0ClkclGbzsEY0aBtqq8MrB",
+        "instagram": "https://www.instagram.com/vluarr/",
+        "soundcloud": "https://soundcloud.com/vluarr",
+        "applemusic": "https://music.apple.com/de/artist/1089347639",
+        "youtube": "https://www.youtube.com/channel/UC9kNe6kYHde0rPffG9tzwyQ"
       },
       "gender": "Male",
       "debutYear": 2018,
@@ -2707,7 +2758,8 @@
       "image": "https://i.scdn.co/image/ab6761610000e5eba7adcccac81c0a948da57094",
       "genres": [
         "bass house",
-        "future bass"
+        "future bass",
+        "edm"
       ],
       "albums": [
         {
@@ -3035,7 +3087,13 @@
       "debutYear": 2013,
       "careerYears": 13,
       "links": {
-        "musicbrainz": "https://musicbrainz.org/artist/5f43abf6-92a5-468a-a633-b73f94627972"
+        "musicbrainz": "https://musicbrainz.org/artist/5f43abf6-92a5-468a-a633-b73f94627972",
+        "spotify": "https://open.spotify.com/artist/45eNHdiiabvmbp4erw26rg",
+        "homepage": "http://illenium.com/",
+        "applemusic": "https://itunes.apple.com/us/artist/id645420096",
+        "instagram": "https://www.instagram.com/illenium/",
+        "soundcloud": "https://soundcloud.com/illeniumofficial",
+        "youtube": "https://www.youtube.com/channel/UCv0tIDoaBZCTXQvVO4zosng"
       },
       "birthYear": 1990
     },
@@ -3044,6 +3102,7 @@
       "image": "https://i.scdn.co/image/ab6761610000e5eb98e56c05d6acbf782609afa2",
       "genres": [
         "melodic bass",
+        "melodic dubstep",
         "future bass",
         "edm",
         "dubstep"
@@ -3373,7 +3432,13 @@
       "debutYear": 2010,
       "careerYears": 16,
       "links": {
-        "musicbrainz": "https://musicbrainz.org/artist/56c4b861-0922-4c3a-a9b9-3bfcb00f8274"
+        "musicbrainz": "https://musicbrainz.org/artist/56c4b861-0922-4c3a-a9b9-3bfcb00f8274",
+        "spotify": "https://open.spotify.com/artist/2qxJFvFYMEDqd7ui6kSAcq",
+        "homepage": "http://www.zedd.net/",
+        "applemusic": "https://itunes.apple.com/de/artist/id368433979",
+        "instagram": "https://www.instagram.com/zedd/",
+        "soundcloud": "https://soundcloud.com/zedd",
+        "youtube": "https://www.youtube.com/channel/UCFzm6oAGFmmZfkrzQ5wATSQ"
       },
       "birthYear": 1989
     },
@@ -3381,7 +3446,9 @@
       "spotifyId": "2qxJFvFYMEDqd7ui6kSAcq",
       "image": "https://i.scdn.co/image/ab6761610000e5ebe28762aed82cde1178fb3873",
       "genres": [
-        "edm"
+        "edm",
+        "dance-pop",
+        "dance"
       ],
       "followers": 6154962,
       "popularity": 76,
@@ -3702,7 +3769,12 @@
       "debutYear": 2013,
       "careerYears": 13,
       "links": {
-        "musicbrainz": "https://musicbrainz.org/artist/8187cde0-bc0d-4669-b435-2664c2f5cab1"
+        "musicbrainz": "https://musicbrainz.org/artist/8187cde0-bc0d-4669-b435-2664c2f5cab1",
+        "spotify": "https://open.spotify.com/artist/4LZ4De2MoO3lP6QaNCfvcu",
+        "homepage": "http://www.saidthesky.com/",
+        "applemusic": "https://itunes.apple.com/artist/id867638609",
+        "soundcloud": "https://soundcloud.com/said-the-sky",
+        "youtube": "https://www.youtube.com/channel/UCCuZs2fDej-bbJDTt5YoQLg"
       },
       "birthYear": 1993
     },
@@ -3711,6 +3783,7 @@
       "image": "https://i.scdn.co/image/ab6761610000e5eb91dfce5b644da56c40ca2d8e",
       "genres": [
         "melodic bass",
+        "melodic dubstep",
         "future bass",
         "edm",
         "chillstep"
@@ -4053,7 +4126,13 @@
       "debutYear": 2010,
       "careerYears": 16,
       "links": {
-        "musicbrainz": "https://musicbrainz.org/artist/e33994a3-2f5c-42f5-8df1-4d23c331a4a5"
+        "musicbrainz": "https://musicbrainz.org/artist/e33994a3-2f5c-42f5-8df1-4d23c331a4a5",
+        "spotify": "https://open.spotify.com/artist/20DZAfCuP1TKZl5KcY7z3Q",
+        "homepage": "http://www.slanderofficial.com/",
+        "applemusic": "https://itunes.apple.com/us/artist/id1051421487",
+        "instagram": "https://www.instagram.com/slanderofficial/",
+        "soundcloud": "https://soundcloud.com/slanderofficial",
+        "youtube": "https://music.youtube.com/channel/UCFlNgc9BeBHxw5y3flzmy_Q"
       }
     },
     "spotify": {
@@ -4061,6 +4140,7 @@
       "image": "https://i.scdn.co/image/ab6761610000e5eb9b8109ae98ff2e165c89ba72",
       "genres": [
         "melodic bass",
+        "melodic dubstep",
         "edm",
         "future bass",
         "dubstep"
@@ -4382,7 +4462,12 @@
       "debutYear": 2014,
       "careerYears": 12,
       "links": {
-        "musicbrainz": "https://musicbrainz.org/artist/f1e0c3fb-1ecb-49fa-bebd-5b0aedb33737"
+        "musicbrainz": "https://musicbrainz.org/artist/f1e0c3fb-1ecb-49fa-bebd-5b0aedb33737",
+        "spotify": "https://open.spotify.com/artist/1CXuuw8HJhyN80HlNzvL1e",
+        "instagram": "https://www.instagram.com/Sullivanking/",
+        "soundcloud": "https://soundcloud.com/sullivankingmusic",
+        "applemusic": "https://music.apple.com/gb/artist/833869649",
+        "youtube": "https://www.youtube.com/channel/UCiUtkoBARJmuFVyBwini_MA"
       }
     },
     "spotify": {
@@ -4716,7 +4801,11 @@
       "debutYear": 2015,
       "careerYears": 11,
       "links": {
-        "musicbrainz": "https://musicbrainz.org/artist/00b21266-918d-434c-b31e-3f1a3e96cad5"
+        "musicbrainz": "https://musicbrainz.org/artist/00b21266-918d-434c-b31e-3f1a3e96cad5",
+        "spotify": "https://open.spotify.com/artist/0k2oLuxLX4aWrqYG7D5vxF",
+        "applemusic": "https://music.apple.com/us/artist/1073027547",
+        "instagram": "https://www.instagram.com/crankdatmusic/",
+        "soundcloud": "https://soundcloud.com/crankdatmusic"
       },
       "birthYear": 1997
     },
@@ -5039,7 +5128,12 @@
       "debutYear": 2015,
       "careerYears": 11,
       "links": {
-        "musicbrainz": "https://musicbrainz.org/artist/eead7215-59da-45f5-b719-62f349ef4133"
+        "musicbrainz": "https://musicbrainz.org/artist/eead7215-59da-45f5-b719-62f349ef4133",
+        "spotify": "https://open.spotify.com/artist/5PlfkPxwCpRRWQJBxCa0By",
+        "applemusic": "https://itunes.apple.com/us/artist/id978839124",
+        "instagram": "https://www.instagram.com/hugelthug/",
+        "soundcloud": "https://soundcloud.com/hugelmusic",
+        "youtube": "https://www.youtube.com/channel/UCWVBfvVTf3UrPA-z5gos60w"
       },
       "birthYear": 1987
     },
@@ -5049,7 +5143,8 @@
       "genres": [
         "latin house",
         "afro house",
-        "techengue"
+        "techengue",
+        "edm"
       ],
       "followers": 716383,
       "popularity": 79,
@@ -5378,7 +5473,13 @@
       "debutYear": 2016,
       "careerYears": 10,
       "links": {
-        "musicbrainz": "https://musicbrainz.org/artist/4c41d78d-9dd5-430d-81ea-286052158293"
+        "musicbrainz": "https://musicbrainz.org/artist/4c41d78d-9dd5-430d-81ea-286052158293",
+        "spotify": "https://open.spotify.com/artist/2mLA48B366zkELXYx7hcDN",
+        "homepage": "https://peggygou.com/",
+        "applemusic": "https://itunes.apple.com/us/artist/id1068912248",
+        "instagram": "https://www.instagram.com/peggygou_/",
+        "soundcloud": "https://soundcloud.com/peggygou",
+        "youtube": "https://www.youtube.com/channel/UCWd5yMFDEuSCWzTM4xuA1fg"
       },
       "birthYear": 1991
     },
@@ -5387,7 +5488,9 @@
       "image": "https://i.scdn.co/image/ab6761610000e5ebffbd43b1e54eb09a8c824f53",
       "genres": [
         "dance",
-        "edm"
+        "edm",
+        "house",
+        "techno"
       ],
       "followers": 1080441,
       "popularity": 65,
@@ -5675,6 +5778,1697 @@
           "artists": [
             "Peggy Gou",
             "Lenny Kravitz"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "slug": "mandy",
+    "identity": {
+      "name": "Mandy",
+      "mbid": "d65fa271-77b6-419b-8ac8-2d5d7e94d91d",
+      "type": "Solo",
+      "gender": "Female",
+      "country": "BE",
+      "aliases": [
+        "Mandy Praet"
+      ],
+      "birthYear": 1997,
+      "debutYear": 2020,
+      "careerYears": 6,
+      "links": {
+        "spotify": "https://open.spotify.com/artist/59VlEky6rgwrcluurlvspE",
+        "applemusic": "https://itunes.apple.com/be/artist/id990577323",
+        "instagram": "https://www.instagram.com/mandyofficial_be/",
+        "soundcloud": "https://soundcloud.com/mandy21701",
+        "musicbrainz": "https://musicbrainz.org/artist/d65fa271-77b6-419b-8ac8-2d5d7e94d91d"
+      }
+    },
+    "spotify": {
+      "spotifyId": "59VlEky6rgwrcluurlvspE",
+      "image": "https://i.scdn.co/image/ab6761610000e5eb656ed0acf8f9557d403cd6bc",
+      "genres": [
+        "hardstyle",
+        "frenchcore",
+        "edm"
+      ],
+      "followers": 46788,
+      "popularity": 44,
+      "spotifyUrl": "https://open.spotify.com/artist/59VlEky6rgwrcluurlvspE",
+      "albums": [
+        {
+          "id": "37pOeaFdIRTaAkL3fo5HR1",
+          "name": "Everybody Dance Now",
+          "albumType": "single",
+          "releaseDate": "2025-10-17",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273fbe2455782977f73bd6b264b",
+          "url": "https://open.spotify.com/album/37pOeaFdIRTaAkL3fo5HR1"
+        },
+        {
+          "id": "6wTiYFlRFyetM08OxhVsqI",
+          "name": "MF GO!",
+          "albumType": "single",
+          "releaseDate": "2025-09-17",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b2739f196d1373a53a33dfcffe62",
+          "url": "https://open.spotify.com/album/6wTiYFlRFyetM08OxhVsqI"
+        },
+        {
+          "id": "5iXeEJIBV7aYpF3W8HQMgP",
+          "name": "KICKS",
+          "albumType": "single",
+          "releaseDate": "2025-06-13",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273874f6a60db9beebf93f92d6d",
+          "url": "https://open.spotify.com/album/5iXeEJIBV7aYpF3W8HQMgP"
+        },
+        {
+          "id": "7eSJa6EmqFGG7Vfoue3EZr",
+          "name": "The Flow",
+          "albumType": "single",
+          "releaseDate": "2025-02-14",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b2734d4bb2df256c252eef2441d6",
+          "url": "https://open.spotify.com/album/7eSJa6EmqFGG7Vfoue3EZr"
+        },
+        {
+          "id": "54hjSf7UH110qCKXhjb0os",
+          "name": "Street Knowledge",
+          "albumType": "single",
+          "releaseDate": "2024-09-13",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b2733ee5daa5b5f44a45b433b8af",
+          "url": "https://open.spotify.com/album/54hjSf7UH110qCKXhjb0os"
+        },
+        {
+          "id": "1uxvyyFdlqXdU3JVbDwTA5",
+          "name": "UNDRGRND (2024 Rave Edit)",
+          "albumType": "single",
+          "releaseDate": "2024-07-24",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b27362853aa7642832e6583a7a3e",
+          "url": "https://open.spotify.com/album/1uxvyyFdlqXdU3JVbDwTA5"
+        },
+        {
+          "id": "5PFPqNAQ7TPziUoWiINBbK",
+          "name": "Get Stompin",
+          "albumType": "single",
+          "releaseDate": "2023-11-24",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b2735a4084dbd1faa48a855ab704",
+          "url": "https://open.spotify.com/album/5PFPqNAQ7TPziUoWiINBbK"
+        },
+        {
+          "id": "7mzcAAE2fCST82z8NGVrY4",
+          "name": "Blow Up The Speakers (Again)",
+          "albumType": "single",
+          "releaseDate": "2023-09-22",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273d9d933b209f4a195bfe23e16",
+          "url": "https://open.spotify.com/album/7mzcAAE2fCST82z8NGVrY4"
+        },
+        {
+          "id": "5LZqYANVnxVQjjV1d9KE0W",
+          "name": "She Knows (with Akon) [3 Are Legend x MANDY Remix]",
+          "albumType": "single",
+          "releaseDate": "2023-09-01",
+          "totalTracks": 2,
+          "image": "https://i.scdn.co/image/ab67616d0000b27384b73d7a7fd1c05a730e92a6",
+          "url": "https://open.spotify.com/album/5LZqYANVnxVQjjV1d9KE0W"
+        },
+        {
+          "id": "3AuTc49Fvxx4YspNvgsRxA",
+          "name": "De Bom (MANDY Remix)",
+          "albumType": "single",
+          "releaseDate": "2023-06-09",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273d42607c1eb24113bcee57b99",
+          "url": "https://open.spotify.com/album/3AuTc49Fvxx4YspNvgsRxA"
+        },
+        {
+          "id": "0zccfdoWWFsJW6c7YPRBLj",
+          "name": "UNDRGRND",
+          "albumType": "single",
+          "releaseDate": "2023-02-02",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273f4851e3ca8b001ba93651737",
+          "url": "https://open.spotify.com/album/0zccfdoWWFsJW6c7YPRBLj"
+        },
+        {
+          "id": "2SXeCXid6oiZJYc24PBKKC",
+          "name": "Lift Me Up",
+          "albumType": "single",
+          "releaseDate": "2022-09-23",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273da1e7a21157c8db301f3dcac",
+          "url": "https://open.spotify.com/album/2SXeCXid6oiZJYc24PBKKC"
+        }
+      ],
+      "topTracks": [
+        {
+          "id": "1S9Ek40BO9LUaiMZfEtRlM",
+          "name": "Everybody Dance Now",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/1S9Ek40BO9LUaiMZfEtRlM",
+          "durationMs": 153298,
+          "popularity": 50,
+          "album": {
+            "id": "37pOeaFdIRTaAkL3fo5HR1",
+            "name": "Everybody Dance Now",
+            "releaseDate": "2025-10-17",
+            "image": "https://i.scdn.co/image/ab67616d0000b273fbe2455782977f73bd6b264b"
+          },
+          "artists": [
+            "KX CHR",
+            "MANDY"
+          ]
+        },
+        {
+          "id": "4TMKgsfeO2pH5jNSJtwUKK",
+          "name": "Blow Up The Speakers (Again)",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/4TMKgsfeO2pH5jNSJtwUKK",
+          "durationMs": 208657,
+          "popularity": 47,
+          "album": {
+            "id": "7mzcAAE2fCST82z8NGVrY4",
+            "name": "Blow Up The Speakers (Again)",
+            "releaseDate": "2023-09-22",
+            "image": "https://i.scdn.co/image/ab67616d0000b273d9d933b209f4a195bfe23e16"
+          },
+          "artists": [
+            "MANDY",
+            "The Moon"
+          ]
+        },
+        {
+          "id": "6HcakYUdMutjzfnAS0QX1q",
+          "name": "KICKS",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/6HcakYUdMutjzfnAS0QX1q",
+          "durationMs": 147375,
+          "popularity": 47,
+          "album": {
+            "id": "5iXeEJIBV7aYpF3W8HQMgP",
+            "name": "KICKS",
+            "releaseDate": "2025-06-13",
+            "image": "https://i.scdn.co/image/ab67616d0000b273874f6a60db9beebf93f92d6d"
+          },
+          "artists": [
+            "LNY TNZ",
+            "MANDY"
+          ]
+        },
+        {
+          "id": "0NtJLfcKJcZpGrguDWCuga",
+          "name": "Jackie Chan - MANDY Remix",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/0NtJLfcKJcZpGrguDWCuga",
+          "durationMs": 180800,
+          "popularity": 43,
+          "album": {
+            "id": "2LfHj3QvCGowIeeSYWXLuA",
+            "name": "Jackie Chan (Remixes, Vol. 2)",
+            "releaseDate": "2018-10-05",
+            "image": "https://i.scdn.co/image/ab67616d0000b273dd03ee36c9b12770c8b0859e"
+          },
+          "artists": [
+            "Tiësto",
+            "Dzeko",
+            "Preme",
+            "Post Malone",
+            "MANDY"
+          ]
+        },
+        {
+          "id": "4q3hobQsGGyrtk63JZbKSq",
+          "name": "MF GO!",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/4q3hobQsGGyrtk63JZbKSq",
+          "durationMs": 144800,
+          "popularity": 42,
+          "album": {
+            "id": "6wTiYFlRFyetM08OxhVsqI",
+            "name": "MF GO!",
+            "releaseDate": "2025-09-17",
+            "image": "https://i.scdn.co/image/ab67616d0000b2739f196d1373a53a33dfcffe62"
+          },
+          "artists": [
+            "MANDY"
+          ]
+        },
+        {
+          "id": "2OGmWLRj4u0rO52Ika4bmf",
+          "name": "She Knows (with Akon) - 3 Are Legend x MANDY Remix",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/2OGmWLRj4u0rO52Ika4bmf",
+          "durationMs": 182598,
+          "popularity": 38,
+          "album": {
+            "id": "7j3QBadmH19j8ucnxTmVIQ",
+            "name": "She Knows (with Akon) [The Remixes]",
+            "releaseDate": "2023-12-29",
+            "image": "https://i.scdn.co/image/ab67616d0000b273c8cdf1dec0c521453eb1a7cb"
+          },
+          "artists": [
+            "Dimitri Vegas & Like Mike",
+            "David Guetta",
+            "Afro Bros",
+            "Akon",
+            "3 Are Legend",
+            "MANDY"
+          ]
+        },
+        {
+          "id": "1jWOJ6kuGnFMOye0mPvKGa",
+          "name": "RaggaDrop",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/1jWOJ6kuGnFMOye0mPvKGa",
+          "durationMs": 206143,
+          "popularity": 39,
+          "album": {
+            "id": "4bZDq528DIGY1BviYVWwrm",
+            "name": "Raggadrop",
+            "releaseDate": "2017-04-17",
+            "image": "https://i.scdn.co/image/ab67616d0000b27372eaacab31dddbdb042fc765"
+          },
+          "artists": [
+            "MANDY"
+          ]
+        },
+        {
+          "id": "3p69LocgURIn0HniU4SbQy",
+          "name": "Instagram - Mandy Remix",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/3p69LocgURIn0HniU4SbQy",
+          "durationMs": 269250,
+          "popularity": 38,
+          "album": {
+            "id": "154K5houWcuFT0xqGKEMC1",
+            "name": "Instagram (The Remixes)",
+            "releaseDate": "2019-11-08",
+            "image": "https://i.scdn.co/image/ab67616d0000b2731ed9e66a16867a0e28e908a1"
+          },
+          "artists": [
+            "Dimitri Vegas & Like Mike",
+            "David Guetta",
+            "Daddy Yankee",
+            "Afro Bros",
+            "NATTI NATASHA",
+            "Dimitri Vegas",
+            "MANDY"
+          ]
+        },
+        {
+          "id": "7xss5lFXrXr1lD4oqvfFUo",
+          "name": "Get Stompin",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/7xss5lFXrXr1lD4oqvfFUo",
+          "durationMs": 186400,
+          "popularity": 38,
+          "album": {
+            "id": "5PFPqNAQ7TPziUoWiINBbK",
+            "name": "Get Stompin",
+            "releaseDate": "2023-11-24",
+            "image": "https://i.scdn.co/image/ab67616d0000b2735a4084dbd1faa48a855ab704"
+          },
+          "artists": [
+            "MANDY"
+          ]
+        },
+        {
+          "id": "3ZN6NiSSI70xzSbdkAm2Pp",
+          "name": "More Than A Human",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/3ZN6NiSSI70xzSbdkAm2Pp",
+          "durationMs": 203970,
+          "popularity": 37,
+          "album": {
+            "id": "0slY4NYi3MET1L5Y1e2K9i",
+            "name": "More Than A Human",
+            "releaseDate": "2021-04-16",
+            "image": "https://i.scdn.co/image/ab67616d0000b273cbc63cf5970bc1d3651f23e8"
+          },
+          "artists": [
+            "Refuzion",
+            "MANDY",
+            "Amanda Collis"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "slug": "mariana-bo",
+    "identity": {
+      "name": "Mariana BO",
+      "mbid": "e78bfb9f-66c2-4758-9bbe-79d05b91646d",
+      "type": "Solo",
+      "gender": "Female",
+      "country": "MX",
+      "aliases": [
+        "Mariana BO",
+        "Sandra Mariana Borrego Robles"
+      ],
+      "birthYear": 1990,
+      "debutYear": 2016,
+      "careerYears": 10,
+      "links": {
+        "spotify": "https://open.spotify.com/artist/2cFzYhiHqYS7o8ZIM9WD22",
+        "instagram": "https://www.instagram.com/djmarianabo/",
+        "soundcloud": "https://soundcloud.com/borrego-s",
+        "applemusic": "https://music.apple.com/gb/artist/1030763633",
+        "musicbrainz": "https://musicbrainz.org/artist/e78bfb9f-66c2-4758-9bbe-79d05b91646d"
+      }
+    },
+    "spotify": {
+      "spotifyId": "2cFzYhiHqYS7o8ZIM9WD22",
+      "image": "https://i.scdn.co/image/ab6761610000e5eb0e21e080724c299a3cf5eb12",
+      "genres": [
+        "big room",
+        "hardstyle",
+        "edm"
+      ],
+      "followers": 92607,
+      "popularity": 48,
+      "spotifyUrl": "https://open.spotify.com/artist/2cFzYhiHqYS7o8ZIM9WD22",
+      "albums": [
+        {
+          "id": "2wlQ6Kn4NVHDdNuycMyYrv",
+          "name": "Put Your Hands Up",
+          "albumType": "single",
+          "releaseDate": "2025-12-05",
+          "totalTracks": 2,
+          "image": "https://i.scdn.co/image/ab67616d0000b2736f179dd7ccef3c2a3dc7a0bf",
+          "url": "https://open.spotify.com/album/2wlQ6Kn4NVHDdNuycMyYrv"
+        },
+        {
+          "id": "7IbuqZnabjK11fZ1kH3tYK",
+          "name": "Keep it Real",
+          "albumType": "single",
+          "releaseDate": "2025-02-14",
+          "totalTracks": 2,
+          "image": "https://i.scdn.co/image/ab67616d0000b27382dfba2af3bbdcfd73e191f4",
+          "url": "https://open.spotify.com/album/7IbuqZnabjK11fZ1kH3tYK"
+        },
+        {
+          "id": "4fcIugw2XY5kk4MZOAK7S2",
+          "name": "Memento Mori",
+          "albumType": "single",
+          "releaseDate": "2024-11-22",
+          "totalTracks": 3,
+          "image": "https://i.scdn.co/image/ab67616d0000b273670ea9cefb5bd2858671d505",
+          "url": "https://open.spotify.com/album/4fcIugw2XY5kk4MZOAK7S2"
+        },
+        {
+          "id": "4c90JGzu4E0xUfqTxPM2IG",
+          "name": "Kolkata (Techno Version) [Extended Mix]",
+          "albumType": "single",
+          "releaseDate": "2024-10-18",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273fbb85bcaac1f107106e699c2",
+          "url": "https://open.spotify.com/album/4c90JGzu4E0xUfqTxPM2IG"
+        },
+        {
+          "id": "421QWBCNHDoQTqDk41JYfj",
+          "name": "Kolkata (Techno Version)",
+          "albumType": "single",
+          "releaseDate": "2024-10-18",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273ad91234de5cb7a4679b7c5f5",
+          "url": "https://open.spotify.com/album/421QWBCNHDoQTqDk41JYfj"
+        },
+        {
+          "id": "4dS8GvbVsTjsBksiIggXK9",
+          "name": "BLACK",
+          "albumType": "single",
+          "releaseDate": "2024-08-06",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b2733b5cc88e78bec9b2e2a5271a",
+          "url": "https://open.spotify.com/album/4dS8GvbVsTjsBksiIggXK9"
+        },
+        {
+          "id": "3vU41s1TBUFzMFolbtIHyd",
+          "name": "Kotodama",
+          "albumType": "single",
+          "releaseDate": "2024-07-12",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273e52a8601f50624ba188dba99",
+          "url": "https://open.spotify.com/album/3vU41s1TBUFzMFolbtIHyd"
+        },
+        {
+          "id": "6HveR0xxtS6V26H2TmQG41",
+          "name": "Voices",
+          "albumType": "single",
+          "releaseDate": "2024-04-05",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273b8c7c794acd4b20bec170ff5",
+          "url": "https://open.spotify.com/album/6HveR0xxtS6V26H2TmQG41"
+        },
+        {
+          "id": "3sVd8AParS5ngj0Vh4TSJr",
+          "name": "Smoke Music",
+          "albumType": "single",
+          "releaseDate": "2024-03-22",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273ac1288f244b0805d74fb33c1",
+          "url": "https://open.spotify.com/album/3sVd8AParS5ngj0Vh4TSJr"
+        },
+        {
+          "id": "31lUdVHJ6RnSOM0g4Uo1Jc",
+          "name": "On Your Own",
+          "albumType": "single",
+          "releaseDate": "2024-02-02",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273bba1895fefd29f7738b569d0",
+          "url": "https://open.spotify.com/album/31lUdVHJ6RnSOM0g4Uo1Jc"
+        },
+        {
+          "id": "2fV4MYB94G5JH2SZUWmWqu",
+          "name": "Boys Choir",
+          "albumType": "single",
+          "releaseDate": "2024-01-12",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273c05988d3e62c64ea8f90b356",
+          "url": "https://open.spotify.com/album/2fV4MYB94G5JH2SZUWmWqu"
+        },
+        {
+          "id": "2gHC9SShuSV69QLN3eoIIr",
+          "name": "Avalanche (Extended Mix)",
+          "albumType": "single",
+          "releaseDate": "2023-12-15",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b2735e7f833b1b933beb11469bcc",
+          "url": "https://open.spotify.com/album/2gHC9SShuSV69QLN3eoIIr"
+        }
+      ],
+      "topTracks": [
+        {
+          "id": "5WcPCjbZalLkmJduC6kIvO",
+          "name": "Vivaldi",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/5WcPCjbZalLkmJduC6kIvO",
+          "durationMs": 160222,
+          "popularity": 52,
+          "album": {
+            "id": "2tvcV4vvhuH05kIX8L1AgG",
+            "name": "Vivaldi",
+            "releaseDate": "2022-01-28",
+            "image": "https://i.scdn.co/image/ab67616d0000b273bf21b44adcfdd9fe09fd76f2"
+          },
+          "artists": [
+            "Timmy Trumpet",
+            "Mariana BO"
+          ]
+        },
+        {
+          "id": "3XUHPnuyV5oCYqt2uFFtfG",
+          "name": "Kotodama",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/3XUHPnuyV5oCYqt2uFFtfG",
+          "durationMs": 152470,
+          "popularity": 50,
+          "album": {
+            "id": "3vU41s1TBUFzMFolbtIHyd",
+            "name": "Kotodama",
+            "releaseDate": "2024-07-12",
+            "image": "https://i.scdn.co/image/ab67616d0000b273e52a8601f50624ba188dba99"
+          },
+          "artists": [
+            "Naeleck",
+            "Mariana BO",
+            "LNY TNZ"
+          ]
+        },
+        {
+          "id": "7fSxXydUV3O7B9v2EBQCS3",
+          "name": "WOLFGANG",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/7fSxXydUV3O7B9v2EBQCS3",
+          "durationMs": 168919,
+          "popularity": 50,
+          "album": {
+            "id": "4nRym2kzawfVrO1bHcw5zK",
+            "name": "Timmy Trumpet's SINPHONY No. 1",
+            "releaseDate": "2023-10-13",
+            "image": "https://i.scdn.co/image/ab67616d0000b273ad9f7ed777f277fa52e771cc"
+          },
+          "artists": [
+            "Timmy Trumpet",
+            "Mariana BO",
+            "Junkie Kid"
+          ]
+        },
+        {
+          "id": "6OS6FafuDd9CytXs2pTVWG",
+          "name": "Voices",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/6OS6FafuDd9CytXs2pTVWG",
+          "durationMs": 188706,
+          "popularity": 47,
+          "album": {
+            "id": "6HveR0xxtS6V26H2TmQG41",
+            "name": "Voices",
+            "releaseDate": "2024-04-05",
+            "image": "https://i.scdn.co/image/ab67616d0000b273b8c7c794acd4b20bec170ff5"
+          },
+          "artists": [
+            "T78",
+            "Mariana BO"
+          ]
+        },
+        {
+          "id": "0Vkf87nNUU5wJPKtpTYt4n",
+          "name": "Cantus",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/0Vkf87nNUU5wJPKtpTYt4n",
+          "durationMs": 184051,
+          "popularity": 47,
+          "album": {
+            "id": "4EpXHxtJQBHKPK17PSyaAF",
+            "name": "Cantus",
+            "releaseDate": "2023-07-21",
+            "image": "https://i.scdn.co/image/ab67616d0000b273320007c0b7613eba9e58864e"
+          },
+          "artists": [
+            "Mariana BO"
+          ]
+        },
+        {
+          "id": "6SK5X1cj2G3vFNb7iTmLfV",
+          "name": "Drop It (feat. LUISAH)",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/6SK5X1cj2G3vFNb7iTmLfV",
+          "durationMs": 125760,
+          "popularity": 43,
+          "album": {
+            "id": "7ouqlLsz812M3nTRAv9NYM",
+            "name": "Drop It (feat. LUISAH)",
+            "releaseDate": "2021-01-22",
+            "image": "https://i.scdn.co/image/ab67616d0000b273550088e5d7f630e772bb15ec"
+          },
+          "artists": [
+            "Dubdogz",
+            "Mariana BO",
+            "Flakkë",
+            "LUISAH"
+          ]
+        },
+        {
+          "id": "3Bk4ZohpjYTuJXbxFRSyPg",
+          "name": "Kolkata (Techno Version)",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/3Bk4ZohpjYTuJXbxFRSyPg",
+          "durationMs": 171428,
+          "popularity": 42,
+          "album": {
+            "id": "421QWBCNHDoQTqDk41JYfj",
+            "name": "Kolkata (Techno Version)",
+            "releaseDate": "2024-10-18",
+            "image": "https://i.scdn.co/image/ab67616d0000b273ad91234de5cb7a4679b7c5f5"
+          },
+          "artists": [
+            "KSHMR",
+            "JDG",
+            "Mariana BO"
+          ]
+        },
+        {
+          "id": "4HTa5sUtXI6ALrgCISH3YC",
+          "name": "Put Your Hands Up",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/4HTa5sUtXI6ALrgCISH3YC",
+          "durationMs": 171260,
+          "popularity": 41,
+          "album": {
+            "id": "2wlQ6Kn4NVHDdNuycMyYrv",
+            "name": "Put Your Hands Up",
+            "releaseDate": "2025-12-05",
+            "image": "https://i.scdn.co/image/ab67616d0000b2736f179dd7ccef3c2a3dc7a0bf"
+          },
+          "artists": [
+            "Mariana BO"
+          ]
+        },
+        {
+          "id": "3WxbeGN19v2MGGbHBvHxFF",
+          "name": "Light Up",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/3WxbeGN19v2MGGbHBvHxFF",
+          "durationMs": 161378,
+          "popularity": 27,
+          "album": {
+            "id": "60V9UD3ADGAYxafKbeHiZc",
+            "name": "Light Up",
+            "releaseDate": "2022-04-29",
+            "image": "https://i.scdn.co/image/ab67616d0000b27323b4e3766d3e6315a2a89e34"
+          },
+          "artists": [
+            "Mariana BO",
+            "Jerome",
+            "Crooked Bangs"
+          ]
+        },
+        {
+          "id": "3iq4M1xPl3YRXRUUAIdREt",
+          "name": "Cotton Eye Joe",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/3iq4M1xPl3YRXRUUAIdREt",
+          "durationMs": 146000,
+          "popularity": 41,
+          "album": {
+            "id": "07XX6CrSeg9PSotzpi36EG",
+            "name": "Cotton Eye Joe",
+            "releaseDate": "2023-04-21",
+            "image": "https://i.scdn.co/image/ab67616d0000b2733be25806188ed892b0240f26"
+          },
+          "artists": [
+            "LNY TNZ",
+            "Mariana BO"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "slug": "e-force",
+    "identity": {
+      "name": "E-Force",
+      "mbid": "fd38f7c4-0a52-470d-84f9-9101fc20a859",
+      "country": "NL",
+      "type": "Solo",
+      "gender": "Male",
+      "aliases": [],
+      "labels": [
+        {
+          "name": "SEVEN Records",
+          "mbid": "caccb718-f225-4552-93e4-5f3dc0d6f4d4",
+          "relationType": "label founder"
+        }
+      ],
+      "birthYear": 1982,
+      "debutYear": 2011,
+      "careerYears": 15,
+      "links": {
+        "spotify": "https://open.spotify.com/artist/1U5uTkUpLrJRytFgcuG63m",
+        "homepage": "http://www.dje-force.com/",
+        "instagram": "https://www.instagram.com/eforcenl/",
+        "soundcloud": "https://soundcloud.com/eforcenl",
+        "applemusic": "https://music.apple.com/gb/artist/72864759",
+        "youtube": "https://www.youtube.com/user/EforceNL",
+        "musicbrainz": "https://musicbrainz.org/artist/fd38f7c4-0a52-470d-84f9-9101fc20a859"
+      }
+    },
+    "spotify": {
+      "spotifyId": "77faXTf6wXs3L2CVol0c8C",
+      "image": "https://i.scdn.co/image/ab6761610000e5eba2f241ad4e67baee59f65a6d",
+      "genres": [
+        "hardstyle",
+        "hardcore",
+        "frenchcore",
+        "edm"
+      ],
+      "followers": 54671,
+      "popularity": 47,
+      "spotifyUrl": "https://open.spotify.com/artist/77faXTf6wXs3L2CVol0c8C",
+      "albums": [
+        {
+          "id": "1cOYWau4urMqLvpZGdy0CV",
+          "name": "Dark Reality",
+          "albumType": "album",
+          "releaseDate": "2023-10-13",
+          "totalTracks": 14,
+          "image": "https://i.scdn.co/image/ab67616d0000b273b3564049359d9a86a1ec1899",
+          "url": "https://open.spotify.com/album/1cOYWau4urMqLvpZGdy0CV"
+        },
+        {
+          "id": "4InuMy9NQVYVwoQvilzZuz",
+          "name": "The Edge Of Insanity",
+          "albumType": "album",
+          "releaseDate": "2017-04-18",
+          "totalTracks": 24,
+          "image": "https://i.scdn.co/image/ab67616d0000b273505fa61e47a7074a474c8a6e",
+          "url": "https://open.spotify.com/album/4InuMy9NQVYVwoQvilzZuz"
+        },
+        {
+          "id": "1fAV4ZxrVUHFp9cvUq6y52",
+          "name": "Break It Down",
+          "albumType": "single",
+          "releaseDate": "2025-12-12",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273dfc75e96d46518a9f3a6408a",
+          "url": "https://open.spotify.com/album/1fAV4ZxrVUHFp9cvUq6y52"
+        },
+        {
+          "id": "4UzPUCuJPAW6FFao0ZWhTp",
+          "name": "Rise From The Void",
+          "albumType": "single",
+          "releaseDate": "2025-12-04",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b2731b24cd2d003158377f6cdf38",
+          "url": "https://open.spotify.com/album/4UzPUCuJPAW6FFao0ZWhTp"
+        },
+        {
+          "id": "2ih5IgK6Dib6V1xtkqAqeX",
+          "name": "From Dust And Blood",
+          "albumType": "single",
+          "releaseDate": "2025-11-21",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b27388307266017d8641be5b3f50",
+          "url": "https://open.spotify.com/album/2ih5IgK6Dib6V1xtkqAqeX"
+        },
+        {
+          "id": "7AqagfRVn9h7DfooAdR5Bk",
+          "name": "Do You Fckn Hear Me",
+          "albumType": "single",
+          "releaseDate": "2025-10-30",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b27346bad93c06c68b7eb80ba5cd",
+          "url": "https://open.spotify.com/album/7AqagfRVn9h7DfooAdR5Bk"
+        },
+        {
+          "id": "1ZiPNHrkIXLnO060DKd6lO",
+          "name": "The Matrix",
+          "albumType": "single",
+          "releaseDate": "2025-10-17",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273b845f131d4aa6a2ede8b8eb9",
+          "url": "https://open.spotify.com/album/1ZiPNHrkIXLnO060DKd6lO"
+        },
+        {
+          "id": "1c32lcrT4YuHGaS7eLZoHV",
+          "name": "Echo Of The Timeless",
+          "albumType": "single",
+          "releaseDate": "2025-09-26",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273742acdf951a734220153a3f0",
+          "url": "https://open.spotify.com/album/1c32lcrT4YuHGaS7eLZoHV"
+        },
+        {
+          "id": "6adYyV52CTZivhl1WoSGDN",
+          "name": "Champions",
+          "albumType": "single",
+          "releaseDate": "2025-08-01",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b2734a75263f89406c5f631c3fc4",
+          "url": "https://open.spotify.com/album/6adYyV52CTZivhl1WoSGDN"
+        },
+        {
+          "id": "5Pk4qlUnHICRaDLATwyfRU",
+          "name": "Scary Dreams",
+          "albumType": "single",
+          "releaseDate": "2025-07-18",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b27376140ef6971f3947ef4e325b",
+          "url": "https://open.spotify.com/album/5Pk4qlUnHICRaDLATwyfRU"
+        },
+        {
+          "id": "5KIPGjZ47KwjzJMpwUjguJ",
+          "name": "The Forces Of Darkness",
+          "albumType": "single",
+          "releaseDate": "2025-06-20",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273f23e5305d80813f8ca46a490",
+          "url": "https://open.spotify.com/album/5KIPGjZ47KwjzJMpwUjguJ"
+        },
+        {
+          "id": "4rMb4m6eOXuqvSZmbXIV6X",
+          "name": "Listen",
+          "albumType": "single",
+          "releaseDate": "2025-05-09",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273dcf82e890f0817691048ba6f",
+          "url": "https://open.spotify.com/album/4rMb4m6eOXuqvSZmbXIV6X"
+        }
+      ],
+      "topTracks": [
+        {
+          "id": "3Ncvr6If3kdO3MicMrV2Hh",
+          "name": "Rise From The Void",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/3Ncvr6If3kdO3MicMrV2Hh",
+          "durationMs": 189000,
+          "popularity": 50,
+          "album": {
+            "id": "4UzPUCuJPAW6FFao0ZWhTp",
+            "name": "Rise From The Void",
+            "releaseDate": "2025-12-04",
+            "image": "https://i.scdn.co/image/ab67616d0000b2731b24cd2d003158377f6cdf38"
+          },
+          "artists": [
+            "D-Sturb",
+            "E-Force"
+          ]
+        },
+        {
+          "id": "7CGY0SjXwObMWabcUuihUD",
+          "name": "Seven - Dimitri K Edit",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/7CGY0SjXwObMWabcUuihUD",
+          "durationMs": 155931,
+          "popularity": 47,
+          "album": {
+            "id": "31ZJZpLAad5AdKJRhoZJXX",
+            "name": "Seven (Dimitri K Edit)",
+            "releaseDate": "2021-10-22",
+            "image": "https://i.scdn.co/image/ab67616d0000b273ea42f0cd542cba7d179258fd"
+          },
+          "artists": [
+            "E-Force",
+            "Dimitri K"
+          ]
+        },
+        {
+          "id": "0uH7CD5FORsmqXGhdPvJz7",
+          "name": "Break It Down",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/0uH7CD5FORsmqXGhdPvJz7",
+          "durationMs": 150039,
+          "popularity": 45,
+          "album": {
+            "id": "1fAV4ZxrVUHFp9cvUq6y52",
+            "name": "Break It Down",
+            "releaseDate": "2025-12-12",
+            "image": "https://i.scdn.co/image/ab67616d0000b273dfc75e96d46518a9f3a6408a"
+          },
+          "artists": [
+            "E-Force",
+            "Nightcraft"
+          ]
+        },
+        {
+          "id": "35ktJRucjD4pw5w8t0Ha97",
+          "name": "Here Comes The Boom",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/35ktJRucjD4pw5w8t0Ha97",
+          "durationMs": 179626,
+          "popularity": 44,
+          "album": {
+            "id": "4InuMy9NQVYVwoQvilzZuz",
+            "name": "The Edge Of Insanity",
+            "releaseDate": "2017-04-18",
+            "image": "https://i.scdn.co/image/ab67616d0000b273505fa61e47a7074a474c8a6e"
+          },
+          "artists": [
+            "E-Force",
+            "Sub Zero Project"
+          ]
+        },
+        {
+          "id": "1YAJBKhKBMsakevrcXYxQp",
+          "name": "From Dust And Blood",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/1YAJBKhKBMsakevrcXYxQp",
+          "durationMs": 198582,
+          "popularity": 43,
+          "album": {
+            "id": "2ih5IgK6Dib6V1xtkqAqeX",
+            "name": "From Dust And Blood",
+            "releaseDate": "2025-11-21",
+            "image": "https://i.scdn.co/image/ab67616d0000b27388307266017d8641be5b3f50"
+          },
+          "artists": [
+            "E-Force",
+            "Wolv",
+            "Elyn"
+          ]
+        },
+        {
+          "id": "2wwkUAQnTjsW2PPCe5MIkE",
+          "name": "Bring It On",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/2wwkUAQnTjsW2PPCe5MIkE",
+          "durationMs": 148406,
+          "popularity": 42,
+          "album": {
+            "id": "3cUjOkczwQfDYCwykax7lg",
+            "name": "Bring It On",
+            "releaseDate": "2024-07-11",
+            "image": "https://i.scdn.co/image/ab67616d0000b273fbdf6c62dffa60bda7959d32"
+          },
+          "artists": [
+            "Aversion",
+            "E-Force"
+          ]
+        },
+        {
+          "id": "3lnvDnLM49dtFasMU0P4Yk",
+          "name": "Seven - Edit",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/3lnvDnLM49dtFasMU0P4Yk",
+          "durationMs": 220413,
+          "popularity": 33,
+          "album": {
+            "id": "1hAdw7R0R2CYmuGmTo6N3r",
+            "name": "QAPITAL 2015",
+            "releaseDate": "2015-04-03",
+            "image": "https://i.scdn.co/image/ab67616d0000b273db4ad8fd1e26aa35407d839e"
+          },
+          "artists": [
+            "E-Force"
+          ]
+        },
+        {
+          "id": "3jMDASM7P3rvdIjsx0EKOG",
+          "name": "Echo Of The Timeless",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/3jMDASM7P3rvdIjsx0EKOG",
+          "durationMs": 164322,
+          "popularity": 39,
+          "album": {
+            "id": "1c32lcrT4YuHGaS7eLZoHV",
+            "name": "Echo Of The Timeless",
+            "releaseDate": "2025-09-26",
+            "image": "https://i.scdn.co/image/ab67616d0000b273742acdf951a734220153a3f0"
+          },
+          "artists": [
+            "E-Force",
+            "Nolz"
+          ]
+        },
+        {
+          "id": "70P1xESKUArcV4CRg1bKbf",
+          "name": "The Matrix",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/70P1xESKUArcV4CRg1bKbf",
+          "durationMs": 170312,
+          "popularity": 26,
+          "album": {
+            "id": "4MlYS0zYSUesAdtxsl3BmR",
+            "name": "BACK2BASICS",
+            "releaseDate": "2025-11-21",
+            "image": "https://i.scdn.co/image/ab67616d0000b2733a3a48a5ab49c5fcf57dd28f"
+          },
+          "artists": [
+            "Hans Glock",
+            "E-Force"
+          ]
+        },
+        {
+          "id": "1HpoC8dTvgDbpJFikvOm9F",
+          "name": "Do You Fckn Hear Me",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/1HpoC8dTvgDbpJFikvOm9F",
+          "durationMs": 178524,
+          "popularity": 25,
+          "album": {
+            "id": "2zMlApVsuczyP3YbENEyVC",
+            "name": "Point Zero",
+            "releaseDate": "2025-11-21",
+            "image": "https://i.scdn.co/image/ab67616d0000b2735ccc43128fd76a849c3b328c"
+          },
+          "artists": [
+            "Deluzion",
+            "E-Force"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "slug": "seth-hills",
+    "identity": {
+      "name": "Seth Hills",
+      "mbid": "c445e1e0-8312-44c6-979d-327a17a9c28d",
+      "type": "Solo",
+      "gender": "Male",
+      "country": "NL",
+      "aliases": [],
+      "birthYear": 1996,
+      "debutYear": 2016,
+      "careerYears": 10,
+      "labels": [
+        {
+          "name": "STMPD RCRDS",
+          "mbid": "2b10df17-702d-4d0e-a779-2e4ae95c4a37",
+          "relationType": "recording contract"
+        },
+        {
+          "name": "Armada Music B.V.",
+          "mbid": "9f4c14a6-1c3c-4cea-b646-fcf01b4d3fa8",
+          "relationType": "recording contract"
+        }
+      ],
+      "links": {
+        "spotify": "https://open.spotify.com/artist/5nFt7a5Du2MkdAr1KniXh7",
+        "homepage": "",
+        "applemusic": "https://music.apple.com/us/artist/1116617663",
+        "instagram": "https://www.instagram.com/SethHillsMusic/",
+        "soundcloud": "https://soundcloud.com/sethhillsmusic",
+        "musicbrainz": "https://musicbrainz.org/artist/c445e1e0-8312-44c6-979d-327a17a9c28d"
+      }
+    },
+    "spotify": {
+      "spotifyId": "5nFt7a5Du2MkdAr1KniXh7",
+      "image": "https://i.scdn.co/image/ab6761610000e5eb67d71add0832d740f60eaed4",
+      "genres": [
+        "bass house",
+        "future house",
+        "big room",
+        "edm"
+      ],
+      "followers": 40466,
+      "popularity": 46,
+      "spotifyUrl": "https://open.spotify.com/artist/5nFt7a5Du2MkdAr1KniXh7",
+      "albums": [
+        {
+          "id": "0R6E19xuHfcWBuUX5VC5rg",
+          "name": "Losing My Mind",
+          "albumType": "single",
+          "releaseDate": "2025-06-06",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b2735a16b49e93505eb0fcfd224d",
+          "url": "https://open.spotify.com/album/0R6E19xuHfcWBuUX5VC5rg"
+        },
+        {
+          "id": "1CJyeeZydxX9JeOkeSytsx",
+          "name": "Gimme The Love",
+          "albumType": "single",
+          "releaseDate": "2025-05-23",
+          "totalTracks": 2,
+          "image": "https://i.scdn.co/image/ab67616d0000b27398427c4172e8e7172eeab839",
+          "url": "https://open.spotify.com/album/1CJyeeZydxX9JeOkeSytsx"
+        },
+        {
+          "id": "0X4kIs7U2I7HEL1DDNU8DM",
+          "name": "Beautiful People (Seth Hills Remix)",
+          "albumType": "single",
+          "releaseDate": "2025-03-28",
+          "totalTracks": 4,
+          "image": "https://i.scdn.co/image/ab67616d0000b273c095fb8e1850ed4dad0c7e30",
+          "url": "https://open.spotify.com/album/0X4kIs7U2I7HEL1DDNU8DM"
+        },
+        {
+          "id": "2EItE81ccQoXQikqnYGTQb",
+          "name": "Addicted",
+          "albumType": "single",
+          "releaseDate": "2025-03-14",
+          "totalTracks": 2,
+          "image": "https://i.scdn.co/image/ab67616d0000b2731ae06f41343e965751bca898",
+          "url": "https://open.spotify.com/album/2EItE81ccQoXQikqnYGTQb"
+        },
+        {
+          "id": "2VFsbGCWZl9PAAU2vdhZJ0",
+          "name": "On & On",
+          "albumType": "single",
+          "releaseDate": "2024-11-08",
+          "totalTracks": 2,
+          "image": "https://i.scdn.co/image/ab67616d0000b273c6b67ea46a3243bc1d40cbf1",
+          "url": "https://open.spotify.com/album/2VFsbGCWZl9PAAU2vdhZJ0"
+        },
+        {
+          "id": "3iGeJxl3Bk0c4JaH8RSV4K",
+          "name": "Biochemical (Extended Mix)",
+          "albumType": "single",
+          "releaseDate": "2024-03-01",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273f992dce4341899b318c04470",
+          "url": "https://open.spotify.com/album/3iGeJxl3Bk0c4JaH8RSV4K"
+        },
+        {
+          "id": "1oNttAQgPEuS0NfPsdWhaS",
+          "name": "Biochemical",
+          "albumType": "single",
+          "releaseDate": "2024-03-01",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b27349d401f3b7f3ee8aa234a251",
+          "url": "https://open.spotify.com/album/1oNttAQgPEuS0NfPsdWhaS"
+        },
+        {
+          "id": "6RKEjVC6w4zhjPeUFDGjKA",
+          "name": "When We Were Young (The Logical Song) [Seth Hills Remix]",
+          "albumType": "single",
+          "releaseDate": "2024-01-26",
+          "totalTracks": 3,
+          "image": "https://i.scdn.co/image/ab67616d0000b273f4e0440854e54cb69e51f9ef",
+          "url": "https://open.spotify.com/album/6RKEjVC6w4zhjPeUFDGjKA"
+        },
+        {
+          "id": "0a37PLxAStKKjYghd2E7lX",
+          "name": "BOTH (David Guetta & Seth Hills Remix)",
+          "albumType": "single",
+          "releaseDate": "2023-12-08",
+          "totalTracks": 4,
+          "image": "https://i.scdn.co/image/ab67616d0000b273695ed419803f4e369454473b",
+          "url": "https://open.spotify.com/album/0a37PLxAStKKjYghd2E7lX"
+        },
+        {
+          "id": "0K4PTqe4YjH5uoBehMfQ8Q",
+          "name": "Eclipse (Extended Mix)",
+          "albumType": "single",
+          "releaseDate": "2023-07-21",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b27318b12e2c7ccd68b95e319703",
+          "url": "https://open.spotify.com/album/0K4PTqe4YjH5uoBehMfQ8Q"
+        },
+        {
+          "id": "7lG0bwKAyH6wIYjyDyE506",
+          "name": "Eclipse",
+          "albumType": "single",
+          "releaseDate": "2023-07-21",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273f4cb42eaee1f5f97e82e4bd9",
+          "url": "https://open.spotify.com/album/7lG0bwKAyH6wIYjyDyE506"
+        },
+        {
+          "id": "5qavp0EZcaxKHo1bAbX1uv",
+          "name": "Light (Extended Mix)",
+          "albumType": "single",
+          "releaseDate": "2023-03-17",
+          "totalTracks": 1,
+          "image": "https://i.scdn.co/image/ab67616d0000b273defa879e82b3acf31aee8b2a",
+          "url": "https://open.spotify.com/album/5qavp0EZcaxKHo1bAbX1uv"
+        }
+      ],
+      "topTracks": [
+        {
+          "id": "46IsWuEwNXTxa3zwRVbU9E",
+          "name": "Gimme The Love",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/46IsWuEwNXTxa3zwRVbU9E",
+          "durationMs": 182535,
+          "popularity": 54,
+          "album": {
+            "id": "7HZcbRZVXZQnatYKsbUN9L",
+            "name": "Gimme The Love",
+            "releaseDate": "2025-05-23",
+            "image": "https://i.scdn.co/image/ab67616d0000b273ec7704cf01714c9bd68a4be0"
+          },
+          "artists": [
+            "Armin van Buuren",
+            "Seth Hills",
+            "Alessia Labate"
+          ]
+        },
+        {
+          "id": "7nlK1F6iJ3Aih70YkltfJS",
+          "name": "Biochemical",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/7nlK1F6iJ3Aih70YkltfJS",
+          "durationMs": 163809,
+          "popularity": 46,
+          "album": {
+            "id": "1oNttAQgPEuS0NfPsdWhaS",
+            "name": "Biochemical",
+            "releaseDate": "2024-03-01",
+            "image": "https://i.scdn.co/image/ab67616d0000b27349d401f3b7f3ee8aa234a251"
+          },
+          "artists": [
+            "Martin Garrix",
+            "Seth Hills"
+          ]
+        },
+        {
+          "id": "6b7Z5ICFy6TbQwshMr9ORO",
+          "name": "BOTH - David Guetta & Seth Hills Remix",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/6b7Z5ICFy6TbQwshMr9ORO",
+          "durationMs": 161904,
+          "popularity": 45,
+          "album": {
+            "id": "0a37PLxAStKKjYghd2E7lX",
+            "name": "BOTH (David Guetta & Seth Hills Remix)",
+            "releaseDate": "2023-12-08",
+            "image": "https://i.scdn.co/image/ab67616d0000b273695ed419803f4e369454473b"
+          },
+          "artists": [
+            "Tiësto",
+            "David Guetta",
+            "Seth Hills"
+          ]
+        },
+        {
+          "id": "1rGWizWLQddt2FtpzzWSEn",
+          "name": "When We Were Young (The Logical Song) - Seth Hills Remix",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/1rGWizWLQddt2FtpzzWSEn",
+          "durationMs": 180000,
+          "popularity": 44,
+          "album": {
+            "id": "6RKEjVC6w4zhjPeUFDGjKA",
+            "name": "When We Were Young (The Logical Song) [Seth Hills Remix]",
+            "releaseDate": "2024-01-26",
+            "image": "https://i.scdn.co/image/ab67616d0000b273f4e0440854e54cb69e51f9ef"
+          },
+          "artists": [
+            "David Guetta",
+            "Kim Petras",
+            "Seth Hills"
+          ]
+        },
+        {
+          "id": "2JPh4dME3ZFFHXrTGfckBH",
+          "name": "Gimme The Love (Mixed)",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/2JPh4dME3ZFFHXrTGfckBH",
+          "durationMs": 95480,
+          "popularity": 39,
+          "album": {
+            "id": "11hKL1GmHT30riBDSoNLoE",
+            "name": "A State of Trance Year Mix 2025 (Mixed by Armin van Buuren)",
+            "releaseDate": "2025-12-12",
+            "image": "https://i.scdn.co/image/ab67616d0000b273201da5e7d7c35dc7ac52041c"
+          },
+          "artists": [
+            "Armin van Buuren",
+            "Seth Hills",
+            "Alessia Labate"
+          ]
+        },
+        {
+          "id": "3YGRkFtSMb8Q6H4mA3lcwQ",
+          "name": "Burning",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/3YGRkFtSMb8Q6H4mA3lcwQ",
+          "durationMs": 155624,
+          "popularity": 36,
+          "album": {
+            "id": "6C0qZ5wP46GQMLiunL0WJa",
+            "name": "Burning",
+            "releaseDate": "2022-12-02",
+            "image": "https://i.scdn.co/image/ab67616d0000b2733ea653928bc5bf08423864e6"
+          },
+          "artists": [
+            "Seth Hills",
+            "Levex"
+          ]
+        },
+        {
+          "id": "3Ygd31O6zd47a3qCjLnITy",
+          "name": "Beautiful People - Seth Hills Remix",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/3Ygd31O6zd47a3qCjLnITy",
+          "durationMs": 232500,
+          "popularity": 34,
+          "album": {
+            "id": "0X4kIs7U2I7HEL1DDNU8DM",
+            "name": "Beautiful People (Seth Hills Remix)",
+            "releaseDate": "2025-03-28",
+            "image": "https://i.scdn.co/image/ab67616d0000b273c095fb8e1850ed4dad0c7e30"
+          },
+          "artists": [
+            "David Guetta",
+            "Sia",
+            "Seth Hills"
+          ]
+        },
+        {
+          "id": "6DJc0UvXBsVJpvK3XwQgQq",
+          "name": "Losing My Mind",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/6DJc0UvXBsVJpvK3XwQgQq",
+          "durationMs": 178124,
+          "popularity": 34,
+          "album": {
+            "id": "0R6E19xuHfcWBuUX5VC5rg",
+            "name": "Losing My Mind",
+            "releaseDate": "2025-06-06",
+            "image": "https://i.scdn.co/image/ab67616d0000b2735a16b49e93505eb0fcfd224d"
+          },
+          "artists": [
+            "Seth Hills",
+            "DAMEN"
+          ]
+        },
+        {
+          "id": "7oo0lyIqstGAnh2st61DjF",
+          "name": "Gimme The Love (Mixed)",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/7oo0lyIqstGAnh2st61DjF",
+          "durationMs": 209120,
+          "popularity": 30,
+          "album": {
+            "id": "7srQvBiklTQCchAVatNUg4",
+            "name": "A State of Trance 2025 (Mixed by Armin van Buuren)",
+            "releaseDate": "2025-03-28",
+            "image": "https://i.scdn.co/image/ab67616d0000b2738c8ebbd70ebd99e439626e92"
+          },
+          "artists": [
+            "Armin van Buuren",
+            "Seth Hills"
+          ]
+        },
+        {
+          "id": "7dz8ibIlfYcEEleh9O4qhO",
+          "name": "What Took You So Long - Seth Hills Remix",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/7dz8ibIlfYcEEleh9O4qhO",
+          "durationMs": 222985,
+          "popularity": 27,
+          "album": {
+            "id": "1rduFpgUXryJAnrmDnk3xi",
+            "name": "Breathe (Remixes)",
+            "releaseDate": "2025-12-24",
+            "image": "https://i.scdn.co/image/ab67616d0000b27326ef8aec205b1dcae7af5e0f"
+          },
+          "artists": [
+            "Armin van Buuren",
+            "Gryffin",
+            "Seth Hills"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "slug": "arty",
+    "identity": {
+      "name": "ARTY",
+      "mbid": "52491cf4-55df-4d0f-b4d4-c3652f7e122d",
+      "type": "Solo",
+      "gender": "Male",
+      "country": "RU",
+      "aliases": [
+        "AR T",
+        "AR-TY",
+        "ARTY",
+        "Artie"
+      ],
+      "birthYear": 1989,
+      "debutYear": 2009,
+      "careerYears": 17,      
+      "labels": [
+        {
+          "name": "Armada Music B.V.",
+          "mbid": "9f4c14a6-1c3c-4cea-b646-fcf01b4d3fa8",
+          "relationType": "recording contract"
+        }
+      ],
+      "links": {
+        "spotify": "https://open.spotify.com/artist/1rSGNXhhYuWoq9BEz5DZGO",
+        "homepage": "https://www.artyofficial.com/",
+        "applemusic": "https://music.apple.com/gb/artist/15956984",
+        "instagram": "https://www.instagram.com/artymusic/",
+        "youtube": "https://www.youtube.com/arty_music",
+        "musicbrainz": "https://musicbrainz.org/artist/52491cf4-55df-4d0f-b4d4-c3652f7e122d"
+      }
+    },
+    "spotify": {
+      "spotifyId": "1rSGNXhhYuWoq9BEz5DZGO",
+      "image": "https://i.scdn.co/image/ab6761610000e5eba2e2672f2666071413f7f213",
+      "genres": [
+        "progressive house",
+        "trance",
+        "big room",
+        "progressive trance",
+        "edm"
+      ],
+      "followers": 197348,
+      "popularity": 54,
+      "spotifyUrl": "https://open.spotify.com/artist/1rSGNXhhYuWoq9BEz5DZGO",
+      "albums": [
+        {
+          "id": "7gVc168Wu64wnNUmUj3B95",
+          "name": "ARTY Mini Mix",
+          "albumType": "album",
+          "releaseDate": "2025-01-31",
+          "totalTracks": 20,
+          "image": "https://i.scdn.co/image/ab67616d0000b2737ff8d533ba9e678a679256bb",
+          "url": "https://open.spotify.com/album/7gVc168Wu64wnNUmUj3B95"
+        },
+        {
+          "id": "4YsxJYWdW4hwxsVLnRJRHW",
+          "name": "From Russia With Love",
+          "albumType": "album",
+          "releaseDate": "2020-11-27",
+          "totalTracks": 24,
+          "image": "https://i.scdn.co/image/ab67616d0000b2735c74891b2f08897216f4eb83",
+          "url": "https://open.spotify.com/album/4YsxJYWdW4hwxsVLnRJRHW"
+        },
+        {
+          "id": "7zz6FgHCgaz1TIYVjzgt2r",
+          "name": "ARTY presents Save Me Tonight",
+          "albumType": "album",
+          "releaseDate": "2019-03-08",
+          "totalTracks": 19,
+          "image": "https://i.scdn.co/image/ab67616d0000b27327af801e397a44e4570ffd8c",
+          "url": "https://open.spotify.com/album/7zz6FgHCgaz1TIYVjzgt2r"
+        },
+        {
+          "id": "3M9tDLu83Y8XlcicBUF3sL",
+          "name": "Glorious",
+          "albumType": "album",
+          "releaseDate": "2015-10-09",
+          "totalTracks": 14,
+          "image": "https://i.scdn.co/image/ab67616d0000b273e1eb8af8969639c892f5974c",
+          "url": "https://open.spotify.com/album/3M9tDLu83Y8XlcicBUF3sL"
+        },
+        {
+          "id": "6y5kJSZ0SGGqems21rUt3n",
+          "name": "Anjunabeats Worldwide 03",
+          "albumType": "album",
+          "releaseDate": "2011-04-11",
+          "totalTracks": 29,
+          "image": "https://i.scdn.co/image/ab67616d0000b273d1a5ca3ab52b6e48a1873907",
+          "url": "https://open.spotify.com/album/6y5kJSZ0SGGqems21rUt3n"
+        },
+        {
+          "id": "3qHmLA2tPYdNjoUnCT33MC",
+          "name": "Taking Me Higher",
+          "albumType": "single",
+          "releaseDate": "2025-12-19",
+          "totalTracks": 2,
+          "image": "https://i.scdn.co/image/ab67616d0000b2730a67b9154e473acf5d34353e",
+          "url": "https://open.spotify.com/album/3qHmLA2tPYdNjoUnCT33MC"
+        },
+        {
+          "id": "0DN9kKTGdJuBK2kzPg2yjX",
+          "name": "Daydreams (Zac Samuel vs Danny Lees Edit)",
+          "albumType": "single",
+          "releaseDate": "2025-12-05",
+          "totalTracks": 3,
+          "image": "https://i.scdn.co/image/ab67616d0000b273ef90c555927d42ad5cf9a132",
+          "url": "https://open.spotify.com/album/0DN9kKTGdJuBK2kzPg2yjX"
+        },
+        {
+          "id": "5FJfDy1xMCVTovB33PAeTH",
+          "name": "Brave",
+          "albumType": "single",
+          "releaseDate": "2025-11-21",
+          "totalTracks": 2,
+          "image": "https://i.scdn.co/image/ab67616d0000b273a0e02cd048a2b4509b8e8e2f",
+          "url": "https://open.spotify.com/album/5FJfDy1xMCVTovB33PAeTH"
+        },
+        {
+          "id": "0koLHMHYaApJfWKz6Z1F0f",
+          "name": "Oxygen (Darren Styles Remix)",
+          "albumType": "single",
+          "releaseDate": "2025-11-14",
+          "totalTracks": 3,
+          "image": "https://i.scdn.co/image/ab67616d0000b273844d61c7a08a6398629942d4",
+          "url": "https://open.spotify.com/album/0koLHMHYaApJfWKz6Z1F0f"
+        },
+        {
+          "id": "1kHn05ayh73VUcRhot9lGs",
+          "name": "Never Be The Same",
+          "albumType": "single",
+          "releaseDate": "2025-10-17",
+          "totalTracks": 3,
+          "image": "https://i.scdn.co/image/ab67616d0000b273e5f937b8a51aaf5441274b0f",
+          "url": "https://open.spotify.com/album/1kHn05ayh73VUcRhot9lGs"
+        },
+        {
+          "id": "0oASdkx9nrneQtqihIKvme",
+          "name": "Daydreams",
+          "albumType": "single",
+          "releaseDate": "2025-08-29",
+          "totalTracks": 2,
+          "image": "https://i.scdn.co/image/ab67616d0000b273c7deb3d44370e70babae8aea",
+          "url": "https://open.spotify.com/album/0oASdkx9nrneQtqihIKvme"
+        },
+        {
+          "id": "0RvuzTpsqe8CItbLsnUdrk",
+          "name": "Oxygen",
+          "albumType": "single",
+          "releaseDate": "2025-07-25",
+          "totalTracks": 2,
+          "image": "https://i.scdn.co/image/ab67616d0000b2737fefaf2df2cdcc128991e8bd",
+          "url": "https://open.spotify.com/album/0RvuzTpsqe8CItbLsnUdrk"
+        }
+      ],
+      "topTracks": [
+        {
+          "id": "00sy6AoG8pNFxbdAWHhsrn",
+          "name": "Oxygen",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/00sy6AoG8pNFxbdAWHhsrn",
+          "durationMs": 172916,
+          "popularity": 53,
+          "album": {
+            "id": "6c9IwkWbbNrZ77MLsGbMM9",
+            "name": "Oxygen",
+            "releaseDate": "2025-07-25",
+            "image": "https://i.scdn.co/image/ab67616d0000b273671c0f84b074d55868861821"
+          },
+          "artists": [
+            "Ben Nicky",
+            "ARTY",
+            "Chicane"
+          ]
+        },
+        {
+          "id": "4vIMcDInP2JdCKg3uBQAGz",
+          "name": "Hurricane - Arty Remix",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/4vIMcDInP2JdCKg3uBQAGz",
+          "durationMs": 223506,
+          "popularity": 46,
+          "album": {
+            "id": "7tE1eo5Av3yx340W5sHv3Q",
+            "name": "Badlands (Decade Edition Anthology)",
+            "releaseDate": "2025-10-14",
+            "image": "https://i.scdn.co/image/ab67616d0000b273734481e0eace8ce99ecd7c23"
+          },
+          "artists": [
+            "Halsey",
+            "ARTY"
+          ]
+        },
+        {
+          "id": "5DNODaGLQJIKWWsHaWT7fk",
+          "name": "Hey Now - ARTY Remix",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/5DNODaGLQJIKWWsHaWT7fk",
+          "durationMs": 351053,
+          "popularity": 38,
+          "album": {
+            "id": "0SI7sJIrvhZtGbUo97t0aX",
+            "name": "The Remixes",
+            "releaseDate": "2023-07-21",
+            "image": "https://i.scdn.co/image/ab67616d0000b27345a32904015f4b2a56237393"
+          },
+          "artists": [
+            "London Grammar",
+            "ARTY"
+          ]
+        },
+        {
+          "id": "3xhHrJujvMsuArqRj9QLWy",
+          "name": "Taking Me Higher",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/3xhHrJujvMsuArqRj9QLWy",
+          "durationMs": 226896,
+          "popularity": 49,
+          "album": {
+            "id": "1kR2yImBZtp7TqlUo1boZV",
+            "name": "Taking Me Higher",
+            "releaseDate": "2025-12-19",
+            "image": "https://i.scdn.co/image/ab67616d0000b2732b11ee039324ab7e68d3ccee"
+          },
+          "artists": [
+            "ARTY",
+            "ÆON:MODE",
+            "MRYN"
+          ]
+        },
+        {
+          "id": "0IuHs8T0ZqUeJmhO04LLcl",
+          "name": "Never Be The Same",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/0IuHs8T0ZqUeJmhO04LLcl",
+          "durationMs": 218095,
+          "popularity": 49,
+          "album": {
+            "id": "1kHn05ayh73VUcRhot9lGs",
+            "name": "Never Be The Same",
+            "releaseDate": "2025-10-17",
+            "image": "https://i.scdn.co/image/ab67616d0000b273e5f937b8a51aaf5441274b0f"
+          },
+          "artists": [
+            "ARTY",
+            "RHODES"
+          ]
+        },
+        {
+          "id": "4WKBNLMKk3cy0z34CuRB6Q",
+          "name": "Come Home",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/4WKBNLMKk3cy0z34CuRB6Q",
+          "durationMs": 226889,
+          "popularity": 22,
+          "album": {
+            "id": "450U5uYi9z0VzYHeRzo9AS",
+            "name": "Come Home (Laura van Dam Remix)",
+            "releaseDate": "2024-05-24",
+            "image": "https://i.scdn.co/image/ab67616d0000b273798108ee387d178df4067fdf"
+          },
+          "artists": [
+            "ALPHA 9",
+            "ARTY"
+          ]
+        },
+        {
+          "id": "3pUi08Z4eoQdPWfonAXHEn",
+          "name": "Porcelain - Arty Remix",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/3pUi08Z4eoQdPWfonAXHEn",
+          "durationMs": 211224,
+          "popularity": 47,
+          "album": {
+            "id": "02wbvDMkZ7bGAfaAvV87qi",
+            "name": "Porcelain (The Remixes)",
+            "releaseDate": "2016-08-26",
+            "image": "https://i.scdn.co/image/ab67616d0000b2731cd5421dcbe7beaa193be5a8"
+          },
+          "artists": [
+            "Moby",
+            "ARTY"
+          ]
+        },
+        {
+          "id": "4KqA0GwEKbc96WyfIZn3SV",
+          "name": "Those Eyes",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/4KqA0GwEKbc96WyfIZn3SV",
+          "durationMs": 162786,
+          "popularity": 45,
+          "album": {
+            "id": "58RPXRvxMszS1tfbeBjht0",
+            "name": "Those Eyes",
+            "releaseDate": "2021-10-29",
+            "image": "https://i.scdn.co/image/ab67616d0000b273dde860661c3b32ceec83e785"
+          },
+          "artists": [
+            "ARTY",
+            "Griff Clawson"
+          ]
+        },
+        {
+          "id": "1nufXiTCTTAeJfO9hLHvO8",
+          "name": "Save Me Tonight",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/1nufXiTCTTAeJfO9hLHvO8",
+          "durationMs": 170079,
+          "popularity": 46,
+          "album": {
+            "id": "0wQCkA93jbaOowF6bHsDfz",
+            "name": "Save Me Tonight",
+            "releaseDate": "2019-01-25",
+            "image": "https://i.scdn.co/image/ab67616d0000b273d097b4c5d5cba3b4880ca367"
+          },
+          "artists": [
+            "ARTY"
+          ]
+        },
+        {
+          "id": "5V2PLjdFz66ver88zZwCHG",
+          "name": "Oxygen - Darren Styles Remix",
+          "previewUrl": null,
+          "url": "https://open.spotify.com/track/5V2PLjdFz66ver88zZwCHG",
+          "durationMs": 177000,
+          "popularity": 43,
+          "album": {
+            "id": "0koLHMHYaApJfWKz6Z1F0f",
+            "name": "Oxygen (Darren Styles Remix)",
+            "releaseDate": "2025-11-14",
+            "image": "https://i.scdn.co/image/ab67616d0000b273844d61c7a08a6398629942d4"
+          },
+          "artists": [
+            "Ben Nicky",
+            "ARTY",
+            "Darren Styles"
           ]
         }
       ]

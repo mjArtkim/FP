@@ -14,7 +14,7 @@
     >
       <PcNavigatorVue/>
     </aside>
-    <div class="flex-1 h-screen overflow-y-auto relative bg-[var(--bg)] text-[var(--text)] pb-24 pc:pb-0">
+    <div id="app-scroll" class="flex-1 h-screen overflow-y-auto relative bg-[var(--bg)] text-[var(--text)] pb-24 pc:pb-0">
       <div class="block pc:hidden">
         <Header />
       </div>

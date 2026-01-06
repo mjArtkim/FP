@@ -85,11 +85,13 @@ const lineupEntries = computed(() => {
   if (!festival.value) return []
   const names = festival.value.lineup.split(',').map((name) => name.trim()).filter(Boolean)
   const slugs = festival.value.artistSlugs || []
-  return names.map((name, idx) => ({
-    name,
-    slug: slugs[idx],
-    image: slugs[idx] ? artistImageMap.value[slugs[idx]] : undefined,
-  }))
+  return names
+    .map((name, idx) => ({
+      name,
+      slug: slugs[idx],
+      image: slugs[idx] ? artistImageMap.value[slugs[idx]] : undefined,
+    }))
+    .sort((a, b) => a.name.localeCompare(b.name))
 })
 
 const showAllLineup = ref(false)
