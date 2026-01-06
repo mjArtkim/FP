@@ -173,7 +173,10 @@ const weeks = computed<Week[]>(() => {
           for (let col = start; col <= end && col < 7; col++) {
             if (col >= 0 && col < hiddenByCol.length) {
               hiddenByCol[col] = (hiddenByCol[col] ?? 0) + 1
-              hiddenEventsByCol[col].push(seg.event)
+              const bucket = hiddenEventsByCol[col]
+              if (bucket) {
+                bucket.push(seg.event)
+              }
             }
           }
         }

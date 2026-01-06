@@ -246,7 +246,7 @@ watch(
                   type="checkbox"
                   class="chlist absolute inset-0 w-full h-full opacity-0 cursor-pointer z-30"
                   :checked="viewMode === 'list'"
-                  @change="viewMode = $event.target.checked ? 'list' : 'calendar'"
+                  @change="viewMode = ($event.target as HTMLInputElement).checked ? 'list' : 'calendar'"
                 />
                 <div class="absolute inset-0 z-10 flex justify-between items-center ">
                   <div class="material-symbols-rounded w-[32px] py-[4px] rounded-[5px] text-sm text-center"
