@@ -53,14 +53,6 @@ const shortText = (text: string, limit = 18) => {
   return text.length > limit ? text.slice(0, limit) + '...' : text
 }
 
-const lineText = (text: string, limit = 30) => {
-  return text.length > limit ? text.slice(0, limit) + '...' : text
-}
-
-const formatMD = (dateStr: string) => {
-  return dateStr.slice(5)
-}
-
 const mapColorToContinent: Record<string, ContinentKey> = {
   '#6e00dd': 'northAmerica',
   '#fda61a': 'southAmerica',
