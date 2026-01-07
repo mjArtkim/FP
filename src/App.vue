@@ -1,7 +1,6 @@
 <script setup lang="ts">
 
   import Header from './components/unit/Header.vue'
-  import MobileBar from './components/unit/MobileBar.vue'
   import { RouterView } from 'vue-router'
   import PcNavigatorVue from './components/unit/PcNavigator.vue'
 </script>
@@ -19,7 +18,6 @@
         <Header />
       </div>
       <RouterView />
-      <MobileBar class="fixed bottom-0 left-0 w-full pc:hidden" />
     </div>
   </div>
 </template>

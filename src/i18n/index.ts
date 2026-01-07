@@ -213,7 +213,8 @@ const getInitialLocale = (): Locale => {
   if (typeof window === 'undefined') return 'en'
   const stored = window.localStorage.getItem(STORAGE_KEY)
   if (stored) return normalizeLocale(stored)
-  return normalizeLocale(window.navigator.language)
+  // Default to English on first load; persist user choice afterwards.
+  return 'en'
 }
 
 const locale = ref<Locale>(getInitialLocale())

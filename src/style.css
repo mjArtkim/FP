@@ -72,10 +72,13 @@
   --bg: #f7f7fb;
   --surface: #ffffff;
   --text: #0f172a;
-  --muted: #6b7280;
+  --muted: #5d636d;
   --accent: #f61979;
   --stroke: #e5e7eb;
   --shadow-weak: rgba(0, 0, 0, 0.2);
+  --subbg: #eeeeee;
+  --subline: #000;
+  --listbg: #ececec;
 }
 
 :root[data-theme="light"] {
@@ -86,6 +89,9 @@
   --accent: #f61979;
   --stroke: #e5e7eb;
   --shadow-weak: rgba(0, 0, 0, 0.2);
+  --subbg: #eeeeee;
+  --subline: #000;
+  --listbg: #ececec;
 }
 
 :root[data-theme="dark"] {
@@ -96,6 +102,9 @@
   --accent: #f61979;
   --stroke: #1f2432;
   --shadow-weak: rgba(255, 255, 255, 0.2);
+  --subbg: #303030;
+  --subline: #eee;
+  --listbg: rgba(120, 120, 120, 0.1);
 }
 ::-webkit-scrollbar {
   width: 8px;
