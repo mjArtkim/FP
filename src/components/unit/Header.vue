@@ -117,11 +117,12 @@ const currentLogo = computed(() => (themeMode.value === 'dark' ? topLogow : topL
             <span class="material-symbols-rounded text-xl">account_box</span>
             <span>{{ t('nav.mypage') }}</span>
           </router-link>
+
+        </div>
+        <div class="flex items-center justify-between border-t border-[var(--stroke)] px-4 py-3">
           <div class="flex items-center">
             <LanguageToggle />
           </div>
-        </div>
-        <div class="flex items-center justify-between border-t border-[var(--stroke)] px-4 py-3">
           <div class="flex items-center gap-2 text-xs font-gugi text-[var(--muted)]">
             <span class="material-symbols-rounded text-base">
               {{ isDarkMode ? 'dark_mode' : 'light_mode' }}

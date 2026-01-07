@@ -176,7 +176,7 @@ const relatedByLocation = computed(() => {
 </script>
 
 <template>
-  <div class="px-5 pb-8 pc:px-14 pc:py-10 h-screen">
+  <div class="px-5 pc:px-14 pc:py-10 h-screen mb-[100px] pc:mb-0">
     <div v-if="festival" class="max-w-5xl mx-auto space-y-8 pc:grid pc:mx-0 pc:grid-cols-3 pc:w-full pc:max-w-full pc:gap-6 pc:space-y-0">
       <div class="flex flex-col gap-6 pc:gap-4">
         <div class="rounded-xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.12)]">
@@ -191,7 +191,7 @@ const relatedByLocation = computed(() => {
           <div class="pt-3 text-sm black pc:text-base">{{ dateRange }}</div>
           <div class="py-3">
             <div class="text-sm font-semibold black pc:text-base">{{ t('festivalDetail.location') }}</div>
-            <div class="text-base text-gray-700 pc:text-lg">{{ locationText }}</div>
+            <div class="text-base pc:text-lg">{{ locationText }}</div>
           </div>
           <div class="flex items-center gap-3">
             <button
@@ -228,7 +228,7 @@ const relatedByLocation = computed(() => {
       </div>
       <div class="flex flex-col gap-6">
         <div class="rounded-lg bg-[var(--bg)] space-y-3">
-          <div class="text-sm font-bold text-gray-700">{{ t('festivalDetail.linkSection') }}</div>
+          <div class="text-sm font-bold">{{ t('festivalDetail.linkSection') }}</div>
           <div class="flex gap-3 flex-col text-center">
             <a
               v-if="festival.ticket"
@@ -245,7 +245,7 @@ const relatedByLocation = computed(() => {
               :href="festival.infolink"
               target="_blank"
               rel="noopener"
-              class="h-[30px] flex items-center justify-center gap-5 rounded-md border bg-[#482317] text-white text-xs pc:text-sm pc:hover:border-[#482317] pc:hover:bg-white pc:hover:text-[#482317] transition-colors font-gugi"
+              class="h-[30px] flex items-center justify-center gap-5 rounded-md pc:border bg-[#482317] text-white text-xs pc:text-sm pc:hover:border-[#482317] pc:hover:bg-white pc:hover:text-[#482317] transition-colors font-gugi"
             >
               <div class="material-symbols-rounded">link</div>
               <div>{{ t('festivalDetail.linkPage') }}</div>
@@ -257,7 +257,7 @@ const relatedByLocation = computed(() => {
         </div>
           <div class="grid gap-6">
           <div class="space-y-3 relative mb-[30px]">
-            <div class="text-sm font-bold text-gray-700">{{ t('festivalDetail.lineup') }}</div>
+            <div class="text-sm font-bold">{{ t('festivalDetail.lineup') }}</div>
             <div class="grid grid-cols-2 gap-3 pc:hidden">
               <template v-for="item in visibleLineupEntries" :key="item.name">
                 <router-link
@@ -332,7 +332,7 @@ const relatedByLocation = computed(() => {
       </div>
       <div class="flex flex-col gap-6">
         <div class="p-4 rounded-lg bg-[var(--bg)] shadow-[0_0_6px_var(--shadow-weak)] space-y-3">
-          <div class="text-sm font-semibold text-gray-700">{{ t('festivalDetail.map') }}</div>
+          <div class="text-sm font-semibold">{{ t('festivalDetail.map') }}</div>
           <div v-if="mapEmbedSrc" class="space-y-2">
             <div class="text-sm text-gray-500">{{ mapQuery }}</div>
             <div class="w-full h-64 rounded-lg overflow-hidden bg-black/5">
@@ -346,12 +346,12 @@ const relatedByLocation = computed(() => {
               ></iframe>
             </div>
           </div>
-          <div v-else class="text-sm text-gray-500">
+          <div v-else class="text-sm">
             {{ t('festivalDetail.mapNoInfo') }}
           </div>
         </div>
         <div class="p-4 rounded-lg bg-[var(--bg)] shadow-[0_0_6px_var(--shadow-weak)] space-y-3 mb-[100px] pc:mb-0">
-          <div class="text-sm font-semibold text-gray-700">
+          <div class="text-sm font-semibold">
             {{ t('festivalDetail.sameLocation') }}
           </div>
           <div v-if="relatedByLocation.length" class="grid grid-cols-1 gap-3 pc:max-h-[320px] pc:overflow-y-auto">
@@ -377,14 +377,14 @@ const relatedByLocation = computed(() => {
               </div>
             </router-link>
           </div>
-          <div v-else class="text-sm text-gray-500">
+          <div v-else class="text-sm">
             {{ t('festivalDetail.noSameLocation') }}
           </div>
         </div>
       </div>
     </div>
 
-    <div v-else class="max-w-3xl mx-auto text-center text-gray-500 py-20">
+    <div v-else class="max-w-3xl mx-auto text-center py-20">
       {{ t('festivalDetail.notFound') }}
     </div>
   </div>
