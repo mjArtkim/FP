@@ -58,7 +58,7 @@ watch(
           <div class="material-symbols-rounded text-2xl pr-5">home</div>
           <div v-if="isSidebarOpen" class="text-lg font-semibold">{{ t('nav.home') }}</div>
         </router-link>
-        <router-link to="#" class="flex items-center cursor-pointer pc:hover:text-[var(--accent)]">
+        <router-link to="/map" class="flex items-center cursor-pointer pc:hover:text-[var(--accent)]">
           <div class="material-symbols-rounded text-2xl pr-5">map</div>
           <div v-if="isSidebarOpen" class="text-lg font-semibold">{{ t('nav.map') }}</div>
         </router-link>

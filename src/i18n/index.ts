@@ -99,6 +99,22 @@ const messages = {
       noFavoriteArtists: 'No bookmarked artists yet.',
       noFavoriteFestivals: 'No bookmarked festivals yet.',
     },
+    mapExplorer: {
+      yourLocation: 'YOUR LOCATION',
+      yourLocationWithContinent: '{continent}',
+      locationDenied: 'LOCATION DENIED',
+      selected: 'Selected: {continent}',
+      tapToSelect: 'Tap a color region to select a continent',
+      continents: {
+        asia: 'ASIA',
+        europe: 'EUROPE',
+        northAmerica: 'NORTH AMERICA',
+        southAmerica: 'SOUTH AMERICA',
+        africa: 'AFRICA',
+        oceania: 'OCEANIA',
+        other: 'OTHER',
+      },
+    },
   },
   ko: {
     nav: {
@@ -195,6 +211,22 @@ const messages = {
       favoriteFestivals: '즐겨찾는 페스티벌',
       noFavoriteArtists: '아직 북마크한 아티스트가 없습니다.',
       noFavoriteFestivals: '아직 북마크한 페스티벌이 없습니다.',
+    },
+    mapExplorer: {
+      yourLocation: '내 위치',
+      yourLocationWithContinent: '내 위치 - {continent}',
+      locationDenied: '위치 권한 거부',
+      selected: '선택됨: {continent}',
+      tapToSelect: '색상 영역을 탭해 대륙을 선택하세요',
+      continents: {
+        asia: '아시아',
+        europe: '유럽',
+        northAmerica: '북아메리카',
+        southAmerica: '남아메리카',
+        africa: '아프리카',
+        oceania: '오세아니아',
+        other: '기타',
+      },
     },
   },
 } as const

@@ -4,6 +4,7 @@ import FirstView from '@/components/FirstView.vue'
 import FestivalDetail from '@/components/unit/FestivalDetail.vue'
 import ArtistDetail from '@/components/unit/ArtistDetail.vue'
 import Favorit from '@/components/unit/Favorit.vue'
+import Map from '@/components/unit/Map.vue'
 
 const routes = [
   {
@@ -27,6 +28,11 @@ const routes = [
     path: '/favorite',
     name: 'favorite',
     component: Favorit,
+  },
+    {
+    path: '/map',
+    name: 'map',
+    component: Map,
   },
 ]
 

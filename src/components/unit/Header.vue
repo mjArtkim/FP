@@ -2,6 +2,7 @@
 import topLogo from '@/assets/img/top_logo_b.svg'
 import topLogow from '@/assets/img/top_logo_w.svg'
 import { ref, computed, onMounted, onBeforeUnmount, watch } from 'vue'
+import { useRoute } from 'vue-router'
 import LanguageToggle from '@/components/unit/LanguageToggle.vue'
 import NeonSwitch from '@/components/unit/NeonSwitch.vue'
 import { useI18n } from '@/i18n'
@@ -12,6 +13,7 @@ const formattedDate = `${today.getFullYear()}.${String(today.getMonth() + 1).pad
 const DateText = ref(formattedDate)
 
 const { t } = useI18n()
+const route = useRoute()
 
 const isGnbOpen = ref(false)
 const themeMode = ref<'light' | 'dark'>('light')
@@ -48,6 +50,13 @@ watch(
     applyTheme(isDark ? 'dark' : 'light')
   },
   { immediate: true }
+)
+
+watch(
+  () => route.fullPath,
+  () => {
+    if (isGnbOpen.value) isGnbOpen.value = false
+  }
 )
 
 const toggleGnb = () => {
@@ -94,14 +103,14 @@ const currentLogo = computed(() => (themeMode.value === 'dark' ? topLogow : topL
       <div
         v-if="isGnbOpen"
         id="mobile-gnb"
-        class="absolute w-[90%] mt-4 rounded-2xl border border-[var(--stroke)] bg-[var(--surface)] backdrop-blur-md shadow-[4px_6px_12px_rgba(0,0,0,0.15)]"
+        class="absolute z-50 w-[90%] mt-4 rounded-2xl border border-[var(--stroke)] bg-[var(--surface)] backdrop-blur-md shadow-[4px_6px_12px_rgba(0,0,0,0.15)]"
       >
         <div class="grid grid-cols-3 gap-3 p-4 text-xs font-gugi text-[var(--text)]">
           <router-link to="/" class="flex flex-col items-center gap-1 pc:hover:text-[var(--accent)]">
             <span class="material-symbols-rounded text-xl">home</span>
             <span>{{ t('nav.home') }}</span>
           </router-link>
-          <router-link to="#" class="flex flex-col items-center gap-1 pc:hover:text-[var(--accent)]">
+          <router-link to="/map" class="flex flex-col items-center gap-1 pc:hover:text-[var(--accent)]">
             <span class="material-symbols-rounded text-xl">map</span>
             <span>{{ t('nav.map') }}</span>
           </router-link>
