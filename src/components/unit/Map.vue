@@ -397,7 +397,7 @@ onBeforeUnmount(() => {
           >
             <div class="flex items-center gap-3">
               <span
-                class="w-6 h-6 rounded-md border border-[var(--stroke)] flex items-center justify-center"
+                class="w-6 h-6 rounded-md border border-[var(--stroke)] flex items-center justify-center cursor-pointer"
                 :class="isAllChecked ? 'bg-[#f61979] text-white border-[#f61979]' : 'bg-[var(--surface)] text-transparent'"
                 @click.stop="toggleAll"
               >
@@ -423,7 +423,7 @@ onBeforeUnmount(() => {
               >
                 <div class="flex items-center gap-3">
                   <span
-                    class="w-6 h-6 rounded-md border border-[var(--stroke)] flex items-center justify-center"
+                    class="w-6 h-6 rounded-md border border-[var(--stroke)] flex items-center justify-center cursor-pointer"
                     :class="isGroupChecked(group) ? 'bg-[#f61979] text-white border-[#f61979]' : 'bg-[var(--surface)] text-transparent'"
                     @click.stop="toggleGroup(group)"
                   >
@@ -446,7 +446,7 @@ onBeforeUnmount(() => {
                   class="flex items-center gap-2 text-xs text-[var(--muted)]"
                 >
                   <span
-                    class="w-6 h-6 rounded-lg border border-[var(--stroke)] flex items-center justify-center"
+                    class="w-6 h-6 rounded-lg border border-[var(--stroke)] flex items-center justify-center cursor-pointer"
                     :class="isSubChecked(sub) ? 'bg-[#f61979] text-white border-[#f61979]' : 'bg-[var(--surface)] text-transparent'"
                     @click="toggleSubgenre(group, sub)"
                   >
