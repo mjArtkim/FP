@@ -311,7 +311,7 @@ const toggleMore = (weekIndex: number, colIndex: number) => {
                   <div
                     v-for="ev in week.hiddenEventsByCol[ci]"
                     :key="ev.id"
-                    class="px-2 py-[2px] pc:hover:bg-gray-900 whitespace-nowrap pc:hover:text-neonpink"
+                    class="px-2 py-[2px] pc:hover:bg-gray-900 whitespace-nowrap pc:hover:text-neonpink cursor-pointer"
                     @click="goToFestivalDetail(ev.id)"
                   >
                     {{ formatMD(ev.start) }} ~ {{ formatMD(ev.end) }}

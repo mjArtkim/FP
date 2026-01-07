@@ -245,7 +245,7 @@ const relatedByLocation = computed(() => {
               :href="festival.infolink"
               target="_blank"
               rel="noopener"
-              class="h-[30px] flex items-center justify-center gap-5 rounded-md pc:border bg-[#482317] text-white text-xs pc:text-sm pc:hover:border-[#482317] pc:hover:bg-white pc:hover:text-[#482317] transition-colors font-gugi"
+              class="h-[30px] flex items-center justify-center gap-5 rounded-md pc:hover:border bg-[#482317] text-white text-xs pc:text-sm pc:hover:border-[#482317] pc:hover:bg-white pc:hover:text-[#482317] transition-colors font-gugi"
             >
               <div class="material-symbols-rounded">link</div>
               <div>{{ t('festivalDetail.linkPage') }}</div>
