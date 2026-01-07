@@ -333,47 +333,31 @@ onBeforeUnmount(() => {
       <div class="text-xs font-bold py-2 pc:text-base">{{ t('firstView.todayFestival') }}</div>
       <ul
         v-if="todayEvents.length"
-        class="flex flex-nowrap gap-6 overflow-x-auto w-full pl-1 py-3 pc:flex-col pc:gap-2 pc:h-[90vh] pc:overflow-auto"
+        class="flex flex-nowrap gap-6 overflow-x-auto w-full pl-1 py-3"
       >
         <li
           v-for="item in todayEvents"
           :key="item.id"
-          class="w-[130px] h-[130px] flex-shrink-0 p-[10px] rounded-lg bg-[var(--bg)] shadow-[1px_1px_6px_var(--shadow-weak)] flex flex-col content-center pc:w-full pc:flex-row pc:shadow-none pc:h-[220px] pc:border-b pc:bg-transparent pc:rounded-none pc:px-[10px] pc:py-[20px] pc:hover:bg-gray-300/20 pc:hover:rounded-lg transition-all duration-300"
+          class="w-[130px] h-[130px] flex-shrink-0 p-[10px] rounded-lg bg-[var(--bg)] shadow-[1px_1px_6px_var(--shadow-weak)] flex flex-col content-center"
         >
-          <router-link :to="{ name: 'festivaldetail', params: { id: item.id } }" class="pc:flex">
+          <router-link :to="{ name: 'festivaldetail', params: { id: item.id } }">
             <img
               :src="item.image"
               alt="festival"
-              class="w-full h-[60px] object-cover rounded-[10px] pc:w-[150px] pc:h-full"
+              class="w-full h-[60px] object-cover rounded-[10px]"
             />
-            <div class="pc:pl-5">
-              <div class="flex flex-col pc:hidden">
-                <div class="text-xs font-black py-[10px]">
-                  {{ shortText(item.title) }}
-                </div>
-                <div class="text-xs truncate">
-                  {{ shortText(item.city + ' / ' + item.contry) }}
-                </div>
+            <div class="flex flex-col">
+              <div class="text-xs font-black py-[10px]">
+                {{ shortText(item.title) }}
               </div>
-              <div class="hidden pc:flex pc:flex-col pc:shrink-0 pc:justify-between pc:h-[90%]">
-                <div class="text-xl font-black py-[10px]">
-                  {{ item.title }}
-                </div>
-                <div class="text-sm truncate">
-                  {{ formatMD(item.start) }} ~ {{ formatMD(item.end) }}
-                </div>
-                <div class="text-sm truncate">
-                  {{ item.city + ' / ' + item.contry }}
-                </div>
-                <div class="text-sm truncate">
-                  {{ lineText(item.lineup) }}
-                </div>
+              <div class="text-xs truncate">
+                {{ shortText(item.city + ' / ' + item.contry) }}
               </div>
             </div>
           </router-link>
         </li>
       </ul>
-      <div v-else class="text-base text-gray-400 text-center py-8 border-b pc:h-[50vh] pc:flex pc:flex-col pc:justify-center pc:text-2xl">
+      <div v-else class="text-base text-gray-400 text-center py-8 border-b">
         {{ t('firstView.emptyToday') }}
       </div>
     </section>
