@@ -271,9 +271,7 @@ const normalizeLocale = (value?: string | null): Locale => {
 
 const getInitialLocale = (): Locale => {
   if (typeof window === 'undefined') return 'en'
-  const stored = window.localStorage.getItem(STORAGE_KEY)
-  if (stored) return normalizeLocale(stored)
-  // Default to English on first load; persist user choice afterwards.
+  // Always start in English, regardless of any stored preference.
   return 'en'
 }
 
