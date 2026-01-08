@@ -66,7 +66,7 @@ const toggleGnb = () => {
 const currentLogo = computed(() => (themeMode.value === 'dark' ? topLogow : topLogo))
 </script>
 <template>
-  <div class="p-5 relative">
+  <div class="p-5 relative z-[9999]">
     <div class="flex justify-between items-center">
       <router-link to="/"><img :src="currentLogo" class="h-8"/></router-link>
       <ul class="flex items-center gap-2">
