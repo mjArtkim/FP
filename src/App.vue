@@ -13,7 +13,11 @@
     >
       <PcNavigatorVue/>
     </aside>
-    <div id="app-scroll" class="flex-1 h-screen overflow-y-auto relative bg-[var(--bg)] text-[var(--text)] pb-24 pc:pb-0">
+    <div
+      id="app-scroll"
+      class="flex-1 overflow-y-auto relative bg-[var(--bg)] text-[var(--text)] pc:pb-0"
+      :class="{ 'overflow-hidden': $route?.name === 'mapresult', 'h-screen': $route?.name !== 'mapresult' }"
+    >
       <div class="block pc:hidden">
         <Header />
       </div>

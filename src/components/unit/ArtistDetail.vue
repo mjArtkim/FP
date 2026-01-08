@@ -281,9 +281,9 @@ onBeforeUnmount(() => {
           <div class="flex items-center gap-3">
             <button
               type="button"
-              class="w-[50%] inline-flex justify-center items-center gap-2 px-3 py-1 rounded-md border shadow-[1px_1px_2px_var(--shadow-weak)] text-sm pc:hover:bg-[#EA6466] pc:hover:text-white transition-colors [text-shadow:1px_1px_2px_var(--shadow-weak)]"
+              class="w-[50%] inline-flex justify-center items-center gap-2 px-3 py-1 rounded-md  shadow-[1px_1px_2px_var(--shadow-weak)] text-sm pc:hover:bg-[#EA6466] pc:hover:text-white transition-colors [text-shadow:1px_1px_2px_var(--shadow-weak)]"
               @click="onToggleFavorite"
-              :class="isBookmarked ? 'bg-[#EA6466] text-white' : 'border-[#EA6466] text-[#EA6466]'"
+              :class="isBookmarked ? 'bg-[#EA6466] text-white' : 'border-[#EA6466] border text-[#EA6466]'"
             >
               <div class="material-symbols-rounded text-xl">
                 {{ isBookmarked ? 'favorite' : 'favorite_border' }}
