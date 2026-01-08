@@ -491,13 +491,13 @@ onBeforeUnmount(() => {
               <div class="grid grid-cols-2 gap-3">
                 <input
                   type="date"
-                  class="w-full rounded-xl border border-[var(--stroke)] bg-[var(--surface)] px-3 py-2 text-sm text-[var(--text)]"
+                  class="w-[90%] rounded-xl border border-[var(--stroke)] bg-[var(--surface)] px-3 py-2 text-sm text-[var(--text)]"
                   :disabled="monthMode !== 'range'"
                   v-model="dateStart"
                 />
                 <input
                   type="date"
-                  class="w-full rounded-xl border border-[var(--stroke)] bg-[var(--surface)] px-3 py-2 text-sm text-[var(--text)]"
+                  class="w-[90%] rounded-xl border border-[var(--stroke)] bg-[var(--surface)] px-3 py-2 text-sm text-[var(--text)]"
                   :disabled="monthMode !== 'range'"
                   v-model="dateEnd"
                 />
