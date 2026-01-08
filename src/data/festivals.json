@@ -22,7 +22,8 @@
         "vluarr"
       ],
       "ticket": "https://www.ideartm.com",
-      "infolink": "https://www.ideartm.com"
+      "infolink": "https://www.ideartm.com",
+      "continent": "europe"
     },
     {
       "id": 2,
@@ -40,7 +41,8 @@
         "anyma"
       ],
       "ticket": "https://www.ideartm.com",
-      "infolink": "https://www.ideartm.com"
+      "infolink": "https://www.ideartm.com",
+      "continent": "asia"
     },
     {
       "id": 3,
@@ -58,7 +60,8 @@
         "anyma"
       ],
       "ticket": "https://www.ideartm.com",
-      "infolink": "https://www.ideartm.com"
+      "infolink": "https://www.ideartm.com",
+      "continent": "asia"
     },
     {
       "id": 4,
@@ -76,7 +79,8 @@
         "anyma"
       ],
       "ticket": "https://www.ideartm.com",
-      "infolink": "https://www.ideartm.com"
+      "infolink": "https://www.ideartm.com",
+      "continent": "asia"
     },
     {
       "id": 5,
@@ -94,7 +98,8 @@
         "anyma"
       ],
       "ticket": "https://www.ideartm.com",
-      "infolink": "https://www.ideartm.com"
+      "infolink": "https://www.ideartm.com",
+      "continent": "asia"
     },
     {
       "id": 6,
@@ -112,7 +117,8 @@
         "anyma"
       ],
       "ticket": "https://www.ideartm.com",
-      "infolink": "https://www.ideartm.com"
+      "infolink": "https://www.ideartm.com",
+      "continent": "asia"
     },
     {
       "id": 7,
@@ -130,7 +136,8 @@
         "anyma"
       ],
       "ticket": "https://www.ideartm.com",
-      "infolink": "https://www.ideartm.com"
+      "infolink": "https://www.ideartm.com",
+      "continent": "asia"
     },
     {
       "id": 8,
@@ -148,7 +155,8 @@
         "anyma"
       ],
       "ticket": "https://www.ideartm.com",
-      "infolink": "https://www.ideartm.com"
+      "infolink": "https://www.ideartm.com",
+      "continent": "asia"
     },
     {
       "id": 9,
@@ -166,7 +174,8 @@
         "anyma"
       ],
       "ticket": "https://www.ideartm.com",
-      "infolink": "https://www.ideartm.com"
+      "infolink": "https://www.ideartm.com",
+      "continent": "asia"
     },
     {
       "id": 10,
@@ -184,7 +193,8 @@
         "anyma"
       ],
       "ticket": "https://www.ideartm.com",
-      "infolink": "https://www.ideartm.com"
+      "infolink": "https://www.ideartm.com",
+      "continent": "asia"
     }
   ],
   "2025-11": [
@@ -204,7 +214,8 @@
         "anyma"
       ],
       "ticket": "https://www.ideartm.com",
-      "infolink": "https://www.ideartm.com"
+      "infolink": "https://www.ideartm.com",
+      "continent": "asia"
     },
     {
       "id": 12,
@@ -222,7 +233,8 @@
         "anyma"
       ],
       "ticket": "https://www.ideartm.com",
-      "infolink": "https://www.ideartm.com"
+      "infolink": "https://www.ideartm.com",
+      "continent": "asia"
     }
   ],
   "2026-09": [
@@ -242,7 +254,8 @@
         "anyma"
       ],
       "ticket": "https://www.ideartm.com",
-      "infolink": "https://www.ideartm.com"
+      "infolink": "https://www.ideartm.com",
+      "continent": "asia"
     },
     {
       "id": 14,
@@ -260,7 +273,8 @@
         "anyma"
       ],
       "ticket": "https://www.ideartm.com",
-      "infolink": "https://www.ideartm.com"
+      "infolink": "https://www.ideartm.com",
+      "continent": "asia"
     }
   ],
   "2026-06": [
@@ -280,7 +294,8 @@
         "anyma"
       ],
       "ticket": "https://www.ideartm.com",
-      "infolink": "https://www.ideartm.com"
+      "infolink": "https://www.ideartm.com",
+      "continent": "asia"
     },
     {
       "id": 16,
@@ -298,7 +313,8 @@
         "anyma"
       ],
       "ticket": "https://www.ideartm.com",
-      "infolink": "https://www.ideartm.com"
+      "infolink": "https://www.ideartm.com",
+      "continent": "asia"
     }
   ],
   "2026-10": [
@@ -318,7 +334,8 @@
         "anyma"
       ],
       "ticket": "https://www.ideartm.com",
-      "infolink": "https://www.ideartm.com"
+      "infolink": "https://www.ideartm.com",
+      "continent": "asia"
     },
     {
       "id": 18,
@@ -336,7 +353,8 @@
         "anyma"
       ],
       "ticket": "https://www.ideartm.com",
-      "infolink": "https://www.ideartm.com"
+      "infolink": "https://www.ideartm.com",
+      "continent": "asia"
     }
   ],
   "2026-04": [
@@ -356,7 +374,8 @@
         "anyma"
       ],
       "ticket": "https://www.ideartm.com",
-      "infolink": "https://www.ideartm.com"
+      "infolink": "https://www.ideartm.com",
+      "continent": "asia"
     },
     {
       "id": 20,
@@ -374,7 +393,8 @@
         "anyma"
       ],
       "ticket": "https://www.ideartm.com",
-      "infolink": "https://www.ideartm.com"
+      "infolink": "https://www.ideartm.com",
+      "continent": "asia"
     }
   ],
   "2026-03": [
@@ -394,7 +414,8 @@
         "anyma"
       ],
       "ticket": "https://www.ideartm.com",
-      "infolink": "https://www.ideartm.com"
+      "infolink": "https://www.ideartm.com",
+      "continent": "asia"
     },
     {
       "id": 22,
@@ -412,7 +433,8 @@
         "anyma"
       ],
       "ticket": "https://www.ideartm.com",
-      "infolink": "https://www.ideartm.com"
+      "infolink": "https://www.ideartm.com",
+      "continent": "asia"
     }
   ],
   "2026-02": [
@@ -432,7 +454,8 @@
         "anyma"
       ],
       "ticket": "https://www.ideartm.com",
-      "infolink": "https://www.ideartm.com"
+      "infolink": "https://www.ideartm.com",
+      "continent": "asia"
     },
     {
       "id": 24,
@@ -450,7 +473,8 @@
         "anyma"
       ],
       "ticket": "https://www.ideartm.com",
-      "infolink": "https://www.ideartm.com"
+      "infolink": "https://www.ideartm.com",
+      "continent": "asia"
     }
   ],
   "2026-01": [
@@ -470,7 +494,8 @@
         "anyma"
       ],
       "ticket": "https://www.ideartm.com",
-      "infolink": "https://www.ideartm.com"
+      "infolink": "https://www.ideartm.com",
+      "continent": "asia"
     },
     {
       "id": 26,
@@ -488,7 +513,8 @@
         "anyma"
       ],
       "ticket": "https://www.ideartm.com",
-      "infolink": "https://www.ideartm.com"
+      "infolink": "https://www.ideartm.com",
+      "continent": "asia"
     },
     {
       "id": 27,
@@ -525,7 +551,8 @@
         "seth-hills"
       ],
       "ticket": "https://www.ideartm.com",
-      "infolink": "https://www.ideartm.com"
+      "infolink": "https://www.ideartm.com",
+      "continent": "europe"
     },
     {
       "id": 28,
@@ -543,7 +570,8 @@
         "anyma"
       ],
       "ticket": "https://www.ideartm.com",
-      "infolink": "https://www.ideartm.com"
+      "infolink": "https://www.ideartm.com",
+      "continent": "asia"
     },
     {
       "id": 29,
@@ -561,7 +589,8 @@
         "anyma"
       ],
       "ticket": "https://www.ideartm.com",
-      "infolink": "https://www.ideartm.com"
+      "infolink": "https://www.ideartm.com",
+      "continent": "asia"
     },
     {
       "id": 30,
@@ -579,7 +608,8 @@
         "anyma"
       ],
       "ticket": "https://www.ideartm.com",
-      "infolink": "https://www.ideartm.com"
+      "infolink": "https://www.ideartm.com",
+      "continent": "asia"
     },
     {
       "id": 31,
@@ -597,7 +627,8 @@
         "anyma"
       ],
       "ticket": "https://www.ideartm.com",
-      "infolink": "https://www.ideartm.com"
+      "infolink": "https://www.ideartm.com",
+      "continent": "asia"
     },
     {
       "id": 32,
@@ -615,7 +646,8 @@
         "anyma"
       ],
       "ticket": "https://www.ideartm.com",
-      "infolink": "https://www.ideartm.com"
+      "infolink": "https://www.ideartm.com",
+      "continent": "asia"
     },
     {
       "id": 33,
@@ -633,7 +665,8 @@
         "anyma"
       ],
       "ticket": "https://www.ideartm.com",
-      "infolink": "https://www.ideartm.com"
+      "infolink": "https://www.ideartm.com",
+      "continent": "asia"
     }
   ]
 }

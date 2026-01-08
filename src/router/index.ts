@@ -5,6 +5,7 @@ import FestivalDetail from '@/components/unit/FestivalDetail.vue'
 import ArtistDetail from '@/components/unit/ArtistDetail.vue'
 import Favorit from '@/components/unit/Favorit.vue'
 import Map from '@/components/unit/Map.vue'
+import MapResult from '@/components/unit/MapResult.vue'
 
 const routes = [
   {
@@ -29,10 +30,15 @@ const routes = [
     name: 'favorite',
     component: Favorit,
   },
-    {
+  {
     path: '/map',
     name: 'map',
     component: Map,
+  },
+  {
+    path: '/map/result',
+    name: 'mapresult',
+    component: MapResult,
   },
 ]
 

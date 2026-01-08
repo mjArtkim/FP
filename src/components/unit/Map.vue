@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, onMounted, onBeforeUnmount, ref } from 'vue'
-import LocationPin from '@/components/unit/LocationPin.vue'
+import { useRouter } from 'vue-router'
 import { GENRE_GROUPS } from '@/utils/genreTone'
 import mapSvg from '@/assets/img/map.svg?raw'
 import { useI18n } from '@/i18n'
@@ -134,16 +134,6 @@ const selectContinent = (continent: ContinentKey) => {
   highlightMapColors(colors.length ? colors : null)
 }
 
-const mapLabel = computed(() => {
-  if (isLocationDenied.value) return t('mapExplorer.locationDenied')
-  if (locationContinent.value) {
-    return t('mapExplorer.yourLocationWithContinent', {
-      continent: t(`mapExplorer.continents.${locationContinent.value}`),
-    })
-  }
-  return t('mapExplorer.yourLocation')
-})
-
 const selectedContinentLabel = computed(() =>
   selectedContinents.value
     .map((continent) => t(`mapExplorer.continents.${continent}`))
@@ -173,15 +163,9 @@ const selectedGenres = ref<string[]>([])
 const monthMode = ref<'all' | 'range'>('all')
 const dateStart = ref('')
 const dateEnd = ref('')
+const filterError = ref('')
 
-const pinStyle = computed(() => {
-  const x = ((lng.value + 180) / 360) * 100
-  const y = ((90 - lat.value) / 180) * 100
-  return {
-    left: `${x}%`,
-    top: `${y}%`,
-  }
-})
+const router = useRouter()
 
 const toggleGenre = (name: string) => {
   if (selectedGenres.value.includes(name)) {
@@ -255,6 +239,31 @@ const toggleAccordion = (name: string) => {
   openGenre.value = openGenre.value === name ? null : name
 }
 
+const hasActiveFilters = () => {
+  const hasContinents = selectedContinents.value.length > 0
+  const hasGenres = selectedGenres.value.length > 0
+  const hasDateRange = monthMode.value === 'range' && !!dateStart.value && !!dateEnd.value
+  return hasContinents || hasGenres || hasDateRange
+}
+
+const startSearch = () => {
+  if (!hasActiveFilters()) {
+    filterError.value = t('mapExplorer.filterRequired')
+    return
+  }
+  filterError.value = ''
+  router.push({
+    name: 'mapresult',
+    query: {
+      continents: selectedContinents.value.join(','),
+      genres: selectedGenres.value.join(','),
+      start: dateStart.value || undefined,
+      end: dateEnd.value || undefined,
+      mode: monthMode.value,
+    },
+  })
+}
+
 onMounted(() => {
   if (!('geolocation' in navigator)) return
   navigator.geolocation.getCurrentPosition(
@@ -291,29 +300,23 @@ onBeforeUnmount(() => {
 <template>
   <section class="px-5 pb-20 font-pretend text-[var(--text)]">
     <header class="pt-2 pb-6">
-      <h1 class="text-3xl font-extrabold tracking-tight">MAP EXPLORER</h1>
-      <p class="mt-2 text-sm font-semibold text-[var(--muted)]">Now Your Location</p>
+      <h1 class="text-3xl font-extrabold tracking-tight">{{ t('mapExplorer.title') }}</h1>
+      <!-- <p class="mt-2 text-sm font-semibold text-[var(--muted)]">Now Your Location</p> -->
     </header>
 
     <div class="relative w-full max-w-[720px]">
       <div class="relative w-full aspect-[757/376] overflow-visible">
         <div
           ref="mapRoot"
-          class="absolute inset-0 map-svg"
+          class="absolute inset-0 map-svg "
           v-html="mapSvg"
         ></div>
-
-        <LocationPin
-          class="absolute"
-          :style="pinStyle"
-        />
-        <div
-          class="absolute -translate-x-1/2 -translate-y-full flex items-center gap-2 rounded-full border border-[#f61979] bg-[var(--surface)] px-3 py-1 text-[10px] font-bold text-[#f61979] shadow-[0_2px_6px_rgba(0,0,0,0.15)]"
-          :style="pinStyle"
-        >
-          <span class="material-symbols-rounded text-xs">location_on</span>
-          <span>{{ mapLabel }}</span>
-        </div>
+        <!-- <div class="absolute -translate-x-1/2 -translate-y-full" :style="pinStyle">
+          <div class="relative flex items-center gap-2 rounded-full border border-[#f61979] bg-[var(--surface)] px-3 py-1 text-[10px] font-bold text-[#f61979] shadow-[0_2px_6px_rgba(0,0,0,0.15)]">
+            <div class="absolute -bottom-4  material-symbols-rounded text-xs">location_on</div>
+            <div>{{ mapLabel }}</div>
+          </div>
+        </div> -->
       </div>
       <div class="pt-3 text-xs font-semibold text-[var(--muted)]">
         <span v-if="selectedContinents.length">{{ t('mapExplorer.selected', { continent: selectedContinentLabel }) }}</span>
@@ -355,10 +358,10 @@ onBeforeUnmount(() => {
     </section>
 
     <section class="pt-8">
-      <h2 class="text-base font-semibold">Filter</h2>
+      <h2 class="text-base font-semibold">{{ t('mapExplorer.filterTitle') }}</h2>
 
       <div class="pt-5">
-        <h3 class="text-sm font-semibold pb-3">Explore by Continent</h3>
+        <h3 class="text-sm font-semibold pb-3">{{ t('mapExplorer.exploreContinent') }}</h3>
         <div class="grid grid-cols-2 gap-3">
           <button
             v-for="continent in continents"
@@ -368,7 +371,7 @@ onBeforeUnmount(() => {
             :style="{
               borderColor: selectedContinents.includes(continent.key) ? continent.color : 'var(--muted)',
               color: selectedContinents.includes(continent.key) ? continent.color : 'var(--muted)',
-              backgroundColor: selectedContinents.includes(continent.key) ? `${continent.color}22` : 'transparent',
+              backgroundColor: selectedContinents.includes(continent.key) ? `${continent.color}22` : 'var(--surface)',
             }"
             @click="selectContinent(continent.key)"
           >
@@ -382,13 +385,13 @@ onBeforeUnmount(() => {
             class="text-xs font-semibold text-[var(--muted)] underline underline-offset-4"
             @click="clearMapSelection"
           >
-            Clear selection
+            {{ t('mapExplorer.clearSelection') }}
           </button>
         </div>
       </div>
 
       <div class="pt-8">
-        <h3 class="text-sm font-semibold pb-3">Explore by Genre</h3>
+        <h3 class="text-sm font-semibold pb-3">{{ t('mapExplorer.exploreGenre') }}</h3>
         <div class="rounded-2xl border border-[var(--stroke)] bg-[var(--surface)] p-4 shadow-[0_6px_18px_rgba(0,0,0,0.06)]">
           <button
             type="button"
@@ -403,7 +406,7 @@ onBeforeUnmount(() => {
               >
                 <span class="material-symbols-rounded text-base">check</span>
               </span>
-              <span class="text-sm font-semibold text-[var(--muted)]">ALL</span>
+              <span class="text-sm font-semibold text-[var(--muted)]">{{ t('mapExplorer.allLabel') }}</span>
             </div>
             <span class="material-symbols-rounded text-lg text-[var(--muted)]">
               {{ isAllOpen ? 'expand_less' : 'expand_more' }}
@@ -461,7 +464,7 @@ onBeforeUnmount(() => {
       </div>
 
       <div class="pt-8">
-        <h3 class="text-sm font-semibold pb-3">Explore by Date</h3>
+        <h3 class="text-sm font-semibold pb-3">{{ t('mapExplorer.exploreDate') }}</h3>
         <div class="flex flex-col gap-3">
           <label class="flex items-center gap-3 rounded-2xl border border-[var(--stroke)] bg-[var(--surface)] px-4 py-4 shadow-[0_4px_12px_rgba(0,0,0,0.06)]">
             <input
@@ -471,7 +474,7 @@ onBeforeUnmount(() => {
               class="accent-[#f61979]"
               v-model="monthMode"
             />
-            <span class="text-sm font-semibold text-[var(--muted)]">All Dates</span>
+            <span class="text-sm font-semibold text-[var(--muted)]">{{ t('mapExplorer.allDates') }}</span>
           </label>
           <div class="rounded-2xl border border-[var(--stroke)] bg-[var(--surface)] px-4 py-4 shadow-[0_4px_12px_rgba(0,0,0,0.06)]">
             <label class="flex items-center gap-3">
@@ -482,7 +485,7 @@ onBeforeUnmount(() => {
                 class="accent-[#f61979]"
                 v-model="monthMode"
               />
-              <span class="text-sm font-semibold text-[var(--muted)]">Date Range</span>
+              <span class="text-sm font-semibold text-[var(--muted)]">{{ t('mapExplorer.dateRange') }}</span>
             </label>
             <div class="pt-3">
               <div class="grid grid-cols-2 gap-3">
@@ -508,9 +511,13 @@ onBeforeUnmount(() => {
         <button
           type="button"
           class="w-full rounded-2xl bg-[#f61979] px-4 py-4 text-sm font-semibold text-white shadow-[0_8px_16px_rgba(246,25,121,0.25)]"
+          @click="startSearch"
         >
-          Search
+          {{ t('mapExplorer.search') }}
         </button>
+        <p v-if="filterError" class="pt-3 text-xs font-semibold text-[#f61979]">
+          {{ filterError }}
+        </p>
       </div>
     </section>
   </section>
