@@ -134,16 +134,6 @@ const selectContinent = (continent: ContinentKey) => {
   highlightMapColors(colors.length ? colors : null)
 }
 
-const mapLabel = computed(() => {
-  if (isLocationDenied.value) return t('mapExplorer.locationDenied')
-  if (locationContinent.value) {
-    return t('mapExplorer.yourLocationWithContinent', {
-      continent: t(`mapExplorer.continents.${locationContinent.value}`),
-    })
-  }
-  return t('mapExplorer.yourLocation')
-})
-
 const selectedContinentLabel = computed(() =>
   selectedContinents.value
     .map((continent) => t(`mapExplorer.continents.${continent}`))
@@ -176,15 +166,6 @@ const dateEnd = ref('')
 const filterError = ref('')
 
 const router = useRouter()
-
-const pinStyle = computed(() => {
-  const x = ((lng.value + 180) / 360) * 100
-  const y = ((90 - lat.value) / 180) * 100
-  return {
-    left: `${x}%`,
-    top: `${y}%`,
-  }
-})
 
 const toggleGenre = (name: string) => {
   if (selectedGenres.value.includes(name)) {
