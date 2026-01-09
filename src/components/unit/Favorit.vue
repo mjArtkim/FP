@@ -44,10 +44,7 @@ const favoriteFestivals = computed(() => {
 
 const favoriteArtistFestivals = computed(() => {
   const allFestivals = Object.values(festivalData).flat()
-  if (!favorites.value.length) return []
-  return allFestivals.filter((fest) =>
-    (fest.artistSlugs || []).some((slug) => favorites.value.includes(slug))
-  )
+  return allFestivals.filter((fest) => festivalFavorites.value.includes(fest.id))
 })
 
 const previewArtists = computed(() => favoriteArtists.value.slice(0, 4))
@@ -56,6 +53,7 @@ const previewFestivals = computed(() => favoriteFestivals.value.slice(0, 4))
 const now = new Date()
 const todayMonthKey = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`
 const currentMonth = ref(todayMonthKey)
+const viewMode = ref<'list' | 'calendar'>('calendar')
 
 const getMonthRange = (monthKey: string) => {
   const [yearStr, monthStr] = monthKey.split('-')
@@ -75,6 +73,12 @@ const currentCalendarEvents = computed(() => {
   if (!range) return []
   return favoriteArtistFestivals.value.filter(
     (event) => event.end >= range.start && event.start <= range.end
+  )
+})
+
+const sortedMonthEvents = computed(() => {
+  return [...currentCalendarEvents.value].sort((a, b) =>
+    a.start.localeCompare(b.start)
   )
 })
 </script>
@@ -151,11 +155,71 @@ const currentCalendarEvents = computed(() => {
       </div>
 
       <div class="space-y-4">
-        <div class="flex items-center justify-between">
-          <div class="text-sm font-semibold">Your Festival Date</div>
-          <MonthNavigator v-model="currentMonth" />
+        <div>
+          <div class="text-sm font-semibold pb-5">Your Festival Date</div>
+          <div class="flex items-center gap-3 justify-between">
+            <MonthNavigator v-model="currentMonth" />
+            <div class="flex justify-end h-[32px] shadow-[0_0_3px_var(--shadow-weak)] p-[2px] rounded-[5px]">
+              <div id="favoriteViewToggle" class="relative w-[64px] h-full">
+                <input
+                  type="checkbox"
+                  class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-30"
+                  :checked="viewMode === 'list'"
+                  @change="viewMode = ($event.target as HTMLInputElement).checked ? 'list' : 'calendar'"
+                />
+                <div class="absolute inset-0 z-10 flex justify-between items-center">
+                  <div
+                    class="material-symbols-rounded w-[32px] py-[4px] rounded-[5px] text-sm text-center"
+                    :class="viewMode === 'calendar' ? 'text-transparent' : 'text-[var(--text)]'"
+                  >
+                    calendar_month
+                  </div>
+                  <div
+                    class="material-symbols-rounded w-[32px] py-[4px] rounded-[5px] text-sm text-center"
+                    :class="viewMode === 'list' ? 'text-transparent' : 'text-[var(--text)]'"
+                  >
+                    lists
+                  </div>
+                </div>
+                <div
+                  class="absolute top-[0px] left-[0px] w-[32px] h-[28px] rounded-[4px] flex items-center justify-center bg-[#F61979] transition-all duration-300 ease-out z-20"
+                  :class="viewMode === 'calendar' ? 'text-white left-[0px]' : 'text-white left-[32px]'"
+                >
+                  <div class="material-symbols-rounded w-[32px] py-[4px] rounded-[5px] text-sm text-center">
+                    {{ viewMode === 'calendar' ? 'calendar_month' : 'lists' }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <CalendarGrid :month="currentMonth" :events="currentCalendarEvents" />
+        <div v-if="viewMode === 'list'" class="grid gap-3">
+          <router-link
+            v-for="event in sortedMonthEvents"
+            :key="event.id"
+            :to="{ name: 'festivaldetail', params: { id: event.id } }"
+            class="flex gap-3 p-3 rounded-lg bg-[var(--bg)] shadow-[0_0_6px_var(--shadow-weak)] pc:hover:bg-neonpink/10 transition-colors"
+          >
+            <img
+              v-if="event.image"
+              :src="event.image"
+              :alt="event.title"
+              class="w-20 h-20 object-cover rounded-md"
+            />
+            <div v-else class="w-20 h-20 rounded-md bg-black/10 flex items-center justify-center text-sm font-semibold uppercase">
+              {{ event.title?.[0] || '?' }}
+            </div>
+            <div class="flex-1">
+              <div class="text-base font-semibold">{{ event.title }}</div>
+              <div class="text-xs text-gray-500">{{ event.city }} / {{ event.contry }}</div>
+              <div class="text-xs text-gray-500">{{ event.start }} ~ {{ event.end }}</div>
+            </div>
+          </router-link>
+          <div v-if="!sortedMonthEvents.length" class="text-xs text-gray-500">
+            {{ t('favorites.noFavoriteFestivals') }}
+          </div>
+        </div>
+        <CalendarGrid v-else :month="currentMonth" :events="currentCalendarEvents" />
       </div>
     </div>
   </div>
