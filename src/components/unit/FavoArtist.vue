@@ -13,6 +13,7 @@ type Artist = {
   slug: string
   identity: {
     name: string
+    country?: string
   }
   spotify?: {
     image?: string
@@ -82,52 +83,60 @@ const barcodeSrc = computed(() => (isDarkTheme.value ? blackBarcode : whiteBarco
         <div class="text-lg font-black">ARTIST</div>
       </div>
 
-      <div v-if="favoriteArtists.length" class="space-y-3">
+      <div v-if="favoriteArtists.length" class="space-y-4">
         <router-link
           v-for="(artist, index) in favoriteArtists"
           :key="artist.slug"
           :to="{ name: 'artistdetail', params: { slug: artist.slug } }"
-          class="relative overflow-hidden px-4 py-3 flex items-center gap-4 transition-all duration-300 pc:hover:translate-x-1"
+          class="relative overflow-hidden  grid grid-cols-[5%_75%_25%] gap-4 transition-all duration-300 pc:hover:translate-x-1 h-[60px]"
           :class="
             index % 2 === 0
-              ? 'bg-neonpink text-white'
-              : 'bg-pulseblue text-white border border-pulseblue/40'
+              ? 'bg-neonpink'
+              : 'bg-pulseblue '
           "
         >
-          <div
-            class="absolute left-0 top-0 h-full w-2"
-            :class="index % 2 === 0 ? 'bg-white/30' : 'bg-pulseblue'"
-          />
-          <img
-            :src="ticketSrc"
-            alt=""
-            class="w-10 h-10 opacity-90"
-          />
-          <div class="flex items-center gap-3">
-            <div class="w-9 h-9 rounded-md overflow-hidden bg-black/20">
+          <div class="h-full ml-3 w-4 flex items-center justify-center bg-[var(--bg)]">
+            <span
+              class="text-[9px] font-bold tracking-[0.1em] rotate-90 text-[var(--subline)]"
+            >
+              {{ artist.identity.country || '--' }}
+            </span>
+          </div>
+          <div class="relative flex items-center gap-3 text-white">
+            <div class="w-9 h-9 rounded-md overflow-hidden bg-black/20 ">
               <img
                 v-if="artist.spotify?.image"
                 :src="artist.spotify.image"
                 :alt="artist.identity.name"
                 class="w-full h-full object-cover"
               />
-              <div v-else class="w-full h-full flex items-center justify-center text-xs font-semibold uppercase">
+              <div v-else class="w-full h-full flex items-center justify-center text-xs font-semibold uppercases ">
                 {{ artist.identity.name?.[0] || '?' }}
               </div>
             </div>
             <div>
               <div class="text-sm font-bold uppercase">{{ artist.identity.name }}</div>
               <div class="text-[10px] opacity-80">{{ getArtistEventCount(artist.slug) }} EVENTS</div>
+            <div class="absolute right-32 bottom-0">
+              <img
+                :src="barcodeSrc"
+                alt=""
+                class="h-full"
+              />
+            </div>
             </div>
           </div>
-          <div class="ml-auto flex items-center gap-3">
-            <img
-              :src="barcodeSrc"
-              alt=""
-              class="h-3 opacity-90"
-            />
-            <div class="flex flex-col items-center">
-              <div class="text-[10px] font-semibold">Detail</div>
+          <div class="relative flex items-center">
+            <div class="absolute -left-[90px]">
+              <div class="absolute -bottom-2 -left-8 font-black art-line text-transparent">ARTIST</div>
+              <img
+                :src="ticketSrc"
+                alt=""
+                class="h-[60px]"
+              />
+            </div>
+            <div class="h-[60px] flex flex-col items-center justify-center bg-[var(--bg)] text-[var(--muted)] px-1">
+              <div class="text-[8px] font-semibold">Detail</div>
               <div class="material-symbols-rounded text-sm">arrow_right_alt</div>
             </div>
           </div>
@@ -139,3 +148,13 @@ const barcodeSrc = computed(() => (isDarkTheme.value ? blackBarcode : whiteBarco
     </div>
   </div>
 </template>
+<style>
+  .art-line {
+    -webkit-text-stroke-width:1px;
+    -webkit-text-stroke-color: white;
+  }
+
+  :root[data-theme="dark"] .art-line {
+    -webkit-text-stroke-color: black;
+  }
+</style>
