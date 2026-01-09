@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { favorites, loadFavorites } from '@/utils/favorites'
 import artists from '@/data/artists.json'
 import festivals from '@/data/festivals.json'
@@ -28,6 +28,27 @@ const artistList = artists as Artist[]
 const festivalData = festivals as Record<string, FestivalItem[]>
 loadFavorites()
 const { t } = useI18n()
+const isDarkTheme = ref(false)
+let themeObserver: MutationObserver | null = null
+
+const syncTheme = () => {
+  if (typeof document === 'undefined') return
+  isDarkTheme.value = document.documentElement.dataset.theme === 'dark'
+}
+
+onMounted(() => {
+  syncTheme()
+  if (typeof document === 'undefined') return
+  themeObserver = new MutationObserver(syncTheme)
+  themeObserver.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ['data-theme'],
+  })
+})
+
+onBeforeUnmount(() => {
+  if (themeObserver) themeObserver.disconnect()
+})
 
 const favoriteArtists = computed(() =>
   artistList.filter((artist) => favorites.value.includes(artist.slug))
@@ -44,6 +65,8 @@ const artistEventCounts = computed<Record<string, number>>(() => {
 })
 
 const getArtistEventCount = (slug: string) => artistEventCounts.value[slug] || 0
+const ticketSrc = computed(() => (isDarkTheme.value ? blackTicket : whiteTicket))
+const barcodeSrc = computed(() => (isDarkTheme.value ? blackBarcode : whiteBarcode))
 </script>
 
 <template>
@@ -64,11 +87,11 @@ const getArtistEventCount = (slug: string) => artistEventCounts.value[slug] || 0
           v-for="(artist, index) in favoriteArtists"
           :key="artist.slug"
           :to="{ name: 'artistdetail', params: { slug: artist.slug } }"
-          class="relative overflow-hidden rounded-xl px-4 py-3 flex items-center gap-4 transition-all duration-300 pc:hover:translate-x-1"
+          class="relative overflow-hidden px-4 py-3 flex items-center gap-4 transition-all duration-300 pc:hover:translate-x-1"
           :class="
             index % 2 === 0
               ? 'bg-neonpink text-white'
-              : 'bg-white text-black border border-pulseblue/40'
+              : 'bg-pulseblue text-white border border-pulseblue/40'
           "
         >
           <div
@@ -76,12 +99,12 @@ const getArtistEventCount = (slug: string) => artistEventCounts.value[slug] || 0
             :class="index % 2 === 0 ? 'bg-white/30' : 'bg-pulseblue'"
           />
           <img
-            :src="index % 2 === 0 ? whiteTicket : blackTicket"
+            :src="ticketSrc"
             alt=""
             class="w-10 h-10 opacity-90"
           />
           <div class="flex items-center gap-3">
-            <div class="w-9 h-9 rounded-full overflow-hidden bg-black/20">
+            <div class="w-9 h-9 rounded-md overflow-hidden bg-black/20">
               <img
                 v-if="artist.spotify?.image"
                 :src="artist.spotify.image"
@@ -99,12 +122,14 @@ const getArtistEventCount = (slug: string) => artistEventCounts.value[slug] || 0
           </div>
           <div class="ml-auto flex items-center gap-3">
             <img
-              :src="index % 2 === 0 ? whiteBarcode : blackBarcode"
+              :src="barcodeSrc"
               alt=""
               class="h-3 opacity-90"
             />
-            <span class="text-[10px] font-semibold">Detail</span>
-            <span class="material-symbols-rounded text-sm">arrow_right_alt</span>
+            <div class="flex flex-col items-center">
+              <div class="text-[10px] font-semibold">Detail</div>
+              <div class="material-symbols-rounded text-sm">arrow_right_alt</div>
+            </div>
           </div>
         </router-link>
       </div>
