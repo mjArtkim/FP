@@ -15,7 +15,7 @@
     </aside>
     <div
       id="app-scroll"
-      class="flex-1 overflow-y-auto pb-[50px] relative bg-[var(--bg)] text-[var(--text)] pc:pb-0"
+      class="flex-1 overflow-y-auto pb-[60px] relative bg-[var(--bg)] text-[var(--text)] pc:pb-0"
       :class="{ 'overflow-hidden': $route?.name === 'mapresult', 'h-screen': $route?.name !== 'mapresult' }"
     >
       <div class="block pc:hidden">

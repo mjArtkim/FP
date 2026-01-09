@@ -4,6 +4,8 @@ import FirstView from '@/components/FirstView.vue'
 import FestivalDetail from '@/components/unit/FestivalDetail.vue'
 import ArtistDetail from '@/components/unit/ArtistDetail.vue'
 import Favorit from '@/components/unit/Favorit.vue'
+import FavoArtist from '@/components/unit/FavoArtist.vue'
+import FavoFestival from '@/components/unit/FavoFestival.vue'
 import Map from '@/components/unit/Map.vue'
 import MapResult from '@/components/unit/MapResult.vue'
 
@@ -29,6 +31,16 @@ const routes = [
     path: '/favorite',
     name: 'favorite',
     component: Favorit,
+  },
+  {
+    path: '/favorite/artists',
+    name: 'favorite-artists',
+    component: FavoArtist,
+  },
+  {
+    path: '/favorite/festivals',
+    name: 'favorite-festivals',
+    component: FavoFestival,
   },
   {
     path: '/map',
