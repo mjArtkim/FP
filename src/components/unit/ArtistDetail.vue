@@ -6,6 +6,7 @@ import festivals from '@/data/festivals.json'
 import { favorites, loadFavorites, toggleFavorite } from '@/utils/favorites'
 import { getGenreToneClass } from '@/utils/genreTone'
 import { useI18n } from '@/i18n'
+import { authUser } from '@/utils/authState'
 
 type Artist = {
   slug: string
@@ -86,7 +87,7 @@ const slug = computed(() => String(props.slug ?? route.params.slug ?? ''))
 
 const artistList = artists as Artist[]
 const artist = computed(() => artistList.find((item) => item.slug === slug.value))
-const isBookmarked = computed(() => favorites.value.includes(slug.value))
+const isBookmarked = computed(() => !!authUser.value && favorites.value.includes(slug.value))
 
 const displayAliases = computed(() => artist.value?.identity.aliases || [])
 const displayGenres = computed(() => artist.value?.spotify?.genres || [])
@@ -185,7 +186,10 @@ loadFavorites()
 
 const onToggleFavorite = () => {
   if (!slug.value) return
-  toggleFavorite(slug.value)
+  const updated = toggleFavorite(slug.value)
+  if (!updated) {
+    router.push({ name: 'login', query: { redirect: route.fullPath } })
+  }
 }
 
 const shareFeedback = ref('')
