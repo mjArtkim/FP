@@ -184,6 +184,10 @@ const messages = {
       artistCount: "You've liked {count} artists",
       festivalCount: "You've bookmarked {count} festivals",
       myFestivalDate: 'Your Festival Date',
+      favoriteArtists: 'Favorite Artists',
+      favoriteFestivals: 'Favorite Festivals',
+      noFavoriteArtists: 'No bookmarked artists yet.',
+      noFavoriteFestivals: 'No bookmarked festivals yet.',
     },
     firstView: {
       todayFestival: 'Today Festival',
@@ -253,12 +257,6 @@ const messages = {
       notFound: 'Artist not found.',
       genreTitle: 'Genre: {name}',
       noGenreMatches: 'No other artists in this genre.',
-    },
-    favorites: {
-      favoriteArtists: 'Favorite Artists',
-      favoriteFestivals: 'Favorite Festivals',
-      noFavoriteArtists: 'No bookmarked artists yet.',
-      noFavoriteFestivals: 'No bookmarked festivals yet.',
     },
     mapExplorer: {
       title: 'MAP EXPLORER',
@@ -472,6 +470,10 @@ const messages = {
       artistCount: '좋아요한 아티스트 {count}명',
       festivalCount: '북마크한 페스티벌 {count}개',
       myFestivalDate: '내 페스티벌 일정',
+      favoriteArtists: '즐겨찾는 아티스트',
+      favoriteFestivals: '즐겨찾는 페스티벌',
+      noFavoriteArtists: '아직 북마크한 아티스트가 없습니다.',
+      noFavoriteFestivals: '아직 북마크한 페스티벌이 없습니다.',
     },
     firstView: {
       todayFestival: '오늘의 페스티벌',
@@ -541,12 +543,6 @@ const messages = {
       notFound: '선택한 아티스트 정보를 찾을 수 없습니다.',
       genreTitle: '장르: {name}',
       noGenreMatches: '같은 장르의 다른 아티스트가 없습니다.',
-    },
-    favorites: {
-      favoriteArtists: '즐겨찾는 아티스트',
-      favoriteFestivals: '즐겨찾는 페스티벌',
-      noFavoriteArtists: '아직 북마크한 아티스트가 없습니다.',
-      noFavoriteFestivals: '아직 북마크한 페스티벌이 없습니다.',
     },
     mapExplorer: {
       title: 'MAP EXPLORER',
