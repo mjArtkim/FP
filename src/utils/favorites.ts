@@ -1,4 +1,5 @@
 import { ref } from 'vue'
+import { authUser } from '@/utils/authState'
 
 const ARTIST_KEY = 'favoriteArtists'
 const FESTIVAL_KEY = 'favoriteFestivals'
@@ -52,7 +53,8 @@ const saveFestivalFavorites = () => {
 
 const toggleFavorite = (slug: string) => {
   loadFavorites()
-  if (!slug) return
+  if (!slug) return false
+  if (!authUser.value) return false
   const set = new Set(favorites.value)
   if (set.has(slug)) {
     set.delete(slug)
@@ -61,6 +63,7 @@ const toggleFavorite = (slug: string) => {
   }
   favorites.value = Array.from(set)
   saveArtistFavorites()
+  return true
 }
 
 const removeFavorite = (slug: string) => {
@@ -76,7 +79,8 @@ const isFavorite = (slug: string) => {
 
 const toggleFestivalFavorite = (id: number) => {
   loadFavorites()
-  if (!id) return
+  if (!id) return false
+  if (!authUser.value) return false
   const set = new Set(festivalFavorites.value)
   if (set.has(id)) {
     set.delete(id)
@@ -85,6 +89,7 @@ const toggleFestivalFavorite = (id: number) => {
   }
   festivalFavorites.value = Array.from(set)
   saveFestivalFavorites()
+  return true
 }
 
 const removeFestivalFavorite = (id: number) => {

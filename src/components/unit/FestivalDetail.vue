@@ -5,6 +5,7 @@ import festivals from '@/data/festivals.json'
 import artists from '@/data/artists.json'
 import { isFestivalFavorite, loadFavorites, toggleFestivalFavorite } from '@/utils/favorites'
 import { useI18n } from '@/i18n'
+import { authUser } from '@/utils/authState'
 
 type FestivalItem = {
   id: number
@@ -53,7 +54,9 @@ const festivalId = computed(() => Number(props.id))
 const festival = computed<FestivalItem | undefined>(() =>
   allFestivals.value.find((item) => item.id === festivalId.value)
 )
-const isBookmarked = computed(() => !!festival.value && isFestivalFavorite(festival.value.id))
+const isBookmarked = computed(
+  () => !!authUser.value && !!festival.value && isFestivalFavorite(festival.value.id)
+)
 
 const dateRange = computed(() => {
   if (!festival.value) return ''
@@ -118,7 +121,10 @@ const shareUrl = computed(() => {
 
 const onToggleFavorite = () => {
   if (!festival.value) return
-  toggleFestivalFavorite(festival.value.id)
+  const updated = toggleFestivalFavorite(festival.value.id)
+  if (!updated) {
+    router.push({ name: 'login', query: { redirect: router.currentRoute.value.fullPath } })
+  }
 }
 
 const onShareLink = async () => {

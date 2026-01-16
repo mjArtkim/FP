@@ -66,11 +66,11 @@ watch(
           <div class="material-symbols-rounded text-2xl pr-5">star</div>
           <div v-if="isSidebarOpen" class="text-lg font-semibold">{{ t('nav.favorite') }}</div>
         </router-link>
-        <router-link to="#" class="flex items-center cursor-pointer pc:hover:text-[var(--accent)]">
+        <router-link to="/insights" class="flex items-center cursor-pointer pc:hover:text-[var(--accent)]">
           <div class="material-symbols-rounded text-2xl pr-5">insert_chart</div>
           <div v-if="isSidebarOpen" class="text-lg font-semibold">{{ t('nav.insights') }}</div>
         </router-link>
-        <router-link to="#" class="flex items-center cursor-pointer pc:hover:text-[var(--accent)]">
+        <router-link to="/mypage" class="flex items-center cursor-pointer pc:hover:text-[var(--accent)]">
           <div class="material-symbols-rounded text-2xl pr-5">account_box</div>
           <div v-if="isSidebarOpen" class="text-lg font-semibold">{{ t('nav.mypage') }}</div>
         </router-link>

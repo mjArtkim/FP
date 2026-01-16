@@ -118,11 +118,11 @@ const currentLogo = computed(() => (themeMode.value === 'dark' ? topLogow : topL
             <span class="material-symbols-rounded text-xl">star</span>
             <span>{{ t('nav.favorite') }}</span>
           </router-link>
-          <router-link to="#" class="flex flex-col items-center gap-1 pc:hover:text-[var(--accent)]">
+          <router-link to="/insights" class="flex flex-col items-center gap-1 pc:hover:text-[var(--accent)]">
             <span class="material-symbols-rounded text-xl">insert_chart</span>
             <span>{{ t('nav.insights') }}</span>
           </router-link>
-          <router-link to="#" class="flex flex-col items-center gap-1 pc:hover:text-[var(--accent)]">
+          <router-link to="/mypage" class="flex flex-col items-center gap-1 pc:hover:text-[var(--accent)]">
             <span class="material-symbols-rounded text-xl">account_box</span>
             <span>{{ t('nav.mypage') }}</span>
           </router-link>
