@@ -71,8 +71,10 @@ const getInitials = (name: string) => {
     .split(' ')
     .filter(Boolean)
   if (!words.length) return '??'
-  if (words.length === 1) return words[0].slice(0, 2).toUpperCase()
-  return `${words[0][0]}${words[1][0]}`.toUpperCase()
+  if (words.length === 1) return (words[0] ?? '').slice(0, 2).toUpperCase()
+  const first = words[0] ?? ''
+  const second = words[1] ?? ''
+  return `${first[0] ?? ''}${second[0] ?? ''}`.toUpperCase()
 }
 
 const slugToName = (slug: string) =>
@@ -166,7 +168,7 @@ const continentSummary = computed(() => {
     name: toTitle(name),
     count,
     percent: total ? (count / total) * 100 : 0,
-    color: chartPalette[index % chartPalette.length],
+    color: chartPalette[index % chartPalette.length] ?? '#94a3b8',
   }))
   const used = segments.reduce((sum, item) => sum + item.count, 0)
   if (total > used) {
@@ -181,7 +183,7 @@ const continentSummary = computed(() => {
     name: toTitle(name),
     count,
     percent: total ? (count / total) * 100 : 0,
-    color: chartPalette[index % chartPalette.length],
+    color: chartPalette[index % chartPalette.length] ?? '#94a3b8',
   }))
   return {
     segments,
