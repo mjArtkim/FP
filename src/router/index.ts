@@ -12,6 +12,7 @@ import Insights from '@/components/unit/Insights.vue'
 import Mypage from '@/components/unit/MyPage.vue'
 import Login from '@/components/unit/Login.vue'
 import Signup from '@/components/unit/Signup.vue'
+import NotFound from '@/components/unit/NotFound.vue'
 import { getCurrentUser } from '@/utils/auth'
 import { resolveUserRole } from '@/utils/roles'
 
@@ -84,6 +85,11 @@ const routes = [
     name: 'signup',
     component: Signup,
     meta: { guestOnly: true },
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'notfound',
+    component: NotFound,
   },
 ]
 
