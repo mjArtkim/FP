@@ -189,6 +189,12 @@ const messages = {
       noFavoriteArtists: 'No bookmarked artists yet.',
       noFavoriteFestivals: 'No bookmarked festivals yet.',
     },
+    notFound: {
+      code: '404',
+      title: 'Page not found',
+      subtitle: 'The page you are looking for does not exist.',
+      goHome: 'Go to home',
+    },
     firstView: {
       todayFestival: 'Today Festival',
       emptyToday: 'Let’s focus on work today 💪',
@@ -474,6 +480,12 @@ const messages = {
       favoriteFestivals: '즐겨찾는 페스티벌',
       noFavoriteArtists: '아직 북마크한 아티스트가 없습니다.',
       noFavoriteFestivals: '아직 북마크한 페스티벌이 없습니다.',
+    },
+    notFound: {
+      code: '404',
+      title: '페이지를 찾을 수 없어요',
+      subtitle: '요청하신 페이지가 존재하지 않습니다.',
+      goHome: '홈으로 이동',
     },
     firstView: {
       todayFestival: '오늘의 페스티벌',
