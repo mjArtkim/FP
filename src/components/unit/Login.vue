@@ -33,6 +33,7 @@ const handleSubmit = async () => {
     isSubmitting.value = false
   }
 }
+
 </script>
 
 <template>
@@ -82,6 +83,11 @@ const handleSubmit = async () => {
       <p class="text-sm text-[var(--muted)]">
         {{ t('auth.login.newHere') }}
         <router-link to="/signup" class="font-semibold text-[var(--accent)]">{{ t('auth.login.createAccount') }}</router-link>
+      </p>
+      <p class="text-sm text-[var(--muted)]">
+        <router-link to="/forgot-password" class="font-semibold text-[var(--accent)]">
+          {{ t('auth.reset.link') }}
+        </router-link>
       </p>
     </div>
   </section>

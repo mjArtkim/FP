@@ -12,6 +12,7 @@ import Insights from '@/components/unit/Insights.vue'
 import Mypage from '@/components/unit/MyPage.vue'
 import Login from '@/components/unit/Login.vue'
 import Signup from '@/components/unit/Signup.vue'
+import ForgotPassword from '@/components/unit/ForgotPassword.vue'
 import NotFound from '@/components/unit/NotFound.vue'
 import { getCurrentUser } from '@/utils/auth'
 import { resolveUserRole } from '@/utils/roles'
@@ -84,6 +85,12 @@ const routes = [
     path: '/signup',
     name: 'signup',
     component: Signup,
+    meta: { guestOnly: true },
+  },
+  {
+    path: '/forgot-password',
+    name: 'forgot-password',
+    component: ForgotPassword,
     meta: { guestOnly: true },
   },
   {
