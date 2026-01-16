@@ -2,6 +2,7 @@ import {
   createUserWithEmailAndPassword,
   deleteUser,
   onAuthStateChanged,
+  sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signOut,
   updateEmail,
@@ -31,6 +32,10 @@ export const deleteCurrentUser = async () => {
 export const updateCurrentEmail = async (email: string) => {
   if (!auth.currentUser) return
   await updateEmail(auth.currentUser, email)
+}
+
+export const sendResetEmail = async (email: string) => {
+  await sendPasswordResetEmail(auth, email)
 }
 
 export const getCurrentUser = () =>
