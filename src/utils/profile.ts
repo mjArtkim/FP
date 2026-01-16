@@ -4,6 +4,7 @@ import { decryptField, encryptField, type EncryptedField } from '@/utils/crypto'
 
 type ProfileDoc = {
   fullName: string
+  city: string
   country: string
   role?: 'user' | 'admin'
   emailEncrypted: EncryptedField | null
@@ -18,6 +19,7 @@ export type ProfileData = {
   email: string
   phone: string
   dob: string
+  city: string
   country: string
   role?: 'user' | 'admin'
 }
@@ -25,6 +27,7 @@ export type ProfileData = {
 export const createProfile = async (uid: string, data: ProfileData) => {
   const payload: ProfileDoc = {
     fullName: data.fullName,
+    city: data.city,
     country: data.country,
     role: data.role ?? 'user',
     emailEncrypted: await encryptField(uid, data.email),
@@ -41,6 +44,7 @@ export const updateProfile = async (uid: string, data: ProfileData) => {
     doc(db, 'profiles', uid),
     {
       fullName: data.fullName,
+      city: data.city,
       country: data.country,
       emailEncrypted: await encryptField(uid, data.email),
       phoneEncrypted: await encryptField(uid, data.phone),
@@ -62,6 +66,7 @@ export const getProfile = async (uid: string, fallbackEmail = '') => {
   const dob = await decryptField(uid, data.dobEncrypted)
   return {
     fullName: data.fullName ?? '',
+    city: data.city ?? '',
     country: data.country ?? '',
     role: data.role === 'admin' ? 'admin' : 'user',
     email,

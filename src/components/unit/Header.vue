@@ -6,8 +6,11 @@ import { useRoute } from 'vue-router'
 import LanguageToggle from '@/components/unit/LanguageToggle.vue'
 import NeonSwitch from '@/components/unit/NeonSwitch.vue'
 import { useI18n } from '@/i18n'
+import { getCurrentUser } from '@/utils/auth'
+import { getProfile } from '@/utils/profile'
 
-const locations = ref('SEOUL.S.KOREA')
+const profileCity = ref('')
+const profileCountry = ref('')
 const today = new Date()
 const formattedDate = `${today.getFullYear()}.${String(today.getMonth() + 1).padStart(2, '0')}.${String(today.getDate()).padStart(2, '0')}`
 const DateText = ref(formattedDate)
@@ -38,6 +41,7 @@ onMounted(() => {
   syncTheme()
   observer = new MutationObserver(syncTheme)
   observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] })
+  void loadProfileLocation()
 })
 
 onBeforeUnmount(() => {
@@ -64,6 +68,27 @@ const toggleGnb = () => {
 }
 
 const currentLogo = computed(() => (themeMode.value === 'dark' ? topLogow : topLogo))
+const locationText = computed(() => {
+  const city = profileCity.value.trim()
+  const country = profileCountry.value.trim()
+  if (city && country) return `${city}, ${country}`
+  if (city) return city
+  if (country) return country
+  return t('common.locationUnset')
+})
+
+const loadProfileLocation = async () => {
+  try {
+    const user = await getCurrentUser()
+    if (!user) return
+    const profile = await getProfile(user.uid, user.email ?? '')
+    profileCity.value = profile?.city ?? ''
+    profileCountry.value = profile?.country ?? ''
+  } catch {
+    profileCity.value = ''
+    profileCountry.value = ''
+  }
+}
 </script>
 <template>
   <div class="p-5 relative z-[9999]">
@@ -72,7 +97,7 @@ const currentLogo = computed(() => (themeMode.value === 'dark' ? topLogow : topL
       <ul class="flex items-center gap-2">
         <li class="flex items-center px-1">
           <div class="material-symbols-rounded text-sm px-2">location_on</div>
-          <div class="font-gugi text-xs">{{ locations }}</div>
+          <div class="font-gugi text-xs">{{ locationText }}</div>
         </li>
         <li class="flex items-center px-1">
           <div class="material-symbols-rounded text-sm px-2">date_range</div>
@@ -136,7 +161,7 @@ const currentLogo = computed(() => (themeMode.value === 'dark' ? topLogow : topL
             <span class="material-symbols-rounded text-base">
               {{ isDarkMode ? 'dark_mode' : 'light_mode' }}
             </span>
-            <span>{{ isDarkMode ? 'Dark' : 'Light' }}</span>
+            <span>{{ isDarkMode ? t('theme.dark') : t('theme.light') }}</span>
           </div>
           <NeonSwitch v-model="isDarkMode" />
         </div>

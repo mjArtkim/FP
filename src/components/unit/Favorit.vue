@@ -86,7 +86,7 @@ const sortedMonthEvents = computed(() => {
   <div class="px-5 py-8 pc:px-14 pc:py-10">
     <div class="max-w-5xl mx-auto space-y-10">
       <div class="space-y-4">
-        <div class="text-xs tracking-[0.25em] font-black text-[var(--muted)]">MY FAVORITE</div>
+        <div class="text-xs tracking-[0.25em] font-black text-[var(--muted)]">{{ t('favorites.myFavoriteTitle') }}</div>
         <div class="grid gap-4">
           <router-link
             to="/favorite/artists"
@@ -109,7 +109,7 @@ const sortedMonthEvents = computed(() => {
                 </div>
               </div>
               <div class="text-sm font-semibold">
-                You've liked {{ favoriteArtists.length }} artists
+                {{ t('favorites.artistCount', { count: favoriteArtists.length }) }}
               </div>
               <div class="ml-auto material-symbols-rounded text-lg text-[var(--muted)]">
                 arrow_right_alt
@@ -141,7 +141,7 @@ const sortedMonthEvents = computed(() => {
                 </div>
               </div>
               <div class="text-sm font-semibold">
-                You've bookmarked {{ favoriteFestivals.length }} festivals
+                {{ t('favorites.festivalCount', { count: favoriteFestivals.length }) }}
               </div>
               <div class="ml-auto material-symbols-rounded text-lg text-[var(--muted)]">
                 arrow_right_alt
@@ -156,7 +156,7 @@ const sortedMonthEvents = computed(() => {
 
       <div class="space-y-4">
         <div>
-          <div class="text-sm font-semibold pb-5">Your Festival Date</div>
+          <div class="text-sm font-semibold pb-5">{{ t('favorites.myFestivalDate') }}</div>
           <div class="flex items-center gap-3 justify-between">
             <MonthNavigator v-model="currentMonth" />
             <div class="flex justify-end h-[32px] shadow-[0_0_3px_var(--shadow-weak)] p-[2px] rounded-[5px]">

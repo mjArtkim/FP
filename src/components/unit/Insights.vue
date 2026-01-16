@@ -2,6 +2,7 @@
 import { computed, ref } from 'vue'
 import festivals from '@/data/festivals.json'
 import artists from '@/data/artists.json'
+import { useI18n } from '@/i18n'
 
 type FestivalItem = {
   id: number
@@ -35,11 +36,16 @@ type ChartSegment = {
   color: string
 }
 
+const { t, currentLocale } = useI18n()
+
 const festivalData = festivals as Record<string, FestivalItem[]>
 const artistData = artists as ArtistItem[]
 const allFestivals = Object.values(festivalData).flat()
 
-const totalDisplay = new Intl.NumberFormat('en-US').format(allFestivals.length)
+const numberLocale = computed(() => (currentLocale.value === 'ko' ? 'ko-KR' : 'en-US'))
+const totalDisplay = computed(() =>
+  new Intl.NumberFormat(numberLocale.value).format(allFestivals.length)
+)
 
 const countryPalette = ['#3b82f6', '#ef4444', '#1f2937']
 const artistPalette = [
@@ -63,7 +69,7 @@ const toTitle = (value = '') =>
     .split(' ')
     .filter(Boolean)
     .map((word) => word[0]?.toUpperCase() + word.slice(1))
-    .join(' ') || 'Unknown'
+    .join(' ') || t('common.unknown')
 
 const getInitials = (name: string) => {
   const words = name
@@ -102,7 +108,7 @@ const markImageFailed = (name: string) => {
 const topCountries = computed(() => {
   const counts = new Map<string, number>()
   allFestivals.forEach((festival) => {
-    const name = festival.contry?.trim() || 'Unknown'
+    const name = festival.contry?.trim() || t('common.unknown')
     counts.set(name, (counts.get(name) || 0) + 1)
   })
   return [...counts.entries()]
@@ -159,7 +165,7 @@ const topArtists = computed(() => {
 const continentSummary = computed(() => {
   const counts = new Map<string, number>()
   allFestivals.forEach((festival) => {
-    const name = festival.continent?.trim() || 'Unknown'
+    const name = festival.continent?.trim() || t('common.unknown')
     counts.set(name, (counts.get(name) || 0) + 1)
   })
   const sorted = [...counts.entries()].sort((a, b) => b[1] - a[1])
@@ -173,7 +179,7 @@ const continentSummary = computed(() => {
   const used = segments.reduce((sum, item) => sum + item.count, 0)
   if (total > used) {
     segments.push({
-      name: 'Other',
+      name: t('common.other'),
       count: total - used,
       percent: total ? ((total - used) / total) * 100 : 0,
       color: '#cbd5f5',
@@ -213,7 +219,7 @@ const chartGradient = computed(() => {
           <span class="material-symbols-rounded text-[22px]">equalizer</span>
         </div>
         <div class="text-xs tracking-wide text-[var(--muted)]">
-          Total Festivals Held This Year
+          {{ t('insights.yearTotal') }}
         </div>
         <div class="text-5xl font-extrabold tracking-tight text-[var(--text)]">
           {{ totalDisplay }}
@@ -222,7 +228,7 @@ const chartGradient = computed(() => {
 
       <div class="space-y-4">
         <div class="text-xs tracking-wide text-[var(--muted)]">
-          Top 3 Countries with the Most Festivals
+          {{ t('insights.topCountries') }}
         </div>
         <ol class="space-y-4 list-decimal list-inside text-[var(--text)]">
           <li
@@ -236,7 +242,7 @@ const chartGradient = computed(() => {
             <div class="text-sm font-semibold text-[var(--muted)]">
               <span class="inline-flex items-center gap-2">
                 <span class="w-2 h-2 rounded-full" :style="{ backgroundColor: country.color }"></span>
-                {{ country.count }} festivals
+                {{ t('insights.festivalCount', { count: country.count }) }}
               </span>
             </div>
           </li>
@@ -245,7 +251,7 @@ const chartGradient = computed(() => {
 
       <div class="space-y-4">
         <div class="text-xs tracking-wide text-[var(--muted)]">
-          Top 4 Most Frequently Appearing Artists
+          {{ t('insights.topArtists') }}
         </div>
         <div class="grid grid-cols-2 gap-4">
           <div
@@ -287,7 +293,7 @@ const chartGradient = computed(() => {
 
       <div class="space-y-4">
         <div class="text-xs tracking-wide text-[var(--muted)]">
-          Continent Share Trends of the Year
+          {{ t('insights.continentTrends') }}
         </div>
         <div class="grid grid-cols-1 gap-6 items-center pc:grid-cols-[160px_1fr]">
           <div class="relative w-40 h-40 mx-auto">
@@ -298,7 +304,7 @@ const chartGradient = computed(() => {
             <div class="absolute inset-6 rounded-full bg-[var(--surface)] shadow-[inset_0_0_12px_rgba(15,23,42,0.08)]"></div>
           </div>
           <div class="space-y-3">
-            <div class="text-xs font-semibold text-[var(--muted)] tracking-wide">TOP 3 Continent</div>
+            <div class="text-xs font-semibold text-[var(--muted)] tracking-wide">{{ t('insights.topContinents') }}</div>
             <div class="space-y-2">
               <div
                 v-for="continent in continentSummary.topList"

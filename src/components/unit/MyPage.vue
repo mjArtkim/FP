@@ -5,6 +5,7 @@ import { deleteCurrentUser, getCurrentUser, signOutUser, updateCurrentEmail } fr
 import { deleteProfile, getProfile, updateProfile } from '@/utils/profile'
 import { clearStoredKey } from '@/utils/crypto'
 import { submitArtist, submitFestival } from '@/utils/adminSubmissions'
+import { useI18n } from '@/i18n'
 
 const isEditing = ref(false)
 const isAdminOpen = ref(false)
@@ -15,6 +16,7 @@ const actionMessage = ref('')
 const userId = ref('')
 const userRole = ref<'guest' | 'user' | 'admin'>('guest')
 const router = useRouter()
+const { t } = useI18n()
 
 const profile = reactive({
   name: '',
@@ -22,6 +24,7 @@ const profile = reactive({
   password: '************',
   phone: '',
   dob: '',
+  city: '',
   country: '',
 })
 
@@ -32,7 +35,7 @@ const maskedPassword = computed(() => {
   return '*'.repeat(length)
 })
 
-const optionalValue = (value: string) => (value.trim() ? value : 'Optional')
+const optionalValue = (value: string) => (value.trim() ? value : t('profile.optionalEmpty'))
 
 const startEdit = () => {
   Object.assign(draftProfile, profile)
@@ -62,14 +65,15 @@ const saveEdit = async () => {
       email: draftProfile.email.trim(),
       phone: draftProfile.phone.trim(),
       dob: draftProfile.dob.trim(),
+      city: draftProfile.city.trim(),
       country: draftProfile.country.trim(),
     })
     Object.assign(profile, draftProfile)
     profile.password = '************'
     isEditing.value = false
-    actionMessage.value = 'Profile updated.'
+    actionMessage.value = t('profile.updateSuccess')
   } catch (error) {
-    const message = error instanceof Error ? error.message : 'Update failed.'
+    const message = error instanceof Error ? error.message : t('profile.updateFailed')
     errorMessage.value = message
   } finally {
     isSaving.value = false
@@ -132,7 +136,7 @@ const closeAdmin = () => {
 
 const saveAdmin = async () => {
   if (userRole.value !== 'admin') {
-    errorMessage.value = 'Admin only.'
+    errorMessage.value = t('profile.adminOnly')
     return
   }
 
@@ -183,10 +187,10 @@ const saveAdmin = async () => {
       })
     }
 
-    actionMessage.value = 'Submission saved.'
+    actionMessage.value = t('profile.submissionSaved')
     isAdminOpen.value = false
   } catch (error) {
-    const message = error instanceof Error ? error.message : 'Save failed.'
+    const message = error instanceof Error ? error.message : t('profile.saveFailed')
     errorMessage.value = message
   } finally {
     isSaving.value = false
@@ -217,12 +221,13 @@ const loadProfile = async () => {
       email: stored?.email ?? user.email ?? '',
       phone: stored?.phone ?? '',
       dob: stored?.dob ?? '',
+      city: stored?.city ?? '',
       country: stored?.country ?? '',
       password: '************',
     })
     Object.assign(draftProfile, profile)
   } catch (error) {
-    const message = error instanceof Error ? error.message : 'Failed to load profile.'
+    const message = error instanceof Error ? error.message : t('profile.loadFailed')
     errorMessage.value = message
   } finally {
     isLoading.value = false
@@ -236,7 +241,7 @@ const handleLogout = async () => {
 
 const handleDelete = async () => {
   if (!userId.value) return
-  if (!window.confirm('Delete your account and all data?')) return
+  if (!window.confirm(t('profile.deleteConfirm'))) return
 
   isSaving.value = true
   errorMessage.value = ''
@@ -248,7 +253,7 @@ const handleDelete = async () => {
     clearStoredKey(userId.value)
     router.replace('/')
   } catch (error) {
-    const message = error instanceof Error ? error.message : 'Delete failed.'
+    const message = error instanceof Error ? error.message : t('profile.deleteFailed')
     errorMessage.value = message
   } finally {
     isSaving.value = false
@@ -269,12 +274,12 @@ onMounted(loadProfile)
             <span class="material-symbols-rounded text-base">tune</span>
           </div>
           <div>
-            <div class="text-xs uppercase tracking-[0.2em] text-[var(--muted)]">User</div>
-            <h1 class="mt-1 text-xl font-semibold">User Configuration</h1>
+            <div class="text-xs uppercase tracking-[0.2em] text-[var(--muted)]">{{ t('profile.titleLabel') }}</div>
+            <h1 class="mt-1 text-xl font-semibold">{{ t('profile.title') }}</h1>
           </div>
         </div>
         <div class="flex flex-col items-end gap-2">
-          <span class="text-xs font-semibold text-[var(--muted)]">USER</span>
+          <span class="text-xs font-semibold text-[var(--muted)]">{{ t('profile.roleLabel') }}</span>
           <button
             v-if="!isEditing"
             type="button"
@@ -282,7 +287,7 @@ onMounted(loadProfile)
             @click="startEdit"
           >
             <span class="material-symbols-rounded text-base">edit</span>
-            Edit
+            {{ t('profile.edit') }}
           </button>
           <div v-else class="flex gap-2">
             <button
@@ -290,7 +295,7 @@ onMounted(loadProfile)
               class="rounded-lg border border-[var(--stroke)] px-3 py-1.5 text-sm font-semibold text-[var(--muted)]"
               @click="cancelEdit"
             >
-              Cancel
+              {{ t('profile.cancel') }}
             </button>
             <button
               type="button"
@@ -298,13 +303,13 @@ onMounted(loadProfile)
               @click="saveEdit"
               :disabled="isSaving"
             >
-              {{ isSaving ? 'Saving...' : 'Save' }}
+              {{ isSaving ? t('profile.saving') : t('profile.save') }}
             </button>
           </div>
         </div>
       </header>
 
-      <p v-if="isLoading" class="text-sm text-[var(--muted)]">Loading profile...</p>
+      <p v-if="isLoading" class="text-sm text-[var(--muted)]">{{ t('profile.loading') }}</p>
       <p v-if="errorMessage" class="rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-600">
         {{ errorMessage }}
       </p>
@@ -316,7 +321,7 @@ onMounted(loadProfile)
         <div class="flex items-start gap-3 border-b border-[var(--stroke)] px-4 py-4">
           <span class="material-symbols-rounded text-lg text-[var(--muted)]">badge</span>
           <div class="flex w-full flex-col gap-1">
-            <div class="text-xs font-semibold uppercase text-[var(--muted)]">Name</div>
+            <div class="text-xs font-semibold uppercase text-[var(--muted)]">{{ t('profile.name') }}</div>
             <div v-if="!isEditing" class="text-sm font-semibold">{{ profile.name }}</div>
             <input
               v-else
@@ -329,7 +334,7 @@ onMounted(loadProfile)
         <div class="flex items-start gap-3 border-b border-[var(--stroke)] px-4 py-4">
           <span class="material-symbols-rounded text-lg text-[var(--muted)]">mail</span>
           <div class="flex w-full flex-col gap-1">
-            <div class="text-xs font-semibold uppercase text-[var(--muted)]">Email Address</div>
+            <div class="text-xs font-semibold uppercase text-[var(--muted)]">{{ t('profile.email') }}</div>
             <div v-if="!isEditing" class="text-sm">{{ profile.email }}</div>
             <input
               v-else
@@ -342,14 +347,14 @@ onMounted(loadProfile)
         <div class="flex items-start gap-3 border-b border-[var(--stroke)] px-4 py-4">
           <span class="material-symbols-rounded text-lg text-[var(--muted)]">lock</span>
           <div class="flex w-full flex-col gap-1">
-            <div class="text-xs font-semibold uppercase text-[var(--muted)]">Password</div>
+            <div class="text-xs font-semibold uppercase text-[var(--muted)]">{{ t('profile.password') }}</div>
             <div v-if="!isEditing" class="text-sm">{{ maskedPassword }}</div>
             <input
               v-else
               v-model="draftProfile.password"
               type="password"
               class="w-full rounded-md border border-[var(--stroke)] bg-[var(--surface)] px-3 py-2 text-sm"
-              placeholder="Managed by Firebase"
+              :placeholder="t('profile.passwordManaged')"
               disabled
             />
           </div>
@@ -358,7 +363,7 @@ onMounted(loadProfile)
           <span class="material-symbols-rounded text-lg text-[var(--muted)]">call</span>
           <div class="flex w-full flex-col gap-1">
             <div class="text-xs font-semibold uppercase text-[var(--muted)]">
-              Phone Number <span class="text-[var(--muted)]">(optional)</span>
+              {{ t('profile.phone') }} <span class="text-[var(--muted)]">{{ t('profile.optionalTag') }}</span>
             </div>
             <div v-if="!isEditing" class="text-sm">{{ optionalValue(profile.phone) }}</div>
             <input
@@ -366,7 +371,7 @@ onMounted(loadProfile)
               v-model="draftProfile.phone"
               type="tel"
               class="w-full rounded-md border border-[var(--stroke)] bg-[var(--surface)] px-3 py-2 text-sm"
-              placeholder="Optional"
+              :placeholder="t('profile.phonePlaceholder')"
             />
           </div>
         </div>
@@ -374,7 +379,7 @@ onMounted(loadProfile)
           <span class="material-symbols-rounded text-lg text-[var(--muted)]">event</span>
           <div class="flex w-full flex-col gap-1">
             <div class="text-xs font-semibold uppercase text-[var(--muted)]">
-              Date of Birth <span class="text-[var(--muted)]">(optional)</span>
+              {{ t('profile.dob') }} <span class="text-[var(--muted)]">{{ t('profile.optionalTag') }}</span>
             </div>
             <div v-if="!isEditing" class="text-sm">{{ optionalValue(profile.dob) }}</div>
             <input
@@ -385,10 +390,26 @@ onMounted(loadProfile)
             />
           </div>
         </div>
+        <div class="flex items-start gap-3 border-b border-[var(--stroke)] px-4 py-4">
+          <span class="material-symbols-rounded text-lg text-[var(--muted)]">location_city</span>
+          <div class="flex w-full flex-col gap-1">
+            <div class="text-xs font-semibold uppercase text-[var(--muted)]">
+              {{ t('profile.city') }} <span class="text-[var(--muted)]">{{ t('profile.optionalTag') }}</span>
+            </div>
+            <div v-if="!isEditing" class="text-sm">{{ optionalValue(profile.city) }}</div>
+            <input
+              v-else
+              v-model="draftProfile.city"
+              type="text"
+              class="w-full rounded-md border border-[var(--stroke)] bg-[var(--surface)] px-3 py-2 text-sm"
+              :placeholder="t('profile.cityPlaceholder')"
+            />
+          </div>
+        </div>
         <div class="flex items-start gap-3 px-4 py-4">
           <span class="material-symbols-rounded text-lg text-[var(--muted)]">public</span>
           <div class="flex w-full flex-col gap-1">
-            <div class="text-xs font-semibold uppercase text-[var(--muted)]">Country / Region</div>
+            <div class="text-xs font-semibold uppercase text-[var(--muted)]">{{ t('profile.country') }}</div>
             <div v-if="!isEditing" class="text-sm">{{ profile.country }}</div>
             <input
               v-else
@@ -408,7 +429,7 @@ onMounted(loadProfile)
           v-if="userRole === 'admin'"
         >
           <span class="material-symbols-rounded text-lg">admin_panel_settings</span>
-          Admin Page
+          {{ t('profile.adminPage') }}
         </button>
         <button
           type="button"
@@ -417,7 +438,7 @@ onMounted(loadProfile)
           :disabled="isSaving"
         >
           <span class="material-symbols-rounded text-lg">delete</span>
-          Delete Account
+          {{ t('profile.deleteAccount') }}
         </button>
         <button
           type="button"
@@ -425,7 +446,7 @@ onMounted(loadProfile)
           @click="handleLogout"
         >
           <span class="material-symbols-rounded text-lg">logout</span>
-          LogOut
+          {{ t('profile.logout') }}
         </button>
       </div>
     </div>
@@ -441,112 +462,112 @@ onMounted(loadProfile)
       <div v-if="isAdminOpen" class="fixed inset-0 z-50 flex items-end justify-center bg-black/40 px-4 py-6">
         <div class="w-full max-w-md rounded-2xl bg-[var(--surface)] p-5 shadow-[0_20px_60px_rgba(0,0,0,0.2)]">
           <div class="flex items-center justify-between pb-4">
-            <div class="text-xs font-semibold uppercase text-[var(--muted)]">Admin</div>
-            <div class="text-lg font-semibold">Artist or Festival</div>
+            <div class="text-xs font-semibold uppercase text-[var(--muted)]">{{ t('profile.adminTitle') }}</div>
+            <div class="text-lg font-semibold">{{ t('profile.adminSubtitle') }}</div>
           </div>
 
           <div class="space-y-4 text-sm">
             <div>
-              <label class="text-xs font-semibold uppercase text-[var(--muted)]">Artist or Festival</label>
+              <label class="text-xs font-semibold uppercase text-[var(--muted)]">{{ t('profile.adminTypeLabel') }}</label>
               <select
                 v-model="festivalForm.role"
                 class="mt-2 w-full rounded-md border border-[var(--stroke)] bg-[var(--surface)] px-3 py-2 text-sm"
               >
-                <option value="FESTIVAL">FESTIVAL</option>
-                <option value="ARTIST">ARTIST</option>
+                <option value="FESTIVAL">{{ t('profile.festivalOption') }}</option>
+                <option value="ARTIST">{{ t('profile.artistOption') }}</option>
               </select>
             </div>
 
             <template v-if="festivalForm.role === 'FESTIVAL'">
               <div>
-                <label class="text-xs font-semibold uppercase text-[var(--muted)]">Festival Name</label>
+                <label class="text-xs font-semibold uppercase text-[var(--muted)]">{{ t('profile.festivalName') }}</label>
                 <input
                   v-model="festivalForm.name"
                   type="text"
-                  placeholder="e.g. Hong Gill Dong"
+                  :placeholder="t('auth.signup.namePlaceholder')"
                   class="mt-2 w-full border-b border-[var(--stroke)] bg-transparent px-1 py-2 text-sm focus:outline-none"
                 />
               </div>
 
               <div>
-                <label class="text-xs font-semibold uppercase text-[var(--muted)]">Date</label>
+                <label class="text-xs font-semibold uppercase text-[var(--muted)]">{{ t('profile.date') }}</label>
                 <div class="mt-2 grid grid-cols-3 gap-2">
                   <select
                     v-model="festivalForm.year"
                     class="w-full rounded-md border border-[var(--stroke)] bg-[var(--surface)] px-2 py-2 text-sm"
                   >
-                    <option value="">Select Year</option>
+                    <option value="">{{ t('profile.yearSelect') }}</option>
                     <option v-for="year in years" :key="year" :value="year">{{ year }}</option>
                   </select>
                   <select
                     v-model="festivalForm.month"
                     class="w-full rounded-md border border-[var(--stroke)] bg-[var(--surface)] px-2 py-2 text-sm"
                   >
-                    <option value="">Select Month</option>
+                    <option value="">{{ t('profile.monthSelect') }}</option>
                     <option v-for="month in months" :key="month" :value="month">{{ month }}</option>
                   </select>
                   <select
                     v-model="festivalForm.day"
                     class="w-full rounded-md border border-[var(--stroke)] bg-[var(--surface)] px-2 py-2 text-sm"
                   >
-                    <option value="">Select Day</option>
+                    <option value="">{{ t('profile.daySelect') }}</option>
                     <option v-for="day in days" :key="day" :value="day">{{ day }}</option>
                   </select>
                 </div>
               </div>
 
               <div>
-                <label class="text-xs font-semibold uppercase text-[var(--muted)]">Location</label>
+                <label class="text-xs font-semibold uppercase text-[var(--muted)]">{{ t('profile.location') }}</label>
                 <input
                   v-model="festivalForm.location"
                   type="text"
-                  placeholder="City Here"
+                  :placeholder="t('profile.locationPlaceholder')"
                   class="mt-2 w-full border-b border-[var(--stroke)] bg-transparent px-1 py-2 text-sm focus:outline-none"
                 />
               </div>
 
               <div>
-                <label class="text-xs font-semibold uppercase text-[var(--muted)]">Country</label>
+                <label class="text-xs font-semibold uppercase text-[var(--muted)]">{{ t('profile.country') }}</label>
                 <input
                   v-model="festivalForm.country"
                   type="text"
-                  placeholder="Select your country"
+                  :placeholder="t('profile.countryPlaceholder')"
                   class="mt-2 w-full border-b border-[var(--stroke)] bg-transparent px-1 py-2 text-sm focus:outline-none"
                 />
               </div>
 
               <div>
-                <label class="text-xs font-semibold uppercase text-[var(--muted)]">Ticket Link</label>
+                <label class="text-xs font-semibold uppercase text-[var(--muted)]">{{ t('profile.ticketLink') }}</label>
                 <input
                   v-model="festivalForm.ticketLink"
                   type="text"
-                  placeholder="LINK HERE"
+                  :placeholder="t('profile.linkPlaceholder')"
                   class="mt-2 w-full border-b border-[var(--stroke)] bg-transparent px-1 py-2 text-sm focus:outline-none"
                 />
               </div>
 
               <div>
-                <label class="text-xs font-semibold uppercase text-[var(--muted)]">Info Link</label>
+                <label class="text-xs font-semibold uppercase text-[var(--muted)]">{{ t('profile.infoLink') }}</label>
                 <input
                   v-model="festivalForm.infoLink"
                   type="text"
-                  placeholder="LINK HERE"
+                  :placeholder="t('profile.linkPlaceholder')"
                   class="mt-2 w-full border-b border-[var(--stroke)] bg-transparent px-1 py-2 text-sm focus:outline-none"
                 />
               </div>
 
               <div>
-                <label class="text-xs font-semibold uppercase text-[var(--muted)]">Line Up</label>
+                <label class="text-xs font-semibold uppercase text-[var(--muted)]">{{ t('profile.lineup') }}</label>
                 <input
                   v-model="festivalForm.lineup"
                   type="text"
-                  placeholder="ARTIST HERE"
+                  :placeholder="t('profile.lineupPlaceholder')"
                   class="mt-2 w-full border-b border-[var(--stroke)] bg-transparent px-1 py-2 text-sm focus:outline-none"
                 />
               </div>
 
               <div>
-                <label class="text-xs font-semibold uppercase text-[var(--muted)]">Image</label>
+                <label class="text-xs font-semibold uppercase text-[var(--muted)]">{{ t('profile.image') }}</label>
                 <div class="mt-2 flex items-center gap-2 border-b border-[var(--stroke)] pb-2">
                   <input
                     type="file"
@@ -555,7 +576,7 @@ onMounted(loadProfile)
                     @change="handleImage"
                   />
                   <label for="festival-image" class="cursor-pointer text-[var(--muted)]">
-                    {{ festivalForm.imageName || 'Open File' }}
+                    {{ festivalForm.imageName || t('profile.openFile') }}
                   </label>
                 </div>
               </div>
@@ -563,106 +584,106 @@ onMounted(loadProfile)
 
             <template v-else>
               <div>
-                <label class="text-xs font-semibold uppercase text-[var(--muted)]">Name</label>
+                <label class="text-xs font-semibold uppercase text-[var(--muted)]">{{ t('profile.artistName') }}</label>
                 <input
                   v-model="festivalForm.artistName"
                   type="text"
-                  placeholder="e.g. Hong Gill Dong"
+                  :placeholder="t('auth.signup.namePlaceholder')"
                   class="mt-2 w-full border-b border-[var(--stroke)] bg-transparent px-1 py-2 text-sm focus:outline-none"
                 />
               </div>
 
               <div>
-                <label class="text-xs font-semibold uppercase text-[var(--muted)]">Born</label>
+                <label class="text-xs font-semibold uppercase text-[var(--muted)]">{{ t('profile.born') }}</label>
                 <div class="mt-2 grid grid-cols-3 gap-2">
                   <select
                     v-model="festivalForm.artistYear"
                     class="w-full rounded-md border border-[var(--stroke)] bg-[var(--surface)] px-2 py-2 text-sm"
                   >
-                    <option value="">Select Year</option>
+                    <option value="">{{ t('profile.yearSelect') }}</option>
                     <option v-for="year in years" :key="`artist-${year}`" :value="year">{{ year }}</option>
                   </select>
                   <select
                     v-model="festivalForm.artistMonth"
                     class="w-full rounded-md border border-[var(--stroke)] bg-[var(--surface)] px-2 py-2 text-sm"
                   >
-                    <option value="">Select Month</option>
+                    <option value="">{{ t('profile.monthSelect') }}</option>
                     <option v-for="month in months" :key="`artist-${month}`" :value="month">{{ month }}</option>
                   </select>
                   <select
                     v-model="festivalForm.artistDay"
                     class="w-full rounded-md border border-[var(--stroke)] bg-[var(--surface)] px-2 py-2 text-sm"
                   >
-                    <option value="">Select Day</option>
+                    <option value="">{{ t('profile.daySelect') }}</option>
                     <option v-for="day in days" :key="`artist-${day}`" :value="day">{{ day }}</option>
                   </select>
                 </div>
               </div>
 
               <div>
-                <label class="text-xs font-semibold uppercase text-[var(--muted)]">City</label>
+                <label class="text-xs font-semibold uppercase text-[var(--muted)]">{{ t('profile.cityAdmin') }}</label>
                 <input
                   v-model="festivalForm.artistCity"
                   type="text"
-                  placeholder="City Here"
+                  :placeholder="t('profile.cityPlaceholder')"
                   class="mt-2 w-full border-b border-[var(--stroke)] bg-transparent px-1 py-2 text-sm focus:outline-none"
                 />
               </div>
 
               <div>
-                <label class="text-xs font-semibold uppercase text-[var(--muted)]">Country</label>
+                <label class="text-xs font-semibold uppercase text-[var(--muted)]">{{ t('profile.country') }}</label>
                 <input
                   v-model="festivalForm.artistCountry"
                   type="text"
-                  placeholder="Select your country"
+                  :placeholder="t('profile.countryPlaceholder')"
                   class="mt-2 w-full border-b border-[var(--stroke)] bg-transparent px-1 py-2 text-sm focus:outline-none"
                 />
               </div>
 
               <div>
-                <label class="text-xs font-semibold uppercase text-[var(--muted)]">Labels</label>
+                <label class="text-xs font-semibold uppercase text-[var(--muted)]">{{ t('profile.labels') }}</label>
                 <input
                   v-model="festivalForm.artistLabels"
                   type="text"
-                  placeholder="Labels here"
+                  :placeholder="t('profile.labelsPlaceholder')"
                   class="mt-2 w-full border-b border-[var(--stroke)] bg-transparent px-1 py-2 text-sm focus:outline-none"
                 />
               </div>
 
               <div>
-                <label class="text-xs font-semibold uppercase text-[var(--muted)]">Genres</label>
+                <label class="text-xs font-semibold uppercase text-[var(--muted)]">{{ t('profile.genres') }}</label>
                 <select
                   v-model="festivalForm.artistGenres"
                   class="mt-2 w-full border-b border-[var(--stroke)] bg-transparent px-1 py-2 text-sm focus:outline-none"
                 >
-                  <option value="">Genres</option>
-                  <option value="Electronic">Electronic</option>
-                  <option value="House">House</option>
-                  <option value="Techno">Techno</option>
-                  <option value="Hip Hop">Hip Hop</option>
-                  <option value="Pop">Pop</option>
+                  <option value="">{{ t('profile.genresPlaceholder') }}</option>
+                  <option value="Electronic">{{ t('profile.genreOptions.electronic') }}</option>
+                  <option value="House">{{ t('profile.genreOptions.house') }}</option>
+                  <option value="Techno">{{ t('profile.genreOptions.techno') }}</option>
+                  <option value="Hip Hop">{{ t('profile.genreOptions.hipHop') }}</option>
+                  <option value="Pop">{{ t('profile.genreOptions.pop') }}</option>
                 </select>
               </div>
 
               <div>
-                <label class="text-xs font-semibold uppercase text-[var(--muted)]">Years Active</label>
+                <label class="text-xs font-semibold uppercase text-[var(--muted)]">{{ t('profile.yearsActive') }}</label>
                 <input
                   v-model="festivalForm.artistActiveYear"
                   type="text"
-                  placeholder="Select Year"
+                  :placeholder="t('profile.yearsActivePlaceholder')"
                   class="mt-2 w-full border-b border-[var(--stroke)] bg-transparent px-1 py-2 text-sm focus:outline-none"
                 />
               </div>
 
               <div>
-                <label class="text-xs font-semibold uppercase text-[var(--muted)]">About Link</label>
+                <label class="text-xs font-semibold uppercase text-[var(--muted)]">{{ t('profile.aboutLink') }}</label>
                 <div class="mt-2 space-y-2">
                   <div class="flex items-center gap-3 border-b border-[var(--stroke)] pb-2">
                     <span class="material-symbols-rounded text-sm text-[var(--muted)]">home</span>
                     <input
                       v-model="festivalForm.aboutLink"
                       type="text"
-                      placeholder="LINK HERE"
+                      :placeholder="t('profile.linkPlaceholder')"
                       class="w-full bg-transparent text-sm focus:outline-none"
                     />
                   </div>
@@ -671,7 +692,7 @@ onMounted(loadProfile)
                     <input
                       v-model="festivalForm.instagramLink"
                       type="text"
-                      placeholder="LINK HERE"
+                      :placeholder="t('profile.linkPlaceholder')"
                       class="w-full bg-transparent text-sm focus:outline-none"
                     />
                   </div>
@@ -680,7 +701,7 @@ onMounted(loadProfile)
                     <input
                       v-model="festivalForm.youtubeLink"
                       type="text"
-                      placeholder="LINK HERE"
+                      :placeholder="t('profile.linkPlaceholder')"
                       class="w-full bg-transparent text-sm focus:outline-none"
                     />
                   </div>
@@ -689,7 +710,7 @@ onMounted(loadProfile)
                     <input
                       v-model="festivalForm.appleMusicLink"
                       type="text"
-                      placeholder="LINK HERE"
+                      :placeholder="t('profile.linkPlaceholder')"
                       class="w-full bg-transparent text-sm focus:outline-none"
                     />
                   </div>
@@ -698,7 +719,7 @@ onMounted(loadProfile)
                     <input
                       v-model="festivalForm.spotifyLink"
                       type="text"
-                      placeholder="LINK HERE"
+                      :placeholder="t('profile.linkPlaceholder')"
                       class="w-full bg-transparent text-sm focus:outline-none"
                     />
                   </div>
@@ -707,7 +728,7 @@ onMounted(loadProfile)
                     <input
                       v-model="festivalForm.soundcloudLink"
                       type="text"
-                      placeholder="LINK HERE"
+                      :placeholder="t('profile.linkPlaceholder')"
                       class="w-full bg-transparent text-sm focus:outline-none"
                     />
                   </div>
@@ -715,7 +736,7 @@ onMounted(loadProfile)
               </div>
 
               <div>
-                <label class="text-xs font-semibold uppercase text-[var(--muted)]">Image</label>
+                <label class="text-xs font-semibold uppercase text-[var(--muted)]">{{ t('profile.image') }}</label>
                 <div class="mt-2 flex items-center gap-2 border-b border-[var(--stroke)] pb-2">
                   <input
                     type="file"
@@ -724,7 +745,7 @@ onMounted(loadProfile)
                     @change="handleArtistImage"
                   />
                   <label for="artist-image" class="cursor-pointer text-[var(--muted)]">
-                    {{ festivalForm.artistImageName || 'Open File' }}
+                    {{ festivalForm.artistImageName || t('profile.openFile') }}
                   </label>
                 </div>
               </div>
@@ -737,14 +758,14 @@ onMounted(loadProfile)
               class="rounded-lg border border-[var(--stroke)] px-4 py-2 text-sm font-semibold text-[var(--muted)]"
               @click="closeAdmin"
             >
-              Close
+              {{ t('profile.close') }}
             </button>
             <button
               type="button"
               class="rounded-lg bg-black px-4 py-2 text-sm font-semibold text-white"
               @click="saveAdmin"
             >
-              Save
+              {{ t('profile.saveButton') }}
             </button>
           </div>
         </div>
