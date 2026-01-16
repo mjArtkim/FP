@@ -4,6 +4,7 @@ import { useRouter } from 'vue-router'
 import { deleteCurrentUser, getCurrentUser, signOutUser, updateCurrentEmail } from '@/utils/auth'
 import { deleteProfile, getProfile, updateProfile } from '@/utils/profile'
 import { clearStoredKey } from '@/utils/crypto'
+import { submitArtist, submitFestival } from '@/utils/adminSubmissions'
 
 const isEditing = ref(false)
 const isAdminOpen = ref(false)
@@ -87,6 +88,22 @@ const festivalForm = reactive({
   infoLink: '',
   lineup: '',
   imageName: '',
+  artistName: '',
+  artistYear: '',
+  artistMonth: '',
+  artistDay: '',
+  artistCity: '',
+  artistCountry: '',
+  artistLabels: '',
+  artistGenres: '',
+  artistActiveYear: '',
+  aboutLink: '',
+  instagramLink: '',
+  youtubeLink: '',
+  appleMusicLink: '',
+  spotifyLink: '',
+  soundcloudLink: '',
+  artistImageName: '',
 })
 
 const years = Array.from({ length: 8 }, (_, index) => `${2024 + index}`)
@@ -99,6 +116,12 @@ const handleImage = (event: Event) => {
   festivalForm.imageName = file?.name ?? ''
 }
 
+const handleArtistImage = (event: Event) => {
+  const input = event.target as HTMLInputElement
+  const file = input.files?.[0]
+  festivalForm.artistImageName = file?.name ?? ''
+}
+
 const openAdmin = () => {
   isAdminOpen.value = true
 }
@@ -107,8 +130,67 @@ const closeAdmin = () => {
   isAdminOpen.value = false
 }
 
-const saveAdmin = () => {
-  isAdminOpen.value = false
+const saveAdmin = async () => {
+  if (userRole.value !== 'admin') {
+    errorMessage.value = 'Admin only.'
+    return
+  }
+
+  isSaving.value = true
+  errorMessage.value = ''
+  actionMessage.value = ''
+
+  try {
+    if (festivalForm.role === 'FESTIVAL') {
+      await submitFestival({
+        type: 'festival',
+        title: festivalForm.name.trim(),
+        date: {
+          year: festivalForm.year,
+          month: festivalForm.month,
+          day: festivalForm.day,
+        },
+        location: festivalForm.location.trim(),
+        country: festivalForm.country.trim(),
+        ticketLink: festivalForm.ticketLink.trim(),
+        infoLink: festivalForm.infoLink.trim(),
+        lineup: festivalForm.lineup.trim(),
+        imageName: festivalForm.imageName,
+      })
+    } else {
+      await submitArtist({
+        type: 'artist',
+        name: festivalForm.artistName.trim(),
+        born: {
+          year: festivalForm.artistYear,
+          month: festivalForm.artistMonth,
+          day: festivalForm.artistDay,
+        },
+        city: festivalForm.artistCity.trim(),
+        country: festivalForm.artistCountry.trim(),
+        labels: festivalForm.artistLabels.trim(),
+        genres: festivalForm.artistGenres.trim(),
+        yearsActive: festivalForm.artistActiveYear.trim(),
+        links: {
+          about: festivalForm.aboutLink.trim(),
+          instagram: festivalForm.instagramLink.trim(),
+          youtube: festivalForm.youtubeLink.trim(),
+          appleMusic: festivalForm.appleMusicLink.trim(),
+          spotify: festivalForm.spotifyLink.trim(),
+          soundcloud: festivalForm.soundcloudLink.trim(),
+        },
+        imageName: festivalForm.artistImageName,
+      })
+    }
+
+    actionMessage.value = 'Submission saved.'
+    isAdminOpen.value = false
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Save failed.'
+    errorMessage.value = message
+  } finally {
+    isSaving.value = false
+  }
 }
 
 const loadProfile = async () => {
@@ -365,7 +447,7 @@ onMounted(loadProfile)
 
           <div class="space-y-4 text-sm">
             <div>
-              <label class="text-xs font-semibold uppercase text-[var(--muted)]">Festival</label>
+              <label class="text-xs font-semibold uppercase text-[var(--muted)]">Artist or Festival</label>
               <select
                 v-model="festivalForm.role"
                 class="mt-2 w-full rounded-md border border-[var(--stroke)] bg-[var(--surface)] px-3 py-2 text-sm"
@@ -375,107 +457,278 @@ onMounted(loadProfile)
               </select>
             </div>
 
-            <div>
-              <label class="text-xs font-semibold uppercase text-[var(--muted)]">Festival Name</label>
-              <input
-                v-model="festivalForm.name"
-                type="text"
-                placeholder="e.g. Hong Gill Dong"
-                class="mt-2 w-full border-b border-[var(--stroke)] bg-transparent px-1 py-2 text-sm focus:outline-none"
-              />
-            </div>
-
-            <div>
-              <label class="text-xs font-semibold uppercase text-[var(--muted)]">Date</label>
-              <div class="mt-2 grid grid-cols-3 gap-2">
-                <select
-                  v-model="festivalForm.year"
-                  class="w-full rounded-md border border-[var(--stroke)] bg-[var(--surface)] px-2 py-2 text-sm"
-                >
-                  <option value="">Select Year</option>
-                  <option v-for="year in years" :key="year" :value="year">{{ year }}</option>
-                </select>
-                <select
-                  v-model="festivalForm.month"
-                  class="w-full rounded-md border border-[var(--stroke)] bg-[var(--surface)] px-2 py-2 text-sm"
-                >
-                  <option value="">Select Month</option>
-                  <option v-for="month in months" :key="month" :value="month">{{ month }}</option>
-                </select>
-                <select
-                  v-model="festivalForm.day"
-                  class="w-full rounded-md border border-[var(--stroke)] bg-[var(--surface)] px-2 py-2 text-sm"
-                >
-                  <option value="">Select Day</option>
-                  <option v-for="day in days" :key="day" :value="day">{{ day }}</option>
-                </select>
-              </div>
-            </div>
-
-            <div>
-              <label class="text-xs font-semibold uppercase text-[var(--muted)]">Location</label>
-              <input
-                v-model="festivalForm.location"
-                type="text"
-                placeholder="City Here"
-                class="mt-2 w-full border-b border-[var(--stroke)] bg-transparent px-1 py-2 text-sm focus:outline-none"
-              />
-            </div>
-
-            <div>
-              <label class="text-xs font-semibold uppercase text-[var(--muted)]">Country</label>
-              <input
-                v-model="festivalForm.country"
-                type="text"
-                placeholder="Select your country"
-                class="mt-2 w-full border-b border-[var(--stroke)] bg-transparent px-1 py-2 text-sm focus:outline-none"
-              />
-            </div>
-
-            <div>
-              <label class="text-xs font-semibold uppercase text-[var(--muted)]">Ticket Link</label>
-              <input
-                v-model="festivalForm.ticketLink"
-                type="text"
-                placeholder="LINK HERE"
-                class="mt-2 w-full border-b border-[var(--stroke)] bg-transparent px-1 py-2 text-sm focus:outline-none"
-              />
-            </div>
-
-            <div>
-              <label class="text-xs font-semibold uppercase text-[var(--muted)]">Info Link</label>
-              <input
-                v-model="festivalForm.infoLink"
-                type="text"
-                placeholder="LINK HERE"
-                class="mt-2 w-full border-b border-[var(--stroke)] bg-transparent px-1 py-2 text-sm focus:outline-none"
-              />
-            </div>
-
-            <div>
-              <label class="text-xs font-semibold uppercase text-[var(--muted)]">Line Up</label>
-              <input
-                v-model="festivalForm.lineup"
-                type="text"
-                placeholder="ARTIST HERE"
-                class="mt-2 w-full border-b border-[var(--stroke)] bg-transparent px-1 py-2 text-sm focus:outline-none"
-              />
-            </div>
-
-            <div>
-              <label class="text-xs font-semibold uppercase text-[var(--muted)]">Image</label>
-              <div class="mt-2 flex items-center gap-2 border-b border-[var(--stroke)] pb-2">
+            <template v-if="festivalForm.role === 'FESTIVAL'">
+              <div>
+                <label class="text-xs font-semibold uppercase text-[var(--muted)]">Festival Name</label>
                 <input
-                  type="file"
-                  class="hidden"
-                  id="festival-image"
-                  @change="handleImage"
+                  v-model="festivalForm.name"
+                  type="text"
+                  placeholder="e.g. Hong Gill Dong"
+                  class="mt-2 w-full border-b border-[var(--stroke)] bg-transparent px-1 py-2 text-sm focus:outline-none"
                 />
-                <label for="festival-image" class="cursor-pointer text-[var(--muted)]">
-                  {{ festivalForm.imageName || 'Open File' }}
-                </label>
               </div>
-            </div>
+
+              <div>
+                <label class="text-xs font-semibold uppercase text-[var(--muted)]">Date</label>
+                <div class="mt-2 grid grid-cols-3 gap-2">
+                  <select
+                    v-model="festivalForm.year"
+                    class="w-full rounded-md border border-[var(--stroke)] bg-[var(--surface)] px-2 py-2 text-sm"
+                  >
+                    <option value="">Select Year</option>
+                    <option v-for="year in years" :key="year" :value="year">{{ year }}</option>
+                  </select>
+                  <select
+                    v-model="festivalForm.month"
+                    class="w-full rounded-md border border-[var(--stroke)] bg-[var(--surface)] px-2 py-2 text-sm"
+                  >
+                    <option value="">Select Month</option>
+                    <option v-for="month in months" :key="month" :value="month">{{ month }}</option>
+                  </select>
+                  <select
+                    v-model="festivalForm.day"
+                    class="w-full rounded-md border border-[var(--stroke)] bg-[var(--surface)] px-2 py-2 text-sm"
+                  >
+                    <option value="">Select Day</option>
+                    <option v-for="day in days" :key="day" :value="day">{{ day }}</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label class="text-xs font-semibold uppercase text-[var(--muted)]">Location</label>
+                <input
+                  v-model="festivalForm.location"
+                  type="text"
+                  placeholder="City Here"
+                  class="mt-2 w-full border-b border-[var(--stroke)] bg-transparent px-1 py-2 text-sm focus:outline-none"
+                />
+              </div>
+
+              <div>
+                <label class="text-xs font-semibold uppercase text-[var(--muted)]">Country</label>
+                <input
+                  v-model="festivalForm.country"
+                  type="text"
+                  placeholder="Select your country"
+                  class="mt-2 w-full border-b border-[var(--stroke)] bg-transparent px-1 py-2 text-sm focus:outline-none"
+                />
+              </div>
+
+              <div>
+                <label class="text-xs font-semibold uppercase text-[var(--muted)]">Ticket Link</label>
+                <input
+                  v-model="festivalForm.ticketLink"
+                  type="text"
+                  placeholder="LINK HERE"
+                  class="mt-2 w-full border-b border-[var(--stroke)] bg-transparent px-1 py-2 text-sm focus:outline-none"
+                />
+              </div>
+
+              <div>
+                <label class="text-xs font-semibold uppercase text-[var(--muted)]">Info Link</label>
+                <input
+                  v-model="festivalForm.infoLink"
+                  type="text"
+                  placeholder="LINK HERE"
+                  class="mt-2 w-full border-b border-[var(--stroke)] bg-transparent px-1 py-2 text-sm focus:outline-none"
+                />
+              </div>
+
+              <div>
+                <label class="text-xs font-semibold uppercase text-[var(--muted)]">Line Up</label>
+                <input
+                  v-model="festivalForm.lineup"
+                  type="text"
+                  placeholder="ARTIST HERE"
+                  class="mt-2 w-full border-b border-[var(--stroke)] bg-transparent px-1 py-2 text-sm focus:outline-none"
+                />
+              </div>
+
+              <div>
+                <label class="text-xs font-semibold uppercase text-[var(--muted)]">Image</label>
+                <div class="mt-2 flex items-center gap-2 border-b border-[var(--stroke)] pb-2">
+                  <input
+                    type="file"
+                    class="hidden"
+                    id="festival-image"
+                    @change="handleImage"
+                  />
+                  <label for="festival-image" class="cursor-pointer text-[var(--muted)]">
+                    {{ festivalForm.imageName || 'Open File' }}
+                  </label>
+                </div>
+              </div>
+            </template>
+
+            <template v-else>
+              <div>
+                <label class="text-xs font-semibold uppercase text-[var(--muted)]">Name</label>
+                <input
+                  v-model="festivalForm.artistName"
+                  type="text"
+                  placeholder="e.g. Hong Gill Dong"
+                  class="mt-2 w-full border-b border-[var(--stroke)] bg-transparent px-1 py-2 text-sm focus:outline-none"
+                />
+              </div>
+
+              <div>
+                <label class="text-xs font-semibold uppercase text-[var(--muted)]">Born</label>
+                <div class="mt-2 grid grid-cols-3 gap-2">
+                  <select
+                    v-model="festivalForm.artistYear"
+                    class="w-full rounded-md border border-[var(--stroke)] bg-[var(--surface)] px-2 py-2 text-sm"
+                  >
+                    <option value="">Select Year</option>
+                    <option v-for="year in years" :key="`artist-${year}`" :value="year">{{ year }}</option>
+                  </select>
+                  <select
+                    v-model="festivalForm.artistMonth"
+                    class="w-full rounded-md border border-[var(--stroke)] bg-[var(--surface)] px-2 py-2 text-sm"
+                  >
+                    <option value="">Select Month</option>
+                    <option v-for="month in months" :key="`artist-${month}`" :value="month">{{ month }}</option>
+                  </select>
+                  <select
+                    v-model="festivalForm.artistDay"
+                    class="w-full rounded-md border border-[var(--stroke)] bg-[var(--surface)] px-2 py-2 text-sm"
+                  >
+                    <option value="">Select Day</option>
+                    <option v-for="day in days" :key="`artist-${day}`" :value="day">{{ day }}</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label class="text-xs font-semibold uppercase text-[var(--muted)]">City</label>
+                <input
+                  v-model="festivalForm.artistCity"
+                  type="text"
+                  placeholder="City Here"
+                  class="mt-2 w-full border-b border-[var(--stroke)] bg-transparent px-1 py-2 text-sm focus:outline-none"
+                />
+              </div>
+
+              <div>
+                <label class="text-xs font-semibold uppercase text-[var(--muted)]">Country</label>
+                <input
+                  v-model="festivalForm.artistCountry"
+                  type="text"
+                  placeholder="Select your country"
+                  class="mt-2 w-full border-b border-[var(--stroke)] bg-transparent px-1 py-2 text-sm focus:outline-none"
+                />
+              </div>
+
+              <div>
+                <label class="text-xs font-semibold uppercase text-[var(--muted)]">Labels</label>
+                <input
+                  v-model="festivalForm.artistLabels"
+                  type="text"
+                  placeholder="Labels here"
+                  class="mt-2 w-full border-b border-[var(--stroke)] bg-transparent px-1 py-2 text-sm focus:outline-none"
+                />
+              </div>
+
+              <div>
+                <label class="text-xs font-semibold uppercase text-[var(--muted)]">Genres</label>
+                <select
+                  v-model="festivalForm.artistGenres"
+                  class="mt-2 w-full border-b border-[var(--stroke)] bg-transparent px-1 py-2 text-sm focus:outline-none"
+                >
+                  <option value="">Genres</option>
+                  <option value="Electronic">Electronic</option>
+                  <option value="House">House</option>
+                  <option value="Techno">Techno</option>
+                  <option value="Hip Hop">Hip Hop</option>
+                  <option value="Pop">Pop</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="text-xs font-semibold uppercase text-[var(--muted)]">Years Active</label>
+                <input
+                  v-model="festivalForm.artistActiveYear"
+                  type="text"
+                  placeholder="Select Year"
+                  class="mt-2 w-full border-b border-[var(--stroke)] bg-transparent px-1 py-2 text-sm focus:outline-none"
+                />
+              </div>
+
+              <div>
+                <label class="text-xs font-semibold uppercase text-[var(--muted)]">About Link</label>
+                <div class="mt-2 space-y-2">
+                  <div class="flex items-center gap-3 border-b border-[var(--stroke)] pb-2">
+                    <span class="material-symbols-rounded text-sm text-[var(--muted)]">home</span>
+                    <input
+                      v-model="festivalForm.aboutLink"
+                      type="text"
+                      placeholder="LINK HERE"
+                      class="w-full bg-transparent text-sm focus:outline-none"
+                    />
+                  </div>
+                  <div class="flex items-center gap-3 border-b border-[var(--stroke)] pb-2">
+                    <span class="material-symbols-rounded text-sm text-[var(--muted)]">photo_camera</span>
+                    <input
+                      v-model="festivalForm.instagramLink"
+                      type="text"
+                      placeholder="LINK HERE"
+                      class="w-full bg-transparent text-sm focus:outline-none"
+                    />
+                  </div>
+                  <div class="flex items-center gap-3 border-b border-[var(--stroke)] pb-2">
+                    <span class="material-symbols-rounded text-sm text-[var(--muted)]">smart_display</span>
+                    <input
+                      v-model="festivalForm.youtubeLink"
+                      type="text"
+                      placeholder="LINK HERE"
+                      class="w-full bg-transparent text-sm focus:outline-none"
+                    />
+                  </div>
+                  <div class="flex items-center gap-3 border-b border-[var(--stroke)] pb-2">
+                    <span class="material-symbols-rounded text-sm text-[var(--muted)]">music_note</span>
+                    <input
+                      v-model="festivalForm.appleMusicLink"
+                      type="text"
+                      placeholder="LINK HERE"
+                      class="w-full bg-transparent text-sm focus:outline-none"
+                    />
+                  </div>
+                  <div class="flex items-center gap-3 border-b border-[var(--stroke)] pb-2">
+                    <span class="material-symbols-rounded text-sm text-[var(--muted)]">headphones</span>
+                    <input
+                      v-model="festivalForm.spotifyLink"
+                      type="text"
+                      placeholder="LINK HERE"
+                      class="w-full bg-transparent text-sm focus:outline-none"
+                    />
+                  </div>
+                  <div class="flex items-center gap-3 border-b border-[var(--stroke)] pb-2">
+                    <span class="material-symbols-rounded text-sm text-[var(--muted)]">graphic_eq</span>
+                    <input
+                      v-model="festivalForm.soundcloudLink"
+                      type="text"
+                      placeholder="LINK HERE"
+                      class="w-full bg-transparent text-sm focus:outline-none"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <label class="text-xs font-semibold uppercase text-[var(--muted)]">Image</label>
+                <div class="mt-2 flex items-center gap-2 border-b border-[var(--stroke)] pb-2">
+                  <input
+                    type="file"
+                    class="hidden"
+                    id="artist-image"
+                    @change="handleArtistImage"
+                  />
+                  <label for="artist-image" class="cursor-pointer text-[var(--muted)]">
+                    {{ festivalForm.artistImageName || 'Open File' }}
+                  </label>
+                </div>
+              </div>
+            </template>
           </div>
 
           <div class="mt-6 flex justify-end gap-2">
