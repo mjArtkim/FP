@@ -265,11 +265,11 @@ onBeforeUnmount(() => {
 }
 
 .map-shell {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .map-frame {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .loading-icon {
@@ -292,11 +292,11 @@ onBeforeUnmount(() => {
 }
 
 .leaflet-popup-content {
-  margin: 0;
+  margin: 10px !important;
 }
 
 .leaflet-popup-content-wrapper {
-  border-radius: 20px;
+  border-radius: 10px;
   padding: 0;
 }
 
@@ -305,11 +305,8 @@ onBeforeUnmount(() => {
 }
 
 .map-card {
-  width: 190px;
-  padding: 12px;
-  border-radius: 18px;
-  background: #ffffff;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  width: 150px;
+  padding: 10px 5px;
   font-family: 'Pretendard', system-ui, -apple-system, sans-serif;
 }
 
@@ -317,7 +314,7 @@ onBeforeUnmount(() => {
   width: 100%;
   height: 86px;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 10px;
 }
 
 .map-card__title {

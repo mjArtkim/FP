@@ -298,64 +298,61 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <section class="px-5 pb-20 font-pretend text-[var(--text)]">
-    <header class="pt-2 pb-6">
-      <h1 class="text-3xl font-extrabold tracking-tight">{{ t('mapExplorer.title') }}</h1>
-      <!-- <p class="mt-2 text-sm font-semibold text-[var(--muted)]">Now Your Location</p> -->
-    </header>
-
-    <div class="relative w-full max-w-[720px]">
-      <div class="relative w-full aspect-[757/376] overflow-visible">
-        <div
-          ref="mapRoot"
-          class="absolute inset-0 map-svg "
-          v-html="mapSvg"
-        ></div>
-        <!-- <div class="absolute -translate-x-1/2 -translate-y-full" :style="pinStyle">
-          <div class="relative flex items-center gap-2 rounded-full border border-[#f61979] bg-[var(--surface)] px-3 py-1 text-[10px] font-bold text-[#f61979] shadow-[0_2px_6px_rgba(0,0,0,0.15)]">
-            <div class="absolute -bottom-4  material-symbols-rounded text-xs">location_on</div>
-            <div>{{ mapLabel }}</div>
+  <section class="px-5 pb-20 font-pretend text-[var(--text)] pc:grid pc:grid-cols-2 pc:gap-8 pc:p-8">
+    <div>
+      <header class="pt-2 pb-6">
+        <h1 class="text-3xl font-extrabold tracking-tight">{{ t('mapExplorer.title') }}</h1>
+      </header>
+      <div  class="pc:h-full pc:flex pc:flex-col gap-5">
+        <div class="relative w-full max-w-[720px]">
+          <div class="relative w-full aspect-[757/376] overflow-visible">
+            <div
+              ref="mapRoot"
+              class="absolute inset-0 map-svg "
+              v-html="mapSvg"
+            >
+            </div>
           </div>
-        </div> -->
-      </div>
-      <div class="pt-3 text-xs font-semibold text-[var(--muted)]">
-        <span v-if="selectedContinents.length">{{ t('mapExplorer.selected', { continent: selectedContinentLabel }) }}</span>
-        <span v-else>{{ t('mapExplorer.tapToSelect') }}</span>
+          <div class="pt-3 text-xs font-semibold text-[var(--muted)]">
+            <span v-if="selectedContinents.length">{{ t('mapExplorer.selected', { continent: selectedContinentLabel }) }}</span>
+            <span v-else>{{ t('mapExplorer.tapToSelect') }}</span>
+          </div>
+        </div>
+
+        <section class="pt-8">
+          <div class="text-xs font-bold py-2 pc:text-base">{{ t('firstView.todayFestival') }}</div>
+          <ul
+            v-if="todayEvents.length"
+            class="flex flex-nowrap gap-6 overflow-x-auto w-full pl-1 py-3"
+          >
+            <li
+              v-for="item in todayEvents"
+              :key="item.id"
+              class="w-[130px] h-[130px] flex-shrink-0 p-[10px] rounded-lg bg-[var(--surface)] shadow-[1px_1px_6px_var(--shadow-weak)] flex flex-col content-center"
+            >
+              <router-link :to="{ name: 'festivaldetail', params: { id: item.id } }">
+                <img
+                  :src="item.image"
+                  alt="festival"
+                  class="w-full h-[60px] object-cover rounded-[10px]"
+                />
+                <div class="flex flex-col">
+                  <div class="text-xs font-black py-[10px]">
+                    {{ shortText(item.title) }}
+                  </div>
+                  <div class="text-xs truncate">
+                    {{ shortText(item.city + ' / ' + item.contry) }}
+                  </div>
+                </div>
+              </router-link>
+            </li>
+          </ul>
+          <div v-else class="text-base text-gray-400 text-center py-8 border-b">
+            {{ t('firstView.emptyToday') }}
+          </div>
+        </section>
       </div>
     </div>
-
-    <section class="pt-8">
-      <div class="text-xs font-bold py-2 pc:text-base">{{ t('firstView.todayFestival') }}</div>
-      <ul
-        v-if="todayEvents.length"
-        class="flex flex-nowrap gap-6 overflow-x-auto w-full pl-1 py-3"
-      >
-        <li
-          v-for="item in todayEvents"
-          :key="item.id"
-          class="w-[130px] h-[130px] flex-shrink-0 p-[10px] rounded-lg bg-[var(--bg)] shadow-[1px_1px_6px_var(--shadow-weak)] flex flex-col content-center"
-        >
-          <router-link :to="{ name: 'festivaldetail', params: { id: item.id } }">
-            <img
-              :src="item.image"
-              alt="festival"
-              class="w-full h-[60px] object-cover rounded-[10px]"
-            />
-            <div class="flex flex-col">
-              <div class="text-xs font-black py-[10px]">
-                {{ shortText(item.title) }}
-              </div>
-              <div class="text-xs truncate">
-                {{ shortText(item.city + ' / ' + item.contry) }}
-              </div>
-            </div>
-          </router-link>
-        </li>
-      </ul>
-      <div v-else class="text-base text-gray-400 text-center py-8 border-b">
-        {{ t('firstView.emptyToday') }}
-      </div>
-    </section>
 
     <section class="pt-8">
       <h2 class="text-base font-semibold">{{ t('mapExplorer.filterTitle') }}</h2>
@@ -507,7 +504,7 @@ onBeforeUnmount(() => {
         </div>
       </div>
 
-      <div class="pt-10">
+      <div class="py-10">
         <button
           type="button"
           class="w-full rounded-2xl bg-[#f61979] px-4 py-4 text-sm font-semibold text-white shadow-[0_8px_16px_rgba(246,25,121,0.25)]"

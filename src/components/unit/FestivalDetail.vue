@@ -182,7 +182,7 @@ const relatedByLocation = computed(() => {
 </script>
 
 <template>
-  <div class="px-5 pc:px-14 pc:py-10 h-screen mb-[100px] pc:mb-0">
+  <div class="px-5 pc:px-14 pc:py-10 mb-[100px] pc:mb-0">
     <div v-if="festival" class="max-w-5xl mx-auto space-y-8 pc:grid pc:mx-0 pc:grid-cols-3 pc:w-full pc:max-w-full pc:gap-6 pc:space-y-0">
       <div class="flex flex-col gap-6 pc:gap-4">
         <div class="rounded-xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.12)]">
