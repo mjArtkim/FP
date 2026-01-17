@@ -71,7 +71,7 @@ const barcodeSrc = computed(() => (isDarkTheme.value ? blackBarcode : whiteBarco
 </script>
 
 <template>
-  <div class="px-5 py-8 pc:px-14 pc:py-10">
+  <div class="px-5 pb-8 pc:px-14 pc:py-10">
     <div class="max-w-5xl mx-auto space-y-4">
       <div class="flex items-center gap-2">
         <router-link
@@ -103,32 +103,32 @@ const barcodeSrc = computed(() => (isDarkTheme.value ? blackBarcode : whiteBarco
             </span>
           </div>
           <div class="relative flex items-center gap-3 text-white">
-            <div class="w-9 h-9 rounded-md overflow-hidden bg-black/20 ">
+            <div class="w-9 h-9 rounded-md overflow-hidden bg-black/20 pc:w-11 pc:h-11">
               <img
                 v-if="artist.spotify?.image"
                 :src="artist.spotify.image"
                 :alt="artist.identity.name"
                 class="w-full h-full object-cover"
               />
-              <div v-else class="w-full h-full flex items-center justify-center text-xs font-semibold uppercases ">
+              <div v-else class="w-full h-full flex items-center justify-center text-xs font-semibold uppercases pc:text-sm">
                 {{ artist.identity.name?.[0] || '?' }}
               </div>
             </div>
             <div>
-              <div class="text-sm font-bold uppercase">{{ artist.identity.name }}</div>
-              <div class="text-[10px] opacity-80">{{ getArtistEventCount(artist.slug) }} EVENTS</div>
-            <div class="absolute right-32 bottom-0">
+              <div class="text-sm font-bold uppercase pc:text-base">{{ artist.identity.name }}</div>
+              <div class="text-[10px] opacity-80 pc:text-xs">{{ getArtistEventCount(artist.slug) }} EVENTS</div>
+            <div class="absolute right-36 bottom-0 w-[10%] min-w-[36px]">
               <img
                 :src="barcodeSrc"
                 alt=""
-                class="h-full"
+                class="w-full"
               />
             </div>
             </div>
           </div>
-          <div class="relative flex items-center">
-            <div class="absolute -left-[90px]">
-              <div class="absolute -bottom-2 -left-8 font-black art-line text-transparent">ARTIST</div>
+          <div class="relative flex items-center max-w-[90px] pc:justify-end">
+            <div class="absolute -left-[90px] pc:-left-10">
+              <div class="absolute -bottom-2 -left-9 pc:-left-12 font-black art-line text-transparent">ARTIST</div>
               <img
                 :src="ticketSrc"
                 alt=""
@@ -136,7 +136,7 @@ const barcodeSrc = computed(() => (isDarkTheme.value ? blackBarcode : whiteBarco
               />
             </div>
             <div class="h-[60px] flex flex-col items-center justify-center bg-[var(--bg)] text-[var(--muted)] px-1">
-              <div class="text-[8px] font-semibold">Detail</div>
+              <div class="text-[8px] font-semibold pc:text-[10px]">Detail</div>
               <div class="material-symbols-rounded text-sm">arrow_right_alt</div>
             </div>
           </div>
