@@ -291,7 +291,7 @@ const chartGradient = computed(() => {
         </div>
       </div>
 
-      <div class="space-y-4">
+      <div class="space-y-4 pb-4">
         <div class="text-xs tracking-wide text-[var(--muted)]">
           {{ t('insights.continentTrends') }}
         </div>
