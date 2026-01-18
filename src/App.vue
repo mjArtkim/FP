@@ -7,7 +7,7 @@
 
 
 <template>
-  <div class="min-h-screen pc:flex pc:overflow-hidden bg-[var(--bg)] text-[var(--text)]">
+  <div class="min-h-[100dvh] pc:flex pc:overflow-hidden bg-[var(--bg)] text-[var(--text)]">
     <aside
       class="hidden pc:flex pc:flex-col pc:shrink-0 border-r border-[var(--stroke)] bg-[var(--surface)] text-[var(--text)]"
     >
@@ -15,8 +15,8 @@
     </aside>
     <div
       id="app-scroll"
-      class="flex-1 overflow-y-auto pb-[60px] relative bg-[var(--bg)] text-[var(--text)] pc:pb-0"
-      :class="{ 'overflow-hidden': $route?.name === 'mapresult', 'h-screen': $route?.name !== 'mapresult' }"
+      class="flex-1 overflow-y-auto pb-[calc(60px+env(safe-area-inset-bottom))] relative bg-[var(--bg)] text-[var(--text)] pc:pb-0"
+      :class="{ 'overflow-hidden': $route?.name === 'mapresult', 'h-[100dvh]': $route?.name !== 'mapresult' }"
     >
       <div class="block pc:hidden">
         <Header />
