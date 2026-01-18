@@ -298,7 +298,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <section class="px-5 pb-20 font-pretend text-[var(--text)] pc:grid pc:grid-cols-2 pc:gap-8 pc:p-8">
+  <section class="px-5 font-pretend text-[var(--text)] pc:grid pc:grid-cols-2 pc:gap-8 pc:p-8">
     <div>
       <header class="pt-2 pb-6">
         <h1 class="text-3xl font-extrabold tracking-tight">{{ t('mapExplorer.title') }}</h1>

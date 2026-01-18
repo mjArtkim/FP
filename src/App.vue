@@ -15,7 +15,7 @@
     </aside>
     <div
       id="app-scroll"
-      class="flex-1 overflow-y-auto pb-[calc(60px+env(safe-area-inset-bottom))] relative bg-[var(--bg)] text-[var(--text)] pc:pb-0"
+      class="flex-1 overflow-y-auto pb-[calc(20px+env(safe-area-inset-bottom))] relative bg-[var(--bg)] text-[var(--text)] pc:pb-0"
       :class="{ 'overflow-hidden': $route?.name === 'mapresult', 'h-[100dvh]': $route?.name !== 'mapresult' }"
     >
       <div class="block pc:hidden">
