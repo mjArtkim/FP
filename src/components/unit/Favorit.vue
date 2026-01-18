@@ -83,7 +83,7 @@ const sortedMonthEvents = computed(() => {
 })
 </script>
 <template>
-  <div class="px-5 pb-8 pc:px-14 pc:py-10">
+  <div class="min-h-[100dvh] px-5 pb-[calc(2rem+env(safe-area-inset-bottom))] pc:px-14 pc:py-10">
     <div class="max-w-5xl mx-auto space-y-10">
       <div class="space-y-4">
         <div class="text-xs tracking-[0.25em] font-black text-[var(--muted)]">{{ t('favorites.myFavoriteTitle') }}</div>

@@ -264,7 +264,7 @@ onMounted(loadProfile)
 </script>
 
 <template>
-  <section class="min-h-screen bg-[var(--bg)] text-[var(--text)] px-6 pt-3 pb-10">
+  <section class="min-h-[100dvh] bg-[var(--bg)] text-[var(--text)] px-6 pt-3 pb-[calc(2.5rem+env(safe-area-inset-bottom))]">
     <div class="mx-auto flex w-full max-w-md flex-col gap-8">
       <header class="flex items-start justify-between">
         <div class="flex items-start gap-3">

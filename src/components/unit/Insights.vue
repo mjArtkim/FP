@@ -213,7 +213,7 @@ const chartGradient = computed(() => {
 </script>
 
 <template>
-  <section class="px-5 pb-10 pt-4 font-pretend text-[var(--text)] pc:px-10 pc:py-8">
+  <section class="min-h-[100dvh] px-5 pb-[calc(2.5rem+env(safe-area-inset-bottom))] pt-4 font-pretend text-[var(--text)] pc:px-10 pc:py-8">
     <div class="max-w-[520px] mx-auto space-y-10">
       <div class="space-y-3">
         <div class="w-10 h-10 rounded-2xl bg-[var(--surface)] shadow-[0_6px_16px_rgba(15,23,42,0.08)] flex items-center justify-center">
