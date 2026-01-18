@@ -248,7 +248,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div class="px-5 pc:px-14 pc:py-10 mb-[100px] pc:mb-0">
+  <div class="px-5 pc:px-14 pc:py-10 mb-[50px] pc:mb-0">
     <div v-if="artist" class="max-w-4xl mx-auto space-y-6 pc:grid pc:mx-0 pc:grid-cols-[35%_65%] pc:w-full pc:max-w-full pc:gap-6 pc:space-y-0">
       <div class="space-y-3 pc:space-y-5">
         <div class="rounded-xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.12)]">
