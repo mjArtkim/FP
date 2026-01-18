@@ -153,6 +153,7 @@ const topArtists = computed(() => {
     .sort((a, b) => b.count - a.count)
     .slice(0, 4)
     .map((artist, index) => ({
+      slug: artist.slug,
       name: artist.slug ? artistMap.get(artist.slug)?.identity?.name || artist.name : artist.name,
       count: artist.count,
       initials: getInitials(artist.name),
@@ -254,10 +255,13 @@ const chartGradient = computed(() => {
           {{ t('insights.topArtists') }}
         </div>
         <div class="grid grid-cols-2 gap-4">
-          <div
+          <component
             v-for="artist in topArtists"
             :key="artist.name"
+            :is="artist.slug ? 'router-link' : 'div'"
+            v-bind="artist.slug ? { to: { name: 'artistdetail', params: { slug: artist.slug } } } : {}"
             class="flex items-center gap-3"
+            :class="artist.slug ? 'cursor-pointer pc:hover:opacity-80 transition-opacity' : ''"
           >
             <div
               class="w-11 h-11 rounded-xl overflow-hidden shadow-[0_8px_16px_rgba(15,23,42,0.15)] flex items-center justify-center"
@@ -287,7 +291,7 @@ const chartGradient = computed(() => {
             >
               {{ artist.name }}
             </div>
-          </div>
+          </component>
         </div>
       </div>
 
