@@ -356,7 +356,7 @@ const relatedByLocation = computed(() => {
             {{ t('festivalDetail.mapNoInfo') }}
           </div>
         </div>
-        <div class="p-4 rounded-lg bg-[var(--bg)] shadow-[0_0_6px_var(--shadow-weak)] space-y-3 mb-[100px] pc:mb-0">
+        <div class="p-4 rounded-lg bg-[var(--bg)] shadow-[0_0_6px_var(--shadow-weak)] space-y-3 mb-[50px] pc:mb-0">
           <div class="text-sm font-semibold">
             {{ t('festivalDetail.sameLocation') }}
           </div>
