@@ -6,6 +6,7 @@ import artists from '@/data/artists.json'
 import { isFestivalFavorite, loadFavorites, toggleFestivalFavorite } from '@/utils/favorites'
 import { useI18n } from '@/i18n'
 import { authUser } from '@/utils/authState'
+import { normalizeExternalUrl } from '@/utils/links'
 
 type FestivalItem = {
   id: number
@@ -67,6 +68,9 @@ const locationText = computed(() => {
   if (!festival.value) return ''
   return `${festival.value.city} / ${festival.value.contry}`
 })
+
+const ticketLink = computed(() => normalizeExternalUrl(festival.value?.ticket))
+const infoLink = computed(() => normalizeExternalUrl(festival.value?.infolink))
 
 const mapQuery = computed(() => {
   if (!festival.value) return ''
@@ -237,8 +241,8 @@ const relatedByLocation = computed(() => {
           <div class="text-sm font-bold">{{ t('festivalDetail.linkSection') }}</div>
           <div class="flex gap-3 flex-col text-center">
             <a
-              v-if="festival.ticket"
-              :href="festival.ticket"
+              v-if="ticketLink"
+              :href="ticketLink"
               target="_blank"
               rel="noopener"
               class="h-[30px] flex items-center justify-center gap-5 rounded-md bg-neonpink text-white text-xs shadow-[0_4px_12px_rgba(0,0,0,0.12)] font-gugi pc:text-sm pc:hover:bg-white pc:hover:border pc:hover:text-neonpink pc:hover:border-neonpink"
@@ -247,8 +251,8 @@ const relatedByLocation = computed(() => {
               <div>{{ t('festivalDetail.getTicket') }}</div>
             </a>
             <a
-              v-if="festival.infolink"
-              :href="festival.infolink"
+              v-if="infoLink"
+              :href="infoLink"
               target="_blank"
               rel="noopener"
               class="h-[30px] flex items-center justify-center gap-5 rounded-md pc:hover:border bg-[#482317] text-white text-xs pc:text-sm pc:hover:border-[#482317] pc:hover:bg-white pc:hover:text-[#482317] transition-colors font-gugi"
@@ -256,7 +260,7 @@ const relatedByLocation = computed(() => {
               <div class="material-symbols-rounded">link</div>
               <div>{{ t('festivalDetail.linkPage') }}</div>
             </a>
-            <div v-if="!festival.ticket && !festival.infolink" class="text-sm text-gray-500">
+            <div v-if="!ticketLink && !infoLink" class="text-sm text-gray-500">
               {{ t('festivalDetail.noLink') }}
             </div>
           </div>

@@ -1,5 +1,7 @@
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore'
 import { auth, db } from '@/utils/firebase'
+import { getProfileRole } from '@/utils/roles'
+import { normalizeExternalUrl } from '@/utils/links'
 
 type FestivalSubmission = {
   type: 'festival'
@@ -36,8 +38,12 @@ type ArtistSubmission = {
 export const submitFestival = async (payload: FestivalSubmission) => {
   const user = auth.currentUser
   if (!user) throw new Error('Login required.')
+  const role = await getProfileRole(user.uid)
+  if (role !== 'admin') throw new Error('Admin only.')
   await addDoc(collection(db, 'adminSubmissions'), {
     ...payload,
+    ticketLink: normalizeExternalUrl(payload.ticketLink),
+    infoLink: normalizeExternalUrl(payload.infoLink),
     createdAt: serverTimestamp(),
     createdBy: user.uid,
     status: 'pending',
@@ -47,8 +53,18 @@ export const submitFestival = async (payload: FestivalSubmission) => {
 export const submitArtist = async (payload: ArtistSubmission) => {
   const user = auth.currentUser
   if (!user) throw new Error('Login required.')
+  const role = await getProfileRole(user.uid)
+  if (role !== 'admin') throw new Error('Admin only.')
   await addDoc(collection(db, 'adminSubmissions'), {
     ...payload,
+    links: {
+      about: normalizeExternalUrl(payload.links.about),
+      instagram: normalizeExternalUrl(payload.links.instagram),
+      youtube: normalizeExternalUrl(payload.links.youtube),
+      appleMusic: normalizeExternalUrl(payload.links.appleMusic),
+      spotify: normalizeExternalUrl(payload.links.spotify),
+      soundcloud: normalizeExternalUrl(payload.links.soundcloud),
+    },
     createdAt: serverTimestamp(),
     createdBy: user.uid,
     status: 'pending',
