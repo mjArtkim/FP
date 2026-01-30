@@ -2,7 +2,7 @@
 
   import Header from './components/unit/Header.vue'
   import { RouterView } from 'vue-router'
-  import PcNavigatorVue from './components/unit/PcNavigator.vue'
+import PcNavigatorVue from './components/part/PcNavigator.vue'
 </script>
 
 

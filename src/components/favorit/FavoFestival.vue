@@ -89,30 +89,30 @@ onMounted(async () => {
         <div class="text-lg font-black">FESTIVAL</div>
       </div>
 
-      <div v-if="favoriteFestivals.length" class="space-y-4">
+      <div v-if="favoriteFestivals.length" class="space-y-4 pc:grid pc:grid-cols-2 pc:space-y-0 pc:gap-5  ">
         <router-link
           v-for="(fest, index) in favoriteFestivals"
           :key="fest.id"
           :to="{ name: 'festivaldetail', params: { id: fest.id } }"
-          class="group h-44 flex overflow-hidden rounded-md shadow-[0_0_8px_rgba(0,0,0,0.08)] border border-black/5"
+          class="group h-44 flex overflow-hidden rounded-md shadow-[0_0_8px_rgba(0,0,0,0.08)] border border-black/5 pc:h-56 pc:hover:-translate-y-2 transition-all duration-300"
           :class="index % 2 === 0 ? 'bg-pulseblue' : 'bg-neonpink'"
         >
-          <div class="festival-pulse font-bold text-white text-[8px] tracking-tight mb-[8px] mx-2 self-end">FESTIVAL PULSE</div>
-          <div class="w-28 h-full shrink-0 bg-black/10 overflow-hidden">
+          <div class="festival-pulse text-white text-[8px] tracking-tight mb-[8px] mx-2 self-end pc:text-[12px]">FESTIVAL PULSE</div>
+          <div class="w-28 h-full shrink-0 bg-black/10 overflow-hidden pc:w-40">
             <img
               v-if="fest.image"
               :src="fest.image"
               :alt="fest.title"
               class="h-full object-cover"
             />
-            <div v-else class="w-full h-full flex items-center justify-center text-xs font-semibold uppercase">
+            <div v-else class="w-full h-full flex items-center justify-center text-xs font-semibold uppercase pc:text-base">
               {{ fest.title?.[0] || '?' }}
             </div>
           </div>
           <div class="relative flex flex-1 text-white pl-3">
             <div class="min-w-0 flex-1 py-3 pr-2 flex flex-col justify-between">
-              <div class=" text-[10px] uppercase opacity-80">Your Pick</div>
-              <div class="text-sm font-bold mt-1">{{ fest.title }}</div>
+              <div class=" text-[10px] uppercase opacity-80 pc:text-[12px]">Your Pick</div>
+              <div class="text-sm font-bold mt-1 pc:text-xl">{{ fest.title }}</div>
             <div
               ref="ticketStripEl"
               class="mt-1 flex w-full items-center gap-[2px]"
@@ -127,17 +127,17 @@ onMounted(async () => {
               />
             </div>
               <div>
-                <div class="text-[10px] opacity-85 mt-1">
+                <div class="text-[10px] opacity-85 mt-1 pc:text-sm">
                   {{ fest.start }} ~ {{ fest.end }}
                 </div>
                 <div class="flex justify-between pr-2">
                   <div>
-                    <div class="text-xs font-bold mt-2">{{ fest.city }}</div>
-                    <div class="text-xs opacity-80">{{ fest.contry }}</div>
+                    <div class="text-xs font-bold mt-2 pc:text-base">{{ fest.city }}</div>
+                    <div class="text-xs opacity-80 pc:text-sm">{{ fest.contry }}</div>
                   </div>
                   <button
                     type="button"
-                    class="mt-2 inline-flex items-center gap-1 text-[10px] px-2 py-1 rounded-md border border-white"
+                    class="mt-2 inline-flex items-center gap-1 text-[10px] px-2 py-1 rounded-md border border-white/60 pc:text-sm pc:px-4"
                   >
                     Detail
                   </button>
