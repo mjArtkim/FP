@@ -3,7 +3,7 @@ import { computed, onMounted, reactive, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { deleteCurrentUser, getCurrentUser, signOutUser, updateCurrentEmail } from '@/utils/auth'
 import { deleteProfile, getProfile, updateProfile } from '@/utils/profile'
-import { clearStoredKey } from '@/utils/crypto'
+import { clearStoredKey, KeyStorageError } from '@/utils/crypto'
 import { submitArtist, submitFestival } from '@/utils/adminSubmissions'
 import AdminModal from '@/components/unit/AdminModal.vue'
 import { useI18n } from '@/i18n'
@@ -74,8 +74,12 @@ const saveEdit = async () => {
     isEditing.value = false
     actionMessage.value = t('profile.updateSuccess')
   } catch (error) {
-    const message = error instanceof Error ? error.message : t('profile.updateFailed')
-    errorMessage.value = message
+    if (error instanceof KeyStorageError) {
+      errorMessage.value = t('profile.secureStorageUnavailable')
+    } else {
+      const message = error instanceof Error ? error.message : t('profile.updateFailed')
+      errorMessage.value = message
+    }
   } finally {
     isSaving.value = false
   }
@@ -216,8 +220,12 @@ const loadProfile = async () => {
     })
     Object.assign(draftProfile, profile)
   } catch (error) {
-    const message = error instanceof Error ? error.message : t('profile.loadFailed')
-    errorMessage.value = message
+    if (error instanceof KeyStorageError) {
+      errorMessage.value = t('profile.secureStorageUnavailable')
+    } else {
+      const message = error instanceof Error ? error.message : t('profile.loadFailed')
+      errorMessage.value = message
+    }
   } finally {
     isLoading.value = false
   }
@@ -253,7 +261,7 @@ onMounted(loadProfile)
 </script>
 
 <template>
-  <section class="min-h-[100dvh] bg-[var(--bg)] text-[var(--text)] px-6 pt-3 pb-[calc(2.5rem+env(safe-area-inset-bottom))]">
+  <section class="min-h-[100dvh] bg-[var(--bg)] text-[var(--text)] px-6 pt-3 pb-[calc(2.5rem+env(safe-area-inset-bottom))] pc:pt-8">
     <div class="mx-auto flex w-full max-w-md flex-col gap-8">
       <header class="flex items-start justify-between">
         <div class="flex items-start gap-3">
@@ -448,7 +456,7 @@ onMounted(loadProfile)
       leave-from-class="opacity-100 translate-y-0"
       leave-to-class="opacity-0 translate-y-6"
     >
-      <div v-if="isAdminOpen" class="fixed inset-0 z-50 flex items-end justify-center bg-black/40 pb-12">
+      <div v-if="isAdminOpen" class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 pb-12">
         <AdminModal
           :festival-form="festivalForm"
           :years="years"

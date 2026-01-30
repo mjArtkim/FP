@@ -177,6 +177,8 @@ const messages = {
       optionalEmpty: 'Optional',
       updateSuccess: 'Profile updated.',
       updateFailed: 'Update failed.',
+      secureStorageUnavailable:
+        'Secure storage is unavailable in this browser. Please enable site data/IndexedDB or use a different browser.',
       adminOnly: 'Admin only.',
       submissionSaved: 'Submission saved.',
       saveFailed: 'Save failed.',
@@ -482,6 +484,8 @@ const messages = {
       optionalEmpty: '선택 안 함',
       updateSuccess: '프로필이 업데이트되었습니다.',
       updateFailed: '업데이트에 실패했습니다.',
+      secureStorageUnavailable:
+        '이 브라우저에서는 보안 저장소를 사용할 수 없습니다. 사이트 데이터/IndexedDB를 허용하거나 다른 브라우저를 사용해 주세요.',
       adminOnly: '관리자만 가능합니다.',
       submissionSaved: '등록이 저장되었습니다.',
       saveFailed: '저장에 실패했습니다.',
