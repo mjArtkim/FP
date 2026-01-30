@@ -456,7 +456,7 @@ onMounted(loadProfile)
       leave-from-class="opacity-100 translate-y-0"
       leave-to-class="opacity-0 translate-y-6"
     >
-      <div v-if="isAdminOpen" class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 pb-12">
+      <div v-if="isAdminOpen" class="fixed inset-0 z-[9999] flex items-center justify-center bg-black/40 pb-12">
         <AdminModal
           :festival-form="festivalForm"
           :years="years"
