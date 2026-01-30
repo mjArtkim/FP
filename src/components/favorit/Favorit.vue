@@ -83,21 +83,21 @@ const sortedMonthEvents = computed(() => {
 })
 </script>
 <template>
-  <div class="min-h-[100dvh] px-5 pb-[calc(2rem+env(safe-area-inset-bottom))] pc:px-14 pc:py-10">
-    <div class="max-w-5xl mx-auto space-y-10">
-      <div class="space-y-4">
+  <div class="relative min-h-[100dvh] px-5 pb-[calc(2rem+env(safe-area-inset-bottom))] pc:px-14 pc:py-10">
+    <div class="max-w-5xl mx-auto space-y-10 pc:grid pc:mx-0 pc:grid-cols-[1fr_1.8fr] pc:max-w-full pc:gap-10">
+      <div class="space-y-4 pc:space-y-10 pc:pt-10">
         <div class="text-xs tracking-[0.25em] font-black text-[var(--muted)]">{{ t('favorites.myFavoriteTitle') }}</div>
         <div class="grid gap-4">
           <router-link
             to="/favorite/artists"
-            class="rounded-2xl bg-[var(--surface)] shadow-[0_0_6px_var(--shadow-weak)] p-4 text-left pc:hover:bg-neonpink/5 transition-colors"
+            class="rounded-2xl bg-[var(--surface)] shadow-[0_0_6px_var(--shadow-weak)] p-4 text-left pc:hover:bg-neonpink/5 transition-colors pc:min-h-[200px] pc:flex pc:justify-center"
           >
-            <div class="flex items-center gap-4">
+            <div class="flex items-center gap-4 pc:flex-col pc:justify-center">
               <div class="flex -space-x-2">
                 <div
                   v-for="artist in previewArtists"
                   :key="artist.slug"
-                  class="w-10 h-10 rounded-full overflow-hidden border-2 border-[var(--surface)] bg-black/10 flex items-center justify-center text-xs font-semibold uppercase"
+                  class="w-10 h-10 rounded-full overflow-hidden border-2 border-[var(--surface)] bg-black/10 flex items-center justify-center text-xs font-semibold uppercase pc:w-16 pc:h-16"
                 >
                   <img
                     v-if="artist.spotify?.image"
@@ -108,11 +108,13 @@ const sortedMonthEvents = computed(() => {
                   <span v-else>{{ artist.identity.name?.[0] || '?' }}</span>
                 </div>
               </div>
-              <div class="text-sm font-semibold">
-                {{ t('favorites.artistCount', { count: favoriteArtists.length }) }}
-              </div>
-              <div class="ml-auto material-symbols-rounded text-lg text-[var(--muted)]">
-                arrow_right_alt
+              <div class="flex items-center">
+                <div class="text-sm font-semibold pc:text-base">
+                  {{ t('favorites.artistCount', { count: favoriteArtists.length }) }}
+                </div>
+                <div class="ml-auto material-symbols-rounded text-lg text-[var(--muted)] pc:text-xl pc:ml-4">
+                  arrow_right_alt
+                </div>
               </div>
             </div>
             <div v-if="!favoriteArtists.length" class="text-xs text-gray-500 mt-2">
@@ -122,14 +124,14 @@ const sortedMonthEvents = computed(() => {
 
           <router-link
             to="/favorite/festivals"
-            class="rounded-2xl bg-[var(--surface)] shadow-[0_0_6px_var(--shadow-weak)] p-4 text-left pc:hover:bg-neonpink/5 transition-colors"
+            class="rounded-2xl bg-[var(--surface)] shadow-[0_0_6px_var(--shadow-weak)] p-4 text-left pc:hover:bg-neonpink/5 transition-colors pc:min-h-[200px] pc:flex pc:justify-center"
           >
-            <div class="flex items-center gap-4">
-              <div class="grid grid-cols-2 gap-1">
+            <div class="flex items-center gap-4 pc:flex-col pc:justify-center">
+              <div class="grid grid-cols-2 gap-1 pc:flex">
                 <div
                   v-for="fest in previewFestivals"
                   :key="fest.id"
-                  class="w-10 h-10 rounded-md overflow-hidden bg-black/10 flex items-center justify-center text-[10px] font-semibold uppercase"
+                  class="w-10 h-10 rounded-md overflow-hidden bg-black/10 flex items-center justify-center text-[10px] font-semibold uppercase pc:w-16 pc:h-16"
                 >
                   <img
                     v-if="fest.image"
@@ -140,11 +142,13 @@ const sortedMonthEvents = computed(() => {
                   <span v-else>{{ fest.title?.[0] || '?' }}</span>
                 </div>
               </div>
-              <div class="text-sm font-semibold">
-                {{ t('favorites.festivalCount', { count: favoriteFestivals.length }) }}
-              </div>
-              <div class="ml-auto material-symbols-rounded text-lg text-[var(--muted)]">
-                arrow_right_alt
+              <div class="flex items-center">
+                <div class="text-sm font-semibold pc:text-base">
+                  {{ t('favorites.festivalCount', { count: favoriteFestivals.length }) }}
+                </div>
+                <div class="ml-auto material-symbols-rounded text-lg text-[var(--muted)] pc:text-xl pc:ml-4">
+                  arrow_right_alt
+                </div>
               </div>
             </div>
             <div v-if="!favoriteFestivals.length" class="text-xs text-gray-500 mt-2">
