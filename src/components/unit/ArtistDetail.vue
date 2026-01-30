@@ -7,6 +7,7 @@ import { favorites, loadFavorites, toggleFavorite } from '@/utils/favorites'
 import { getGenreToneClass } from '@/utils/genreTone'
 import { useI18n } from '@/i18n'
 import { authUser } from '@/utils/authState'
+import { normalizeExternalUrl } from '@/utils/links'
 
 type Artist = {
   slug: string
@@ -112,15 +113,15 @@ const showAllAlbums = ref(false)
 const showAllTracks = ref(false)
 const showAllGenres = ref(false)
 const showAllAliases = ref(false)
-const homepageLink = computed(() => artist.value?.identity.links?.homepage)
-const instagramLink = computed(() => artist.value?.identity.links?.instagram)
-const youtubeLink = computed(() => artist.value?.identity.links?.youtube)
-const applemusicLink = computed(() => artist.value?.identity.links?.applemusic)
-const soundcloudLink = computed(() => artist.value?.identity.links?.soundcloud)
+const homepageLink = computed(() => normalizeExternalUrl(artist.value?.identity.links?.homepage))
+const instagramLink = computed(() => normalizeExternalUrl(artist.value?.identity.links?.instagram))
+const youtubeLink = computed(() => normalizeExternalUrl(artist.value?.identity.links?.youtube))
+const applemusicLink = computed(() => normalizeExternalUrl(artist.value?.identity.links?.applemusic))
+const soundcloudLink = computed(() => normalizeExternalUrl(artist.value?.identity.links?.soundcloud))
 const spotifyLink = computed(() => {
   const spotifyId = artist.value?.spotify?.spotifyId
   if (spotifyId) return `https://open.spotify.com/artist/${spotifyId}`
-  return artist.value?.identity.links?.spotify
+  return normalizeExternalUrl(artist.value?.identity.links?.spotify)
 })
 
 function formatDuration(durationMs?: number) {

@@ -239,7 +239,7 @@ const handleDelete = async () => {
   try {
     await deleteProfile(userId.value)
     await deleteCurrentUser()
-    clearStoredKey(userId.value)
+    await clearStoredKey(userId.value)
     router.replace('/')
   } catch (error) {
     const message = error instanceof Error ? error.message : t('profile.deleteFailed')

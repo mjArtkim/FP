@@ -3,7 +3,8 @@ import { auth, db } from '@/utils/firebase'
 
 export type UserRole = 'guest' | 'user' | 'admin'
 
-let cachedRole: { uid: string; role: UserRole } | null = null
+const ROLE_CACHE_TTL_MS = 30_000
+let cachedRole: { uid: string; role: UserRole; fetchedAt: number } | null = null
 
 export const getProfileRole = async (uid: string): Promise<UserRole> => {
   const snapshot = await getDoc(doc(db, 'profiles', uid))
@@ -15,9 +16,11 @@ export const getProfileRole = async (uid: string): Promise<UserRole> => {
 export const resolveUserRole = async (): Promise<UserRole> => {
   const user = auth.currentUser
   if (!user) return 'guest'
-  if (cachedRole?.uid === user.uid) return cachedRole.role
+  if (cachedRole?.uid === user.uid && Date.now() - cachedRole.fetchedAt < ROLE_CACHE_TTL_MS) {
+    return cachedRole.role
+  }
   const role = await getProfileRole(user.uid)
-  cachedRole = { uid: user.uid, role }
+  cachedRole = { uid: user.uid, role, fetchedAt: Date.now() }
   return role
 }
 

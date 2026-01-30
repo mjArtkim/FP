@@ -21,7 +21,6 @@ export type ProfileData = {
   dob: string
   city: string
   country: string
-  role?: 'user' | 'admin'
 }
 
 export const createProfile = async (uid: string, data: ProfileData) => {
@@ -29,7 +28,7 @@ export const createProfile = async (uid: string, data: ProfileData) => {
     fullName: data.fullName,
     city: data.city,
     country: data.country,
-    role: data.role ?? 'user',
+    role: 'user',
     emailEncrypted: await encryptField(uid, data.email),
     phoneEncrypted: await encryptField(uid, data.phone),
     dobEncrypted: await encryptField(uid, data.dob),

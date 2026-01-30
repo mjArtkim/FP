@@ -19,18 +19,69 @@ const base64ToBytes = (base64: string) => {
   return bytes
 }
 
-const getStoredKey = (uid: string) => localStorage.getItem(`fp_key_${uid}`)
-const setStoredKey = (uid: string, value: string) => localStorage.setItem(`fp_key_${uid}`, value)
+const DB_NAME = 'festival_key_store'
+const DB_STORE = 'keys'
+const memoryKeyCache = new Map<string, CryptoKey>()
+
+const openKeyDb = () =>
+  new Promise<IDBDatabase>((resolve, reject) => {
+    const request = indexedDB.open(DB_NAME, 1)
+    request.onupgradeneeded = () => {
+      request.result.createObjectStore(DB_STORE)
+    }
+    request.onsuccess = () => resolve(request.result)
+    request.onerror = () => reject(request.error)
+  })
+
+const getStoredKey = async (uid: string) => {
+  const cached = memoryKeyCache.get(uid)
+  if (cached) return cached
+  if (typeof localStorage !== 'undefined') {
+    const legacy = localStorage.getItem(`fp_key_${uid}`)
+    if (legacy) {
+      try {
+        const imported = await crypto.subtle.importKey('raw', base64ToBytes(legacy), 'AES-GCM', false, [
+          'encrypt',
+          'decrypt',
+        ])
+        await setStoredKey(uid, imported)
+        localStorage.removeItem(`fp_key_${uid}`)
+        return imported
+      } catch {
+        localStorage.removeItem(`fp_key_${uid}`)
+      }
+    }
+  }
+  if (typeof indexedDB === 'undefined') return null
+  const db = await openKeyDb()
+  return new Promise<CryptoKey | null>((resolve, reject) => {
+    const tx = db.transaction(DB_STORE, 'readonly')
+    const request = tx.objectStore(DB_STORE).get(uid)
+    request.onsuccess = () => resolve((request.result as CryptoKey | undefined) ?? null)
+    request.onerror = () => reject(request.error)
+  })
+}
+
+const setStoredKey = async (uid: string, key: CryptoKey) => {
+  memoryKeyCache.set(uid, key)
+  if (typeof indexedDB === 'undefined') return
+  const db = await openKeyDb()
+  await new Promise<void>((resolve, reject) => {
+    const tx = db.transaction(DB_STORE, 'readwrite')
+    tx.objectStore(DB_STORE).put(key, uid)
+    tx.oncomplete = () => resolve()
+    tx.onerror = () => reject(tx.error)
+  })
+}
 
 const getOrCreateKey = async (uid: string) => {
-  const stored = getStoredKey(uid)
+  const stored = await getStoredKey(uid)
   if (stored) {
-    return crypto.subtle.importKey('raw', base64ToBytes(stored), 'AES-GCM', true, ['encrypt', 'decrypt'])
+    return stored
   }
 
-  const key = await crypto.subtle.generateKey({ name: 'AES-GCM', length: 256 }, true, ['encrypt', 'decrypt'])
-  const raw = await crypto.subtle.exportKey('raw', key)
-  setStoredKey(uid, bufferToBase64(raw))
+  const key = await crypto.subtle.generateKey({ name: 'AES-GCM', length: 256 }, false, ['encrypt', 'decrypt'])
+  await setStoredKey(uid, key)
   return key
 }
 
@@ -65,6 +116,14 @@ export const decryptField = async (uid: string, payload: EncryptedField | null |
   }
 }
 
-export const clearStoredKey = (uid: string) => {
-  localStorage.removeItem(`fp_key_${uid}`)
+export const clearStoredKey = async (uid: string) => {
+  memoryKeyCache.delete(uid)
+  if (typeof indexedDB === 'undefined') return
+  const db = await openKeyDb()
+  await new Promise<void>((resolve, reject) => {
+    const tx = db.transaction(DB_STORE, 'readwrite')
+    tx.objectStore(DB_STORE).delete(uid)
+    tx.oncomplete = () => resolve()
+    tx.onerror = () => reject(tx.error)
+  })
 }
