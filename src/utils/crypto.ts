@@ -23,6 +23,13 @@ const DB_NAME = 'festival_key_store'
 const DB_STORE = 'keys'
 const memoryKeyCache = new Map<string, CryptoKey>()
 
+export class KeyStorageError extends Error {
+  constructor(message = 'Secure storage unavailable.') {
+    super(message)
+    this.name = 'KeyStorageError'
+  }
+}
+
 const openKeyDb = () =>
   new Promise<IDBDatabase>((resolve, reject) => {
     const request = indexedDB.open(DB_NAME, 1)
@@ -32,6 +39,18 @@ const openKeyDb = () =>
     request.onsuccess = () => resolve(request.result)
     request.onerror = () => reject(request.error)
   })
+
+const assertKeyStorageAvailable = async () => {
+  if (typeof indexedDB === 'undefined') {
+    throw new KeyStorageError()
+  }
+  try {
+    const db = await openKeyDb()
+    db.close?.()
+  } catch {
+    throw new KeyStorageError()
+  }
+}
 
 const getStoredKey = async (uid: string) => {
   const cached = memoryKeyCache.get(uid)
@@ -75,6 +94,7 @@ const setStoredKey = async (uid: string, key: CryptoKey) => {
 }
 
 const getOrCreateKey = async (uid: string) => {
+  await assertKeyStorageAvailable()
   const stored = await getStoredKey(uid)
   if (stored) {
     return stored
@@ -111,7 +131,10 @@ export const decryptField = async (uid: string, payload: EncryptedField | null |
       base64ToBytes(payload.value)
     )
     return decoder.decode(decrypted)
-  } catch {
+  } catch (error) {
+    if (error instanceof KeyStorageError) {
+      throw error
+    }
     return ''
   }
 }
