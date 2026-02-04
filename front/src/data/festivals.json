@@ -475,6 +475,25 @@
       "ticket": "https://www.ideartm.com",
       "infolink": "https://www.ideartm.com",
       "continent": "asia"
+    },
+        {
+      "id": 34,
+      "title": "2월엔 다른 페스티벌",
+      "start": "2026-02-02",
+      "end": "2026-02-27",
+      "image": "/img/testimg.png",
+      "contry": "Korea",
+      "city": "Seoul",
+      "lineup": "Martin Garrix, Hardwell, Afrojack, ANYMA",
+      "artistSlugs": [
+        "martin-garrix",
+        "hardwell",
+        "afrojack",
+        "anyma"
+      ],
+      "ticket": "https://www.ideartm.com",
+      "infolink": "https://www.ideartm.com",
+      "continent": "asia"
     }
   ],
   "2026-01": [
