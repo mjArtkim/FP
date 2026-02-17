@@ -1,14 +1,16 @@
 <script setup lang="ts">
 import topLogo from '@/assets/img/top_logo_b.svg'
 import topLogow from '@/assets/img/top_logo_w.svg'
-import { computed, onMounted, ref, watch } from 'vue'
+import { computed, onMounted, onBeforeUnmount, ref } from 'vue'
 import NeonSwitch from '@/components/part/NeonSwitch.vue'
 import LanguageToggle from '@/components/part/LanguageToggle.vue'
 import { useI18n } from '@/i18n'
 import { resolveUserRole } from '@/utils/roles'
 import { getCurrentUser } from '@/utils/auth'
 import { getProfile } from '@/utils/profile'
-const isPowerOn = ref(false)
+import { applyTheme, resolveTheme, setStoredTheme } from '@/utils/theme'
+const isPowerOn = ref(resolveTheme() === 'dark')
+let themeObserver: MutationObserver | null = null
 const profileCity = ref('')
 const profileCountry = ref('')
 const today = new Date()
@@ -34,23 +36,30 @@ const copyrightText = computed(() =>
   t('common.copyright', { year: currentYear, brand: t('common.brand') })
 )
 
-const applyTheme = (mode: 'light' | 'dark') => {
+const syncTheme = () => {
   if (typeof document === 'undefined') return
-  const root = document.documentElement
-  root.dataset.theme = mode
+  const mode = document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light'
+  isPowerOn.value = mode === 'dark'
+}
+
+const onThemeToggle = (value: boolean) => {
+  const mode = value ? 'dark' : 'light'
+  isPowerOn.value = value
+  applyTheme(mode)
+  setStoredTheme(mode)
 }
 
 const currentLogo = computed(() => (isPowerOn.value ? topLogow : topLogo))
 
-watch(
-  isPowerOn,
-  (isDark) => {
-    applyTheme(isDark ? 'dark' : 'light')
-  },
-  { immediate: true }
-)
-
 onMounted(async () => {
+  syncTheme()
+  if (typeof document !== 'undefined') {
+    themeObserver = new MutationObserver(syncTheme)
+    themeObserver.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['data-theme'],
+    })
+  }
   try {
     const user = await getCurrentUser()
     if (!user) return
@@ -61,6 +70,10 @@ onMounted(async () => {
   } catch {
     userRole.value = 'guest'
   }
+})
+
+onBeforeUnmount(() => {
+  if (themeObserver) themeObserver.disconnect()
 })
 </script>
 <template>
@@ -113,7 +126,11 @@ onMounted(async () => {
         >
           {{ isPowerOn ? 'dark_mode' : 'light_mode' }}
         </div>
-        <NeonSwitch v-model="isPowerOn" v-if="isSidebarOpen"/>
+        <NeonSwitch
+          v-if="isSidebarOpen"
+          :model-value="isPowerOn"
+          @update:modelValue="onThemeToggle"
+        />
       </div>
       <div v-if="isSidebarOpen" class="pb-6">
         <LanguageToggle />

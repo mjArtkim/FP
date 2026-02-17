@@ -8,6 +8,7 @@ import NeonSwitch from '@/components/part/NeonSwitch.vue'
 import { useI18n } from '@/i18n'
 import { getCurrentUser } from '@/utils/auth'
 import { getProfile } from '@/utils/profile'
+import { applyTheme, resolveTheme, setStoredTheme } from '@/utils/theme'
 
 const profileCity = ref('')
 const profileCountry = ref('')
@@ -19,21 +20,23 @@ const { t } = useI18n()
 const route = useRoute()
 
 const isGnbOpen = ref(false)
-const themeMode = ref<'light' | 'dark'>('light')
-const isDarkMode = ref(false)
+const themeMode = ref<'light' | 'dark'>(resolveTheme())
+const isDarkMode = ref(themeMode.value === 'dark')
 let observer: MutationObserver | null = null
-
-const applyTheme = (mode: 'light' | 'dark') => {
-  if (typeof document === 'undefined') return
-  const root = document.documentElement
-  if (root.dataset.theme !== mode) root.dataset.theme = mode
-}
 
 const syncTheme = () => {
   if (typeof document === 'undefined') return
   const mode = document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light'
   themeMode.value = mode
   isDarkMode.value = mode === 'dark'
+}
+
+const onThemeToggle = (value: boolean) => {
+  const mode = value ? 'dark' : 'light'
+  isDarkMode.value = value
+  themeMode.value = mode
+  applyTheme(mode)
+  setStoredTheme(mode)
 }
 
 onMounted(() => {
@@ -47,14 +50,6 @@ onMounted(() => {
 onBeforeUnmount(() => {
   if (observer) observer.disconnect()
 })
-
-watch(
-  isDarkMode,
-  (isDark) => {
-    applyTheme(isDark ? 'dark' : 'light')
-  },
-  { immediate: true }
-)
 
 watch(
   () => route.fullPath,
@@ -163,7 +158,7 @@ const loadProfileLocation = async () => {
             </span>
             <span>{{ isDarkMode ? t('theme.dark') : t('theme.light') }}</span>
           </div>
-          <NeonSwitch v-model="isDarkMode" />
+          <NeonSwitch :model-value="isDarkMode" @update:modelValue="onThemeToggle" />
         </div>
       </div>
     </transition>

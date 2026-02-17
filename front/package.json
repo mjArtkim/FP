@@ -4,6 +4,12 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "sync:artists": "node scripts/syncArtistsFromFestivals.js",
+    "mbid:autofill": "node scripts/autoMatchMbid.js",
+    "spotify:enrich": "node scripts/enrichArtistsWithSpotify.js",
+    "festival:images": "node scripts/fetchFestivalImages.js",
+    "predev": "npm run sync:artists",
+    "prebuild": "npm run sync:artists",
     "dev": "vite",
     "build": "vue-tsc -b && vite build",
     "preview": "vite preview"
