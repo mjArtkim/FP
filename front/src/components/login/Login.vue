@@ -10,6 +10,7 @@ const { t } = useI18n()
 
 const email = ref('')
 const password = ref('')
+const rememberMe = ref(false)
 const isSubmitting = ref(false)
 const errorMessage = ref('')
 
@@ -23,7 +24,7 @@ const handleSubmit = async () => {
   errorMessage.value = ''
 
   try {
-    await signIn(email.value, password.value)
+    await signIn(email.value, password.value, rememberMe.value)
     const redirectTo = (route.query.redirect as string) || '/'
     router.replace(redirectTo)
   } catch (error) {
@@ -66,6 +67,15 @@ const handleSubmit = async () => {
             class="rounded-lg border border-[var(--stroke)] bg-[var(--surface-alt)] px-3 py-2 text-sm"
             :placeholder="t('auth.login.passwordPlaceholder')"
           />
+        </label>
+
+        <label class="flex items-center gap-2 text-sm text-[var(--muted)]">
+          <input
+            v-model="rememberMe"
+            type="checkbox"
+            class="h-4 w-4 rounded border border-[var(--stroke)] text-[var(--accent)] focus:ring-0"
+          />
+          <span>{{ t('auth.login.rememberMe') }}</span>
         </label>
 
         <p v-if="errorMessage" class="rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-600">
