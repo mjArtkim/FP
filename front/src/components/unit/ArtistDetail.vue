@@ -643,7 +643,7 @@ onBeforeUnmount(() => {
           <div class="text-sm font-semibold">{{ t('artistDetail.topTracks') }}</div>
           <div class="space-y-2">
             <template
-              v-for="track in (showAllTracks ? displayTracks : displayTracks.slice(0, 4))"
+              v-for="track in (showAllTracks ? displayTracks : displayTracks.slice(0, 3))"
               :key="track.id"
             >
               <a
@@ -700,7 +700,7 @@ onBeforeUnmount(() => {
               {{ t('artistDetail.noTracks') }}
             </div>
           </div>
-          <div v-if="displayTracks.length > 4" class="text-right">
+          <div v-if="displayTracks.length > 3" class="text-right">
             <button
               type="button"
               class="text-sm text-gray-400 inline-flex items-center gap-1 pc:hover:text-gray-700"

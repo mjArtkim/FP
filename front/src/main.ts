@@ -3,7 +3,9 @@ import './style.css'
 import App from './App.vue'
 import router from './router'
 import { initAuthState } from '@/utils/authState'
+import { initTheme } from '@/utils/theme'
 
+initTheme()
 initAuthState()
 
 createApp(App)

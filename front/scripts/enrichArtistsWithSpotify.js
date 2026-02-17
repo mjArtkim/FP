@@ -2,84 +2,60 @@ import 'dotenv/config'
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
-import fetch from 'node-fetch'
-import { getSpotifyToken } from './spotifyAuth.ts'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
-type SpotifyAlbum = {
-  id: string
-  name: string
-  albumType: string
-  releaseDate: string
-  totalTracks: number
-  image?: string
-  url?: string
-}
+const CLIENT_ID = process.env.SPOTIFY_CLIENT_ID
+const CLIENT_SECRET = process.env.SPOTIFY_CLIENT_SECRET
 
-type SpotifyTopTrack = {
-  id: string
-  name: string
-  previewUrl?: string | null
-  url?: string
-  durationMs?: number
-  popularity?: number
-  album?: {
-    id?: string
-    name?: string
-    releaseDate?: string
-    image?: string
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
+
+async function getSpotifyToken() {
+  if (!CLIENT_ID || !CLIENT_SECRET) {
+    throw new Error('SPOTIFY_CLIENT_ID / SPOTIFY_CLIENT_SECRET 을 .env에 넣어줘')
   }
-  artists?: string[]
+
+  const res = await fetch('https://accounts.spotify.com/api/token', {
+    method: 'POST',
+    headers: {
+      Authorization:
+        'Basic ' + Buffer.from(`${CLIENT_ID}:${CLIENT_SECRET}`).toString('base64'),
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: 'grant_type=client_credentials',
+  })
+
+  const data = await res.json()
+  if (!data.access_token) throw new Error('토큰 발급 실패: ' + JSON.stringify(data))
+  return data.access_token
 }
 
-type Artist = {
-  slug: string
-  identity: { name: string }
-  spotify: {
-    spotifyId?: string
-    image?: string
-    genres?: string[]
-    followers?: number
-    popularity?: number
-    spotifyUrl?: string
-
-    // ✅ 추가
-    albums?: SpotifyAlbum[]
-    topTracks?: SpotifyTopTrack[]
-  }
-}
-
-const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms))
-
-async function searchSpotifyArtist(name: string, token: string) {
+async function searchSpotifyArtist(name, token) {
   const q = encodeURIComponent(name)
   const res = await fetch(
     `https://api.spotify.com/v1/search?q=${q}&type=artist&limit=5`,
     { headers: { Authorization: `Bearer ${token}` } }
   )
   const data = await res.json()
-  return (data?.artists?.items ?? []) as any[]
+  return (data?.artists?.items ?? [])
 }
 
-async function fetchSpotifyJSON(url: string, token: string) {
+async function fetchSpotifyJSON(url, token) {
   const res = await fetch(url, { headers: { Authorization: `Bearer ${token}` } })
   if (!res.ok) throw new Error(`Spotify ${res.status}: ${await res.text()}`)
   return res.json()
 }
 
-async function getArtistAlbums(artistId: string, token: string) {
-  // album,single 만 (compilation/appears_on 제외) + 최근순으로 가져온 다음 정리
+async function getArtistAlbums(artistId, token) {
   const url =
     `https://api.spotify.com/v1/artists/${artistId}/albums` +
     `?include_groups=album,single&limit=20&market=US`
   const json = await fetchSpotifyJSON(url, token)
-  const items = (json?.items ?? []) as any[]
+  const items = (json?.items ?? [])
 
-  // 중복(같은 앨범이 여러 시장/버전으로 잡히는 경우) 제거: name+release_date 기준
-  const seen = new Set<string>()
-  const out: SpotifyAlbum[] = []
+  const seen = new Set()
+  const out = []
 
   for (const it of items) {
     const key = `${it?.name ?? ''}|${it?.release_date ?? ''}|${it?.album_type ?? ''}`
@@ -89,23 +65,23 @@ async function getArtistAlbums(artistId: string, token: string) {
     out.push({
       id: it.id,
       name: it.name,
-      albumType: it.album_type, // "album" | "single"
-      releaseDate: it.release_date, // "YYYY-MM-DD" or "YYYY"
+      albumType: it.album_type,
+      releaseDate: it.release_date,
       totalTracks: it.total_tracks ?? 0,
       image: it.images?.[0]?.url,
       url: it.external_urls?.spotify,
     })
   }
 
-  return out.slice(0, 9) // ✅ 너무 길어지지 않게 상위 9개만
+  return out.slice(0, 9)
 }
 
-async function getArtistTopTracks(artistId: string, token: string) {
+async function getArtistTopTracks(artistId, token) {
   const url = `https://api.spotify.com/v1/artists/${artistId}/top-tracks?market=US`
   const json = await fetchSpotifyJSON(url, token)
-  const tracks = (json?.tracks ?? []) as any[]
+  const tracks = (json?.tracks ?? [])
 
-  const out: SpotifyTopTrack[] = tracks.slice(0, 5).map((t) => ({
+  const out = tracks.slice(0, 5).map((t) => ({
     id: t.id,
     name: t.name,
     previewUrl: t.preview_url ?? null,
@@ -118,7 +94,7 @@ async function getArtistTopTracks(artistId: string, token: string) {
       releaseDate: t.album?.release_date,
       image: t.album?.images?.[0]?.url,
     },
-    artists: Array.isArray(t.artists) ? t.artists.map((x: any) => x.name) : [],
+    artists: Array.isArray(t.artists) ? t.artists.map((x) => x.name) : [],
   }))
 
   return out
@@ -126,7 +102,7 @@ async function getArtistTopTracks(artistId: string, token: string) {
 
 ;(async () => {
   const artistsPath = path.resolve(__dirname, '../src/data/artists.json')
-  const artists = JSON.parse(fs.readFileSync(artistsPath, 'utf-8')) as Artist[]
+  const artists = JSON.parse(fs.readFileSync(artistsPath, 'utf-8'))
 
   const token = await getSpotifyToken()
 
@@ -135,7 +111,6 @@ async function getArtistTopTracks(artistId: string, token: string) {
   for (const a of artists) {
     const queryName = a.identity?.name || a.slug
 
-    // ✅ spotifyId 없으면 먼저 찾기
     if (!a.spotify?.spotifyId) {
       const candidates = await searchSpotifyArtist(queryName, token)
       const best = candidates[0]
@@ -144,24 +119,21 @@ async function getArtistTopTracks(artistId: string, token: string) {
         continue
       }
 
-    a.spotify = {
-      ...(a.spotify ?? {}),
-      spotifyId: best.id,
-      image: best.images?.[0]?.url || a.spotify?.image || '',
-      genres: best.genres || [],
-      followers: best.followers?.total ?? 0,
-      popularity: best.popularity ?? 0,
-      spotifyUrl: best.external_urls?.spotify || '',
-    }
+      a.spotify = {
+        ...(a.spotify ?? {}),
+        spotifyId: best.id,
+        image: best.images?.[0]?.url || a.spotify?.image || '',
+        genres: best.genres || [],
+        followers: best.followers?.total ?? 0,
+        popularity: best.popularity ?? 0,
+        spotifyUrl: best.external_urls?.spotify || '',
+      }
       console.log(`🔎 Spotify matched: ${queryName} -> ${best.name}`)
       await sleep(120)
     }
 
     const id = a.spotify.spotifyId
     if (!id) continue
-
-    // ✅ 이미 albums/topTracks가 있으면 스킵하고 싶으면 여기 조건 추가 가능
-    // if ((a.spotify.albums?.length ?? 0) > 0 && (a.spotify.topTracks?.length ?? 0) > 0) continue
 
     try {
       const [albums, topTracks] = await Promise.all([
@@ -179,7 +151,7 @@ async function getArtistTopTracks(artistId: string, token: string) {
       console.log(
         `✅ Spotify extra: ${queryName} (albums: ${albums.length}, topTracks: ${topTracks.length})`
       )
-    } catch (e: any) {
+    } catch (e) {
       console.log(`⚠️ Spotify extra failed: ${queryName} -> ${e?.message ?? e}`)
     }
 
